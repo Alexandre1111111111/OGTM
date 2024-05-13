@@ -1,0 +1,323 @@
+body {
+    background-image: url('campo.png');
+    background-size: 87%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 97vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: rgb(0, 143, 136);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html {
+    font-family: "Nunito", sans-serif;
+    user-select: none;
+}
+.barbarovsk {
+    display: flex;
+    width: 20vh;
+    height: 100%;
+    padding: 0;
+    padding-bottom: 0;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #000;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center; 
+}
+.barbarovsk:hover {
+    border-color: rgb(187, 0, 187);
+}
+.personagens {
+    display: flex;
+    position: absolute;
+    bottom: 2vh;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    width: 56%;
+    height: 33%;
+}
+.aliado {
+    width: 12%;
+    height: 100%;
+    background-color: rgba(0, 0, 255, 0.644);
+    position: absolute;
+    left: 0;
+    border: 3px solid #000;
+}
+.inimigo {
+    width: 12%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.644);
+    position: absolute;
+    right: 0;
+    border: 3px solid #000;
+}
+.rivais {
+    display: flex;
+    position: absolute;
+    top: 2vh;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    width: 73%;
+    height: 30%;
+}
+.thesauriano {
+    display: flex;
+    width: 18vh;
+    height: 100%;
+    padding: 0;
+    position: relative;
+    top: 1vh;
+    padding-bottom: 0;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    overflow: hidden;
+    background-image: url(thesauriano.png);
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #000;
+    font-family: "Nunito", sans-serif;
+    cursor: pointer;
+    align-items: center; 
+    justify-content: center;
+}
+.vdc {
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    left: 2vh;
+    top: 1.3vh;
+    display: flex;
+    width: 100%;
+    height: 140%;
+}
+.vdc h1 {
+    font-size: 2.5vh;
+}
+.baixo {
+    position: relative;
+    top: 4vh;
+}
+.alto {
+    position: relative;
+    bottom: 3vh;
+}
+#danoc1a, #danoc2a, #danoc3a, #danoc4a, #danoc5a, #danoc1, #danoc2, #danoc3, #danoc4, #danoc5, #danoc6, #danoc7 {
+    position: relative;
+    right: 0.5vh;
+}
+.thesauriano:hover {
+    border-color: rgb(187, 53, 0);
+}
+#hpbarco {
+    width: 100%;
+    height: 12vh;
+    background-color: rgba(0, 0, 0, 0.692);
+    border-top: 0.5vh solid #fff;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#hpbarco h1 {
+    color: #ffffff;
+}
+#hpbarco img {
+    display: block;
+    height: 6vh;
+    margin: 0.5vh;
+}
+#hpbarcoini {
+    width: 100%;
+    height: 12vh;
+    background-color: rgba(0, 0, 0, 0.692);
+    border-bottom: 0.5vh solid #fff;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#hpbarcoini h1 {
+    color: #ffffff;
+}
+#hpbarcoini img {
+    display: block;
+    height: 6vh;
+    margin: 0.5vh;
+}
+.resouro {
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    left: 2vh;
+    top: 1.3vh;
+    display: flex;
+    width: 100%;
+}
+.resouro h1 {
+    font-size: 2vh;
+}
+.ressan {
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    left: 2vh;
+    top: 2vh;
+    display: flex;
+    width: 100%;
+}
+.ressan h1 {
+    font-size: 2vh;
+}
+.atributosc1 {
+    display: grid;
+    width: 100%;
+    height: 30%;
+}
+#ouroc1, #sanc1, #ouroc2, #sanc2, #ouroc3, #sanc3, #ouroc4, #sanc4, #ouroc5, #sanc5, #ouroc6, #ouroc7 {
+    position: relative;
+    right: 1vh;
+}
+#btns {
+    width: 100%;
+    height: 25vh;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 14vh;
+    border-top: 0.5vh solid #ffffff;
+}
+#btns button {
+    width: 100%;
+    height: 9vh;
+    cursor: pointer;
+}
+#atacar {
+    background-color: rgba(255, 0, 0, 0.87);
+    color: rgb(255, 203, 154);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 5vh;
+}
+#ordenar {
+    background-color: rgba(0, 26, 255, 0.87);
+    color: rgb(249, 255, 170);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 5vh;
+}
+#itens {
+    background-color: rgba(47, 182, 130, 0.87);
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 5vh;
+}
+#mirac1, #mirac2, #mirac3, #mirac4, #mirac5, #mirac6, #mirac7, #mirap1, #mirap2, #mirap3, #mirap4, #mirap5 {
+    height: 15vh;
+    position: absolute;
+    display: none;
+}
+@keyframes shake {
+    0%{
+        transform: translateX(0.1vh);
+    }
+    100%{
+        transform: translateX(-0.1vh);
+    }
+}
+#cta1 {
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    background-image: url(barbarovsk.png);
+}
+#cta2 {
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    background-image: url(crowly.png);
+}
+#cta3 {
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    background-image: url(lysa.png);
+}
+#cta4 {
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    background-image: url(Vilin.png);
+}
+#cta5 {
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    background-image: url(gabriele.png);
+}
+.dado {
+    display: none;
+    width: 40vh;
+    height: 40vh;
+    background-color: #000000d7;
+    z-index: 10;
+    border: 0.3vh solid #fff;
+    border-radius: 3vh;
+    margin: 0 auto;
+}
+.num {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#roll {
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(255, 159, 49);
+    border-radius: 3vh;
+    cursor: pointer;
+    font-size: 4vh;
+    text-shadow: -1px 0 #ffb394, 0 1px #ffb394, 1px 0 #ffb394, 0 -1px #ffb394;
+}
+#rolln {
+    color: #ff4f09;
+    font-size: 10vh;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.nivel {
+    width: 100%;
+    height: 12vh;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+#nvc1, #nvc2, #nvc3, #nvc4, #nvc5 {
+    font-size: 1.8vh;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0 auto;
+}
+#cartai1, #cartai2, #cartai3, #cartai4, #cartai5, #cartai6, #cartai7 {
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+}
+.incapacitado {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.938);
+    display: none;
+    position: absolute;
+    align-items: center;
+}
+.incapacitado h1 {
+    color: #ff0000;
+    font-size: 2.8vh;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin: 0 auto;
+}
+#inc1, #inc2, #inc3, #inc4, #inc5 {
+    position: absolute;
+    width: 20vh;
+}
