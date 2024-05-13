@@ -143,6 +143,216 @@ function limp() {
 }
 
 function nvs() {
+    switch (niveis[4].textContent) {
+        case "NV: I":
+            danototalp5 = armap5;
+            danoc5a.textContent = armap5;
+            vidac5a.textContent = vidap5;
+        break;
+        case "NV: II":
+            danototalp5 = 10 + armap5;
+            danoc5a.textContent = armap5 + 10;
+            vidac5a.textContent = vidap5 + 20;
+            resc5a.textContent = "6%";
+            resp5 -= 0.01;
+        break;
+        case "NV: III":
+            danototalp5 = 25 + armap5;
+            danoc5a.textContent = armap5 + 25;
+            vidac5a.textContent = vidap5 + 45;
+            resc5a.textContent = "8%";
+            resp5 -= 0.03;
+        break;
+        case "NV: IV":
+            danototalp5 = 45 + armap5;
+            danoc5a.textContent = armap5 + 45;
+            vidac5a.textContent = vidap5 + 75;
+            resc5a.textContent = "11%";
+            resp5 -= 0.06;
+        break;
+        case "NV: V":
+            danototalp5 = 65 + armap5;
+            danoc5a.textContent = armap5 + 65;
+            vidac5a.textContent = vidap5 + 120;
+            resc5a.textContent = "14%";
+            resp5 -= 0.09;
+        break;
+        case "NV: VI":
+            danototalp5 = 95 + armap5;
+            danoc5a.textContent = armap5 + 95;
+            vidac5a.textContent = vidap5 + 170;
+            resc5a.textContent = "17%";
+            resp5 -= 0.12;
+        break;
+        case "NV: VII":
+            danototalp5 = 130 + armap5;
+            danoc5a.textContent = armap5 + 130;
+            vidac5a.textContent = vidap5 + 235;
+            resc5a.textContent = "20%";
+            resp5 -= 0.15;
+        break;
+        case "NV: VIII":
+            danototalp5 = 170 + armap5;
+            danoc5a.textContent = armap5 + 170;
+            vidac5a.textContent = vidap5 + 320;
+            resc5a.textContent = "23%";
+            resp5 -= 0.18;
+        break;
+        case "NV: IX":
+            danototalp5 = 215 + armap5;
+            danoc5a.textContent = armap5 + 215;
+            vidac5a.textContent = vidap5 + 420;
+            resc5a.textContent = "26%";
+            resp5 -= 0.21;
+        break;
+        case "NV: X":
+            danototalp5 = 265 + armap5;
+            danoc5a.textContent = armap5 + 265;
+            vidac5a.textContent = vidap5 + 550;
+            resc5a.textContent = "31%";
+            resp5 -= 0.26;
+        break;
+}
+    switch (niveis[3].textContent) {
+        case "NV: I":
+            danototalp4 = armap4;
+            danoc4a.textContent = armap4;
+            vidac4a.textContent = vidap4;
+        break;
+        case "NV: II":
+            danototalp4 = 10 + armap4;
+            danoc4a.textContent = armap4 + 10;
+            vidac4a.textContent = vidap4 + 20;
+            resc4a.textContent = "9%";
+            resp4 -= 0.01;
+        break;
+        case "NV: III":
+            danototalp4 = 25 + armap4;
+            danoc4a.textContent = armap4 + 25;
+            vidac4a.textContent = vidap4 + 45;
+            resc4a.textContent = "11%";
+            resp4 -= 0.03;
+        break;
+        case "NV: IV":
+            danototalp4 = 45 + armap4;
+            danoc4a.textContent = armap4 + 45;
+            vidac4a.textContent = vidap4 + 75;
+            resc4a.textContent = "14%";
+            resp4 -= 0.06;
+        break;
+        case "NV: V":
+            danototalp4 = 65 + armap4;
+            danoc4a.textContent = armap4 + 65;
+            vidac4a.textContent = vidap4 + 120;
+            resc4a.textContent = "17%";
+            resp4 -= 0.09;
+        break;
+        case "NV: VI":
+            danototalp4 = 95 + armap4;
+            danoc4a.textContent = armap4 + 95;
+            vidac4a.textContent = vidap4 + 170;
+            resc4a.textContent = "20%";
+            resp4 -= 0.12;
+        break;
+        case "NV: VII":
+            danototalp4 = 130 + armap4;
+            danoc4a.textContent = armap4 + 130;
+            vidac4a.textContent = vidap4 + 235;
+            resc4a.textContent = "23%";
+            resp4 -= 0.15;
+        break;
+        case "NV: VIII":
+            danototalp4 = 170 + armap4;
+            danoc4a.textContent = armap4 + 170;
+            vidac4a.textContent = vidap4 + 320;
+            resc4a.textContent = "26%";
+            resp4 -= 0.18;
+        break;
+        case "NV: IX":
+            danototalp4 = 215 + armap4;
+            danoc4a.textContent = armap4 + 215;
+            vidac4a.textContent = vidap4 + 420;
+            resc4a.textContent = "29%";
+            resp4 -= 0.21;
+        break;
+        case "NV: X":
+            danototalp4 = 265 + armap4;
+            danoc4a.textContent = armap4 + 265;
+            vidac4a.textContent = vidap4 + 550;
+            resc4a.textContent = "34%";
+            resp4 -= 0.26;
+        break;
+}
+    switch (niveis[2].textContent) {
+        case "NV: I":
+            danototalp3 = armap3;
+            danoc3a.textContent = armap3;
+            vidac3a.textContent = vidap3;
+        break;
+        case "NV: II":
+            danototalp3 = 10 + armap3;
+            danoc3a.textContent = armap3 + 10;
+            vidac3a.textContent = vidap3 + 20;
+            resc3a.textContent = "11%";
+            resp3 -= 0.01;
+        break;
+        case "NV: III":
+            danototalp3 = 25 + armap3;
+            danoc3a.textContent = armap3 + 25;
+            vidac3a.textContent = vidap3 + 45;
+            resc3a.textContent = "13%";
+            resp3 -= 0.03;
+        break;
+        case "NV: IV":
+            danototalp3 = 45 + armap3;
+            danoc3a.textContent = armap3 + 45;
+            vidac3a.textContent = vidap3 + 75;
+            resc3a.textContent = "16%";
+            resp3 -= 0.06;
+        break;
+        case "NV: V":
+            danototalp3 = 65 + armap3;
+            danoc3a.textContent = armap3 + 65;
+            vidac3a.textContent = vidap3 + 120;
+            resc3a.textContent = "19%";
+            resp3 -= 0.09;
+        break;
+        case "NV: VI":
+            danototalp3 = 95 + armap3;
+            danoc3a.textContent = armap3 + 95;
+            vidac3a.textContent = vidap3 + 170;
+            resc3a.textContent = "22%";
+            resp3 -= 0.12;
+        break;
+        case "NV: VII":
+            danototalp3 = 130 + armap3;
+            danoc3a.textContent = armap3 + 130;
+            vidac3a.textContent = vidap3 + 235;
+            resc3a.textContent = "25%";
+            resp3 -= 0.15;
+        break;
+        case "NV: VIII":
+            danototalp3 = 170 + armap3;
+            danoc3a.textContent = armap3 + 170;
+            vidac3a.textContent = vidap3 + 320;
+            resc3a.textContent = "28%";
+            resp3 -= 0.18;
+        break;
+        case "NV: IX":
+            danototalp3 = 215 + armap3;
+            danoc3a.textContent = armap3 + 215;
+            vidac3a.textContent = vidap3 + 420;
+            resc3a.textContent = "31%";
+            resp3 -= 0.21;
+        break;
+        case "NV: X":
+            danototalp3 = 265 + armap3;
+            danoc3a.textContent = armap3 + 265;
+            vidac3a.textContent = vidap3 + 550;
+            resc3a.textContent = "36%";
+            resp3 -= 0.26;
+        break;
+}
         switch (niveis[1].textContent) {
             case "NV: I":
                 danototalp2 = armap2;
@@ -308,6 +518,15 @@ function personagem() {
 nvs();
 
 personagem();
+
+setInterval(() => {
+    console.log(`danototal: ${danototal}`);
+    console.log(danototalp1);
+    console.log(danototalp2);
+    console.log(danototalp3);
+    console.log(danototalp4);
+    console.log(danototalp5);
+}, 2000)
 
 function inc() {
         if (vidac1a.textContent <= 0) {
@@ -716,14 +935,14 @@ function trocar() {
             cta5.style.animationName = "shake";
             ordenar.style.display = "none";
             btns.style.bottom = "5vh";
-            per = 2;
+            per = 5;
         break;
         case cta1.style.animationName == "shake" && inc2.style.display == "flex" && inc3.style.display == "flex":
             cta1.style.animationName = "unset";
             cta4.style.animationName = "shake";
             ordenar.style.display = "none";
             btns.style.bottom = "5vh";
-            per = 2;
+            per = 4;
         break;
         case cta1.style.animationName == "shake" && inc2.style.display == "flex":
             cta1.style.animationName = "unset";
@@ -845,6 +1064,7 @@ else {
             turnoini();
         break;
     }
+    personagem();
 }
     }
 }
