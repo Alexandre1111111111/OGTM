@@ -68,6 +68,11 @@ const roll = document.querySelector("#roll");
 const rolln = document.querySelector("#rolln");
 const dado = document.querySelector(".dado");
 const btns = document.querySelector("#btns");
+const veztxt = document.querySelector("#veztxt");
+const vez = document.querySelector(".vez");
+const damage = document.querySelector(".damage");
+const total = document.querySelector("#total");
+const ordem = document.querySelector(".ordem");
 
 const punhal = 20;
 const rapieira = 35;
@@ -121,6 +126,11 @@ let hpt4;
 let hpt5;
 let hpt6;
 let hpt7;
+let ress1 = 10;
+let ress2 = 15;
+let ress3 = 10;
+let ress4 = 8;
+let ress5 = 5;
 let hpp;
 let hpp2;
 let hpp3;
@@ -130,387 +140,192 @@ let rest = 0.85;
 let numdado;
 let per = 1;
 let turnoa = true;
+let mirando = false;
 
 const cartasi = [cartai1, cartai2, cartai3, cartai4, cartai5, cartai6, cartai7];
 const miras = [mirac1, mirac2, mirac3, mirac4, mirac5, mirac6, mirac7, mirap1, mirap2, mirap3, mirap4, mirap5];
 const vidas = [vidac1a, vidac2a, vidac3a, vidac4a, vidac5a];
 const niveis = [nvc1, nvc2, nvc3, nvc4, nvc5];
+const danos = [danototalp1, danototalp2, danototalp3, danototalp4, danototalp5];
+const dns = [danoc1a, danoc2a, danoc3a, danoc4a, danoc5a];
+const armas = [armap1, armap2, armap3, armap4, armap5];
+const resistencias = [resc1a, resc2a, resc3a, resc4a, resc5a];
+const resps = [resp1, resp2, resp3, resp4, resp5];
+const vds = [vidap1, vidap2, vidap3, vidap4, vidap5];
+const rss = [ress1, ress2, ress3, ress4, ress5];
+const incis = [inci1, inci2, inci3, inci4, inci5, inci6, inci7];
+const vidasi = [vidac1, vidac2, vidac3, vidac4, vidac5, vidac6, vidac7];
 
 function limp() {
     for(i = 0; i < miras.length; i++) {
         miras[i].style.display = "none";
     }
+    vez.style.top = "2vh";
+    vez.style.backgroundColor = "rgba(0, 0, 255, 0.842)";
+    damage.style.right = "30vh";
+    setTimeout(() => {
+        damage.style.visibility = "hidden";
+    }, 500)
+    mirando = false;
+    total.textContent = "---";
+    atacar.addEventListener("click", rvmatq);
 }
 
+function ttl() {
+    total.textContent = Math.floor(danototal * rest);
+}
+
+function trocatxt() {
+    switch(true) {
+        case mirando:
+            veztxt.textContent = "Escolha o Alvo";
+        break;
+        case cta1.style.animationName == "shake":
+            vez.style.display = "flex";
+            veztxt.textContent = "Vez de Barbarovsk";
+        break;
+        case cta2.style.animationName == "shake":
+            vez.style.display = "flex";
+            veztxt.textContent = "Vez de Crowly";
+        break;
+        case cta3.style.animationName == "shake":
+            vez.style.display = "flex";
+            veztxt.textContent = "Vez de Lysa";
+        break;
+        case cta4.style.animationName == "shake":
+            vez.style.display = "flex";
+            veztxt.textContent = "Vez de Darban";
+        break;
+        case cta5.style.animationName == "shake":
+            vez.style.display = "flex";
+            veztxt.textContent = "Vez de Gabriele";
+        break;
+        case !turnoa:
+            vez.style.display = "none";
+        break;
+    }
+}
+
+function odm() {
+    if(ordem.style.display != "flex") {
+        ordem.style.display = "flex";
+        setTimeout(() => {
+            ordem.style.opacity = "1";
+        }, 50)
+    }
+    else {
+        ordem.style.opacity = "0";
+        setTimeout(() => {
+            ordem.style.display = "none";
+        }, 250)
+    }
+}
+
+ordenar.addEventListener("click", odm);
+
+setInterval(trocatxt, 10);
+
 function nvs() {
-    switch (niveis[4].textContent) {
-        case "NV: I":
-            danototalp5 = armap5;
-            danoc5a.textContent = armap5;
-            vidac5a.textContent = vidap5;
-        break;
-        case "NV: II":
-            danototalp5 = 10 + armap5;
-            danoc5a.textContent = armap5 + 10;
-            vidac5a.textContent = vidap5 + 20;
-            resc5a.textContent = "6%";
-            resp5 -= 0.01;
-        break;
-        case "NV: III":
-            danototalp5 = 25 + armap5;
-            danoc5a.textContent = armap5 + 25;
-            vidac5a.textContent = vidap5 + 45;
-            resc5a.textContent = "8%";
-            resp5 -= 0.03;
-        break;
-        case "NV: IV":
-            danototalp5 = 45 + armap5;
-            danoc5a.textContent = armap5 + 45;
-            vidac5a.textContent = vidap5 + 75;
-            resc5a.textContent = "11%";
-            resp5 -= 0.06;
-        break;
-        case "NV: V":
-            danototalp5 = 65 + armap5;
-            danoc5a.textContent = armap5 + 65;
-            vidac5a.textContent = vidap5 + 120;
-            resc5a.textContent = "14%";
-            resp5 -= 0.09;
-        break;
-        case "NV: VI":
-            danototalp5 = 95 + armap5;
-            danoc5a.textContent = armap5 + 95;
-            vidac5a.textContent = vidap5 + 170;
-            resc5a.textContent = "17%";
-            resp5 -= 0.12;
-        break;
-        case "NV: VII":
-            danototalp5 = 130 + armap5;
-            danoc5a.textContent = armap5 + 130;
-            vidac5a.textContent = vidap5 + 235;
-            resc5a.textContent = "20%";
-            resp5 -= 0.15;
-        break;
-        case "NV: VIII":
-            danototalp5 = 170 + armap5;
-            danoc5a.textContent = armap5 + 170;
-            vidac5a.textContent = vidap5 + 320;
-            resc5a.textContent = "23%";
-            resp5 -= 0.18;
-        break;
-        case "NV: IX":
-            danototalp5 = 215 + armap5;
-            danoc5a.textContent = armap5 + 215;
-            vidac5a.textContent = vidap5 + 420;
-            resc5a.textContent = "26%";
-            resp5 -= 0.21;
-        break;
-        case "NV: X":
-            danototalp5 = 265 + armap5;
-            danoc5a.textContent = armap5 + 265;
-            vidac5a.textContent = vidap5 + 550;
-            resc5a.textContent = "31%";
-            resp5 -= 0.26;
-        break;
-}
-    switch (niveis[3].textContent) {
-        case "NV: I":
-            danototalp4 = armap4;
-            danoc4a.textContent = armap4;
-            vidac4a.textContent = vidap4;
-        break;
-        case "NV: II":
-            danototalp4 = 10 + armap4;
-            danoc4a.textContent = armap4 + 10;
-            vidac4a.textContent = vidap4 + 20;
-            resc4a.textContent = "9%";
-            resp4 -= 0.01;
-        break;
-        case "NV: III":
-            danototalp4 = 25 + armap4;
-            danoc4a.textContent = armap4 + 25;
-            vidac4a.textContent = vidap4 + 45;
-            resc4a.textContent = "11%";
-            resp4 -= 0.03;
-        break;
-        case "NV: IV":
-            danototalp4 = 45 + armap4;
-            danoc4a.textContent = armap4 + 45;
-            vidac4a.textContent = vidap4 + 75;
-            resc4a.textContent = "14%";
-            resp4 -= 0.06;
-        break;
-        case "NV: V":
-            danototalp4 = 65 + armap4;
-            danoc4a.textContent = armap4 + 65;
-            vidac4a.textContent = vidap4 + 120;
-            resc4a.textContent = "17%";
-            resp4 -= 0.09;
-        break;
-        case "NV: VI":
-            danototalp4 = 95 + armap4;
-            danoc4a.textContent = armap4 + 95;
-            vidac4a.textContent = vidap4 + 170;
-            resc4a.textContent = "20%";
-            resp4 -= 0.12;
-        break;
-        case "NV: VII":
-            danototalp4 = 130 + armap4;
-            danoc4a.textContent = armap4 + 130;
-            vidac4a.textContent = vidap4 + 235;
-            resc4a.textContent = "23%";
-            resp4 -= 0.15;
-        break;
-        case "NV: VIII":
-            danototalp4 = 170 + armap4;
-            danoc4a.textContent = armap4 + 170;
-            vidac4a.textContent = vidap4 + 320;
-            resc4a.textContent = "26%";
-            resp4 -= 0.18;
-        break;
-        case "NV: IX":
-            danototalp4 = 215 + armap4;
-            danoc4a.textContent = armap4 + 215;
-            vidac4a.textContent = vidap4 + 420;
-            resc4a.textContent = "29%";
-            resp4 -= 0.21;
-        break;
-        case "NV: X":
-            danototalp4 = 265 + armap4;
-            danoc4a.textContent = armap4 + 265;
-            vidac4a.textContent = vidap4 + 550;
-            resc4a.textContent = "34%";
-            resp4 -= 0.26;
-        break;
-}
-    switch (niveis[2].textContent) {
-        case "NV: I":
-            danototalp3 = armap3;
-            danoc3a.textContent = armap3;
-            vidac3a.textContent = vidap3;
-        break;
-        case "NV: II":
-            danototalp3 = 10 + armap3;
-            danoc3a.textContent = armap3 + 10;
-            vidac3a.textContent = vidap3 + 20;
-            resc3a.textContent = "11%";
-            resp3 -= 0.01;
-        break;
-        case "NV: III":
-            danototalp3 = 25 + armap3;
-            danoc3a.textContent = armap3 + 25;
-            vidac3a.textContent = vidap3 + 45;
-            resc3a.textContent = "13%";
-            resp3 -= 0.03;
-        break;
-        case "NV: IV":
-            danototalp3 = 45 + armap3;
-            danoc3a.textContent = armap3 + 45;
-            vidac3a.textContent = vidap3 + 75;
-            resc3a.textContent = "16%";
-            resp3 -= 0.06;
-        break;
-        case "NV: V":
-            danototalp3 = 65 + armap3;
-            danoc3a.textContent = armap3 + 65;
-            vidac3a.textContent = vidap3 + 120;
-            resc3a.textContent = "19%";
-            resp3 -= 0.09;
-        break;
-        case "NV: VI":
-            danototalp3 = 95 + armap3;
-            danoc3a.textContent = armap3 + 95;
-            vidac3a.textContent = vidap3 + 170;
-            resc3a.textContent = "22%";
-            resp3 -= 0.12;
-        break;
-        case "NV: VII":
-            danototalp3 = 130 + armap3;
-            danoc3a.textContent = armap3 + 130;
-            vidac3a.textContent = vidap3 + 235;
-            resc3a.textContent = "25%";
-            resp3 -= 0.15;
-        break;
-        case "NV: VIII":
-            danototalp3 = 170 + armap3;
-            danoc3a.textContent = armap3 + 170;
-            vidac3a.textContent = vidap3 + 320;
-            resc3a.textContent = "28%";
-            resp3 -= 0.18;
-        break;
-        case "NV: IX":
-            danototalp3 = 215 + armap3;
-            danoc3a.textContent = armap3 + 215;
-            vidac3a.textContent = vidap3 + 420;
-            resc3a.textContent = "31%";
-            resp3 -= 0.21;
-        break;
-        case "NV: X":
-            danototalp3 = 265 + armap3;
-            danoc3a.textContent = armap3 + 265;
-            vidac3a.textContent = vidap3 + 550;
-            resc3a.textContent = "36%";
-            resp3 -= 0.26;
-        break;
-}
-        switch (niveis[1].textContent) {
+    for(let i = 0; i < niveis.length; i++) {
+        switch (niveis[i].textContent) {
             case "NV: I":
-                danototalp2 = armap2;
-                danoc2a.textContent = armap2;
-                vidac2a.textContent = vidap2;
+                danos[i] = armas[i];
+                dns[i].textContent = armas[i];
+                vidas[i].textContent = vds[i];
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: II":
-                danototalp2 = 10 + armap2;
-                danoc2a.textContent = armap2 + 10;
-                vidac2a.textContent = vidap2 + 20;
-                resc2a.textContent = "16%";
-                resp2 -= 0.01;
+                danos[i] = 10 + armas[i];
+                dns[i].textContent = armas[i] + 10;
+                vidas[i].textContent = vds[i] + 20;
+                resistencias[i].textContent = `${rss[i] + 1}%`;
+                resps[i] -= 0.01;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: III":
-                danototalp2 = 25 + armap2;
-                danoc2a.textContent = armap2 + 25;
-                vidac2a.textContent = vidap2 + 45;
-                resc2a.textContent = "18%";
-                resp2 -= 0.03;
+                danos[i] = 25 + armas[i];
+                dns[i].textContent = armas[i] + 25;
+                vidas[i].textContent = vds[i] + 45;
+                resistencias[i].textContent = `${rss[i] + 3}%`;
+                resps[i] -= 0.03;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: IV":
-                danototalp2 = 45 + armap2;
-                danoc2a.textContent = armap2 + 45;
-                vidac2a.textContent = vidap2 + 75;
-                resc2a.textContent = "21%";
-                resp2 -= 0.06;
+                danos[i] = 45 + armas[i];
+                dns[i].textContent = armas[i] + 45;
+                vidas[i].textContent = vds[i] + 75;
+                resistencias[i].textContent = `${rss[i] + 6}%`;
+                resps[i] -= 0.06;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: V":
-                danototalp2 = 65 + armap2;
-                danoc2a.textContent = armap2 + 65;
-                vidac2a.textContent = vidap2 + 120;
-                resc2a.textContent = "24%";
-                resp2 -= 0.09;
+                danos[i] = 65 + armas[i];
+                dns[i].textContent = armas[i] + 65;
+                vidas[i].textContent = vds[i] + 120;
+                resistencias[i].textContent = `${rss[i] + 9}%`;
+                resps[i] -= 0.09;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: VI":
-                danototalp2 = 95 + armap2;
-                danoc2a.textContent = armap2 + 95;
-                vidac2a.textContent = vidap2 + 170;
-                resc2a.textContent = "27%";
-                resp2 -= 0.12;
+                danos[i] = 95 + armas[i];
+                dns[i].textContent = armas[i] + 95;
+                vidas[i].textContent = vds[i] + 170;
+                resistencias[i].textContent = `${rss[i] + 12}%`;
+                resps[i] -= 0.12;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: VII":
-                danototalp2 = 130 + armap2;
-                danoc2a.textContent = armap2 + 130;
-                vidac2a.textContent = vidap2 + 235;
-                resc2a.textContent = "30%";
-                resp2 -= 0.15;
+                danos[i] = 130 + armas[i];
+                dns[i].textContent = armas[i] + 130;
+                vidas[i].textContent = vds[i] + 235;
+                resistencias[i].textContent = `${rss[i] + 15}%`;
+                resps[i] -= 0.15;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: VIII":
-                danototalp2 = 170 + armap2;
-                danoc2a.textContent = armap2 + 170;
-                vidac2a.textContent = vidap2 + 320;
-                resc2a.textContent = "33%";
-                resp2 -= 0.18;
+                danos[i] = 170 + armas[i];
+                dns[i].textContent = armas[i] + 170;
+                vidas[i].textContent = vds[i] + 320;
+                resistencias[i].textContent = `${rss[i] + 18}%`;
+                resps[i] -= 0.18;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: IX":
-                danototalp2 = 215 + armap2;
-                danoc2a.textContent = armap2 + 215;
-                vidac2a.textContent = vidap2 + 420;
-                resc2a.textContent = "36%";
-                resp2 -= 0.21;
+                danos[i] = 215 + armas[i];
+                dns[i].textContent = armas[i] + 215;
+                vidas[i].textContent = vds[i] + 420;
+                resistencias[i].textContent = `${rss[i] + 21}%`;
+                resps[i] -= 0.21;
+                vds[i] = vidas[i].textContent;
             break;
             case "NV: X":
-                danototalp2 = 265 + armap2;
-                danoc2a.textContent = armap2 + 265;
-                vidac2a.textContent = vidap2 + 550;
-                resc2a.textContent = "41%";
-                resp2 -= 0.26;
+                danos[i] = 265 + armas[i];
+                dns[i].textContent = armas[i] + 265;
+                vidas[i].textContent = vds[i] + 550;
+                resistencias[i].textContent = `${rss[i] + 26}%`;
+                resps[i] -= 0.26;
+                vds[i] = vidas[i].textContent;
             break;
         }
-        switch (niveis[0].textContent) {
-            case "NV: I":
-                danototalp1 = armap1;
-                danoc1a.textContent = armap1;
-                vidac1a.textContent = vidap1;
-            break;
-            case "NV: II":
-                danototalp1 = 10 + armap1;
-                danoc1a.textContent = armap1 + 10;
-                vidac1a.textContent = vidap1 + 20;
-                resc1a.textContent = "11%";
-                resp1 -= 0.01;
-            break;
-            case "NV: III":
-                danototalp1 = 25 + armap1;
-                danoc1a.textContent = armap1 + 25;
-                vidac1a.textContent = vidap1 + 45;
-                resc1a.textContent = "13%";
-                resp1 -= 0.03;
-            break;
-            case "NV: IV":
-                danototalp1 = 45 + armap1;
-                danoc1a.textContent = armap1 + 45;
-                vidac1a.textContent = vidap1 + 75;
-                resc1a.textContent = "16%";
-                resp1 -= 0.06;
-            break;
-            case "NV: V":
-                danototalp1 = 65 + armap1;
-                danoc1a.textContent = armap1 + 65;
-                vidac1a.textContent = vidap1 + 120;
-                resc1a.textContent = "19%";
-                resp1 -= 0.09;
-            break;
-            case "NV: VI":
-                danototalp1 = 95 + armap1;
-                danoc1a.textContent = armap1 + 95;
-                vidac1a.textContent = vidap1 + 170;
-                resc1a.textContent = "22%";
-                resp1 -= 0.12;
-            break;
-            case "NV: VII":
-                danototalp1 = 130 + armap1;
-                danoc1a.textContent = armap1 + 130;
-                vidac1a.textContent = vidap1 + 235;
-                resc1a.textContent = "25%";
-                resp1 -= 0.15;
-            break;
-            case "NV: VIII":
-                danototalp1 = 170 + armap1;
-                danoc1a.textContent = armap1 + 170;
-                vidac1a.textContent = vidap1 + 320;
-                resc1a.textContent = "28%";
-                resp1 -= 0.18;
-            break;
-            case "NV: IX":
-                danototalp1 = 215 + armap1;
-                danoc1a.textContent = armap1 + 215;
-                vidac1a.textContent = vidap1 + 420;
-                resc1a.textContent = "31%";
-                resp1 -= 0.21;
-            break;
-            case "NV: X":
-                danototalp1 = 265 + armap1;
-                danoc1a.textContent = armap1 + 265;
-                vidac1a.textContent = vidap1 + 550;
-                resc1a.textContent = "36%";
-                resp1 -= 0.26;
-            break;
     }
 }
 
 function personagem() {
     switch(per) {
         case 1:
-            danototal = danototalp1;
+            danototal = danos[0];
         break;
         case 2:
-            danototal = danototalp2;
+            danototal = danos[1];
         break;
         case 3:
-            danototal = danototalp3;
+            danototal = danos[2];
         break;
         case 4:
-            danototal = danototalp4;
+            danototal = danos[3];
         break;
         case 5:
-            danototal = danototalp5;
+            danototal = danos[4];
         break;
     }
 }
@@ -519,45 +334,141 @@ nvs();
 
 personagem();
 
-setInterval(() => {
-    console.log(`danototal: ${danototal}`);
-    console.log(danototalp1);
-    console.log(danototalp2);
-    console.log(danototalp3);
-    console.log(danototalp4);
-    console.log(danototalp5);
-}, 2000)
-
 function inc() {
         if (vidac1a.textContent <= 0) {
             inc1.style.display = "flex";
+            vidac1a.textContent = 0;
         }
         if (vidac2a.textContent <= 0) {
             inc2.style.display = "flex";
+            vidac2a.textContent = 0;
         }
         if (vidac3a.textContent <= 0) {
             inc3.style.display = "flex";
+            vidac3a.textContent = 0;
         }
         if (vidac4a.textContent <= 0) {
             inc4.style.display = "flex";
+            vidac4a.textContent = 0;
         }
         if (vidac5a.textContent <= 0) {
             inc5.style.display = "flex";
+            vidac5a.textContent = 0;
         }
+}
+function incinimigo() {
+    if (vidac1.textContent <= 0) {
+        incis[0].style.display = "flex";
+        vidac1.textContent = 0;
+    }
+    if (vidac2.textContent <= 0) {
+        incis[1].style.display = "flex";
+        vidac2.textContent = 0;
+    }
+    if (vidac3.textContent <= 0) {
+        incis[2].style.display = "flex";
+        vidac3.textContent = 0;
+    }
+    if (vidac4.textContent <= 0) {
+        incis[3].style.display = "flex";
+        vidac4.textContent = 0;
+    }
+    if (vidac5.textContent <= 0) {
+        incis[4].style.display = "flex";
+        vidac5.textContent = 0;
+    }
+    if (vidac6.textContent <= 0) {
+        incis[5].style.display = "flex";
+        vidac6.textContent = 0;
+    }
+    if (vidac7.textContent <= 0) {
+        incis[6].style.display = "flex";
+        vidac7.textContent = 0;
+    }
 }
 
 setInterval(inc, 50);
+setInterval(incinimigo, 50);
+setInterval(() => {
+    if(turnoa) {
+        btns.style.display = "block";
+    }
+}, 50)
+setInterval(() => {
+    for(let i = 0; i < vidasi.length; i++) {
+    if(vidasi[i].textContent < 300) {
+        vidasi[i].style.color ="#e31212";
+    }
+}
+}, 10)
 
-atacar.addEventListener("click", () => {
+setInterval(() => {
+    for(let i = 0; i < vidas.length; i++) {
+        if(vidas[i].textContent < vds[i]) {
+            vidas[i].style.color ="#e31212";
+        }
+    }
+}, 10)
+
+setInterval(() => {
+    if(per != 1) {
+        ordenar.style.display = "none";
+        btns.style.bottom = "5vh";
+    }
+    else {
+        ordenar.style.display = "block";
+        btns.style.bottom = "14vh";
+    }
+}, 10)
+
+function atacando() {
+    mirando = true;
     roll.style.visibility = "visible";
     numdado = 0;
     rolln.textContent = numdado;
+    vez.style.top = "40vh";
+    vez.style.backgroundColor = "rgba(255, 0, 0, 0.842)";
+    damage.style.visibility = "visible";
+    damage.style.right = "0vh";
     mira();
-})
+}
+
+function rvmatq() {
+    atacar.removeEventListener("click", rvmatq);
+    atacando();
+}
+
+atacar.addEventListener("click", rvmatq);
 
 function turnoini() {
     turnoa = false;
-    cartasi[0].style.animationName = "shake";
+    btns.style.display = "none";
+    switch(true) {
+        case incis[0].style.display != "flex":
+            cartasi[0].style.animationName = "shake";
+        break;
+        case incis[6].style.display == "flex" && incis[5].style.display == "flex" && incis[4].style.display == "flex" && incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
+            cartasi[7].style.animationName = "shake";
+        break;
+        case incis[5].style.display == "flex" && incis[4].style.display == "flex" && incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
+            cartasi[6].style.animationName = "shake";
+        break;
+        case incis[4].style.display == "flex" && incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
+            cartasi[5].style.animationName = "shake";
+        break;
+        case incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
+            cartasi[4].style.animationName = "shake";
+        break;
+        case incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
+            cartasi[3].style.animationName = "shake";
+        break;
+        case incis[1].style.display == "flex" && incis[0].style.display == "flex":
+            cartasi[2].style.animationName = "shake";
+        break;
+        case incis[0].style.display == "flex":
+            cartasi[1].style.animationName = "shake";
+        break;
+    }
     inijog();
     for (let i = 0; i < cartasi.length; i++) {
     if(cartasi[i].style.backgroundImage = "thesauriano.png") {
@@ -595,8 +506,17 @@ function alvos() {
         case inc2.style.display == "flex" && alvo == 2 && inc1.style.display != "flex":
             alvo += 1;
         break;
+        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex":
+            alvo -= 1;
+        break;
         case inc3.style.display == "flex" && alvo == 3 && inc2.style.display == "flex":
             alvo -= 2;
+        break;
+        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex":
+            alvo += 2;
+        break;
+        case inc3.style.display == "flex" && alvo == 3 && inc1.style.display == "flex" && inc2.style.display == "flex":
+            alvo += 1;
         break;
         case inc3.style.display == "flex" && alvo == 3 && inc2.style.display != "flex":
             alvo -= 1;
@@ -609,6 +529,9 @@ function alvos() {
         break;
         case inc4.style.display == "flex" && alvo == 4 && inc3.style.display != "flex":
             alvo -= 1;
+        break;
+        case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex" && inc1.style.display == "flex":
+            alvo += 1;
         break;
         case inc5.style.display == "flex" && alvo == 5 && inc4.style.display == "flex" && inc3.style.display == "flex" && inc2.style.display == "flex":
             alvo -= 4;
@@ -645,37 +568,127 @@ function alvos() {
 function rodar() {
     roll.style.visibility = "hidden";
     switch (true) {
-        case cartasi[0].style.animationName == "shake":
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display != "flex":
             cartasi[0].style.animationName = "unset";
             cartasi[1].style.animationName = "shake";
             alvos();
             rolar();
         break;
-        case cartasi[1].style.animationName == "shake":
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[4].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[3].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[2].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[4].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[3].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display != "flex":
             cartasi[1].style.animationName = "unset";
             cartasi[2].style.animationName = "shake";
             alvos();
             rolar();
         break;
-        case cartasi[2].style.animationName == "shake":
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[2].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
+            cartasi[2].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex":
+            cartasi[2].style.animationName = "unset";
+            cartasi[4].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display != "flex":
             cartasi[2].style.animationName = "unset";
             cartasi[3].style.animationName = "shake";
             alvos();
             rolar();
         break;
-        case cartasi[3].style.animationName == "shake":
+        case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[3].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex":
+            cartasi[3].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[3].style.animationName == "shake" && incis[4].style.display != "flex":
             cartasi[3].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             alvos();
             rolar();
         break;
-        case cartasi[4].style.animationName == "shake":
+        case cartasi[4].style.animationName == "shake" && incis[5].style.display == "flex":
+            cartasi[4].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            alvos();
+            rolar();
+        break;
+        case cartasi[4].style.animationName == "shake" && incis[5].style.display != "flex":
             cartasi[4].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             alvos();
             rolar();
         break;
-        case cartasi[5].style.animationName == "shake":
+        case cartasi[5].style.animationName == "shake" && incis[6].style.display != "flex":
             cartasi[5].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             alvos();
@@ -715,6 +728,7 @@ function inijog() {
 }
 
 function c1() {
+    if(incis[0].style.display != "flex") {
     mirac1.style.display = "block";
     mirac2.style.display = "none";
     mirac3.style.display = "none";
@@ -722,9 +736,15 @@ function c1() {
     mirac5.style.display = "none";
     mirac6.style.display = "none";
     mirac7.style.display = "none";
+    ttl();
+    }
+    else {
+        cartasi[0].removeEventListener("click", apcdado);
+    }
 }
 
 function c2() {
+    if(incis[1].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "block";
     mirac3.style.display = "none";
@@ -732,8 +752,14 @@ function c2() {
     mirac5.style.display = "none";
     mirac6.style.display = "none";
     mirac7.style.display = "none";
+    ttl();
+}
+else {
+    cartasi[1].removeEventListener("click", apcdado);
+}
 }
 function c3() {
+    if(incis[2].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
     mirac3.style.display = "block";
@@ -741,8 +767,14 @@ function c3() {
     mirac5.style.display = "none";
     mirac6.style.display = "none";
     mirac7.style.display = "none";
+    ttl();
+}
+else {
+    cartasi[2].removeEventListener("click", apcdado);
+}
 }
 function c4() {
+    if(incis[3].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
     mirac3.style.display = "none";
@@ -750,8 +782,14 @@ function c4() {
     mirac5.style.display = "none";
     mirac6.style.display = "none";
     mirac7.style.display = "none";
+    ttl();
+}
+else {
+    cartasi[3].removeEventListener("click", apcdado);
+}
 }
 function c5() {
+    if(incis[4].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
     mirac3.style.display = "none";
@@ -759,8 +797,14 @@ function c5() {
     mirac5.style.display = "block";
     mirac6.style.display = "none";
     mirac7.style.display = "none";
+    ttl();
+}
+else {
+    cartasi[4].removeEventListener("click", apcdado);
+}
 }
 function c6() {
+    if(incis[5].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
     mirac3.style.display = "none";
@@ -768,8 +812,14 @@ function c6() {
     mirac5.style.display = "none";
     mirac6.style.display = "block";
     mirac7.style.display = "none";
+    ttl();
+}
+else {
+    cartasi[5].removeEventListener("click", apcdado);
+}
 }
 function c7() {
+    if(incis[6].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
     mirac3.style.display = "none";
@@ -777,7 +827,19 @@ function c7() {
     mirac5.style.display = "none";
     mirac6.style.display = "none";
     mirac7.style.display = "block";
+    ttl();
 }
+else {
+    cartasi[6].removeEventListener("click", apcdado);
+}
+}
+
+window.addEventListener("contextmenu", function (e) {
+    limp();
+    apcdado();
+    dado.style.display = "none";
+    e.preventDefault(); 
+}, false);
 
 function mira() {
     cartai1.addEventListener("mouseover", c1);
@@ -788,8 +850,7 @@ function mira() {
     cartai6.addEventListener("mouseover", c6);
     cartai7.addEventListener("mouseover", c7);
 }
-for (let i = 0; i < cartasi.length; i++) {
-    cartasi[i].addEventListener("click", () => {
+function apcdado() {
         cartai1.removeEventListener("mouseover", c1);
         cartai2.removeEventListener("mouseover", c2);
         cartai3.removeEventListener("mouseover", c3);
@@ -798,9 +859,12 @@ for (let i = 0; i < cartasi.length; i++) {
         cartai6.removeEventListener("mouseover", c6);
         cartai7.removeEventListener("mouseover", c7);
         if(mirac1.style.display == "block" || mirac2.style.display == "block" || mirac3.style.display == "block" || mirac4.style.display == "block" || mirac5.style.display == "block" || mirac6.style.display == "block" || mirac7.style.display == "block") {
-        dado.style.display = "block";
+            dado.style.display = "block";
         }
-    });  
+    }
+
+for (let i = 0; i < cartasi.length; i++) {
+    cartasi[i].addEventListener("click", apcdado);
 }
 
 function danoinimigo() {
@@ -865,13 +929,13 @@ function dano() {
     }
 
     else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
-        hpt = Math.floor(vidac1.textContent - danototal + 5 * rest);
-        hpt2 = Math.floor(vidac2.textContent - danototal + 5 * rest);
-        hpt3 = Math.floor(vidac3.textContent - danototal + 5 * rest);
-        hpt4 = Math.floor(vidac4.textContent - danototal + 5 * rest);
-        hpt5 = Math.floor(vidac5.textContent - danototal + 5 * rest);
-        hpt6 = Math.floor(vidac6.textContent - danototal + 5 * rest);
-        hpt7 = Math.floor(vidac7.textContent - danototal + 5 * rest);
+        hpt = Math.floor(vidac1.textContent - danototal * rest);
+        hpt2 = Math.floor(vidac2.textContent - danototal * rest);
+        hpt3 = Math.floor(vidac3.textContent - danototal * rest);
+        hpt4 = Math.floor(vidac4.textContent - danototal * rest);
+        hpt5 = Math.floor(vidac5.textContent - danototal * rest);
+        hpt6 = Math.floor(vidac6.textContent - danototal * rest);
+        hpt7 = Math.floor(vidac7.textContent - danototal * rest);
     }
 
     else if (numdado == 16 || numdado == 17 || numdado == 18){
@@ -909,45 +973,45 @@ function trocar() {
     switch(true) {
         case cta1.style.animationName == "shake" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc5.style.display == "flex" && inc4.style.display == "flex":
             cta1.style.animationName = "unset";
+            incinimigo();
             turnoini();
         break;
         case cta2.style.animationName == "shake" && inc3.style.display == "flex" && inc5.style.display == "flex" && inc4.style.display == "flex":
             cta2.style.animationName = "unset";
+            incinimigo();
             turnoini();
         break;
         case cta3.style.animationName == "shake" && inc5.style.display == "flex" && inc4.style.display == "flex":
             cta3.style.animationName = "unset";
+            incinimigo();
             turnoini();
         break;
         case cta4.style.animationName == "shake" && inc5.style.display == "flex":
             cta4.style.animationName = "unset";
+            incinimigo();
             turnoini();
         break;
         case cta1.style.animationName == "shake" && inc2.style.display != "flex":
             cta1.style.animationName = "unset";
             cta2.style.animationName = "shake";
-            ordenar.style.display = "none";
             btns.style.bottom = "5vh";
             per = 2;
         break;
         case cta1.style.animationName == "shake" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
             cta1.style.animationName = "unset";
             cta5.style.animationName = "shake";
-            ordenar.style.display = "none";
             btns.style.bottom = "5vh";
             per = 5;
         break;
         case cta1.style.animationName == "shake" && inc2.style.display == "flex" && inc3.style.display == "flex":
             cta1.style.animationName = "unset";
             cta4.style.animationName = "shake";
-            ordenar.style.display = "none";
             btns.style.bottom = "5vh";
             per = 4;
         break;
         case cta1.style.animationName == "shake" && inc2.style.display == "flex":
             cta1.style.animationName = "unset";
             cta3.style.animationName = "shake";
-            ordenar.style.display = "none";
             btns.style.bottom = "5vh";
             per = 2;
         break;
@@ -989,12 +1053,12 @@ function trocar() {
             cta3.style.animationName = "shake";
             per = 3;
         break;
-        case cta3.style.animationName == "shake" && inc1.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
+        case cta3.style.animationName == "shake" && inc1.style.display == "flex" && inc2.style.display == "flex" && inc4.style.display == "flex":
             cta3.style.animationName = "unset";
             cta5.style.animationName = "shake";
-            per = 4;
+            per = 5;
         break;
-        case cta3.style.animationName == "shake" && inc1.style.display == "flex" && inc3.style.display == "flex":
+        case cta3.style.animationName == "shake" && inc1.style.display == "flex" && inc2.style.display == "flex":
             cta3.style.animationName = "unset";
             cta4.style.animationName = "shake";
             per = 4;
@@ -1002,6 +1066,11 @@ function trocar() {
         case cta3.style.animationName != "shake" && cta2.style.animationName != "shake" && cta1.style.animationName != "shake" && cta4.style.animationName != "shake" && cta5.style.animationName != "shake":
             cta3.style.animationName = "shake";
             per = 3;
+        break;
+        case cta3.style.animationName == "shake" && inc4.style.display == "flex":
+            cta3.style.animationName = "unset";
+            cta5.style.animationName = "shake";
+            per = 5;
         break;
         case cta3.style.animationName == "shake" && inc4.style.display != "flex":
             cta3.style.animationName = "unset";
@@ -1024,10 +1093,12 @@ function trocar() {
         break;
         case cta5.style.animationName != "shake" && inc1.style.display == "flex" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
             cta5.style.animationName = "shake";
+            incinimigo();
             turnoini();
         break;
         case cta5.style.animationName == "shake" && cta2.style.animationName != "shake" && cta3.style.animationName != "shake" && cta4.style.animationName != "shake" && cta1.style.animationName != "shake":
             cta5.style.animationName = "unset";
+            incinimigo();
             turnoini();
         break;
     }
@@ -1061,6 +1132,7 @@ else {
             ordenar.style.display = "block";
             btns.style.bottom = "14vh";
             per = 1;
+            incinimigo();
             turnoini();
         break;
     }
