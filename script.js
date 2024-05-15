@@ -61,6 +61,13 @@ const mirap2 = document.querySelector("#mirap2");
 const mirap3 = document.querySelector("#mirap3");
 const mirap4 = document.querySelector("#mirap4");
 const mirap5 = document.querySelector("#mirap5");
+const danoc1 = document.querySelector("#danoc1");
+const danoc2 = document.querySelector("#danoc2");
+const danoc3 = document.querySelector("#danoc3");
+const danoc4 = document.querySelector("#danoc4");
+const danoc5 = document.querySelector("#danoc5");
+const danoc6 = document.querySelector("#danoc6");
+const danoc7 = document.querySelector("#danoc7");
 const atacar = document.querySelector("#atacar");
 const ordenar = document.querySelector("#ordenar");
 const itens = document.querySelector("#itens");
@@ -73,19 +80,29 @@ const vez = document.querySelector(".vez");
 const damage = document.querySelector(".damage");
 const total = document.querySelector("#total");
 const ordem = document.querySelector(".ordem");
+const btncom = document.querySelector("#btncom");
+const inisel = document.querySelector(".inisel");
+const cog = document.querySelector("#cog");
+const options = document.querySelector(".options");
+const resume = document.querySelector("#resume");
+const sldm = document.querySelector("#sldm");
+const slds = document.querySelector("#slds");
+const armasatl = document.querySelector("#armasatl");
+const armaatl = document.querySelector(".armaatl");
+const num = document.querySelector(".num");
 
 const punhal = 20;
 const rapieira = 35;
 const sabre = 30;
-const mosquete = 40;
+const mosquete = 40.01;
 const perdeneira = 40;
-const machado = 35;
-const besta = 30;
-const pistola = 40;
+const machado = 35.01;
+const besta = 30.01;
+const pistola = 40.02;
 
 const granada = 150;
 const adaga = 45;
-const molotov = 35;
+const molotov = 35.02;
 const nock = 60;
 
 const arpão = 25;
@@ -108,7 +125,6 @@ let vidap2 = 200;
 let vidap3 = 125;
 let vidap4 = 150;
 let vidap5 = 175;
-let danot = 135;
 let rd;
 let alvo;
 let NV = 6;
@@ -118,7 +134,7 @@ let danototalp2 = 0;
 let danototalp3 = 0;
 let danototalp4 = 0;
 let danototalp5 = 0;
-let danototalini;
+let danototalini = danoc1.textContent;
 let hpt;
 let hpt2;
 let hpt3;
@@ -141,7 +157,37 @@ let numdado;
 let per = 1;
 let turnoa = true;
 let mirando = false;
+let audio;
+let audio2;
+let audio3;
+let audio4;
+let audio5;
+let amving;
+let twelve;
+let ini;
 
+const bgmusic = new Audio("bgmusic.mp3");
+
+const doze = new Audio("shotgun.mp3");
+const lamina = new Audio("lamina.mp3");
+const mosqsd = new Audio("mosquete.mp3");
+const canhao = new Audio("canhao.mp3");
+const gransd = new Audio("granada.mp3");
+const molotsd = new Audio("molotov.mp3");
+const bstsd = new Audio("besta.mp3");
+
+const sons = [doze, lamina, mosqsd, canhao, gransd, molotsd, bstsd];
+
+bgmusic.volume = 0.3;
+
+for(i = 0; i < sons.length; i++) {
+    sons[i].volume = 0.7;
+}
+
+bgmusic.loop = true;
+
+const danoini = [danoc1, danoc2, danoc3, danoc4, danoc5, danoc6, danoc7];
+const audios = [audio, audio2, audio3, audio4, audio5];
 const cartasi = [cartai1, cartai2, cartai3, cartai4, cartai5, cartai6, cartai7];
 const miras = [mirac1, mirac2, mirac3, mirac4, mirac5, mirac6, mirac7, mirap1, mirap2, mirap3, mirap4, mirap5];
 const vidas = [vidac1a, vidac2a, vidac3a, vidac4a, vidac5a];
@@ -171,9 +217,23 @@ function limp() {
     atacar.addEventListener("click", rvmatq);
 }
 
+sldm.oninput = () => {
+    bgmusic.volume = sldm.value / 100;
+}
+slds.oninput = () => {
+    for(i = 0; i < sons.length; i++) {
+        sons[i].volume = sldm.value / 100;
+    }
+}
+
 function ttl() {
     total.textContent = Math.floor(danototal * rest);
 }
+
+btncom.addEventListener("click", () => {
+    inisel.style.display = "none";
+    bgmusic.play();
+})
 
 function trocatxt() {
     switch(true) {
@@ -206,6 +266,49 @@ function trocatxt() {
     }
 }
 
+cog.addEventListener("click", () => {
+    if(cog.style.rotate != "90deg") {
+        cog.style.rotate = "90deg";
+        options.style.display = "flex";
+    } 
+})
+
+function amuletos() {
+    twelve = Math.floor(Math.random() * 5) + 1;
+    if(twelve == 5) {
+    switch(true) {
+    case mirac1.style.display == "block" :
+        danototalini *= 1.50;
+        danoc1.textContent = Math.floor(danoc1.textContent * 1.50);
+    break;
+    case mirac2.style.display == "block" :
+        danototalini *= 1.50;
+        danoc2.textContent = Math.floor(danoc2.textContent * 1.50);
+    break;
+    case mirac3.style.display == "block" :
+        danototalini *= 1.50;
+        danoc3.textContent = Math.floor(danoc3.textContent * 1.50);
+    break;
+    case mirac4.style.display == "block" :
+        danototalini *= 1.50;
+        danoc4.textContent = Math.floor(danoc4.textContent * 1.50);
+    break;
+    case mirac5.style.display == "block" :
+        danototalini *= 1.50;
+        danoc5.textContent = Math.floor(danoc5.textContent * 1.50);
+    break;
+    case mirac6.style.display == "block" :
+        danototalini *= 1.50;
+        danoc6.textContent = Math.floor(danoc6.textContent * 1.50);
+    break;
+    case mirac7.style.display == "block" :
+        danototalini *= 1.50;
+        danoc7.textContent = Math.floor(danoc7.textContent * 1.50);
+    break;
+    }
+}
+}
+
 function odm() {
     if(ordem.style.display != "flex") {
         ordem.style.display = "flex";
@@ -230,13 +333,13 @@ function nvs() {
         switch (niveis[i].textContent) {
             case "NV: I":
                 danos[i] = armas[i];
-                dns[i].textContent = armas[i];
+                dns[i].textContent = Math.floor(armas[i]);
                 vidas[i].textContent = vds[i];
                 vds[i] = vidas[i].textContent;
             break;
             case "NV: II":
                 danos[i] = 10 + armas[i];
-                dns[i].textContent = armas[i] + 10;
+                dns[i].textContent = Math.floor(armas[i] + 10);
                 vidas[i].textContent = vds[i] + 20;
                 resistencias[i].textContent = `${rss[i] + 1}%`;
                 resps[i] -= 0.01;
@@ -244,7 +347,7 @@ function nvs() {
             break;
             case "NV: III":
                 danos[i] = 25 + armas[i];
-                dns[i].textContent = armas[i] + 25;
+                dns[i].textContent = Math.floor(armas[i] + 25);
                 vidas[i].textContent = vds[i] + 45;
                 resistencias[i].textContent = `${rss[i] + 3}%`;
                 resps[i] -= 0.03;
@@ -252,7 +355,7 @@ function nvs() {
             break;
             case "NV: IV":
                 danos[i] = 45 + armas[i];
-                dns[i].textContent = armas[i] + 45;
+                dns[i].textContent = Math.floor(armas[i] + 45);
                 vidas[i].textContent = vds[i] + 75;
                 resistencias[i].textContent = `${rss[i] + 6}%`;
                 resps[i] -= 0.06;
@@ -260,7 +363,7 @@ function nvs() {
             break;
             case "NV: V":
                 danos[i] = 65 + armas[i];
-                dns[i].textContent = armas[i] + 65;
+                dns[i].textContent = Math.floor(armas[i] + 65);
                 vidas[i].textContent = vds[i] + 120;
                 resistencias[i].textContent = `${rss[i] + 9}%`;
                 resps[i] -= 0.09;
@@ -268,7 +371,7 @@ function nvs() {
             break;
             case "NV: VI":
                 danos[i] = 95 + armas[i];
-                dns[i].textContent = armas[i] + 95;
+                dns[i].textContent = Math.floor(armas[i] + 95);
                 vidas[i].textContent = vds[i] + 170;
                 resistencias[i].textContent = `${rss[i] + 12}%`;
                 resps[i] -= 0.12;
@@ -276,7 +379,7 @@ function nvs() {
             break;
             case "NV: VII":
                 danos[i] = 130 + armas[i];
-                dns[i].textContent = armas[i] + 130;
+                dns[i].textContent = Math.floor(armas[i] + 130);
                 vidas[i].textContent = vds[i] + 235;
                 resistencias[i].textContent = `${rss[i] + 15}%`;
                 resps[i] -= 0.15;
@@ -284,7 +387,7 @@ function nvs() {
             break;
             case "NV: VIII":
                 danos[i] = 170 + armas[i];
-                dns[i].textContent = armas[i] + 170;
+                dns[i].textContent = Math.floor(armas[i] + 170);
                 vidas[i].textContent = vds[i] + 320;
                 resistencias[i].textContent = `${rss[i] + 18}%`;
                 resps[i] -= 0.18;
@@ -292,7 +395,7 @@ function nvs() {
             break;
             case "NV: IX":
                 danos[i] = 215 + armas[i];
-                dns[i].textContent = armas[i] + 215;
+                dns[i].textContent = Math.floor(armas[i] + 215);
                 vidas[i].textContent = vds[i] + 420;
                 resistencias[i].textContent = `${rss[i] + 21}%`;
                 resps[i] -= 0.21;
@@ -300,7 +403,7 @@ function nvs() {
             break;
             case "NV: X":
                 danos[i] = 265 + armas[i];
-                dns[i].textContent = armas[i] + 265;
+                dns[i].textContent = Math.floor(armas[i] + 265);
                 vidas[i].textContent = vds[i] + 550;
                 resistencias[i].textContent = `${rss[i] + 26}%`;
                 resps[i] -= 0.26;
@@ -329,6 +432,57 @@ function personagem() {
         break;
     }
 }
+
+function inimigo() {
+    switch (true) {
+        case cartasi[0].style.animationName == "shake":
+            ini = 1;
+        break;
+        case cartasi[1].style.animationName == "shake":
+            ini = 2;
+        break;
+        case cartasi[2].style.animationName == "shake":
+            ini = 3;
+        break;
+        case cartasi[3].style.animationName == "shake":
+            ini = 4;
+        break;
+        case cartasi[4].style.animationName == "shake":
+            ini = 5;
+        break;
+        case cartasi[5].style.animationName == "shake":
+            ini = 6;
+        break;
+        case cartasi[6].style.animationName == "shake":
+            ini = 7;
+        break;
+    }
+    switch(ini) {
+        case 1:
+            danototalini = danoini[0].textContent;
+        break;
+        case 2:
+            danototalini = danoini[1].textContent;
+        break;
+        case 3:
+            danototalini = danoini[2].textContent;
+        break;
+        case 4:
+            danototalini = danoini[3].textContent;
+        break;
+        case 5:
+            danototalini = danoini[4].textContent;
+        break;
+        case 6:
+            danototalini = danoini[5].textContent;
+        break;
+        case 7:
+            danototalini = danoini[6].textContent;
+        break;
+    }
+}
+
+setInterval(inimigo, 10);
 
 nvs();
 
@@ -392,6 +546,7 @@ setInterval(incinimigo, 50);
 setInterval(() => {
     if(turnoa) {
         btns.style.display = "block";
+        armaatl.style.display = "flex";
     }
 }, 50)
 setInterval(() => {
@@ -408,6 +563,22 @@ setInterval(() => {
             vidas[i].style.color ="#e31212";
         }
     }
+    if(mirando) {
+        cog.style.display = "none";
+    }
+    else {
+        cog.style.display = "block";
+    }
+    if(!turnoa) {
+        dado.style.height = "20vh";
+        dado.style.width = "30vh";
+        num.style.height = "20vh";
+    }
+    else {
+        dado.style.height = "40vh";
+        dado.style.width = "40vh";
+        num.style.height = "30vh";
+    }
 }, 10)
 
 setInterval(() => {
@@ -419,6 +590,80 @@ setInterval(() => {
         ordenar.style.display = "block";
         btns.style.bottom = "14vh";
     }
+    for (let i = 0; i < armas.length; i++) {
+    switch(true) {
+        case per == i + 1 && armas[i] == punhal:
+            armasatl.textContent = "Punhal";
+        break;
+        case per == i + 1 && armas[i] == rapieira:
+            armasatl.textContent = "Rapieira";
+        break;
+        case per == i + 1 && armas[i] == sabre:
+            armasatl.textContent = "Sabre";
+        break;
+        case per == i + 1 && armas[i] == mosquete:
+            armasatl.textContent = "Mosquete";
+        break;
+        case per == i + 1 && armas[i] == perdeneira:
+            armasatl.textContent = "Perdeneira";
+        break;
+        case per == i + 1 && armas[i] == besta:
+            armasatl.textContent = "Besta";
+        break;
+        case per == i + 1 && armas[i] == machado:
+            armasatl.textContent = "Machado";
+        break;
+        case per == i + 1 && armas[i] == pistola:
+            armasatl.textContent = "Pistola";
+        break;
+        case per == i + 1 && armas[i] == granada:
+            armasatl.textContent = "Granada";
+        break;
+        case per == i + 1 && armas[i] == adaga:
+            armasatl.textContent = "Adaga Dupla";
+        break;
+        case per == i + 1 && armas[i] == molotov:
+            armasatl.textContent = "Coquetel Molotov";
+        break;
+        case per == i + 1 && armas[i] == nock:
+            armasatl.textContent = "Espingarda Nock";
+        break;
+        case per == i + 1 && armas[i] == arpão:
+            armasatl.textContent = "Mini-Arpão";
+        break;
+        case per == i + 1 && armas[i] == foice:
+            armasatl.textContent = "Foice Curta";
+        break;
+        case per == i + 1 && armas[i] == espada:
+            armasatl.textContent = "Espada Congelada";
+        break;
+    }
+}
+}, 10)
+
+setInterval(() => {
+    for (let i = 0; i < armas.length; i++) {
+    switch(true) {
+        case armas[i] == nock:
+            audios[i] = sons[0];
+        break;
+        case armas[i] == granada:
+            audios[i] = sons[4];
+        break;
+        case armas[i] == molotov:
+            audios[i] = sons[5];
+        break;
+        case armas[i] == punhal || armas[i] == rapieira || armas[i] == sabre || armas[i] == machado || armas[i] == foice || armas[i] == espada || armas[i] == adaga:
+            audios[i] = sons[1];
+        break;
+        case armas[i] == perdeneira || armas[i] == pistola || armas[i] == mosquete:
+            audios[i] = sons[2];
+        break;
+        case armas[i] == besta || armas[i] == arpão:
+            audios[i] = sons[6];
+        break;
+    }
+}
 }, 10)
 
 function atacando() {
@@ -438,11 +683,17 @@ function rvmatq() {
     atacando();
 }
 
+resume.addEventListener("click", () => {
+    cog.style.rotate = "0deg";
+    options.style.display = "none";
+})
+
 atacar.addEventListener("click", rvmatq);
 
 function turnoini() {
     turnoa = false;
     btns.style.display = "none";
+    armaatl.style.display = "none";
     switch(true) {
         case incis[0].style.display != "flex":
             cartasi[0].style.animationName = "shake";
@@ -470,11 +721,6 @@ function turnoini() {
         break;
     }
     inijog();
-    for (let i = 0; i < cartasi.length; i++) {
-    if(cartasi[i].style.backgroundImage = "thesauriano.png") {
-        danototalini = danot;
-    }
-}
 dado.style.display = "block";
 roll.style.display = "none";
     alvos();
@@ -497,17 +743,20 @@ function alvos() {
         case inc1.style.display == "flex" && alvo == 1 && inc2.style.display != "flex":
             alvo += 1;
         break;
+        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex":
+            alvo -= 1;
+        break;
         case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex":
             alvo += 3;
         break;
-        case inc2.style.display == "flex" && alvo == 2 && inc2.style.display == "flex":
+        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex":
             alvo += 2;
         break;
-        case inc2.style.display == "flex" && alvo == 2 && inc1.style.display != "flex":
+        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display != "flex":
             alvo += 1;
         break;
-        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex":
-            alvo -= 1;
+        case inc3.style.display == "flex" && alvo == 3 && inc1.style.display == "flex" && inc2.style.display == "flex":
+            alvo += 1;
         break;
         case inc3.style.display == "flex" && alvo == 3 && inc2.style.display == "flex":
             alvo -= 2;
@@ -515,11 +764,11 @@ function alvos() {
         case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex":
             alvo += 2;
         break;
-        case inc3.style.display == "flex" && alvo == 3 && inc1.style.display == "flex" && inc2.style.display == "flex":
-            alvo += 1;
-        break;
         case inc3.style.display == "flex" && alvo == 3 && inc2.style.display != "flex":
             alvo -= 1;
+        break;
+        case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex" && inc1.style.display == "flex":
+            alvo += 1;
         break;
         case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex":
             alvo -= 3;
@@ -527,19 +776,19 @@ function alvos() {
         case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex":
             alvo -= 2;
         break;
-        case inc4.style.display == "flex" && alvo == 4 && inc3.style.display != "flex":
+        case inc4.style.display == "flex" && alvo == 4 && inc5.style.display == "flex":
             alvo -= 1;
         break;
-        case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex" && inc1.style.display == "flex":
+        case inc4.style.display == "flex" && alvo == 4 && inc5.style.display != "flex":
             alvo += 1;
         break;
         case inc5.style.display == "flex" && alvo == 5 && inc4.style.display == "flex" && inc3.style.display == "flex" && inc2.style.display == "flex":
             alvo -= 4;
         break;
-        case inc5.style.display == "flex" && alvo == 5 && inc3.style.display == "flex" && inc2.style.display == "flex":
+        case inc5.style.display == "flex" && alvo == 5 && inc3.style.display == "flex" && inc4.style.display == "flex":
             alvo -= 3;
         break;
-        case inc5.style.display == "flex" && alvo == 5 && inc2.style.display == "flex":
+        case inc5.style.display == "flex" && alvo == 5 && inc4.style.display == "flex":
             alvo -= 2;
         break;
         case inc5.style.display == "flex" && alvo == 5 && inc4.style.display != "flex":
@@ -834,12 +1083,18 @@ else {
 }
 }
 
-window.addEventListener("contextmenu", function (e) {
+function btd(e) {
     limp();
     apcdado();
     dado.style.display = "none";
     e.preventDefault(); 
-}, false);
+}
+
+function rmvbtd(e) {
+    e.preventDefault(); 
+}
+
+window.addEventListener("contextmenu", btd, false);
 
 function mira() {
     cartai1.addEventListener("mouseover", c1);
@@ -1013,7 +1268,7 @@ function trocar() {
             cta1.style.animationName = "unset";
             cta3.style.animationName = "shake";
             btns.style.bottom = "5vh";
-            per = 2;
+            per = 3;
         break;
         case cta1.style.animationName != "shake" && cta2.style.animationName != "shake" && cta3.style.animationName != "shake" && cta4.style.animationName != "shake" && cta5.style.animationName != "shake":
             cta1.style.animationName = "shake";
@@ -1022,17 +1277,17 @@ function trocar() {
         case cta1.style.animationName == "shake" && inc2.style.display != "flex":
             cta1.style.animationName = "unset";
             cta2.style.animationName = "shake";
-            per = 3;
+            per = 2;
         break;
-        case cta2.style.animationName == "shake" && inc1.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
+        case cta2.style.animationName == "shake" && inc3.style.display == "flex" && inc4.style.display == "flex":
             cta2.style.animationName = "unset";
             cta5.style.animationName = "shake";
-            per = 3;
+            per = 5;
         break;
-        case cta2.style.animationName == "shake" && inc1.style.display == "flex" && inc3.style.display == "flex":
+        case cta2.style.animationName == "shake" && inc3.style.display == "flex":
             cta2.style.animationName = "unset";
             cta4.style.animationName = "shake";
-            per = 3;
+            per = 4;
         break;
         case cta2.style.animationName == "shake" && inc1.style.display == "flex":
             cta2.style.animationName = "unset";
@@ -1089,10 +1344,11 @@ function trocar() {
         case cta4.style.animationName == "shake" && inc5.style.display != "flex":
             cta4.style.animationName = "unset";
             cta5.style.animationName = "shake";
-            per = 3;
+            per = 5;
         break;
         case cta5.style.animationName != "shake" && inc1.style.display == "flex" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
             cta5.style.animationName = "shake";
+            per = 5;
             incinimigo();
             turnoini();
         break;
@@ -1142,6 +1398,8 @@ else {
 }
 
 function rolar() {
+    window.removeEventListener("contextmenu", btd, false);
+    window.addEventListener("contextmenu", rmvbtd, false);
     roll.style.visibility = "hidden";
     numdado = Math.floor(Math.random() * 20) + 1;
     rolln.textContent = numdado;
@@ -1154,6 +1412,46 @@ function rolar() {
     dado.style.display = "block";
     setTimeout(() => {
         dado.style.display = "none";
+        amuletos();
+        window.addEventListener("contextmenu", btd, false);
+        if(!turnoa) {
+            sons[2].currentTime = 0.5;
+            sons[2].play();
+        }
+        else {
+        switch (per) {
+            case 1:
+                if(armas[0] == perdeneira || armas[0] == pistola || armas[0] == mosquete) {
+                    audios[1].currentTime = 0.5;
+                }
+                audios[0].play();
+            break;
+            case 2:
+                if(armas[1] == perdeneira || armas[1] == pistola || armas[1] == mosquete) {
+                    audios[1].currentTime = 0.5;
+                }
+                audios[1].play();
+            break;
+            case 3:
+                if(armas[2] == perdeneira || armas[2] == pistola || armas[2] == mosquete) {
+                    audios[1].currentTime = 0.5;
+                }
+                audios[2].play();
+            break;
+            case 4:
+                if(armas[3] == perdeneira || armas[3] == pistola || armas[3] == mosquete) {
+                    audios[1].currentTime = 0.5;
+                }
+                audios[3].play();
+            break;
+            case 5:
+                if(armas[4] == perdeneira || armas[4] == pistola || armas[4] == mosquete) {
+                    audios[1].currentTime = 0.5;
+                }
+                audios[4].play();
+            break;
+        }
+    }
         if(turnoa) {
             roll.style.display = "block";
         switch (true) {
@@ -1188,6 +1486,7 @@ function rolar() {
         }
     }
     else {
+        danototalini = 0;
         switch (alvo) {
             case 1:
                 roll.style.visibility = "hidden";

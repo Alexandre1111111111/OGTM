@@ -1,14 +1,15 @@
 body {
     background-image: url('campo.png');
-    background-size: 90%;
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    height: 97vh;
+    height: 100vh;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: rgb(0, 143, 136);
     display: flex;
     align-items: center;
+    margin: 0 auto;
     justify-content: center;
 }
 html {
@@ -40,7 +41,7 @@ html {
     bottom: 2vh;
     margin: 0 auto;
     justify-content: space-evenly;
-    width: 56%;
+    width: 130vh;
     height: 33%;
 }
 .aliado {
@@ -65,7 +66,7 @@ html {
     top: 2vh;
     margin: 0 auto;
     justify-content: space-evenly;
-    width: 73%;
+    width: 160vh;;
     height: 30%;
 }
 .thesauriano {
@@ -232,6 +233,9 @@ html {
     height: 15vh;
     position: absolute;
     display: none;
+    animation-duration: 0.1s;
+    animation-iteration-count: infinite;
+    animation-name: shake;
 }
 @keyframes shake {
     0%{
@@ -417,4 +421,210 @@ html {
     border: 3px solid #fff;
     border-radius: 10vh;
     transition-duration: 0.5s;
+}
+.inisel {
+    height: 90vh;
+    width: 70vh;
+    background-color: #000;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5vh;
+}
+.inisel button {
+    font-size: 6vh; 
+    width: 40vh;
+    height: 10vh;
+    border-radius: 2vh;
+    cursor: pointer;
+    background-color: #9bdb88;
+}
+.vd {
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    left: 2vh;
+    top: 1.3vh;
+    display: flex;
+    width: 100%;
+    height: 140%;
+}
+.vd h1 {
+    font-size: 2.5vh;
+}
+#cog {
+    height: 10vh;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    z-index: 30;
+    top: 1vh;
+    left: 28vh;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    opacity: 0.8;
+}
+.options {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.384);
+    z-index: 70;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.ctop {
+    width: 60vh;
+    height: 80vh;
+    background-color: rgba(0, 0, 0, 0.966);
+    z-index: 70;
+    border: 1vh solid #582a04;
+    border-radius: 10vh;
+}
+.sonsm {
+    width: 100%;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sonsm h1 {
+    color: #fdb00b;
+    font-size: 7vh;
+    text-shadow: 0.3vh 0.3vh 0.3vh #000;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+}
+.cct {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cct button {
+    height: 10vh;
+    width: 50vh;
+    border-radius: 5vh;
+    font-size: 5vh;
+    cursor: pointer;
+    background-color: #fdb00b;
+}
+.barras {
+    width: 100%;
+    height: 30vh;
+}
+.brrm {
+    height: 15vh;
+    border-bottom: 0.3vh solid #fdb00b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 0.3vh solid #fdb00b;
+}
+.brrs {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 0.3vh solid #fdb00b;
+}
+.brrm h1 {
+    color: #e0912a;
+    font-size: 5vh;
+    margin: 0 auto;
+    margin-left: 0.5vh;
+    margin-right: 3vh;
+}
+
+.brrs h1 {
+    color: #e0912a;
+    font-size: 5vh;
+    margin: 0 auto;
+    margin-left: 3.5vh;
+    margin-right: 7vh;
+}
+
+.slide {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 60%;
+    height: 0.5vh;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slide::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.5vh;
+    height: 4vh;
+    background: #e2a600;
+    cursor: pointer;
+  }
+  
+  .slide::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+.armaatl {
+    width: 100%;
+    height: 18vh;
+    background-color: rgba(0, 0, 0, 0.705);
+    position: absolute;
+    top: 25vh;
+    border-top: 0.3vh solid #fff;
+    border-bottom: 0.3vh solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.armaatl h1 {
+    height: 12.5vh;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 3vh;
+    border-bottom: 0.3vh solid #fff;
+}
+.armaatl h2 {
+    height: 12.5vh;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 3vh;
+}
+
+@media screen and (min-height: 700px) {
+    .rivais {
+        height: 28%;
+        width: 130vh;
+    }
+    .thesauriano {
+        width: 16.8vh;
+    }
+    .resouro h1 {
+        font-size: 1.8vh;
+    }
+    .resouro {
+        height: 120%;
+    }
+    .vd h1 {
+        font-size: 2.1vh;
+    }
+    .damage h1 {
+        font-size: 3.5vh;
+    }
+    #cog {
+        left: 23vh;
+    }
 }

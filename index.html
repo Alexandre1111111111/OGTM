@@ -11,6 +11,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="options">
+        <div class="ctop">
+            <div class="sonsm">
+                <h1>Volume</h1>
+                <div class="barras">
+                <div class="brrm">
+                    <h1>Música</h1>
+                        <input type="range" min="0" max="100" value="30" class="slide" id="sldm">
+                      </div>
+                <div class="brrs">
+                    <h1>SFX</h1>
+                        <input type="range" min="0" max="100" value="70" class="slide" id="slds">
+                </div>
+            </div>
+            </div>
+            <div class="cct">
+                <button id="resume">Retomar</button>
+            </div>
+        </div>
+    </div>
+    <img id="cog" src="https://cdn-icons-png.flaticon.com/512/5725/5725391.png" alt="">
+    <div class="inisel">
+        <button id="btncom">Começar</button>
+    </div>
     <div class="ordem">
         
     </div>
@@ -21,6 +45,10 @@
         <div class="damage">
             <h1>Dano Total:</h1>
             <h2 id="total">---</h2>
+        </div>
+        <div class="armaatl">
+            <h1>Arma Atual:</h1>
+            <h2 id="armasatl">---</h2>
         </div>
         <div id="btns">
             <button id="atacar">Atacar</button>
@@ -138,7 +166,7 @@
 <div class="rivais">
     <div id="cartai1" class="thesauriano baixo">
         <div class="atributosc1">
-        <div class="vdc">
+        <div class="vd">
             <h1 id="vidac1">300</h1>
             <h1 id="danoc1">135</h1>
         </div>
@@ -154,7 +182,7 @@
     </div>
     <div id="cartai2" class="thesauriano">
         <div class="atributosc1">
-            <div class="vdc">
+            <div class="vd">
                 <h1 id="vidac2">300</h1>
                 <h1 id="danoc2">135</h1>
             </div>
@@ -170,7 +198,7 @@
     </div>
     <div id="cartai3" class="thesauriano baixo">
         <div class="atributosc1">
-            <div class="vdc">
+            <div class="vd">
                 <h1 id="vidac3">300</h1>
                 <h1 id="danoc3">135</h1>
             </div>
@@ -186,7 +214,7 @@
     </div>
     <div id="cartai4" class="thesauriano">
         <div class="atributosc1">
-            <div class="vdc">
+            <div class="vd">
                 <h1 id="vidac4">300</h1>
                 <h1 id="danoc4">135</h1>
             </div>
@@ -202,7 +230,7 @@
     </div>
     <div id="cartai5" class="thesauriano baixo">
         <div class="atributosc1">
-            <div class="vdc">
+            <div class="vd">
                 <h1 id="vidac5">300</h1>
                 <h1 id="danoc5">135</h1>
             </div>
@@ -218,7 +246,7 @@
     </div>
     <div id="cartai6" class="thesauriano">
         <div class="atributosc1">
-            <div class="vdc">
+            <div class="vd">
                 <h1 id="vidac6">300</h1>
                 <h1 id="danoc6">135</h1>
             </div>
@@ -234,7 +262,7 @@
     </div>
     <div id="cartai7" class="thesauriano baixo">
         <div class="atributosc1">
-            <div class="vdc">
+            <div class="vd">
                 <h1 id="vidac7">300</h1>
                 <h1 id="danoc7">135</h1>
             </div>
