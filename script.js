@@ -755,17 +755,20 @@ function alvos() {
         case inc2.style.display == "flex" && alvo == 2 && inc3.style.display != "flex":
             alvo += 1;
         break;
+        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display != "flex":
+            alvo += 1;
+        break;
+        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex" && inc2.style.display == "flex":
+            alvo -= 2;
+        break;
         case inc3.style.display == "flex" && alvo == 3 && inc1.style.display == "flex" && inc2.style.display == "flex":
             alvo += 1;
         break;
-        case inc3.style.display == "flex" && alvo == 3 && inc2.style.display == "flex":
-            alvo -= 2;
+        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex":
+            alvo -= 1;
         break;
         case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex":
             alvo += 2;
-        break;
-        case inc3.style.display == "flex" && alvo == 3 && inc2.style.display != "flex":
-            alvo -= 1;
         break;
         case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex" && inc1.style.display == "flex":
             alvo += 1;
@@ -1495,25 +1498,21 @@ function rolar() {
             break;
             case 2:
                 roll.style.visibility = "hidden";
-                    hpt = Math.floor(vidac2.textContent - 35 * rest);
                     vidac2a.textContent = hpp2;
                     limp();
             break;
             case 3:
                 roll.style.visibility = "hidden";
-                    hpt = Math.floor(vidac3.textContent - 35 * rest);
                     vidac3a.textContent = hpp3;
                     limp();
             break;
             case 4:
                 roll.style.visibility = "hidden";
-                    hpt = Math.floor(vidac4.textContent - 35 * rest);
                     vidac4a.textContent = hpp4;
                     limp();
             break;
             case 5:
                 roll.style.visibility = "hidden";
-                    hpt = Math.floor(vidac5.textContent - 35 * rest);
                     vidac5a.textContent = hpp5;
                     limp();
             break;
