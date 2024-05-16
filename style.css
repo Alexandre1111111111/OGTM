@@ -118,7 +118,7 @@ html {
 }
 #hpbarco {
     width: 100%;
-    height: 12vh;
+    height: 18vh;
     background-color: rgba(0, 0, 0, 0.692);
     border-top: 0.5vh solid #fff;
     position: absolute;
@@ -126,6 +126,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-size: 2.5vh;
 }
 #hpbarco h1 {
@@ -138,7 +139,7 @@ html {
 }
 #hpbarcoini {
     width: 100%;
-    height: 12vh;
+    height: 18vh;
     background-color: rgba(0, 0, 0, 0.692);
     border-bottom: 0.5vh solid #fff;
     position: absolute;
@@ -146,6 +147,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     font-size: 2.5vh;
 }
 #hpbarcoini h1 {
@@ -194,7 +196,7 @@ html {
     height: 25vh;
     margin: 0 auto;
     position: absolute;
-    bottom: 14vh;
+    bottom: 20vh;
     border-top: 0.5vh solid #ffffff;
 }
 #btns button {
@@ -363,6 +365,23 @@ html {
     animation-iteration-count: infinite;
     animation-name: pulse;
 }
+.canhoneiro {
+    width: 20vh;
+    height: 100%;
+    background-color: #00000007;
+    display: none;
+    position: absolute;
+    box-shadow: inset 0vh 0vh 0.5vh 0.5vh #ffdb77;
+    z-index: 5;
+}
+.canhoneiro img {
+    height: 5vh;
+}
+
+#cn1, #cn2, #cn3, #cn4 {
+    display: none;
+}
+
 @keyframes pulse {
     0%{
         opacity: 0.8;
@@ -431,6 +450,7 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 5vh;
+    position: absolute;
 }
 .inisel button {
     font-size: 6vh; 
@@ -460,7 +480,7 @@ html {
     position: absolute;
     z-index: 30;
     top: 1vh;
-    left: 28vh;
+    left: 1vh;
     cursor: pointer;
     transition-duration: 0.3s;
     opacity: 0.8;
@@ -473,6 +493,7 @@ html {
     display: none;
     align-items: center;
     justify-content: center;
+    transition-duration: 0.3s;
 }
 .ctop {
     width: 60vh;
@@ -576,7 +597,7 @@ html {
   }
 .armaatl {
     width: 100%;
-    height: 18vh;
+    height: 17vh;
     background-color: rgba(0, 0, 0, 0.705);
     position: absolute;
     top: 25vh;
@@ -588,20 +609,123 @@ html {
     flex-direction: column;
 }
 .armaatl h1 {
-    height: 12.5vh;
     width: 100%;
-    text-align: center;
     color: #fff;
     font-size: 3vh;
-    border-bottom: 0.3vh solid #fff;
 }
 .armaatl h2 {
-    height: 12.5vh;
     width: 100%;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 3vh;
+}
+.armaatl h3 {
+    width: 100%;
+    color: #fff;
+    font-size: 2.3vh;
+}
+.armatxt {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    border-bottom: 0.3vh solid #fff;
+    align-items: center;
+    display: flex;
+}
+.atltxt {
+    width: 100%;
+    height: 50%;
     text-align: center;
     margin: 0 auto;
+    align-items: center;
+    display: flex;
+}
+.mun {
+    width: 100%;
+    height: 33%;
+    text-align: center;
     color: #fff;
-    font-size: 3vh;
+    border-top: 0.3vh solid #fff;
+    display: none;
+    align-items: center;
+}
+.ctinisel {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000005e;
+    position: absolute;
+    z-index: 100;
+}
+.niveis {
+    width: 100%;
+    height: 6vh;
+    border-bottom: 3px solid #fff;
+    display: block;
+}
+.vidabc {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    justify-content: center;
+}
+.inund {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#nv1, #nv2, #nv3 {
+    height: 2.5vh;
+    width: 2.5vh;
+    border-radius: 30vh;
+    border: 0.1vh solid #fff;
+}
+.vidabci {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 12vh;
+    justify-content: center;
+}
+.inundi {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#nv1i, #nv2i, #nv3i {
+    height: 2.5vh;
+    width: 2.5vh;
+    border-radius: 30vh;
+    border: 0.1vh solid #fff;
+}
+.niveisi {
+    width: 100%;
+    height: 6vh;
+    border-top: 3px solid #fff;
+    display: block;
+}
+#opcnn {
+    width: 100%;
+    height: 30vh;
+    border-top-left-radius: 10vh;
+    border-top-right-radius: 10vh;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.315);
+    border-bottom: 0.3vh solid #fff;
+    font-size: 6vh;
+    color: #ffd04f;
+    transition-duration: 0.3s;
+    text-shadow: 0.1vh 0.1vh 0.1vh #000;
+}
+#opcnn:hover {
+    background-color: rgba(110, 14, 14, 0.315);
 }
 
 @media screen and (min-height: 700px) {
@@ -623,8 +747,5 @@ html {
     }
     .damage h1 {
         font-size: 3.5vh;
-    }
-    #cog {
-        left: 23vh;
     }
 }

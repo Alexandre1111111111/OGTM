@@ -81,7 +81,7 @@ const damage = document.querySelector(".damage");
 const total = document.querySelector("#total");
 const ordem = document.querySelector(".ordem");
 const btncom = document.querySelector("#btncom");
-const inisel = document.querySelector(".inisel");
+const ctinisel = document.querySelector(".ctinisel");
 const cog = document.querySelector("#cog");
 const options = document.querySelector(".options");
 const resume = document.querySelector("#resume");
@@ -90,7 +90,20 @@ const slds = document.querySelector("#slds");
 const armasatl = document.querySelector("#armasatl");
 const armaatl = document.querySelector(".armaatl");
 const num = document.querySelector(".num");
+const ammo = document.querySelector("#ammo");
+const mun = document.querySelector(".mun");
+const opcnn = document.querySelector("#opcnn");
+const cn1 = document.querySelector("#cn1");
+const cn2 = document.querySelector("#cn2");
+const cn3 = document.querySelector("#cn3");
+const cn4 = document.querySelector("#cn4");
+const vidabarcoa = document.querySelector("#vidabarcoa");
+const vidabarcoi = document.querySelector("#vidabarcoi");
+const nv1i = document.querySelector("#nv1i");
+const nv2i = document.querySelector("#nv2i");
+const nv3i = document.querySelector("#nv3i");
 
+const coronhada = 10;
 const punhal = 20;
 const rapieira = 35;
 const sabre = 30;
@@ -165,6 +178,15 @@ let audio5;
 let amving;
 let twelve;
 let ini;
+let munp1;
+let munp2 = 3;
+let munp3;
+let munp4;
+let munp5 = 3;
+let mrcanhao = false;
+let usandoc = false;
+let canhaodmg = 230;
+let canhaoexpdmg = 550;
 
 const bgmusic = new Audio("bgmusic.mp3");
 
@@ -186,6 +208,10 @@ for(i = 0; i < sons.length; i++) {
 
 bgmusic.loop = true;
 
+const cns = [cn1, cn2, cn3, cn4];
+const ctas = [cta1, cta2, cta3, cta4, cta5];
+const incs = [inc1, inc2, inc3, inc4, inc5];
+const muns = [munp1, munp2, munp3, munp4, munp5];
 const danoini = [danoc1, danoc2, danoc3, danoc4, danoc5, danoc6, danoc7];
 const audios = [audio, audio2, audio3, audio4, audio5];
 const cartasi = [cartai1, cartai2, cartai3, cartai4, cartai5, cartai6, cartai7];
@@ -202,16 +228,78 @@ const rss = [ress1, ress2, ress3, ress4, ress5];
 const incis = [inci1, inci2, inci3, inci4, inci5, inci6, inci7];
 const vidasi = [vidac1, vidac2, vidac3, vidac4, vidac5, vidac6, vidac7];
 
+function cnf1() {
+    if(incs[1].style.display != "flex") {
+        cn1.style.display = "flex";
+        cn2.style.display = "none";
+        cn3.style.display = "none";
+        cn4.style.display = "none";
+    }
+}
+function cnf2() {
+    if(incs[2].style.display != "flex") {
+        cn1.style.display = "none";
+        cn2.style.display = "flex";
+        cn3.style.display = "none";
+        cn4.style.display = "none";
+    }
+}
+function cnf3() {
+    if(incs[3].style.display != "flex") {
+        cn1.style.display = "none";
+        cn2.style.display = "none";
+        cn3.style.display = "flex";
+        cn4.style.display = "none";
+    }
+}
+function cnf4() {
+    if(incs[4].style.display != "flex") {
+        cn1.style.display = "none";
+        cn2.style.display = "none";
+        cn3.style.display = "none";
+        cn4.style.display = "flex";
+    }
+}
+
+function cannon() {
+    ctas[1].addEventListener("mouseover", cnf1);
+    ctas[2].addEventListener("mouseover", cnf2);
+    ctas[3].addEventListener("mouseover", cnf3);
+    ctas[4].addEventListener("mouseover", cnf4);
+    ctas[1].addEventListener("click", lockcn);
+    ctas[2].addEventListener("click", lockcn);
+    ctas[3].addEventListener("click", lockcn);
+    ctas[4].addEventListener("click", lockcn);
+}
+
+function lockcn() {
+    ctas[1].removeEventListener("click", lockcn);
+    ctas[2].removeEventListener("click", lockcn);
+    ctas[3].removeEventListener("click", lockcn);
+    ctas[4].removeEventListener("click", lockcn);
+    rmvcnmira();
+    vez.style.top = "2vh";
+    mrcanhao = false;
+}
+
+function limpcn() {
+    cn1.style.display = "none";
+    cn2.style.display = "none";
+    cn3.style.display = "none";
+    cn4.style.display = "none";
+}
+
 function limp() {
     for(i = 0; i < miras.length; i++) {
         miras[i].style.display = "none";
     }
     vez.style.top = "2vh";
+    mrcanhao = false;
     vez.style.backgroundColor = "rgba(0, 0, 255, 0.842)";
     damage.style.right = "30vh";
     setTimeout(() => {
         damage.style.visibility = "hidden";
-    }, 500)
+    }, 100)
     mirando = false;
     total.textContent = "---";
     atacar.addEventListener("click", rvmatq);
@@ -222,7 +310,7 @@ sldm.oninput = () => {
 }
 slds.oninput = () => {
     for(i = 0; i < sons.length; i++) {
-        sons[i].volume = sldm.value / 100;
+        sons[i].volume = slds.value / 100;
     }
 }
 
@@ -231,34 +319,39 @@ function ttl() {
 }
 
 btncom.addEventListener("click", () => {
-    inisel.style.display = "none";
+    ctinisel.style.display = "none";
     bgmusic.play();
 })
 
+atacar.addEventListener("click", rvmatq);
+
 function trocatxt() {
     switch(true) {
+        case mrcanhao:
+            veztxt.textContent = "Escolha o Operador";
+        break;
         case mirando:
             veztxt.textContent = "Escolha o Alvo";
         break;
         case cta1.style.animationName == "shake":
             vez.style.display = "flex";
-            veztxt.textContent = "Vez de Barbarovsk";
+            veztxt.textContent = "Turno de Barbarovsk";
         break;
         case cta2.style.animationName == "shake":
             vez.style.display = "flex";
-            veztxt.textContent = "Vez de Crowly";
+            veztxt.textContent = "Turno de Crowly";
         break;
         case cta3.style.animationName == "shake":
             vez.style.display = "flex";
-            veztxt.textContent = "Vez de Lysa";
+            veztxt.textContent = "Turno de Lysa";
         break;
         case cta4.style.animationName == "shake":
             vez.style.display = "flex";
-            veztxt.textContent = "Vez de Darban";
+            veztxt.textContent = "Turno de Darban";
         break;
         case cta5.style.animationName == "shake":
             vez.style.display = "flex";
-            veztxt.textContent = "Vez de Gabriele";
+            veztxt.textContent = "Turno de Gabriele";
         break;
         case !turnoa:
             vez.style.display = "none";
@@ -269,7 +362,12 @@ function trocatxt() {
 cog.addEventListener("click", () => {
     if(cog.style.rotate != "90deg") {
         cog.style.rotate = "90deg";
-        options.style.display = "flex";
+        if(options.style.display != "flex") {
+            options.style.display = "flex";
+            setTimeout(() => {
+                options.style.opacity = "1";
+            }, 50)
+        }
     } 
 })
 
@@ -309,9 +407,23 @@ function amuletos() {
 }
 }
 
+opcnn.addEventListener("click", () => {
+    mrcanhao = true;
+    ordem.style.opacity = "0";
+    setTimeout(() => {
+        ordem.style.display = "none";
+    }, 250)
+    vez.style.top = "50vh";
+    cannon();
+})
+
 function odm() {
     if(ordem.style.display != "flex") {
         ordem.style.display = "flex";
+        limp();
+        apcdado();
+        rmvcnmira();
+        dado.style.display = "none";
         setTimeout(() => {
             ordem.style.opacity = "1";
         }, 50)
@@ -492,6 +604,7 @@ function inc() {
         if (vidac1a.textContent <= 0) {
             inc1.style.display = "flex";
             vidac1a.textContent = 0;
+            limpcn();
         }
         if (vidac2a.textContent <= 0) {
             inc2.style.display = "flex";
@@ -564,10 +677,16 @@ setInterval(() => {
         }
     }
     if(mirando) {
-        cog.style.display = "none";
+        cog.style.opacity = "0";
+        setTimeout(() => {
+            cog.style.display = "none";
+        }, 200)
     }
     else {
+        cog.style.opacity = "1";
+        setTimeout(() => {
         cog.style.display = "block";
+        }, 200)
     }
     if(!turnoa) {
         dado.style.height = "20vh";
@@ -579,63 +698,138 @@ setInterval(() => {
         dado.style.width = "40vh";
         num.style.height = "30vh";
     }
+    for (let i = 0; i < muns.length; i++) {
+        if(muns[i] == 0 && per == i + 1) {
+            armas[i] = coronhada;
+            for(let i = 0; i < niveis.length; i++) {
+                switch (niveis[i].textContent) {
+                    case "NV: I":
+                        danos[i] = armas[i];
+                        dns[i].textContent = Math.floor(armas[i]);
+                    break;
+                    case "NV: II":
+                        danos[i] = 10 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 10);
+                    break;
+                    case "NV: III":
+                        danos[i] = 25 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 25);
+                    break;
+                    case "NV: IV":
+                        danos[i] = 45 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 45);
+                    break;
+                    case "NV: V":
+                        danos[i] = 65 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 65);
+                    break;
+                    case "NV: VI":
+                        danos[i] = 95 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 95);
+                    break;
+                    case "NV: VII":
+                        danos[i] = 130 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 130);
+                    break;
+                    case "NV: VIII":
+                        danos[i] = 170 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 170);
+                    break;
+                    case "NV: IX":
+                        danos[i] = 215 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 215);
+                    break;
+                    case "NV: X":
+                        danos[i] = 265 + armas[i];
+                        dns[i].textContent = Math.floor(armas[i] + 265);
+                    break;
+                }
+            }
+        }
+    }
 }, 10)
 
 setInterval(() => {
     if(per != 1) {
         ordenar.style.display = "none";
-        btns.style.bottom = "5vh";
+        btns.style.bottom = "11vh";
     }
     else {
         ordenar.style.display = "block";
-        btns.style.bottom = "14vh";
+        btns.style.bottom = "20vh";
     }
     for (let i = 0; i < armas.length; i++) {
     switch(true) {
+        case per == i + 1 && armas[i] == coronhada:
+            armasatl.textContent = "Coronhada";
+            mun.style.display = "none";
+        break;
         case per == i + 1 && armas[i] == punhal:
             armasatl.textContent = "Punhal";
+            mun.style.display = "none";
         break;
         case per == i + 1 && armas[i] == rapieira:
             armasatl.textContent = "Rapieira";
+            mun.style.display = "none";
         break;
         case per == i + 1 && armas[i] == sabre:
             armasatl.textContent = "Sabre";
+            mun.style.display = "none";
         break;
         case per == i + 1 && armas[i] == mosquete:
             armasatl.textContent = "Mosquete";
+            mun.style.display = "flex";
+            ammo.textContent = `Munição: x${muns[i]}`;
         break;
         case per == i + 1 && armas[i] == perdeneira:
             armasatl.textContent = "Perdeneira";
+            mun.style.display = "flex";
+            ammo.textContent = `Munição: x${muns[i]}`;
         break;
         case per == i + 1 && armas[i] == besta:
             armasatl.textContent = "Besta";
+            mun.style.display = "flex";
+            ammo.textContent = `Virotes: x${muns[i]}`;
         break;
         case per == i + 1 && armas[i] == machado:
             armasatl.textContent = "Machado";
+            mun.style.display = "none";
         break;
         case per == i + 1 && armas[i] == pistola:
             armasatl.textContent = "Pistola";
+            mun.style.display = "flex";
+            ammo.textContent = `Munição: x${muns[i]}`;
         break;
         case per == i + 1 && armas[i] == granada:
             armasatl.textContent = "Granada";
+            mun.style.display = "flex";
+            ammo.textContent = `Quantidade: x${muns[i]}`;
         break;
         case per == i + 1 && armas[i] == adaga:
             armasatl.textContent = "Adaga Dupla";
+            mun.style.display = "none";
         break;
         case per == i + 1 && armas[i] == molotov:
             armasatl.textContent = "Coquetel Molotov";
+            mun.style.display = "flex";
+            ammo.textContent = `Quantidade: x${muns[i]}`;
         break;
         case per == i + 1 && armas[i] == nock:
             armasatl.textContent = "Espingarda Nock";
+            mun.style.display = "flex";
+            ammo.textContent = `Munição: x${muns[i]}`;
         break;
         case per == i + 1 && armas[i] == arpão:
             armasatl.textContent = "Mini-Arpão";
+            mun.style.display = "none";
         break;
         case per == i + 1 && armas[i] == foice:
             armasatl.textContent = "Foice Curta";
+            mun.style.display = "none";
         break;
         case per == i + 1 && armas[i] == espada:
             armasatl.textContent = "Espada Congelada";
+            mun.style.display = "none";
         break;
     }
 }
@@ -664,31 +858,90 @@ setInterval(() => {
         break;
     }
 }
+    switch (true) {
+        case ctas[1].style.animationName == "shake" && cn1.style.display == "flex":
+            usandoc = true;
+        break;
+        case ctas[2].style.animationName == "shake" && cn2.style.display == "flex":
+            usandoc = true;
+        break;
+        case ctas[3].style.animationName == "shake" && cn3.style.display == "flex":
+            usandoc = true;
+        break;
+        case ctas[4].style.animationName == "shake" && cn4.style.display == "flex":
+            usandoc = true;
+        break;
+        default:
+            usandoc = false;
+    }
 }, 10)
 
+function atqcanhao() {
+    if(numdado == 1 || numdado == 2 || numdado == 3){
+        vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg + 50);
+    }
+    else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
+        vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg + 20);
+    }
+
+    else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
+        vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg);
+    }
+
+    else if (numdado == 16 || numdado == 17 || numdado == 18){
+        vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg - 20);
+    }
+
+    else if (numdado == 19 || numdado == 20){
+        vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg - 50);
+    }
+}
+
 function atacando() {
+    atacar.addEventListener("click", rvmatq);
+    if(mrcanhao == true) {
+        limpcn();
+    }
+    rmvcnmira();
+    if(usandoc == false) {
     mirando = true;
+    if(ordem.style.display == "flex") {
+        ordem.style.opacity = "0";
+        setTimeout(() => {
+            ordem.style.display = "none";
+        }, 250)
+    }
     roll.style.visibility = "visible";
     numdado = 0;
     rolln.textContent = numdado;
     vez.style.top = "40vh";
+    mrcanhao = false;
     vez.style.backgroundColor = "rgba(255, 0, 0, 0.842)";
     damage.style.visibility = "visible";
     damage.style.right = "0vh";
     mira();
 }
+else {
+    dado.style.display = "block";
+}
+}
 
 function rvmatq() {
+    numdado = 0;
+    rolln.textContent = numdado;
     atacar.removeEventListener("click", rvmatq);
     atacando();
 }
 
 resume.addEventListener("click", () => {
     cog.style.rotate = "0deg";
-    options.style.display = "none";
+    if(options.style.display == "flex") {
+        options.style.opacity = "0";
+        setTimeout(() => {
+            options.style.display = "none";
+        }, 250)
+    }
 })
-
-atacar.addEventListener("click", rvmatq);
 
 function turnoini() {
     turnoa = false;
@@ -761,11 +1014,11 @@ function alvos() {
         case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex" && inc2.style.display == "flex":
             alvo -= 2;
         break;
-        case inc3.style.display == "flex" && alvo == 3 && inc1.style.display == "flex" && inc2.style.display == "flex":
-            alvo += 1;
-        break;
         case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex":
             alvo -= 1;
+        break;
+        case inc3.style.display == "flex" && alvo == 3 && inc1.style.display == "flex" && inc2.style.display == "flex":
+            alvo += 1;
         break;
         case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex":
             alvo += 2;
@@ -948,6 +1201,15 @@ function rodar() {
         break;
         case cartasi[6].style.animationName == "shake":
             cartasi[6].style.animationName = "unset";
+            if(vidabarcoa.textContent <= 0 && nv12.style.backgroundColor == "#fc6f03") {
+                nv13.style.backgroundColor = "#fc0303";
+            }
+            else if(vidabarcoa.textContent <= 0 && nv1i.style.backgroundColor == "#fcf003") {
+                nv12.style.backgroundColor = "#fc6f03";
+            }
+            else if(vidabarcoa.textContent <= 0) {
+                nv1i.style.backgroundColor = "#fcf003";
+            }
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
@@ -977,6 +1239,13 @@ function rodar() {
 
 function inijog() {
     rd = setInterval(rodar, 1500);
+}
+
+function rmvcnmira() {
+    ctas[1].removeEventListener("mouseover", cnf1);
+    ctas[2].removeEventListener("mouseover", cnf2);
+    ctas[3].removeEventListener("mouseover", cnf3);
+    ctas[4].removeEventListener("mouseover", cnf4);
 }
 
 function c1() {
@@ -1089,7 +1358,14 @@ else {
 function btd(e) {
     limp();
     apcdado();
+    rmvcnmira();
     dado.style.display = "none";
+    if(ordem.style.display == "flex") {
+        ordem.style.opacity = "0";
+        setTimeout(() => {
+            ordem.style.display = "none";
+        }, 250)
+    }
     e.preventDefault(); 
 }
 
@@ -1406,8 +1682,13 @@ function rolar() {
     roll.style.visibility = "hidden";
     numdado = Math.floor(Math.random() * 20) + 1;
     rolln.textContent = numdado;
-    if(turnoa) {
+    if(turnoa && usandoc == false) {
         dano();
+    }
+    else if(usandoc == true) {
+        setTimeout(() => {
+            atqcanhao();
+        }, 1000);
     }
     else {
         danoinimigo();
@@ -1415,6 +1696,12 @@ function rolar() {
     dado.style.display = "block";
     setTimeout(() => {
         dado.style.display = "none";
+        for (let i = 0; i < cartasi.length; i++) {
+            if(danototalini > 135 && ini == i + 1) {
+                danototalini = 135;
+                danoini[i].textContent = 135;
+            } 
+        }
         amuletos();
         window.addEventListener("contextmenu", btd, false);
         if(!turnoa) {
@@ -1422,38 +1709,79 @@ function rolar() {
             sons[2].play();
         }
         else {
+            if(usandoc == false) {
         switch (per) {
             case 1:
                 if(armas[0] == perdeneira || armas[0] == pistola || armas[0] == mosquete) {
                     audios[1].currentTime = 0.5;
+                    muns[0]--;
+                }
+                if(armas[0] == besta || armas[0] == molotov || armas[0] == granada || armas[0] == nock) {
+                    muns[0]--;
                 }
                 audios[0].play();
             break;
             case 2:
                 if(armas[1] == perdeneira || armas[1] == pistola || armas[1] == mosquete) {
                     audios[1].currentTime = 0.5;
+                    if(munp1 != 0) {
+                        muns[1]--;
+                    }
+                }
+                if(armas[1] == besta || armas[1] == molotov || armas[1] == granada || armas[1] == nock) {
+                    if(munp1 != 0) {
+                        muns[1]--;
+                    }
                 }
                 audios[1].play();
             break;
             case 3:
                 if(armas[2] == perdeneira || armas[2] == pistola || armas[2] == mosquete) {
                     audios[1].currentTime = 0.5;
+                    if(munp2 != 0) {
+                        muns[2]--;
+                    }
+                }
+                if(armas[2] == besta || armas[2] == molotov || armas[2] == granada || armas[2] == nock) {
+                    if(munp2 != 0) {
+                        muns[2]--;
+                    }
                 }
                 audios[2].play();
             break;
             case 4:
                 if(armas[3] == perdeneira || armas[3] == pistola || armas[3] == mosquete) {
                     audios[1].currentTime = 0.5;
+                    if(munp3 != 0) {
+                        muns[3]--;
+                    }
+                }
+                if(armas[3] == besta || armas[3] == molotov || armas[3] == granada || armas[3] == nock) {
+                    if(munp3 != 0) {
+                        muns[3]--;
+                    }
                 }
                 audios[3].play();
             break;
             case 5:
                 if(armas[4] == perdeneira || armas[4] == pistola || armas[4] == mosquete) {
                     audios[1].currentTime = 0.5;
+                    if(munp4 != 0) {
+                        muns[4]--;
+                    }
+                }
+                if(armas[4] == besta || armas[4] == molotov || armas[4] == granada || armas[4] == nock) {
+                    if(munp4 != 0) {
+                        muns[4]--;
+                    }
                 }
                 audios[4].play();
             break;
         }
+    }
+    else {
+        sons[3].play();
+    }
     }
         if(turnoa) {
             roll.style.display = "block";
