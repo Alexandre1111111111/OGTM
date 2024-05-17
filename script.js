@@ -102,6 +102,20 @@ const vidabarcoi = document.querySelector("#vidabarcoi");
 const nv1i = document.querySelector("#nv1i");
 const nv2i = document.querySelector("#nv2i");
 const nv3i = document.querySelector("#nv3i");
+const nv1 = document.querySelector("#nv1");
+const nv2 = document.querySelector("#nv2");
+const nv3 = document.querySelector("#nv3");
+const cn1i = document.querySelector("#cn1i");
+const cn2i = document.querySelector("#cn2i");
+const cn3i = document.querySelector("#cn3i");
+const cn4i = document.querySelector("#cn4i");
+const cn5i = document.querySelector("#cn5i");
+const cn6i = document.querySelector("#cn6i");
+const cn7i = document.querySelector("#cn7i");
+const hab = document.querySelector(".hab");
+const ichab = document.querySelector("#ichab");
+const estatq = document.querySelector(".estatq");
+const est = document.querySelector("#est");
 
 const coronhada = 10;
 const punhal = 20;
@@ -187,6 +201,12 @@ let mrcanhao = false;
 let usandoc = false;
 let canhaodmg = 230;
 let canhaoexpdmg = 550;
+let nvil = 0;
+let vidaa = vidabarcoa.textContent;
+let vidai = vidabarcoi.textContent;
+let canhoneiro;
+let usandoci = false;
+let nvila = 0;
 
 const bgmusic = new Audio("bgmusic.mp3");
 
@@ -209,6 +229,7 @@ for(i = 0; i < sons.length; i++) {
 bgmusic.loop = true;
 
 const cns = [cn1, cn2, cn3, cn4];
+const cnis = [cn1i, cn2i, cn3i, cn4i, cn5i, cn6i, cn7i];
 const ctas = [cta1, cta2, cta3, cta4, cta5];
 const incs = [inc1, inc2, inc3, inc4, inc5];
 const muns = [munp1, munp2, munp3, munp4, munp5];
@@ -279,6 +300,7 @@ function lockcn() {
     ctas[4].removeEventListener("click", lockcn);
     rmvcnmira();
     vez.style.top = "2vh";
+    vez.style.backgroundColor = "rgba(0, 0, 255, 0.842)";
     mrcanhao = false;
 }
 
@@ -305,6 +327,35 @@ function limp() {
     atacar.addEventListener("click", rvmatq);
 }
 
+function canhaoadv() {
+    canhoneiro = Math.floor(Math.random() * 7) + 1;
+    switch(canhoneiro) {
+        case 1:
+            cn1i.style.display = "flex";
+        break;
+        case 2:
+            cn2i.style.display = "flex";
+        break;
+        case 3:
+            cn3i.style.display = "flex";
+        break;
+        case 4:
+            cn4i.style.display = "flex";
+        break;
+        case 5:
+            cn5i.style.display = "flex";
+        break;
+        case 6:
+            cn6i.style.display = "flex";
+        break;
+        case 7:
+            cn7i.style.display = "flex";
+        break;
+    }
+}
+
+canhaoadv();
+
 sldm.oninput = () => {
     bgmusic.volume = sldm.value / 100;
 }
@@ -328,6 +379,7 @@ atacar.addEventListener("click", rvmatq);
 function trocatxt() {
     switch(true) {
         case mrcanhao:
+            vez.style.backgroundColor = "rgba(0, 50, 155, 0.842)";
             veztxt.textContent = "Escolha o Operador";
         break;
         case mirando:
@@ -377,31 +429,31 @@ function amuletos() {
     switch(true) {
     case mirac1.style.display == "block" :
         danototalini *= 1.50;
-        danoc1.textContent = Math.floor(danoc1.textContent * 1.50);
+        danoc1.textContent = Math.floor(danototalini);
     break;
     case mirac2.style.display == "block" :
         danototalini *= 1.50;
-        danoc2.textContent = Math.floor(danoc2.textContent * 1.50);
+        danoc2.textContent = Math.floor(danototalini);
     break;
     case mirac3.style.display == "block" :
         danototalini *= 1.50;
-        danoc3.textContent = Math.floor(danoc3.textContent * 1.50);
+        danoc3.textContent = Math.floor(danototalini);
     break;
     case mirac4.style.display == "block" :
         danototalini *= 1.50;
-        danoc4.textContent = Math.floor(danoc4.textContent * 1.50);
+        danoc4.textContent = Math.floor(danototalini);
     break;
     case mirac5.style.display == "block" :
         danototalini *= 1.50;
-        danoc5.textContent = Math.floor(danoc5.textContent * 1.50);
+        danoc5.textContent = Math.floor(danototalini);
     break;
     case mirac6.style.display == "block" :
         danototalini *= 1.50;
-        danoc6.textContent = Math.floor(danoc6.textContent * 1.50);
+        danoc6.textContent = Math.floor(danototalini);
     break;
     case mirac7.style.display == "block" :
         danototalini *= 1.50;
-        danoc7.textContent = Math.floor(danoc7.textContent * 1.50);
+        danoc7.textContent = Math.floor(danototalini);
     break;
     }
 }
@@ -689,8 +741,8 @@ setInterval(() => {
         }, 200)
     }
     if(!turnoa) {
-        dado.style.height = "20vh";
-        dado.style.width = "30vh";
+        dado.style.height = "25vh";
+        dado.style.width = "35vh";
         num.style.height = "20vh";
     }
     else {
@@ -752,10 +804,12 @@ setInterval(() => {
 setInterval(() => {
     if(per != 1) {
         ordenar.style.display = "none";
+        hab.style.bottom = "-20vh";
         btns.style.bottom = "11vh";
     }
     else {
         ordenar.style.display = "block";
+        hab.style.bottom = "-11vh";
         btns.style.bottom = "20vh";
     }
     for (let i = 0; i < armas.length; i++) {
@@ -874,27 +928,139 @@ setInterval(() => {
         default:
             usandoc = false;
     }
+    switch (true) {
+        case cn1i.style.display == "flex" && ini == 1:
+            usandoci = true;
+        break;
+        case cn2i.style.display == "flex" && ini == 2:
+            usandoci = true;
+        break;
+        case cn3i.style.display == "flex" && ini == 3:
+            usandoci = true;
+        break;
+        case cn4i.style.display == "flex" && ini == 4:
+            usandoci = true;
+        break;
+        case cn5i.style.display == "flex" && ini == 5:
+            usandoci = true;
+        break;
+        case cn6i.style.display == "flex" && ini == 6:
+            usandoci = true;
+        break;
+        case cn7i.style.display == "flex" && ini == 7:
+            usandoci = true;
+        break;
+        default:
+            usandoci = false;
+    }
+    if(vidabarcoi.textContent <= 0) {
+        nv1i.style.backgroundColor = "#fcf003";
+    }
+    if(vidabarcoa.textContent <= 0) {
+        nv1.style.backgroundColor = "#fcf003";
+    }
+    if(vidabarcoi.textContent < vidai) {
+        vidabarcoi.style.color = "#ed9d9d";
+    }
+    if(vidabarcoa.textContent < vidaa) {
+        vidabarcoa.style.color = "#ed9d9d";
+    }
+    switch(per) {
+        case 1:
+            hab.style.backgroundColor = "#ffd952";
+            ichab.src = "https://cdn-icons-png.flaticon.com/512/855/855059.png";
+        break;
+        case 2:
+            hab.style.backgroundColor = "#3084cf";
+            ichab.src = "https://cdn-icons-png.flaticon.com/512/2851/2851844.png";
+        break;
+        case 3:
+            hab.style.backgroundColor = "#cf30ca";
+            ichab.src = "https://cdn-icons-png.flaticon.com/512/15532/15532570.png";
+        break;
+        case 4:
+            hab.style.backgroundColor = "#cf303d";
+            ichab.src = "https://cdn-icons-png.flaticon.com/512/5246/5246522.png";
+        break;
+        case 5:
+            hab.style.backgroundColor = "#30cf9d";
+            ichab.src = "https://cdn-icons-png.flaticon.com/512/139/139776.png";
+        break;
+    }
 }, 10)
 
+setInterval(() => {
+    if(vidabarcoi.textContent <= 0) {
+        vidabarcoi.textContent = 0;
+    }
+    if(vidabarcoa.textContent <= 0) {
+        vidabarcoa.textContent = 0;
+    }
+}, 0)
+
 function atqcanhao() {
+    if(usandoci == false) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg + 50);
+        est.textContent = "Ataque Falho";
+        est.style.color = "#fc1303";
     }
     else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
         vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg + 20);
+        est.textContent = "Ataque Fraco";
+        est.style.color = "#f7847c";
     }
 
     else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
         vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg);
+        est.textContent = "Ataque Normal";
+        est.style.color = "#fbff08";
     }
 
     else if (numdado == 16 || numdado == 17 || numdado == 18){
         vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg - 20);
+        est.textContent = "Ataque Forte";
+        est.style.color = "#a0ff08";
     }
 
     else if (numdado == 19 || numdado == 20){
+        vidabarcoi.style.color = "#ed9d9d";
         vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg - 50);
+        est.textContent = "Ataque Perfeito";
+        est.style.color = "#008013";
     }
+}
+else {
+    if(numdado == 1 || numdado == 2 || numdado == 3){
+        vidabarcoa.textContent = Math.floor(vidabarcoa.textContent - canhaodmg + 50);
+        est.textContent = "Ataque Falho";
+        est.style.color = "#fc1303";
+    }
+    else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
+        vidabarcoa.textContent = Math.floor(vidabarcoa.textContent - canhaodmg + 20);
+        est.textContent = "Ataque Fraco";
+        est.style.color = "#f7847c";
+    }
+
+    else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
+        vidabarcoa.textContent = Math.floor(vidabarcoa.textContent - canhaodmg);
+        est.textContent = "Ataque Normal";
+        est.style.color = "#fbff08";
+    }
+
+    else if (numdado == 16 || numdado == 17 || numdado == 18){
+        vidabarcoa.textContent = Math.floor(vidabarcoa.textContent - canhaodmg - 20);
+        est.textContent = "Ataque Forte";
+        est.style.color = "#a0ff08";
+    }
+
+    else if (numdado == 19 || numdado == 20){
+        vidabarcoa.style.color = "#ed9d9d";
+        vidabarcoa.textContent = Math.floor(vidabarcoa.textContent - canhaodmg - 50);
+        est.textContent = "Ataque Perfeito";
+        est.style.color = "#008013";
+    }
+}
 }
 
 function atacando() {
@@ -912,6 +1078,7 @@ function atacando() {
         }, 250)
     }
     roll.style.visibility = "visible";
+    estatq.style.display = "none";
     numdado = 0;
     rolln.textContent = numdado;
     vez.style.top = "40vh";
@@ -922,7 +1089,7 @@ function atacando() {
     mira();
 }
 else {
-    dado.style.display = "block";
+    dado.style.display = "flex";
 }
 }
 
@@ -944,15 +1111,13 @@ resume.addEventListener("click", () => {
 })
 
 function turnoini() {
+    afunali();
     turnoa = false;
     btns.style.display = "none";
     armaatl.style.display = "none";
     switch(true) {
         case incis[0].style.display != "flex":
             cartasi[0].style.animationName = "shake";
-        break;
-        case incis[6].style.display == "flex" && incis[5].style.display == "flex" && incis[4].style.display == "flex" && incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
-            cartasi[7].style.animationName = "shake";
         break;
         case incis[5].style.display == "flex" && incis[4].style.display == "flex" && incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
             cartasi[6].style.animationName = "shake";
@@ -974,14 +1139,19 @@ function turnoini() {
         break;
     }
     inijog();
-dado.style.display = "block";
-roll.style.display = "none";
-    alvos();
+    dado.style.display = "flex";
+    estatq.style.display = "flex";
     rolar();
-    danoinimigo();
+    if(usandoci == false) {
+        setTimeout(() => {
+        alvos();
+        danoinimigo();
+        }, 15)
+    }
 }
 
 function alvos() {
+    if(usandoci == false) {
     alvo = Math.floor(Math.random() * 5) + 1;
     switch (true) {
         case inc1.style.display == "flex" && alvo == 1 && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
@@ -1008,6 +1178,9 @@ function alvos() {
         case inc2.style.display == "flex" && alvo == 2 && inc3.style.display != "flex":
             alvo += 1;
         break;
+        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex":
+            alvo += 2;
+        break;
         case inc3.style.display == "flex" && alvo == 3 && inc4.style.display != "flex":
             alvo += 1;
         break;
@@ -1016,12 +1189,6 @@ function alvos() {
         break;
         case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex":
             alvo -= 1;
-        break;
-        case inc3.style.display == "flex" && alvo == 3 && inc1.style.display == "flex" && inc2.style.display == "flex":
-            alvo += 1;
-        break;
-        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex":
-            alvo += 2;
         break;
         case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex" && inc1.style.display == "flex":
             alvo += 1;
@@ -1069,147 +1236,15 @@ function alvos() {
         break;
     }
 }
+}
 
 function rodar() {
     roll.style.visibility = "hidden";
+    estatq.style.display = "flex";
     switch (true) {
-        case cartasi[0].style.animationName == "shake" && incis[1].style.display != "flex":
+        case cartasi[0].style.animationName == "shake" && inci7.style.display == "flex" && inci6.style.display == "flex" && inci5.style.display == "flex" && inci4.style.display == "flex" && inci3.style.display == "flex" && inci2.style.display == "flex":
             cartasi[0].style.animationName = "unset";
-            cartasi[1].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
-            cartasi[0].style.animationName = "unset";
-            cartasi[6].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
-            cartasi[0].style.animationName = "unset";
-            cartasi[5].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
-            cartasi[0].style.animationName = "unset";
-            cartasi[4].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex":
-            cartasi[0].style.animationName = "unset";
-            cartasi[3].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex":
-            cartasi[0].style.animationName = "unset";
-            cartasi[2].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
-            cartasi[1].style.animationName = "unset";
-            cartasi[6].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
-            cartasi[1].style.animationName = "unset";
-            cartasi[5].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
-            cartasi[1].style.animationName = "unset";
-            cartasi[4].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex":
-            cartasi[1].style.animationName = "unset";
-            cartasi[3].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[1].style.animationName == "shake" && incis[2].style.display != "flex":
-            cartasi[1].style.animationName = "unset";
-            cartasi[2].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
-            cartasi[2].style.animationName = "unset";
-            cartasi[6].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
-            cartasi[2].style.animationName = "unset";
-            cartasi[5].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex":
-            cartasi[2].style.animationName = "unset";
-            cartasi[4].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[2].style.animationName == "shake" && incis[3].style.display != "flex":
-            cartasi[2].style.animationName = "unset";
-            cartasi[3].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
-            cartasi[3].style.animationName = "unset";
-            cartasi[6].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex":
-            cartasi[3].style.animationName = "unset";
-            cartasi[5].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[3].style.animationName == "shake" && incis[4].style.display != "flex":
-            cartasi[3].style.animationName = "unset";
-            cartasi[4].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[4].style.animationName == "shake" && incis[5].style.display == "flex":
-            cartasi[4].style.animationName = "unset";
-            cartasi[6].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[4].style.animationName == "shake" && incis[5].style.display != "flex":
-            cartasi[4].style.animationName = "unset";
-            cartasi[5].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[5].style.animationName == "shake" && incis[6].style.display != "flex":
-            cartasi[5].style.animationName = "unset";
-            cartasi[6].style.animationName = "shake";
-            alvos();
-            rolar();
-        break;
-        case cartasi[6].style.animationName == "shake":
-            cartasi[6].style.animationName = "unset";
-            if(vidabarcoa.textContent <= 0 && nv12.style.backgroundColor == "#fc6f03") {
-                nv13.style.backgroundColor = "#fc0303";
-            }
-            else if(vidabarcoa.textContent <= 0 && nv1i.style.backgroundColor == "#fcf003") {
-                nv12.style.backgroundColor = "#fc6f03";
-            }
-            else if(vidabarcoa.textContent <= 0) {
-                nv1i.style.backgroundColor = "#fcf003";
-            }
+            afunini();
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
@@ -1233,6 +1268,376 @@ function rodar() {
             trocar();
             turnoa = true;
             clearInterval(rd);
+        break;
+        case cartasi[1].style.animationName == "shake" && inci7.style.display == "flex" && inci6.style.display == "flex" && inci5.style.display == "flex" && inci4.style.display == "flex" && inci3.style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            afunini();
+            if(inc1.style.display != "flex") {
+                cta1.style.animationName = "shake";
+                per = 1;
+            }
+            else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
+                cta2.style.animationName = "shake";
+                per = 2;
+            }
+            else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
+                cta3.style.animationName = "shake";
+                per = 3;
+            }
+            else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
+                cta4.style.animationName = "shake";
+                per = 4;
+            }
+            else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
+                cta5.style.animationName = "shake";
+                per = 5;
+            }
+            trocar();
+            turnoa = true;
+            clearInterval(rd);
+        break;
+        case cartasi[2].style.animationName == "shake" && inci7.style.display == "flex" && inci6.style.display == "flex" && inci5.style.display == "flex" && inci4.style.display == "flex":
+            cartasi[2].style.animationName = "unset";
+            afunini();
+            if(inc1.style.display != "flex") {
+                cta1.style.animationName = "shake";
+                per = 1;
+            }
+            else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
+                cta2.style.animationName = "shake";
+                per = 2;
+            }
+            else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
+                cta3.style.animationName = "shake";
+                per = 3;
+            }
+            else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
+                cta4.style.animationName = "shake";
+                per = 4;
+            }
+            else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
+                cta5.style.animationName = "shake";
+                per = 5;
+            }
+            trocar();
+            turnoa = true;
+            clearInterval(rd);
+        break;
+        case cartasi[3].style.animationName == "shake" && inci7.style.display == "flex" && inci6.style.display == "flex" && inci5.style.display == "flex":
+            cartasi[3].style.animationName = "unset";
+            afunini();
+            if(inc1.style.display != "flex") {
+                cta1.style.animationName = "shake";
+                per = 1;
+            }
+            else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
+                cta2.style.animationName = "shake";
+                per = 2;
+            }
+            else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
+                cta3.style.animationName = "shake";
+                per = 3;
+            }
+            else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
+                cta4.style.animationName = "shake";
+                per = 4;
+            }
+            else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
+                cta5.style.animationName = "shake";
+                per = 5;
+            }
+            trocar();
+            turnoa = true;
+            clearInterval(rd);
+        break;
+        case cartasi[4].style.animationName == "shake" && inci7.style.display == "flex" && inci6.style.display == "flex":
+            cartasi[4].style.animationName = "unset";
+            afunini();
+            if(inc1.style.display != "flex") {
+                cta1.style.animationName = "shake";
+                per = 1;
+            }
+            else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
+                cta2.style.animationName = "shake";
+                per = 2;
+            }
+            else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
+                cta3.style.animationName = "shake";
+                per = 3;
+            }
+            else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
+                cta4.style.animationName = "shake";
+                per = 4;
+            }
+            else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
+                cta5.style.animationName = "shake";
+                per = 5;
+            }
+            trocar();
+            turnoa = true;
+            clearInterval(rd);
+        break;
+        case cartasi[5].style.animationName == "shake" && inci7.style.display == "flex":
+            cartasi[5].style.animationName = "unset";
+            afunini();
+            if(inc1.style.display != "flex") {
+                cta1.style.animationName = "shake";
+                per = 1;
+            }
+            else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
+                cta2.style.animationName = "shake";
+                per = 2;
+            }
+            else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
+                cta3.style.animationName = "shake";
+                per = 3;
+            }
+            else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
+                cta4.style.animationName = "shake";
+                per = 4;
+            }
+            else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
+                cta5.style.animationName = "shake";
+                per = 5;
+            }
+            trocar();
+            turnoa = true;
+            clearInterval(rd);
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display != "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[1].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[4].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[3].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex":
+            cartasi[0].style.animationName = "unset";
+            cartasi[2].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[4].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[3].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[1].style.animationName == "shake" && incis[2].style.display != "flex":
+            cartasi[1].style.animationName = "unset";
+            cartasi[2].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[2].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
+            cartasi[2].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex":
+            cartasi[2].style.animationName = "unset";
+            cartasi[4].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[2].style.animationName == "shake" && incis[3].style.display != "flex":
+            cartasi[2].style.animationName = "unset";
+            cartasi[3].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
+            cartasi[3].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex":
+            cartasi[3].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[3].style.animationName == "shake" && incis[4].style.display != "flex":
+            cartasi[3].style.animationName = "unset";
+            cartasi[4].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[4].style.animationName == "shake" && incis[5].style.display == "flex":
+            cartasi[4].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[4].style.animationName == "shake" && incis[5].style.display != "flex":
+            cartasi[4].style.animationName = "unset";
+            cartasi[5].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[5].style.animationName == "shake" && incis[6].style.display != "flex":
+            cartasi[5].style.animationName = "unset";
+            cartasi[6].style.animationName = "shake";
+            setTimeout(() => {
+                alvos();
+            }, 15)
+            rolar();
+        break;
+        case cartasi[6].style.animationName == "shake":
+            cartasi[6].style.animationName = "unset";
+            if(usandoci == true) {
+                atqcanhao();
+                usandoci = false;
+            }
+            afunini();
+            if(inc1.style.display != "flex") {
+                cta1.style.animationName = "shake";
+                per = 1;
+            }
+            else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
+                cta2.style.animationName = "shake";
+                per = 2;
+            }
+            else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
+                cta3.style.animationName = "shake";
+                per = 3;
+            }
+            else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
+                cta4.style.animationName = "shake";
+                per = 4;
+            }
+            else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
+                cta5.style.animationName = "shake";
+                per = 5;
+            }
+            trocar();
+            turnoa = true;
+            clearInterval(rd);
+        break;
+    }
+}
+
+function afunali() {
+    if(nvila == 3) {
+        for (let i = 0; i < incs.length; i++) {
+            incs[i].style.display = "flex";
+        }
+    }
+    switch (true) {
+        case vidabarcoa.textContent <= 0 && nv2.style.backgroundColor != "unset" && nvila == 2:
+            nv3.style.backgroundColor = "#fc0303";
+            nvila = 3;
+        break;
+        case vidabarcoa.textContent <= 0 && nv1.style.backgroundColor != "unset":
+            nv2.style.backgroundColor = "#fc6f03";
+            nvila = 2;
+        break;
+    }
+}
+
+function afunini() {
+    if(nvil == 3) {
+        for (let i = 0; i < incis.length; i++) {
+            incis[i].style.display = "flex";
+        }
+    }
+    switch (true) {
+        case vidabarcoi.textContent <= 0 && nv2.style.backgroundColor != "unset" && nvila == 2:
+            nv3.style.backgroundColor = "#fc0303";
+            nvila = 3;
+        break;
+        case vidabarcoi.textContent <= 0 && nv1.style.backgroundColor != "unset":
+            nv2.style.backgroundColor = "#fc6f03";
+            nvila = 2;
         break;
     }
 }
@@ -1359,6 +1764,9 @@ function btd(e) {
     limp();
     apcdado();
     rmvcnmira();
+    if(cta1.style.animationName == "shake") {
+        limpcn();
+    }
     dado.style.display = "none";
     if(ordem.style.display == "flex") {
         ordem.style.opacity = "0";
@@ -1393,7 +1801,7 @@ function apcdado() {
         cartai6.removeEventListener("mouseover", c6);
         cartai7.removeEventListener("mouseover", c7);
         if(mirac1.style.display == "block" || mirac2.style.display == "block" || mirac3.style.display == "block" || mirac4.style.display == "block" || mirac5.style.display == "block" || mirac6.style.display == "block" || mirac7.style.display == "block") {
-            dado.style.display = "block";
+            dado.style.display = "flex";
         }
     }
 
@@ -1402,12 +1810,15 @@ for (let i = 0; i < cartasi.length; i++) {
 }
 
 function danoinimigo() {
+    if(usandoci == false) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         hpp = vidas[0].textContent;
         hpp2 = vidas[1].textContent;
         hpp3 = vidas[2].textContent;
         hpp4 = vidas[3].textContent;
         hpp5 = vidas[4].textContent;
+        est.textContent = "Ataque Falho";
+        est.style.color = "#fc1303";
     }
     else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
         hpp = Math.floor(vidas[0].textContent - danototalini + 5 * resp1);
@@ -1415,6 +1826,8 @@ function danoinimigo() {
         hpp3 = Math.floor(vidas[2].textContent - danototalini + 5 * resp3);
         hpp4 = Math.floor(vidas[3].textContent - danototalini + 5 * resp4);
         hpp5 = Math.floor(vidas[4].textContent - danototalini + 5 * resp5);
+        est.textContent = "Ataque Fraco";
+        est.style.color = "#f7847c";
     }
 
     else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
@@ -1423,6 +1836,8 @@ function danoinimigo() {
         hpp3 = Math.floor(vidas[2].textContent - danototalini + 5 * resp3);
         hpp4 = Math.floor(vidas[3].textContent - danototalini + 5 * resp4);
         hpp5 = Math.floor(vidas[4].textContent - danototalini + 5 * resp5);
+        est.textContent = "Ataque Normal";
+        est.style.color = "#fbff08";
     }
 
     else if (numdado == 16 || numdado == 17 || numdado == 18){
@@ -1431,6 +1846,8 @@ function danoinimigo() {
         hpp3 = Math.floor(vidas[2].textContent - danototalini);
         hpp4 = Math.floor(vidas[3].textContent - danototalini);
         hpp5 = Math.floor(vidas[4].textContent - danototalini);
+        est.textContent = "Ataque Forte";
+        est.style.color = "#a0ff08";
     }
 
     else if (numdado == 19 || numdado == 20){
@@ -1439,7 +1856,10 @@ function danoinimigo() {
         hpp3 = Math.floor(vidas[2].textContent - danototalini - 15);
         hpp4 = Math.floor(vidas[3].textContent - danototalini - 15);
         hpp5 = Math.floor(vidas[4].textContent - danototalini - 15);
+        est.textContent = "Ataque Perfeito";
+        est.style.color = "#008013";
     }
+}
 }
 
 function dano() {
@@ -1451,6 +1871,8 @@ function dano() {
         hpt5 = vidac5.textContent;
         hpt6 = vidac6.textContent;
         hpt7 = vidac7.textContent;
+        est.textContent = "Ataque Falho";
+        est.style.color = "#fc1303";
     }
     else if( numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
         hpt = Math.floor(vidac1.textContent - danototal + 5 * rest);
@@ -1460,6 +1882,8 @@ function dano() {
         hpt5 = Math.floor(vidac5.textContent - danototal + 5 * rest);
         hpt6 = Math.floor(vidac6.textContent - danototal + 5 * rest);
         hpt7 = Math.floor(vidac7.textContent - danototal + 5 * rest);
+        est.textContent = "Ataque Fraco";
+        est.style.color = "#f7847c";
     }
 
     else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
@@ -1470,6 +1894,8 @@ function dano() {
         hpt5 = Math.floor(vidac5.textContent - danototal * rest);
         hpt6 = Math.floor(vidac6.textContent - danototal * rest);
         hpt7 = Math.floor(vidac7.textContent - danototal * rest);
+        est.textContent = "Ataque Normal";
+        est.style.color = "#fbff08";
     }
 
     else if (numdado == 16 || numdado == 17 || numdado == 18){
@@ -1480,6 +1906,8 @@ function dano() {
         hpt5 = Math.floor(vidac5.textContent - danototal);
         hpt6 = Math.floor(vidac6.textContent - danototal);
         hpt7 = Math.floor(vidac7.textContent - danototal);
+        est.textContent = "Ataque Forte";
+        est.style.color = "#a0ff08";
     }
 
     else if (numdado == 19 || numdado == 20){
@@ -1490,17 +1918,22 @@ function dano() {
         hpt5 = Math.floor(vidac5.textContent - danototal - 15);
         hpt6 = Math.floor(vidac6.textContent - danototal - 15);
         hpt7 = Math.floor(vidac7.textContent - danototal - 15);
+        est.textContent = "Ataque Perfeito";
+        est.style.color = "#008013";
     }
 }
 
 cta1.style.animationName = "shake";
 
 function trocar() {
+    ini = 0;
     danototal = 0;
     personagem();
     roll.style.visibility = "visible";
+    estatq.style.display = "none";
     if(roll.style.display == "none") {
-    roll.style.display = "block";
+        roll.style.display = "block";
+        estatq.style.display = "none";
     }
     if(turnoa) {
     if(inc1.style.display == "flex" || inc2.style.display == "flex" || inc3.style.display == "flex" || inc4.style.display == "flex" || inc5.style.display == "flex") {
@@ -1680,6 +2113,7 @@ function rolar() {
     window.removeEventListener("contextmenu", btd, false);
     window.addEventListener("contextmenu", rmvbtd, false);
     roll.style.visibility = "hidden";
+    estatq.style.display = "flex";
     numdado = Math.floor(Math.random() * 20) + 1;
     rolln.textContent = numdado;
     if(turnoa && usandoc == false) {
@@ -1690,23 +2124,31 @@ function rolar() {
             atqcanhao();
         }, 1000);
     }
-    else {
+    else if(usandoci == true) {
+        atqcanhao();
+    }
+    else if(usandoci == false) {
         danoinimigo();
     }
-    dado.style.display = "block";
+    dado.style.display = "flex";
     setTimeout(() => {
         dado.style.display = "none";
         for (let i = 0; i < cartasi.length; i++) {
             if(danototalini > 135 && ini == i + 1) {
                 danototalini = 135;
-                danoini[i].textContent = 135;
+                danoini[i].textContent = danototalini;
             } 
         }
         amuletos();
         window.addEventListener("contextmenu", btd, false);
         if(!turnoa) {
-            sons[2].currentTime = 0.5;
-            sons[2].play();
+            if(usandoci == false) {
+                sons[2].currentTime = 0.5;
+                sons[2].play();
+            }
+            else {
+                sons[3].play();
+            }
         }
         else {
             if(usandoc == false) {
@@ -1785,6 +2227,7 @@ function rolar() {
     }
         if(turnoa) {
             roll.style.display = "block";
+            estatq.style.display = "none";
         switch (true) {
             case mirac1.style.display == "block":
                     vidac1.textContent = hpt;
@@ -1816,31 +2259,36 @@ function rolar() {
             break;
         }
     }
-    else {
+    else if(usandoci == false) {
         danototalini = 0;
         switch (alvo) {
             case 1:
                 roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
                     vidac1a.textContent = hpp;
                     limp();
             break;
             case 2:
                 roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
                     vidac2a.textContent = hpp2;
                     limp();
             break;
             case 3:
                 roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
                     vidac3a.textContent = hpp3;
                     limp();
             break;
             case 4:
                 roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
                     vidac4a.textContent = hpp4;
                     limp();
             break;
             case 5:
                 roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
                     vidac5a.textContent = hpp5;
                     limp();
             break;
