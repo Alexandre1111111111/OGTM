@@ -1,4 +1,5 @@
 function danoinimigo() {
+    if(essencia == false) {
     switch(ini) {
     case 1:
         danototalini = danoini[0].textContent;
@@ -22,6 +23,33 @@ function danoinimigo() {
         danototalini = danoini[6].textContent;
     break;
 }
+    }
+    else {
+        switch(ini) {
+            case 1:
+                danototalini = danoini[0].textContent / 2;
+            break;
+            case 2:
+                danototalini = danoini[1].textContent / 2;
+            break;
+            case 3:
+                danototalini = danoini[2].textContent / 2;
+            break;
+            case 4:
+                danototalini = danoini[3].textContent / 2;
+            break;
+            case 5:
+                danototalini = danoini[4].textContent / 2;
+            break;
+            case 6:
+                danototalini = danoini[5].textContent / 2;
+            break;
+            case 7:
+                danototalini = danoini[6].textContent / 2;
+            break;
+        }
+    }
+
 if(usandoci == false) {
 if(numdado == 1 || numdado == 2 || numdado == 3){
     hpp = vidas[0].textContent;

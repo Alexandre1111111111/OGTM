@@ -421,6 +421,54 @@ resume.addEventListener("click", () => {
 })
 
 function turnoini() {
+    setInterval(() => {
+        switch (true) {
+            case cn1i.style.display == "flex" && ini == 1:
+                for (let i = 0; i < miras.length; i++) {
+                   miras[i].style.display = "none"; 
+                }
+                usandoci = true;
+            break;
+            case cn2i.style.display == "flex" && ini == 2:
+                for (let i = 0; i < miras.length; i++) {
+                    miras[i].style.display = "none"; 
+                 }
+                usandoci = true;
+            break;
+            case cn3i.style.display == "flex" && ini == 3:
+                for (let i = 0; i < miras.length; i++) {
+                    miras[i].style.display = "none"; 
+                 }
+                usandoci = true;
+            break;
+            case cn4i.style.display == "flex" && ini == 4:
+                for (let i = 0; i < miras.length; i++) {
+                    miras[i].style.display = "none"; 
+                 }
+                usandoci = true;
+            break;
+            case cn5i.style.display == "flex" && ini == 5:
+                for (let i = 0; i < miras.length; i++) {
+                    miras[i].style.display = "none"; 
+                 }
+                usandoci = true;
+            break;
+            case cn6i.style.display == "flex" && ini == 6:
+                for (let i = 0; i < miras.length; i++) {
+                    miras[i].style.display = "none"; 
+                 }
+                usandoci = true;
+            break;
+            case cn7i.style.display == "flex" && ini == 7:
+                for (let i = 0; i < miras.length; i++) {
+                    miras[i].style.display = "none"; 
+                 }
+                usandoci = true;
+            break;
+            default:
+                usandoci = false;
+        }
+    }, 10)
     habatv = 0;
     afunali();
     turnoa = false;

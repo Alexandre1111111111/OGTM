@@ -324,7 +324,7 @@ setInterval(() => {
     }
     switch(per) {
         case 1:
-            hab.style.backgroundColor = "#8ee6a6";
+            hab.style.backgroundColor = "#13801a";
             ichab.src = "https://cdn-icons-png.flaticon.com/512/855/855059.png";
             cooldown.textContent = cool1;
         break;
@@ -362,6 +362,14 @@ setInterval(() => {
         danoc5a.textContent = Math.floor(dans5);
     }
     personagem();
+    for (let i = 0; i < dns.length; i++) {
+        if(dns[i].textContent > danos[i]) {
+            dns[i].style.color = "#006e06";
+        }
+        else {
+            dns[i].style.color = "#000";
+        }
+    }
     if(cooldown.textContent != "0") {
         hab.removeEventListener("click", habilidades);
         cool.style.display = "flex";
@@ -370,7 +378,68 @@ setInterval(() => {
         hab.addEventListener("click", habilidades);
         cool.style.display = "none";
     }
+    if(quantm.textContent == 0) {
+        kit.removeEventListener("click", kitf);
+    }
+    else {
+        kit.addEventListener("click", kitf);
+    }
+    if(quantr.textContent == 0) {
+        reparo.removeEventListener("click", reparof);
+    }
+    else {
+        reparo.addEventListener("click", reparof);
+    }
+    if(quanta.textContent == 0) {
+        auriana.removeEventListener("click", aurianaf);
+    }
+    else {
+        auriana.addEventListener("click", aurianaf);
+    }
+    if(quantc.textContent == 0) {
+        cristais.removeEventListener("click", cristaisf);
+    }
+    else {
+        cristais.addEventListener("click", cristaisf);
+    }
+    if(quants.textContent == 0) {
+        sopro.removeEventListener("click", soprof);
+    }
+    else {
+        sopro.addEventListener("click", soprof);
+    }
+    if(quante.textContent == 0) {
+        explosiva.removeEventListener("click", explosivaf);
+    }
+    else {
+        explosiva.addEventListener("click", explosivaf);
+    }
+    if(quantf.textContent == 0) {
+        ferro.removeEventListener("click", ferrof);
+    }
+    else {
+        ferro.addEventListener("click", ferrof);
+    }
+    if(quanti.textContent == 0) {
+        incendiario.removeEventListener("click", incendiariof);
+    }
+    else {
+        incendiario.addEventListener("click", incendiariof);
+    }
 }, 10)
+
+setInterval(() => {
+    if(vidabarcoa.textContent * 1 > vidaa * 1) {
+        vidabarcoa.textContent = vidaa;
+        vidabarcoa.style.color = "#fff";
+    }
+    for (let i = 0; i < vidas.length; i++) {
+    if(vidas[i].textContent * 1 > vds[i] * 1) {
+        vidas[i].style.color = "#000";
+        vidas[i].textContent = vds[i];
+    }
+}
+}, 50)
 
 setInterval(() => {
     if(vidabarcoi.textContent <= 0) {
@@ -378,30 +447,5 @@ setInterval(() => {
     }
     if(vidabarcoa.textContent <= 0) {
         vidabarcoa.textContent = 0;
-    }
-    switch (true) {
-        case cn1i.style.display == "flex" && ini == 1:
-            usandoci = true;
-        break;
-        case cn2i.style.display == "flex" && ini == 2:
-            usandoci = true;
-        break;
-        case cn3i.style.display == "flex" && ini == 3:
-            usandoci = true;
-        break;
-        case cn4i.style.display == "flex" && ini == 4:
-            usandoci = true;
-        break;
-        case cn5i.style.display == "flex" && ini == 5:
-            usandoci = true;
-        break;
-        case cn6i.style.display == "flex" && ini == 6:
-            usandoci = true;
-        break;
-        case cn7i.style.display == "flex" && ini == 7:
-            usandoci = true;
-        break;
-        default:
-            usandoci = false;
     }
 }, 0)
