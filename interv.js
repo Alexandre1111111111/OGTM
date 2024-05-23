@@ -8,9 +8,32 @@ setInterval(() => {
 }, 50)
 setInterval(() => {
     for(let i = 0; i < vidasi.length; i++) {
-    if(vidasi[i].textContent < 300) {
+    if(vidasi[i].textContent < vidat) {
         vidasi[i].style.color ="#e31212";
     }
+}
+switch (true) {
+    case cartasi[0].style.animationName == "shake":
+        ini = 1;
+    break;
+    case cartasi[1].style.animationName == "shake":
+        ini = 2;
+    break;
+    case cartasi[2].style.animationName == "shake":
+        ini = 3;
+    break;
+    case cartasi[3].style.animationName == "shake":
+        ini = 4;
+    break;
+    case cartasi[4].style.animationName == "shake":
+        ini = 5;
+    break;
+    case cartasi[5].style.animationName == "shake":
+        ini = 6;
+    break;
+    case cartasi[6].style.animationName == "shake":
+        ini = 7;
+    break;
 }
 }, 10)
 
@@ -370,6 +393,14 @@ setInterval(() => {
             dns[i].style.color = "#000";
         }
     }
+    for (let i = 0; i < dns.length; i++) {
+        if(danoini[i].textContent > danost[i]) {
+            danoini[i].style.color = "#006e06";
+        }
+        else {
+            danoini[i].style.color = "#000";
+        }
+    }
     if(cooldown.textContent != "0") {
         hab.removeEventListener("click", habilidades);
         cool.style.display = "flex";
@@ -426,6 +457,7 @@ setInterval(() => {
     else {
         incendiario.addEventListener("click", incendiariof);
     }
+    numdado = rolln.textContent;
 }, 10)
 
 setInterval(() => {
@@ -447,5 +479,16 @@ setInterval(() => {
     }
     if(vidabarcoa.textContent <= 0) {
         vidabarcoa.textContent = 0;
+    }
+    if(inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex" && inci7.style.display == "flex") {
+        vtdrct.style.display = "flex";
+        vez.style.display = "none";
+        vt = true;
+    }
+    if(inc1.style.display == "flex" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex") {
+        vtdrct.style.display = "flex";
+        vez.style.display = "none";
+        vt = true;
+        defvt.textContent = "Derrota";
     }
 }, 0)

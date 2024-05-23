@@ -131,10 +131,50 @@ function use() {
         break;
         case nomeitm.textContent == "Bebida Auriana":
             quanta.textContent--;
+            duraaur = 2;
+            auriano = true;
+            switch (per) {
+                case 1:
+                    dans1 *= 1.30;
+                    utili = 1;
+                break;
+                case 2:
+                    dans2 *= 1.30;
+                    utili = 2;
+                break;
+                case 3:
+                    dans3 *= 1.30;
+                    utili = 3;
+                break;
+                case 4:
+                    dans4 *= 1.30;
+                    utili = 4;
+                break;
+                case 5:
+                    dans5 *= 1.30;
+                    utili = 5;
+                break;
+            }
         break;
         case nomeitm.textContent == "Essência de Cristais Norlândeses":
+            db1.style.display = "block";
+            imgdb.src = "https://cdn-icons-png.flaticon.com/512/912/912791.png";
+            db1.style.backgroundColor = "#0f191a";
             quantc.textContent--;
+            db1p2.style.display = "block";
+            imgdbp2.src = "https://cdn-icons-png.flaticon.com/512/912/912791.png";
+            db1p2.style.backgroundColor = "#0f191a";
+            db1p3.style.display = "block";
+            imgdbp3.src = "https://cdn-icons-png.flaticon.com/512/912/912791.png";
+            db1p3.style.backgroundColor = "#0f191a";
+            db1p4.style.display = "block";
+            imgdbp4.src = "https://cdn-icons-png.flaticon.com/512/912/912791.png";
+            db1p4.style.backgroundColor = "#0f191a";
+            db1p5.style.display = "block";
+            imgdbp5.src = "https://cdn-icons-png.flaticon.com/512/912/912791.png";
+            db1p5.style.backgroundColor = "#0f191a";
             essencia = true;
+            duracri = 3;
         break;
         case nomeitm.textContent == "Frasco de Sopro Gélido":
             quants.textContent--;
@@ -144,23 +184,47 @@ function use() {
         break;
         case nomeitm.textContent == "Essência de Ferro Derretido":
             quantf.textContent--;
+            for(let i = 0; i < armas.length; i++) {
+                switch (true) {
+                    case armas[i] == punhal && per == i + 1:
+                        laminau = armasb[0];
+                    break;
+                    case armas[i] == rapieira && per == i + 1:
+                        laminau = armasb[1];
+                    break;
+                    case armas[i] == sabre && per == i + 1:
+                        laminau = armasb[2];
+                    break;
+                    case armas[i] == machado && per == i + 1:
+                        laminau = armasb[3];
+                    break;
+                    case armas[i] == adaga && per == i + 1:
+                        laminau = armasb[4];
+                    break;
+                    case armas[i] == foice && per == i + 1:
+                        laminau = armasb[5];
+                    break;
+                }
+            }
+            if(laminau != 0) {
             switch (per) {
                 case 1:
-                    danototalp1 *= 2;
+                    dans1 = danoc1a.textContent * 1 + laminau;
                 break;
                 case 2:
-                    danototalp2 *= 2;
+                    dans2 = danoc2a.textContent * 1 + laminau;
                 break;
                 case 3:
-                    danototalp3 *= 2;
+                    dans3 = danoc3a.textContent * 1 + laminau;
                 break;
                 case 4:
-                    danototalp4 *= 2;
+                    dans4 = danoc4a.textContent * 1 + laminau;
                 break;
                 case 5:
-                    danototalp5 *= 2;
+                    dans5 = danoc5a.textContent * 1 + laminau;
                 break;
             }
+        }
         break;
         case nomeitm.textContent == "Virote Incendiário":
             quanti.textContent--;

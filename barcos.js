@@ -61,6 +61,7 @@ else {
         est.style.color = "#008013";
     }
 }
+usandoci = false;
 }
 function afunali() {
     if(nvila == 3) {

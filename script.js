@@ -54,10 +54,12 @@ function lockcn() {
 }
 
 function limpcn() {
-    cn1.style.display = "none";
-    cn2.style.display = "none";
-    cn3.style.display = "none";
-    cn4.style.display = "none";
+    if(veztxt.textContent == "Escolha o Operador") {
+        cn1.style.display = "none";
+        cn2.style.display = "none";
+        cn3.style.display = "none";
+        cn4.style.display = "none";
+    }
 }
 
 function limp() {
@@ -131,6 +133,9 @@ atacar.addEventListener("click", rvmatq);
 
 function trocatxt() {
     switch(true) {
+        case vt == true:
+            vez.style.display = "none";
+        break;
         case mrcanhao:
             vez.style.backgroundColor = "rgba(0, 50, 155, 0.842)";
             veztxt.textContent = "Escolha o Operador";
@@ -291,29 +296,6 @@ function personagem() {
 }
 
 function inimigo() {
-    switch (true) {
-        case cartasi[0].style.animationName == "shake":
-            ini = 1;
-        break;
-        case cartasi[1].style.animationName == "shake":
-            ini = 2;
-        break;
-        case cartasi[2].style.animationName == "shake":
-            ini = 3;
-        break;
-        case cartasi[3].style.animationName == "shake":
-            ini = 4;
-        break;
-        case cartasi[4].style.animationName == "shake":
-            ini = 5;
-        break;
-        case cartasi[5].style.animationName == "shake":
-            ini = 6;
-        break;
-        case cartasi[6].style.animationName == "shake":
-            ini = 7;
-        break;
-    }
     switch(ini) {
         case 1:
             danototalini = danoini[0].textContent;
@@ -420,55 +402,64 @@ resume.addEventListener("click", () => {
     }
 })
 
+function itv() {
+    
+}
+
 function turnoini() {
     setInterval(() => {
+        for (let i = 0; i < miras.length; i++) {
         switch (true) {
             case cn1i.style.display == "flex" && ini == 1:
-                for (let i = 0; i < miras.length; i++) {
                    miras[i].style.display = "none"; 
-                }
                 usandoci = true;
             break;
             case cn2i.style.display == "flex" && ini == 2:
-                for (let i = 0; i < miras.length; i++) {
                     miras[i].style.display = "none"; 
-                 }
                 usandoci = true;
             break;
             case cn3i.style.display == "flex" && ini == 3:
-                for (let i = 0; i < miras.length; i++) {
                     miras[i].style.display = "none"; 
-                 }
                 usandoci = true;
             break;
             case cn4i.style.display == "flex" && ini == 4:
-                for (let i = 0; i < miras.length; i++) {
                     miras[i].style.display = "none"; 
-                 }
                 usandoci = true;
             break;
             case cn5i.style.display == "flex" && ini == 5:
-                for (let i = 0; i < miras.length; i++) {
                     miras[i].style.display = "none"; 
-                 }
                 usandoci = true;
             break;
             case cn6i.style.display == "flex" && ini == 6:
-                for (let i = 0; i < miras.length; i++) {
                     miras[i].style.display = "none"; 
-                 }
                 usandoci = true;
             break;
             case cn7i.style.display == "flex" && ini == 7:
-                for (let i = 0; i < miras.length; i++) {
                     miras[i].style.display = "none"; 
-                 }
                 usandoci = true;
             break;
             default:
                 usandoci = false;
         }
+    }
     }, 10)
+    if(essencia == true) {
+        duracri--;
+    }
+    if(duracri == 0) {
+        db1.style.display = "none";
+        db1p2.style.display = "none";
+        db1p3.style.display = "none";
+        db1p4.style.display = "none";
+        db1p5.style.display = "none";
+        essencia = false;
+    }
+    if(auriano == true) {
+        duraaur--;
+    }
+    if(duraaur == 0) {
+        auriano = false;
+    }
     habatv = 0;
     afunali();
     turnoa = false;
@@ -1140,22 +1131,43 @@ function rolar() {
     else if(turnoa && usandoc == false && habatv == 1) {
         Comm();
     }
+    else if(usandoci == true) {
+        danoinimigo();
+        atqcanhao();
+    }
+    else if(!turnoa) {
+        danoinimigo();
+    }
     else if(usandoc == true) {
         setTimeout(() => {
             atqcanhao();
         }, 1000);
     }
-    else if(usandoci == true) {
-        atqcanhao();
-    }
-    else if(usandoci == false && !turnoa) {
-        danoinimigo();
-    }
+    if(usandoc == false) {
+    if(auriano == false) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         est.textContent = "Ataque Falho";
         est.style.color = "#fc1303";
     }
-    else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
+    }
+    else if(per == utili) {
+        if(numdado == 1 || numdado == 2 || numdado == 3){
+        est.textContent = "Ataque Fraco";
+        est.style.color = "#f7847c";
+        }
+    }
+    else {
+        est.textContent = "Ataque Falho";
+        est.style.color = "#fc1303";
+    }
+    }
+    else {
+        if(numdado == 1 || numdado == 2 || numdado == 3){
+        est.textContent = "Ataque Leve";
+        est.style.color = "#f7847c";
+        }
+    }
+    if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
         est.textContent = "Ataque Fraco";
         est.style.color = "#f7847c";
     }
