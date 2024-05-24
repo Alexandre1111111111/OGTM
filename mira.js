@@ -1,4 +1,5 @@
 function c1() {
+    if(area == false) {
     if(incis[0].style.display != "flex") {
     mirac1.style.display = "block";
     mirac2.style.display = "none";
@@ -13,8 +14,25 @@ function c1() {
         cartasi[0].removeEventListener("click", apcdado);
     }
 }
+else {
+    if(incis[0].style.display != "flex") {
+        mirac1.style.display = "block";
+        mirac2.style.display = "block";
+        mirac3.style.display = "none";
+        mirac4.style.display = "none";
+        mirac5.style.display = "none";
+        mirac6.style.display = "none";
+        mirac7.style.display = "none";
+        ttl();
+        }
+        else {
+            cartasi[0].removeEventListener("click", apcdado);
+        }
+}
+}
 
 function c2() {
+    if(area == false) {
     if(incis[1].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "block";
@@ -29,7 +47,24 @@ else {
     cartasi[1].removeEventListener("click", apcdado);
 }
 }
+else {
+    if(incis[0].style.display != "flex") {
+        mirac1.style.display = "block";
+        mirac2.style.display = "block";
+        mirac3.style.display = "block";
+        mirac4.style.display = "none";
+        mirac5.style.display = "none";
+        mirac6.style.display = "none";
+        mirac7.style.display = "none";
+        ttl();
+        }
+        else {
+            cartasi[0].removeEventListener("click", apcdado);
+        }
+}
+}
 function c3() {
+    if(area == false) {
     if(incis[2].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
@@ -44,7 +79,24 @@ else {
     cartasi[2].removeEventListener("click", apcdado);
 }
 }
+else {
+    if(incis[0].style.display != "flex") {
+        mirac1.style.display = "none";
+        mirac2.style.display = "block";
+        mirac3.style.display = "block";
+        mirac4.style.display = "block";
+        mirac5.style.display = "none";
+        mirac6.style.display = "none";
+        mirac7.style.display = "none";
+        ttl();
+        }
+        else {
+            cartasi[0].removeEventListener("click", apcdado);
+        }
+}
+}
 function c4() {
+    if(area == false) {
     if(incis[3].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
@@ -59,7 +111,24 @@ else {
     cartasi[3].removeEventListener("click", apcdado);
 }
 }
+else {
+    if(incis[0].style.display != "flex") {
+        mirac1.style.display = "none";
+        mirac2.style.display = "none";
+        mirac3.style.display = "block";
+        mirac4.style.display = "block";
+        mirac5.style.display = "block";
+        mirac6.style.display = "none";
+        mirac7.style.display = "none";
+        ttl();
+        }
+        else {
+            cartasi[0].removeEventListener("click", apcdado);
+        }
+}
+}
 function c5() {
+    if(area == false) {
     if(incis[4].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
@@ -74,7 +143,24 @@ else {
     cartasi[4].removeEventListener("click", apcdado);
 }
 }
+else {
+    if(incis[0].style.display != "flex") {
+        mirac1.style.display = "none";
+        mirac2.style.display = "none";
+        mirac3.style.display = "none";
+        mirac4.style.display = "block";
+        mirac5.style.display = "block";
+        mirac6.style.display = "block";
+        mirac7.style.display = "none";
+        ttl();
+        }
+        else {
+            cartasi[0].removeEventListener("click", apcdado);
+        }
+}
+}
 function c6() {
+    if(area == false) {
     if(incis[5].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
@@ -89,7 +175,24 @@ else {
     cartasi[5].removeEventListener("click", apcdado);
 }
 }
+else {
+    if(incis[0].style.display != "flex") {
+        mirac1.style.display = "none";
+        mirac2.style.display = "none";
+        mirac3.style.display = "none";
+        mirac4.style.display = "none";
+        mirac5.style.display = "block";
+        mirac6.style.display = "block";
+        mirac7.style.display = "block";
+        ttl();
+        }
+        else {
+            cartasi[0].removeEventListener("click", apcdado);
+        }
+}
+}
 function c7() {
+    if(area == false) {
     if(incis[6].style.display != "flex") {
     mirac1.style.display = "none";
     mirac2.style.display = "none";
@@ -102,6 +205,22 @@ function c7() {
 }
 else {
     cartasi[6].removeEventListener("click", apcdado);
+}
+}
+else {
+    if(incis[0].style.display != "flex") {
+        mirac1.style.display = "none";
+        mirac2.style.display = "none";
+        mirac3.style.display = "none";
+        mirac4.style.display = "none";
+        mirac5.style.display = "none";
+        mirac6.style.display = "block";
+        mirac7.style.display = "block";
+        ttl();
+        }
+        else {
+            cartasi[0].removeEventListener("click", apcdado);
+        }
 }
 }
 function alvos() {

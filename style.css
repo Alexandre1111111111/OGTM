@@ -1047,7 +1047,7 @@ html {
     color: #fff;
 }
 
-.debuffp2, .debuffp4 {
+.debuffp2, .debuffp4, .debuffi1, .debuffi2, .debuffi3, .debuffi4, .debuffi5, .debuffi6, .debuffi7 {
     width: 3vh;
     height: 12vh;
     position: absolute;
@@ -1063,7 +1063,7 @@ html {
     margin-top: 1vh;
 }
 
-.db1, .db1p2, .db1p3, .db1p4, .db1p5 {
+.db1, .db1p2, .db1p3, .db1p4, .db1p5, .db1i1, .db1i2, .db1i3, .db1i4, .db1i5, .db1i6, .db1i7 {
     width: 3vh;
     height: 3vh;
     border: 0.3vh solid #fff;
@@ -1073,7 +1073,7 @@ html {
     justify-content: center;
 }
 
-.db1 img, .db1p2 img, .db1p3 img, .db1p4 img, .db1p5 img{
+.db1 img, .db1p2 img, .db1p3 img, .db1p4 img, .db1p5 img, .db1i1 img, .db1i2 img, .db1i3 img, .db1i4 img, .db1i5 img, .db1i6 img, .db1i7 img {
     height: 3vh;
 }
 

@@ -458,6 +458,50 @@ setInterval(() => {
         incendiario.addEventListener("click", incendiariof);
     }
     numdado = rolln.textContent;
+    if(durafrio == 0) {
+        gelo = false;
+        db1i1.style.display = "none";
+        db1i2.style.display = "none";
+        db1i3.style.display = "none";
+        db1i4.style.display = "none";
+        db1i5.style.display = "none";
+        db1i6.style.display = "none";
+        db1i7.style.display = "none";
+    }
+    else {
+    switch (true) {
+        case imgdbi1.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac1.style.display == "block":
+            gelo = true;
+            ttl();
+        break;
+        case imgdbi2.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac2.style.display == "block":
+            gelo = true;
+            ttl();
+        break;
+        case imgdbi3.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac3.style.display == "block":
+            gelo = true;
+            ttl();
+        break;
+        case imgdbi4.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac4.style.display == "block":
+            gelo = true;
+            ttl();
+        break;
+        case imgdbi5.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac5.style.display == "block":
+            gelo = true;
+            ttl();
+        break;
+        case imgdbi6.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac6.style.display == "block":
+            gelo = true;
+            ttl();
+        break;
+        case imgdbi7.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac7.style.display == "block":
+            gelo = true;
+            ttl();
+        break;
+        default:
+            gelo = false;
+    }
+}
 }, 10)
 
 setInterval(() => {

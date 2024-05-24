@@ -178,9 +178,49 @@ function use() {
         break;
         case nomeitm.textContent == "Frasco de Sopro Gélido":
             quants.textContent--;
+            mirando = true;
+            vez.style.top = "40vh";
+            mrcanhao = false;
+            vez.style.backgroundColor = "rgba(255, 0, 0, 0.842)";
+            area = true;
+            durafrio = 3;
+            mira();
         break;
         case nomeitm.textContent == "Bala Explosiva":
-            quante.textContent--;
+            for(let i = 0; i < armasf.length; i++) {
+            switch(per) {
+                case 1:
+                    if(armas[0] == armasf[i]) {
+                    quante.textContent--;
+                    expl = true;
+                    }
+                break;
+                case 2:
+                    if(armas[1] == armasf[i]) {
+                    quante.textContent--;
+                    expl = true;
+                    }
+                break;
+                case 3:
+                    if(armas[2] == armasf[i]) {
+                    quante.textContent--;
+                    expl = true;
+                    }
+                break;
+                case 4:
+                    if(armas[3] == armasf[i]) {
+                    quante.textContent--;
+                    expl = true;
+                    }
+                break;
+                case 5:
+                    if(armas[4] == armasf[i]) {
+                    quante.textContent--;
+                    expl = true;
+                    }
+                break;
+            }
+        }
         break;
         case nomeitm.textContent == "Essência de Ferro Derretido":
             quantf.textContent--;

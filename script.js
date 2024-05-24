@@ -253,44 +253,69 @@ setInterval(trocatxt, 10);
 function personagem() {
     switch(per) {
         case 1:
+            if(gelo == false) {
             if(habatv == 0) {
                 danototal = dans1;
             }
             else {
                 danototal = dans1 * 1.50;
             }
+        }
+        else {
+            danototal = dans1 * 1.30;
+        }
         break;
         case 2:
+            if(gelo == false) {
             if(habatv == 0) {
                 danototal = dans2;
             }
             else {
                 danototal = danototalp2;
             }
+        }
+        else {
+            danototal = dans2 * 1.30;
+        }
         break;
         case 3:
+            if(gelo == false) {
             if(habatv == 0) {
                 danototal = dans3;
             }
             else {
                 danototal = danototalp3;
             }
+        }
+        else {
+            danototal = dans3 * 1.30;
+        }
         break;
         case 4:
+            if(gelo == false) {
             if(habatv == 0) {
                 danototal = dans4;
             }
             else {
                 danototal = danototalp4;
             }
+        }
+        else {
+            danototal = dans4 * 1.30;
+        }
         break;
         case 5:
+            if(gelo == false) {
             if(habatv == 0) {
                 danototal = dans5;
             }
             else {
                 danototal = danototalp5;
             }
+        }
+        else {
+            danototal = dans5 * 1.30;
+        }
         break;
     }
 }
@@ -345,6 +370,7 @@ fechar.addEventListener("click", () => {
 itens.addEventListener("click", ulitens);
 
 function atacando() {
+    area = false;
     if(habatv == 0 || per == 1) {
     atacar.addEventListener("click", rvmatq);
     if(mrcanhao == true) {
@@ -402,10 +428,6 @@ resume.addEventListener("click", () => {
     }
 })
 
-function itv() {
-    
-}
-
 function turnoini() {
     setInterval(() => {
         for (let i = 0; i < miras.length; i++) {
@@ -460,6 +482,7 @@ function turnoini() {
     if(duraaur == 0) {
         auriano = false;
     }
+    durafrio--;
     habatv = 0;
     afunali();
     turnoa = false;
@@ -912,6 +935,18 @@ function rmvbtd(e) {
 
 window.addEventListener("contextmenu", btd, false);
 
+function frio() {
+    for(let i = 0; i < db1s.length; i++) {
+        if(miras[i].style.display == "block") {
+            db1s[i].style.display = "block";
+            imgdbs[i].src = "https://cdn-icons-png.flaticon.com/512/1553/1553283.png";
+            db1s[i].style.backgroundColor = "#0f191a";
+        }
+    }
+    mirando = false;
+    limp();
+}
+
 function apcdado() {
         cartai1.removeEventListener("mouseover", c1);
         cartai2.removeEventListener("mouseover", c2);
@@ -920,10 +955,15 @@ function apcdado() {
         cartai5.removeEventListener("mouseover", c5);
         cartai6.removeEventListener("mouseover", c6);
         cartai7.removeEventListener("mouseover", c7);
+        if(area == false) {
         if(mirac1.style.display == "block" || mirac2.style.display == "block" || mirac3.style.display == "block" || mirac4.style.display == "block" || mirac5.style.display == "block" || mirac6.style.display == "block" || mirac7.style.display == "block") {
             dado.style.display = "flex";
         }
     }
+    else {
+        frio();
+    }
+}
 
 for (let i = 0; i < cartasi.length; i++) {
     cartasi[i].addEventListener("click", apcdado);
