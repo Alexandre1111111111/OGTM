@@ -5,7 +5,7 @@ setInterval(() => {
         btns.style.display = "block";
         armaatl.style.display = "flex";
     }
-}, 50)
+}, 0)
 setInterval(() => {
     for(let i = 0; i < vidasi.length; i++) {
     if(vidasi[i].textContent < vidat) {
@@ -409,55 +409,118 @@ setInterval(() => {
         hab.addEventListener("click", habilidades);
         cool.style.display = "none";
     }
-    if(quantm.textContent == 0) {
+
+    if(quantmp.textContent == 0) {
         kit.removeEventListener("click", kitf);
     }
     else {
         kit.addEventListener("click", kitf);
     }
-    if(quantr.textContent == 0) {
+    if(quantrp.textContent == 0) {
         reparo.removeEventListener("click", reparof);
     }
     else {
         reparo.addEventListener("click", reparof);
     }
-    if(quanta.textContent == 0) {
+    if(quantap.textContent == 0) {
         auriana.removeEventListener("click", aurianaf);
     }
     else {
         auriana.addEventListener("click", aurianaf);
     }
-    if(quantc.textContent == 0) {
+    if(quantcp.textContent == 0) {
         cristais.removeEventListener("click", cristaisf);
     }
     else {
         cristais.addEventListener("click", cristaisf);
     }
-    if(quants.textContent == 0) {
+    if(quantsp.textContent == 0) {
         sopro.removeEventListener("click", soprof);
     }
     else {
         sopro.addEventListener("click", soprof);
     }
-    if(quante.textContent == 0) {
+    if(quantep.textContent == 0) {
         explosiva.removeEventListener("click", explosivaf);
     }
     else {
         explosiva.addEventListener("click", explosivaf);
     }
-    if(quantf.textContent == 0) {
+    if(quantfp.textContent == 0) {
         ferro.removeEventListener("click", ferrof);
     }
     else {
         ferro.addEventListener("click", ferrof);
     }
-    if(quanti.textContent == 0) {
+    if(quantip.textContent == 0) {
         incendiario.removeEventListener("click", incendiariof);
     }
     else {
         incendiario.addEventListener("click", incendiariof);
     }
+
+    if(quantm.textContent == 0) {
+        kit2.removeEventListener("click", kitf2);
+    }
+    else {
+        kit2.addEventListener("click", kitf2);
+    }
+    if(quantr.textContent == 0) {
+        reparo2.removeEventListener("click", reparof2);
+    }
+    else {
+        reparo2.addEventListener("click", reparof2);
+    }
+    if(quanta.textContent == 0) {
+        auriana2.removeEventListener("click", aurianaf2);
+    }
+    else {
+        auriana2.addEventListener("click", aurianaf2);
+    }
+    if(quantc.textContent == 0) {
+        cristais2.removeEventListener("click", cristaisf2);
+    }
+    else {
+        cristais2.addEventListener("click", cristaisf2);
+    }
+    if(quants.textContent == 0) {
+        sopro2.removeEventListener("click", soprof2);
+    }
+    else {
+        sopro2.addEventListener("click", soprof2);
+    }
+    if(quante.textContent == 0) {
+        explosiva2.removeEventListener("click", explosivaf2);
+    }
+    else {
+        explosiva2.addEventListener("click", explosivaf2);
+    }
+    if(quantf.textContent == 0) {
+        ferro2.removeEventListener("click", ferrof2);
+    }
+    else {
+        ferro2.addEventListener("click", ferrof2);
+    }
+    if(quanti.textContent == 0) {
+        incendiario2.removeEventListener("click", incendiariof2);
+    }
+    else {
+        incendiario2.addEventListener("click", incendiariof2);
+    }
     numdado = rolln.textContent;
+    for (let i = 0; i < duraqmds.length; i++) {
+        if(duraqmds[i] == 0) {
+            queimando[i] = false;
+            db1i1.style.display = "none";
+            db1i2.style.display = "none";
+            db1i3.style.display = "none";
+            db1i4.style.display = "none";
+            db1i5.style.display = "none";
+            db1i6.style.display = "none";
+            db1i7.style.display = "none";
+            confogos[i].style.animationName = "apgfogo";
+        }
+    }
     if(durafrio == 0) {
         gelo = false;
         db1i1.style.display = "none";
@@ -467,6 +530,9 @@ setInterval(() => {
         db1i5.style.display = "none";
         db1i6.style.display = "none";
         db1i7.style.display = "none";
+        for (let i = 0; i < confogos.length; i++) {
+            confogos[i].style.animationName = "descongelado";
+        }
     }
     else {
     switch (true) {
@@ -502,6 +568,7 @@ setInterval(() => {
             gelo = false;
     }
 }
+defitens();
 }, 10)
 
 setInterval(() => {
@@ -528,6 +595,13 @@ setInterval(() => {
         vtdrct.style.display = "flex";
         vez.style.display = "none";
         vt = true;
+        for (let i = 2; i < musica.length; i++) {
+            musica[0].pause();
+            musica[i].pause();
+        }
+        if(musica[1].paused == true) {
+            musica[1].play();
+        }
     }
     if(inc1.style.display == "flex" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex") {
         vtdrct.style.display = "flex";

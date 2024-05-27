@@ -1053,6 +1053,9 @@ html {
     position: absolute;
     right: 1vh;
     top: 1vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .debuff, .debuffp3, .debuffp5 {
@@ -1061,6 +1064,9 @@ html {
     position: absolute;
     margin-left: 15vh;
     margin-top: 1vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .db1, .db1p2, .db1p3, .db1p4, .db1p5, .db1i1, .db1i2, .db1i3, .db1i4, .db1i5, .db1i6, .db1i7 {
@@ -1071,9 +1077,43 @@ html {
     display: none;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    margin: 0.25vh;
 }
 
 .db1 img, .db1p2 img, .db1p3 img, .db1p4 img, .db1p5 img, .db1i1 img, .db1i2 img, .db1i3 img, .db1i4 img, .db1i5 img, .db1i6 img, .db1i7 img {
+    height: 3vh;
+}
+
+.db2, .db2p2, .db2p3, .db2p4, .db2p5, .db2i1, .db2i2, .db2i3, .db2i4, .db2i5, .db2i6, .db2i7 {
+    width: 3vh;
+    height: 3vh;
+    border: 0.3vh solid #fff;
+    border-radius: 30vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0.25vh;
+}
+
+.db2 img, .db2p2 img, .db2p3 img, .db2p4 img, .db2p5 img, .db2i1 img, .db2i2 img, .db2i3 img, .db2i4 img, .db2i5 img, .db2i6 img, .db2i7 img {
+    height: 3vh;
+}
+
+.db3, .db3p2, .db3p3, .db3p4, .db3p5, .db3i1, .db3i2, .db3i3, .db3i4, .db3i5, .db3i6, .db3i7 {
+    width: 3vh;
+    height: 3vh;
+    border: 0.3vh solid #fff;
+    border-radius: 30vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0.25vh;
+}
+
+.db3 img, .db3p2 img, .db3p3 img, .db3p4 img, .db3p5 img, .db3i1 img, .db3i2 img, .db3i3 img, .db3i4 img, .db3i5 img, .db3i6 img, .db3i7 img {
     height: 3vh;
 }
 
@@ -1105,6 +1145,77 @@ html {
     font-size: 10vh;
     color: #e2a600;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.confogo1, .confogo2, .confogo3, .confogo4, .confogo5, .confogo6, .confogo7 {
+    width: 18vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 5;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.balaset {
+    height: 9vh;
+    width: 9vh;
+    background-color: #000;
+    position: absolute;
+    left: 70%;
+    border-top-right-radius: 5vh;
+    border-bottom-right-radius: 5vh;
+    border: 0.5vh solid #bb8b06;
+    bottom: 62%;
+    z-index: -1;
+    opacity: 0;
+    transition-duration: 0.3s;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.balaset img {
+    height: 7vh;
+    margin-right: 1.5vh;
+}
+
+@keyframes congelado {
+    0% {
+        box-shadow: inset 0vh 0vh 0vh 0vh #29b5ce;
+    }
+    100% {
+        box-shadow: inset 0vh 0vh 1vh 1vh #29b5ce;
+    }
+}
+
+@keyframes descongelado {
+    0% {
+        box-shadow: inset 0vh 0vh 1vh 1vh #29b5ce;
+    }
+    100% {
+        box-shadow: inset 0vh 0vh 0vh 0vh #29b5ce;
+    }
+}
+
+@keyframes fogo {
+    0% {
+        box-shadow: inset 0vh 0vh 0vh 0vh #29b5ce;
+    }
+    100% {
+        box-shadow: inset 0vh 0vh 1vh 1vh #d41818;
+    }
+}
+
+@keyframes apgfogo {
+    0% {
+        box-shadow: inset 0vh 0vh 1vh 1vh #d41818;
+    }
+    100% {
+        box-shadow: inset 0vh 0vh 0vh 0vh #29b5ce;
+    }
 }
 
 @media screen and (min-height: 700px) {

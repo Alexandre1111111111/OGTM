@@ -101,6 +101,7 @@ else if (numdado == 19 || numdado == 20){
 }
 
 function dano() {
+    if(expl == false) {
     if(auriano == false) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         hpt = vidac1.textContent;
@@ -184,5 +185,31 @@ else if (numdado == 19 || numdado == 20){
     hpt7 = Math.floor(vidac7.textContent - danototal - 15);
     est.textContent = "Ataque Perfeito";
     est.style.color = "#008013";
+}
+    }
+    else {
+        if(numdado <= 3){
+            hpt = vidac1.textContent;
+            hpt2 = vidac2.textContent;
+            hpt3 = vidac3.textContent;
+            hpt4 = vidac4.textContent;
+            hpt5 = vidac5.textContent;
+            hpt6 = vidac6.textContent;
+            hpt7 = vidac7.textContent;
+            est.textContent = "Ataque Falho";
+            est.style.color = "#fc1303";
+        }
+        else if (numdado > 3){ {
+            hpt = Math.floor(vidac1.textContent - 500);
+            hpt2 = Math.floor(vidac2.textContent - 500);
+            hpt3 = Math.floor(vidac3.textContent - 500);
+            hpt4 = Math.floor(vidac4.textContent - 500);
+            hpt5 = Math.floor(vidac5.textContent - 500);
+            hpt6 = Math.floor(vidac6.textContent - 500);
+            hpt7 = Math.floor(vidac7.textContent - 500);
+            est.textContent = "Ataque Arcetivo";
+            est.style.color = "#a0ff08";
+        }
+    }
 }
 }

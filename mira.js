@@ -48,7 +48,7 @@ else {
 }
 }
 else {
-    if(incis[0].style.display != "flex") {
+    if(incis[1].style.display != "flex") {
         mirac1.style.display = "block";
         mirac2.style.display = "block";
         mirac3.style.display = "block";
@@ -59,7 +59,7 @@ else {
         ttl();
         }
         else {
-            cartasi[0].removeEventListener("click", apcdado);
+            cartasi[1].removeEventListener("click", apcdado);
         }
 }
 }
@@ -80,7 +80,7 @@ else {
 }
 }
 else {
-    if(incis[0].style.display != "flex") {
+    if(incis[2].style.display != "flex") {
         mirac1.style.display = "none";
         mirac2.style.display = "block";
         mirac3.style.display = "block";
@@ -91,7 +91,7 @@ else {
         ttl();
         }
         else {
-            cartasi[0].removeEventListener("click", apcdado);
+            cartasi[2].removeEventListener("click", apcdado);
         }
 }
 }
@@ -112,7 +112,7 @@ else {
 }
 }
 else {
-    if(incis[0].style.display != "flex") {
+    if(incis[3].style.display != "flex") {
         mirac1.style.display = "none";
         mirac2.style.display = "none";
         mirac3.style.display = "block";
@@ -123,7 +123,7 @@ else {
         ttl();
         }
         else {
-            cartasi[0].removeEventListener("click", apcdado);
+            cartasi[3].removeEventListener("click", apcdado);
         }
 }
 }
@@ -144,7 +144,7 @@ else {
 }
 }
 else {
-    if(incis[0].style.display != "flex") {
+    if(incis[4].style.display != "flex") {
         mirac1.style.display = "none";
         mirac2.style.display = "none";
         mirac3.style.display = "none";
@@ -155,7 +155,7 @@ else {
         ttl();
         }
         else {
-            cartasi[0].removeEventListener("click", apcdado);
+            cartasi[4].removeEventListener("click", apcdado);
         }
 }
 }
@@ -176,7 +176,7 @@ else {
 }
 }
 else {
-    if(incis[0].style.display != "flex") {
+    if(incis[5].style.display != "flex") {
         mirac1.style.display = "none";
         mirac2.style.display = "none";
         mirac3.style.display = "none";
@@ -187,7 +187,7 @@ else {
         ttl();
         }
         else {
-            cartasi[0].removeEventListener("click", apcdado);
+            cartasi[5].removeEventListener("click", apcdado);
         }
 }
 }
@@ -208,7 +208,7 @@ else {
 }
 }
 else {
-    if(incis[0].style.display != "flex") {
+    if(incis[6].style.display != "flex") {
         mirac1.style.display = "none";
         mirac2.style.display = "none";
         mirac3.style.display = "none";
@@ -219,7 +219,7 @@ else {
         ttl();
         }
         else {
-            cartasi[0].removeEventListener("click", apcdado);
+            cartasi[6].removeEventListener("click", apcdado);
         }
 }
 }

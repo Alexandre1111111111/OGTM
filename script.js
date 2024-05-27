@@ -371,6 +371,9 @@ itens.addEventListener("click", ulitens);
 
 function atacando() {
     area = false;
+    if(expl == true) {
+        area = true;
+    }
     if(habatv == 0 || per == 1) {
     atacar.addEventListener("click", rvmatq);
     if(mrcanhao == true) {
@@ -469,20 +472,276 @@ function turnoini() {
         duracri--;
     }
     if(duracri == 0) {
-        db1.style.display = "none";
-        db1p2.style.display = "none";
-        db1p3.style.display = "none";
-        db1p4.style.display = "none";
-        db1p5.style.display = "none";
+        for (let i = 0; i < imgdbsa.length; i++) {
+        if(imgdbsa[i].src == "https://cdn-icons-png.flaticon.com/512/912/912791.png") {
+            db1sa[i].style.display = "none";
+        }
+        }
         essencia = false;
+        numbuffsp1--;
     }
     if(auriano == true) {
         duraaur--;
     }
-    if(duraaur == 0) {
-        auriano = false;
+    if(aurianop2 == true) {
+        duraaurp2--;
+    }
+    if(aurianop3 == true) {
+        duraaurp3--;
+    }
+    if(aurianop4 == true) {
+        duraaurp4--;
+    }
+    if(aurianop5 == true) {
+        duraaurp5--;
+    }
+    switch (true) {
+        case duraaur == 0 && imgdb.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1.style.display = "none";
+            auriano = false;
+            dans1 = Math.floor(dans1 * 0.77);
+            numbuffsp1--;
+        break;
+        case duraaur == 0 && imgdb2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2.style.display = "none";
+            auriano = false;
+            dans1 = Math.floor(dans1 * 0.77);
+            numbuffsp1--;
+        break;
+        case duraaur == 0 && imgdb3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3.style.display = "none";
+            auriano = false;
+            dans1 = Math.floor(dans1 * 0.77);
+            numbuffsp1--;
+        break;
+    }
+    switch (true) {
+        case duraaurp2 == 0 && imgdbp2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p2.style.display = "none";
+            aurianop2 = false;
+            dans2 = Math.floor(dans2 * 0.77);
+            numbuffsp2--;
+        break;
+        case duraaurp2 == 0 && imgdb2p2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p2.style.display = "none";
+            aurianop2 = false;
+            dans2 = Math.floor(dans2 * 0.77);
+            numbuffsp2--;
+        break;
+        case duraaurp2 == 0 && imgdb3p2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p2.style.display = "none";
+            aurianop2 = false;
+            dans2 = Math.floor(dans2 * 0.77);
+            numbuffsp2--;
+        break;
+    }
+    switch (true) {
+        case duraaurp3 == 0 && imgdbp3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p3.style.display = "none";
+            aurianop3 = false;
+            dans3 = Math.floor(dans3 * 0.77);
+            numbuffsp3--;
+        break;
+        case duraaurp3 == 0 && imgdb2p3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p3.style.display = "none";
+            aurianop3 = false;
+            dans3 = Math.floor(dans3 * 0.77);
+            numbuffsp3--;
+        break;
+        case duraaurp3 == 0 && imgdb3p3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p3.style.display = "none";
+            aurianop3 = false;
+            dans3 = Math.floor(dans3 * 0.77);
+            numbuffsp3--;
+        break;
+    }
+    switch (true) {
+        case duraaurp4 == 0 && imgdbp4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p4.style.display = "none";
+            aurianop4 = false;
+            dans4 = Math.floor(dans4 * 0.77);
+            numbuffsp4--;
+        break;
+        case duraaurp4 == 0 && imgdb2p4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p4.style.display = "none";
+            aurianop4 = false;
+            dans4 = Math.floor(dans4 * 0.77);
+            numbuffsp4--;
+        break;
+        case duraaurp4 == 0 && imgdb3p4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p4.style.display = "none";
+            aurianop4 = false;
+            dans4 = Math.floor(dans4 * 0.77);
+            numbuffsp4--;
+        break;
+    }
+    switch (true) {
+        case duraaurp5 == 0 && imgdbp5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p5.style.display = "none";
+            aurianop5 = false;
+            dans5 = Math.floor(dans5 * 0.77);
+            numbuffsp5--;
+        break;
+        case duraaurp5 == 0 && imgdb2p5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p5.style.display = "none";
+            aurianop5 = false;
+            dans5 = Math.floor(dans5 * 0.77);
+            numbuffsp5--;
+        break;
+        case duraaurp5 == 0 && imgdb3p5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p5.style.display = "none";
+            aurianop5 = false;
+            dans5 = Math.floor(dans5 * 0.77);
+            numbuffsp5--;
+        break;
+    }
+    if(aquecida == true) {
+        duraaquece--;
+    }
+    if(aquecidap2 == true) {
+        duraaquecep2--;
+    }
+    if(aquecidap3 == true) {
+        duraaquecep3--;
+    }
+    if(aquecidap4 == true) {
+        duraaquecep4--;
+    }
+    if(aquecidap5 == true) {
+        duraaquecep5--;
+    }
+    switch (true) {
+        case duraaquece == 0 && db == 1:
+            db1.style.display = "none";
+            aquecida = false;
+            dans1 = danoc1a.textContent - laminau;
+            numbuffsp1--;
+        break;
+        case duraaquece == 0 && db == 2:
+            db2.style.display = "none";
+            aquecida = false;
+            dans1 = danoc1a.textContent - laminau;
+            numbuffsp1--;
+        break;
+        case duraaquece == 0 && db == 3:
+            db3.style.display = "none";
+            aquecida = false;
+            dans1 = danoc1a.textContent - laminau;
+            numbuffsp1--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep2 == 0 && dbp2 == 1:
+            db1p2.style.display = "none";
+            aquecidap2 = false;
+            dans2 = danoc2a.textContent - laminau;
+            numbuffsp2--;
+        break;
+        case duraaquecep2 == 0 && dbp2 == 2:
+            db2p2.style.display = "none";
+            aquecidap2 = false;
+            dans2 = danoc2a.textContent - laminau;
+            numbuffsp2--;
+        break;
+        case duraaquecep2 == 0 && dbp2 == 3:
+            db3p2.style.display = "none";
+            aquecidap2 = false;
+            dans2 = danoc2a.textContent - laminau;
+            numbuffsp2--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep3 == 0 && dbp3 == 1:
+            db1p3.style.display = "none";
+            aquecidap3 = false;
+            dans3 = danoc3a.textContent - laminau;
+            numbuffsp3--;
+        break;
+        case duraaquecep3 == 0 && dbp3 == 2:
+            db2p3.style.display = "none";
+            aquecidap3 = false;
+            dans3 = danoc3a.textContent - laminau;
+            numbuffsp3--;
+        break;
+        case duraaquecep3 == 0 && dbp3 == 3:
+            db3p3.style.display = "none";
+            aquecidap3 = false;
+            dans3 = danoc3a.textContent - laminau;
+            numbuffsp3--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep4 == 0 && dbp4 == 1:
+            db1p4.style.display = "none";
+            aquecidap4 = false;
+            dans4 = danoc4a.textContent - laminau;
+            numbuffsp4--;
+        break;
+        case duraaquecep4 == 0 && dbp4 == 2:
+            db2p4.style.display = "none";
+            aquecidap4 = false;
+            dans4 = danoc4a.textContent - laminau;
+            numbuffsp4--;
+        break;
+        case duraaquecep4 == 0 && dbp4 == 3:
+            db3p4.style.display = "none";
+            aquecidap4 = false;
+            dans4 = danoc4a.textContent - laminau;
+            numbuffsp4--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep5 == 0 && dbp5 == 1:
+            db1p5.style.display = "none";
+            aquecidap5 = false;
+            dans5 = danoc5a.textContent - laminau;
+            numbuffsp5--;
+        break;
+        case duraaquecep5 == 0 && dbp5 == 2:
+            db2p5.style.display = "none";
+            aquecidap5 = false;
+            dans5 = danoc5a.textContent - laminau;
+            numbuffsp5--;
+        break;
+        case duraaquecep5 == 0 && dbp5 == 3:
+            db3p5.style.display = "none";
+            aquecidap5 = false;
+            dans5 = danoc5a.textContent - laminau;
+            numbuffsp5--;
+        break;
     }
     durafrio--;
+    for (let i = 0; i < duraqmds.length; i++) {
+        duraqmds[i]--;
+    }
+    if(queimando[0] == true) {
+        hpt = Math.floor(vidac1.textContent - 10);
+        vidac1.textContent = hpt;
+    }
+    if(queimando[1] == true) {
+        hpt2 = Math.floor(vidac2.textContent - 10);
+        vidac2.textContent = hpt2;
+    }
+    if(queimando[2] == true) {
+        hpt3 = Math.floor(vidac3.textContent - 10);
+        vidac3.textContent = hpt3;
+    }
+    if(queimando[3] == true) {
+        hpt4 = Math.floor(vidac4.textContent - 10);
+        vidac4.textContent = hpt4;
+    }
+    if(queimando[4] == true) {
+        hpt5 = Math.floor(vidac5.textContent - 10);
+        vidac5.textContent = hpt5;
+    }
+    if(queimando[5] == true) {
+        hpt6 = Math.floor(vidac6.textContent - 10);
+        vidac6.textContent = hpt6;
+    }
+    if(queimando[6] == true) {
+        hpt7 = Math.floor(vidac7.textContent - 10);
+        vidac7.textContent = hpt7;
+    }
     habatv = 0;
     afunali();
     turnoa = false;
@@ -906,6 +1165,31 @@ function btd(e) {
     limp();
     apcdado();
     rmvcnmira();
+    if(vez.style.top == "40vh") {
+    if(itembarco == true) {
+        quants.textContent++;
+    }
+    else {
+        quantsp.textContent++;
+        switch(per) {
+            case 1:
+                defsp1++;
+            break;
+            case 2:
+                defsp2++;
+            break;
+            case 3:
+                defsp3++;
+            break;
+            case 4:
+                defsp4++;
+            break;
+            case 5:
+                defsp5++;
+            break;
+        }
+    }
+}
     if(cool1 == 5 && per == 1) {
         cool1 = 0;
     }
@@ -938,9 +1222,12 @@ window.addEventListener("contextmenu", btd, false);
 function frio() {
     for(let i = 0; i < db1s.length; i++) {
         if(miras[i].style.display == "block") {
+            duraqmds[i] = -1;
+            queimando[i] = false;
             db1s[i].style.display = "block";
             imgdbs[i].src = "https://cdn-icons-png.flaticon.com/512/1553/1553283.png";
             db1s[i].style.backgroundColor = "#0f191a";
+            confogos[i].style.animationName = "congelado";
         }
     }
     mirando = false;
@@ -955,12 +1242,12 @@ function apcdado() {
         cartai5.removeEventListener("mouseover", c5);
         cartai6.removeEventListener("mouseover", c6);
         cartai7.removeEventListener("mouseover", c7);
-        if(area == false) {
+        if(area == false || expl == true) {
         if(mirac1.style.display == "block" || mirac2.style.display == "block" || mirac3.style.display == "block" || mirac4.style.display == "block" || mirac5.style.display == "block" || mirac6.style.display == "block" || mirac7.style.display == "block") {
             dado.style.display = "flex";
         }
     }
-    else {
+    else if(expl == false) {
         frio();
     }
 }
@@ -1228,6 +1515,23 @@ function rolar() {
     }
     dado.style.display = "flex";
     setTimeout(() => {
+        if(aquecida == true && per == 1 || aquecidap2 == true && per == 2 || aquecidap3 == true && per == 3 || aquecidap4 == true && per == 4 || aquecidap5 == true && per == 5) {
+        for(let i = 0; i < db1s.length; i++) {
+            if(numdado > 3 || aurianos[i] == true) {
+            if(miras[i].style.display == "block") {
+                db1s[i].style.display = "block";
+                imgdbs[i].src = "https://cdn-icons-png.flaticon.com/512/785/785116.png";
+                db1s[i].style.backgroundColor = "#ba0909";
+                confogos[i].style.animationName = "fogo";
+                queimando[i] = true;
+                duraqmds[i] = 3;
+                    }
+                }
+            }
+        }
+        balaset.style.display = "none";
+        balaset.style.left = "70%";
+        balaset.style.opacity = "0";
         dado.style.display = "none";
         for (let i = 0; i < cartasi.length; i++) {
             if(danototalini > 135 && ini == i + 1) {
@@ -1257,6 +1561,11 @@ function rolar() {
                 if(armas[0] == besta || armas[0] == molotov || armas[0] == granada || armas[0] == nock) {
                     muns[0]--;
                 }
+                if(expl == true) {
+                    setTimeout(() => {
+                        sons[4].play();
+                    }, 500)
+                }
                 audios[0].play();
             break;
             case 2:
@@ -1270,6 +1579,11 @@ function rolar() {
                     if(munp1 != 0) {
                         muns[1]--;
                     }
+                }
+                if(expl == true) {
+                    setTimeout(() => {
+                        sons[4].play();
+                    }, 500)
                 }
                 audios[1].play();
             break;
@@ -1285,6 +1599,11 @@ function rolar() {
                         muns[2]--;
                     }
                 }
+                if(expl == true) {
+                    setTimeout(() => {
+                        sons[4].play();
+                    }, 500)
+                }
                 audios[2].play();
             break;
             case 4:
@@ -1298,6 +1617,11 @@ function rolar() {
                     if(munp3 != 0) {
                         muns[3]--;
                     }
+                }
+                if(expl == true) {
+                    setTimeout(() => {
+                        sons[4].play();
+                    }, 500)
                 }
                 audios[3].play();
             break;
@@ -1313,6 +1637,11 @@ function rolar() {
                         muns[4]--;
                     }
                 }
+                if(expl == true) {
+                    setTimeout(() => {
+                        sons[4].play();
+                    }, 500)
+                }
                 audios[4].play();
             break;
         }
@@ -1321,40 +1650,41 @@ function rolar() {
         sons[3].play();
     }
     }
+    if(expl == false) {
         if(turnoa) {
             roll.style.display = "block";
             estatq.style.display = "none";
-        switch (true) {
-            case mirac1.style.display == "block":
-                    vidac1.textContent = hpt;
-                    limp();
-            break;
-            case mirac2.style.display == "block":
-                    vidac2.textContent = hpt2;
-                    limp();
-            break;
-            case mirac3.style.display == "block":
-                    vidac3.textContent = hpt3;
-                    limp();
-            break;
-            case mirac4.style.display == "block":
-                    vidac4.textContent = hpt4;
-                    limp();
-            break;
-            case mirac5.style.display == "block":
-                    vidac5.textContent = hpt5;
-                    limp();
-            break;
-            case mirac6.style.display == "block":
-                    vidac6.textContent = hpt6;
-                    limp();
-            break;
-            case mirac7.style.display == "block":
-                    vidac7.textContent = hpt7;
-                    limp();
-            break;
+            switch (true) {
+                case mirac1.style.display == "block":
+                        vidac1.textContent = hpt;
+                        limp();
+                break;
+                case mirac2.style.display == "block":
+                        vidac2.textContent = hpt2;
+                        limp();
+                break;
+                case mirac3.style.display == "block":
+                        vidac3.textContent = hpt3;
+                        limp();
+                break;
+                case mirac4.style.display == "block":
+                        vidac4.textContent = hpt4;
+                        limp();
+                break;
+                case mirac5.style.display == "block":
+                        vidac5.textContent = hpt5;
+                        limp();
+                break;
+                case mirac6.style.display == "block":
+                        vidac6.textContent = hpt6;
+                        limp();
+                break;
+                case mirac7.style.display == "block":
+                        vidac7.textContent = hpt7;
+                        limp();
+                break;
+            }
         }
-    }
     else if(usandoci == false) {
         danototalini = 0;
         switch (alvo) {
@@ -1390,8 +1720,55 @@ function rolar() {
             break;
         }
     }
-        trocar();
-    }, 1000)
 }
-
+else {
+    roll.style.display = "block";
+    estatq.style.display = "none";
+    switch (true) {
+        case mirac6.style.display == "block" && mirac7.style.display == "block" && mirac5.style.display == "block":
+            vidac5.textContent = hpt5;
+            vidac6.textContent = hpt6;
+            vidac7.textContent = hpt7;
+            limp();
+    break;
+        case mirac5.style.display == "block" && mirac6.style.display == "block" && mirac4.style.display == "block":
+            vidac4.textContent = hpt4;
+            vidac5.textContent = hpt5;
+            vidac6.textContent = hpt6;
+            limp();
+    break;
+        case mirac4.style.display == "block" && mirac5.style.display == "block" && mirac3.style.display == "block":
+            vidac3.textContent = hpt3;
+            vidac4.textContent = hpt4;
+            vidac5.textContent = hpt5;
+            limp();
+    break;
+        case mirac3.style.display == "block" && mirac2.style.display == "block" && mirac4.style.display == "block":
+            vidac2.textContent = hpt2;
+            vidac3.textContent = hpt3;
+            vidac4.textContent = hpt4;
+            limp();
+    break;
+        case mirac2.style.display == "block" && mirac1.style.display == "block" && mirac3.style.display == "block":
+            vidac1.textContent = hpt;
+            vidac2.textContent = hpt2;
+            vidac3.textContent = hpt3;
+            limp();
+    break;
+        case mirac1.style.display == "block" && mirac2.style.display == "block":
+            vidac1.textContent = hpt;
+            vidac2.textContent = hpt2;
+            limp();
+    break;
+        case mirac7.style.display == "block" && mirac6.style.display == "block":
+            vidac6.textContent = hpt6;
+            vidac7.textContent = hpt7;
+            limp();
+    break;
+    }
+}
+    expl = false;
+    trocar();
+}, 1000)
+}
 roll.addEventListener("click", rolar);
