@@ -507,6 +507,9 @@ setInterval(() => {
     else {
         incendiario2.addEventListener("click", incendiariof2);
     }
+    if(vez.style.top == "2vh") {
+        miraspr = false;
+    }
     numdado = rolln.textContent;
     for (let i = 0; i < duraqmds.length; i++) {
         if(duraqmds[i] == 0) {
@@ -521,8 +524,9 @@ setInterval(() => {
             confogos[i].style.animationName = "apgfogo";
         }
     }
-    if(durafrio == 0) {
-        gelo = false;
+    for (let i = 0; i < confogos.length; i++) {
+    if(durafrios[i] == 0) {
+        gelos[i] = false;
         db1i1.style.display = "none";
         db1i2.style.display = "none";
         db1i3.style.display = "none";
@@ -530,10 +534,8 @@ setInterval(() => {
         db1i5.style.display = "none";
         db1i6.style.display = "none";
         db1i7.style.display = "none";
-        for (let i = 0; i < confogos.length; i++) {
-            confogos[i].style.animationName = "descongelado";
+        confogos[i].style.animationName = "descongelado";
         }
-    }
     else {
     switch (true) {
         case imgdbi1.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac1.style.display == "block":
@@ -568,6 +570,7 @@ setInterval(() => {
             gelo = false;
     }
 }
+    }
 defitens();
 }, 10)
 

@@ -468,280 +468,6 @@ function turnoini() {
         }
     }
     }, 10)
-    if(essencia == true) {
-        duracri--;
-    }
-    if(duracri == 0) {
-        for (let i = 0; i < imgdbsa.length; i++) {
-        if(imgdbsa[i].src == "https://cdn-icons-png.flaticon.com/512/912/912791.png") {
-            db1sa[i].style.display = "none";
-        }
-        }
-        essencia = false;
-        numbuffsp1--;
-    }
-    if(auriano == true) {
-        duraaur--;
-    }
-    if(aurianop2 == true) {
-        duraaurp2--;
-    }
-    if(aurianop3 == true) {
-        duraaurp3--;
-    }
-    if(aurianop4 == true) {
-        duraaurp4--;
-    }
-    if(aurianop5 == true) {
-        duraaurp5--;
-    }
-    switch (true) {
-        case duraaur == 0 && imgdb.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db1.style.display = "none";
-            auriano = false;
-            dans1 = Math.floor(dans1 * 0.77);
-            numbuffsp1--;
-        break;
-        case duraaur == 0 && imgdb2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db2.style.display = "none";
-            auriano = false;
-            dans1 = Math.floor(dans1 * 0.77);
-            numbuffsp1--;
-        break;
-        case duraaur == 0 && imgdb3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db3.style.display = "none";
-            auriano = false;
-            dans1 = Math.floor(dans1 * 0.77);
-            numbuffsp1--;
-        break;
-    }
-    switch (true) {
-        case duraaurp2 == 0 && imgdbp2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db1p2.style.display = "none";
-            aurianop2 = false;
-            dans2 = Math.floor(dans2 * 0.77);
-            numbuffsp2--;
-        break;
-        case duraaurp2 == 0 && imgdb2p2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db2p2.style.display = "none";
-            aurianop2 = false;
-            dans2 = Math.floor(dans2 * 0.77);
-            numbuffsp2--;
-        break;
-        case duraaurp2 == 0 && imgdb3p2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db3p2.style.display = "none";
-            aurianop2 = false;
-            dans2 = Math.floor(dans2 * 0.77);
-            numbuffsp2--;
-        break;
-    }
-    switch (true) {
-        case duraaurp3 == 0 && imgdbp3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db1p3.style.display = "none";
-            aurianop3 = false;
-            dans3 = Math.floor(dans3 * 0.77);
-            numbuffsp3--;
-        break;
-        case duraaurp3 == 0 && imgdb2p3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db2p3.style.display = "none";
-            aurianop3 = false;
-            dans3 = Math.floor(dans3 * 0.77);
-            numbuffsp3--;
-        break;
-        case duraaurp3 == 0 && imgdb3p3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db3p3.style.display = "none";
-            aurianop3 = false;
-            dans3 = Math.floor(dans3 * 0.77);
-            numbuffsp3--;
-        break;
-    }
-    switch (true) {
-        case duraaurp4 == 0 && imgdbp4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db1p4.style.display = "none";
-            aurianop4 = false;
-            dans4 = Math.floor(dans4 * 0.77);
-            numbuffsp4--;
-        break;
-        case duraaurp4 == 0 && imgdb2p4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db2p4.style.display = "none";
-            aurianop4 = false;
-            dans4 = Math.floor(dans4 * 0.77);
-            numbuffsp4--;
-        break;
-        case duraaurp4 == 0 && imgdb3p4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db3p4.style.display = "none";
-            aurianop4 = false;
-            dans4 = Math.floor(dans4 * 0.77);
-            numbuffsp4--;
-        break;
-    }
-    switch (true) {
-        case duraaurp5 == 0 && imgdbp5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db1p5.style.display = "none";
-            aurianop5 = false;
-            dans5 = Math.floor(dans5 * 0.77);
-            numbuffsp5--;
-        break;
-        case duraaurp5 == 0 && imgdb2p5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db2p5.style.display = "none";
-            aurianop5 = false;
-            dans5 = Math.floor(dans5 * 0.77);
-            numbuffsp5--;
-        break;
-        case duraaurp5 == 0 && imgdb3p5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
-            db3p5.style.display = "none";
-            aurianop5 = false;
-            dans5 = Math.floor(dans5 * 0.77);
-            numbuffsp5--;
-        break;
-    }
-    if(aquecida == true) {
-        duraaquece--;
-    }
-    if(aquecidap2 == true) {
-        duraaquecep2--;
-    }
-    if(aquecidap3 == true) {
-        duraaquecep3--;
-    }
-    if(aquecidap4 == true) {
-        duraaquecep4--;
-    }
-    if(aquecidap5 == true) {
-        duraaquecep5--;
-    }
-    switch (true) {
-        case duraaquece == 0 && db == 1:
-            db1.style.display = "none";
-            aquecida = false;
-            dans1 = danoc1a.textContent - laminau;
-            numbuffsp1--;
-        break;
-        case duraaquece == 0 && db == 2:
-            db2.style.display = "none";
-            aquecida = false;
-            dans1 = danoc1a.textContent - laminau;
-            numbuffsp1--;
-        break;
-        case duraaquece == 0 && db == 3:
-            db3.style.display = "none";
-            aquecida = false;
-            dans1 = danoc1a.textContent - laminau;
-            numbuffsp1--;
-        break;
-    }
-    switch (true) {
-        case duraaquecep2 == 0 && dbp2 == 1:
-            db1p2.style.display = "none";
-            aquecidap2 = false;
-            dans2 = danoc2a.textContent - laminau;
-            numbuffsp2--;
-        break;
-        case duraaquecep2 == 0 && dbp2 == 2:
-            db2p2.style.display = "none";
-            aquecidap2 = false;
-            dans2 = danoc2a.textContent - laminau;
-            numbuffsp2--;
-        break;
-        case duraaquecep2 == 0 && dbp2 == 3:
-            db3p2.style.display = "none";
-            aquecidap2 = false;
-            dans2 = danoc2a.textContent - laminau;
-            numbuffsp2--;
-        break;
-    }
-    switch (true) {
-        case duraaquecep3 == 0 && dbp3 == 1:
-            db1p3.style.display = "none";
-            aquecidap3 = false;
-            dans3 = danoc3a.textContent - laminau;
-            numbuffsp3--;
-        break;
-        case duraaquecep3 == 0 && dbp3 == 2:
-            db2p3.style.display = "none";
-            aquecidap3 = false;
-            dans3 = danoc3a.textContent - laminau;
-            numbuffsp3--;
-        break;
-        case duraaquecep3 == 0 && dbp3 == 3:
-            db3p3.style.display = "none";
-            aquecidap3 = false;
-            dans3 = danoc3a.textContent - laminau;
-            numbuffsp3--;
-        break;
-    }
-    switch (true) {
-        case duraaquecep4 == 0 && dbp4 == 1:
-            db1p4.style.display = "none";
-            aquecidap4 = false;
-            dans4 = danoc4a.textContent - laminau;
-            numbuffsp4--;
-        break;
-        case duraaquecep4 == 0 && dbp4 == 2:
-            db2p4.style.display = "none";
-            aquecidap4 = false;
-            dans4 = danoc4a.textContent - laminau;
-            numbuffsp4--;
-        break;
-        case duraaquecep4 == 0 && dbp4 == 3:
-            db3p4.style.display = "none";
-            aquecidap4 = false;
-            dans4 = danoc4a.textContent - laminau;
-            numbuffsp4--;
-        break;
-    }
-    switch (true) {
-        case duraaquecep5 == 0 && dbp5 == 1:
-            db1p5.style.display = "none";
-            aquecidap5 = false;
-            dans5 = danoc5a.textContent - laminau;
-            numbuffsp5--;
-        break;
-        case duraaquecep5 == 0 && dbp5 == 2:
-            db2p5.style.display = "none";
-            aquecidap5 = false;
-            dans5 = danoc5a.textContent - laminau;
-            numbuffsp5--;
-        break;
-        case duraaquecep5 == 0 && dbp5 == 3:
-            db3p5.style.display = "none";
-            aquecidap5 = false;
-            dans5 = danoc5a.textContent - laminau;
-            numbuffsp5--;
-        break;
-    }
-    durafrio--;
-    for (let i = 0; i < duraqmds.length; i++) {
-        duraqmds[i]--;
-    }
-    if(queimando[0] == true) {
-        hpt = Math.floor(vidac1.textContent - 10);
-        vidac1.textContent = hpt;
-    }
-    if(queimando[1] == true) {
-        hpt2 = Math.floor(vidac2.textContent - 10);
-        vidac2.textContent = hpt2;
-    }
-    if(queimando[2] == true) {
-        hpt3 = Math.floor(vidac3.textContent - 10);
-        vidac3.textContent = hpt3;
-    }
-    if(queimando[3] == true) {
-        hpt4 = Math.floor(vidac4.textContent - 10);
-        vidac4.textContent = hpt4;
-    }
-    if(queimando[4] == true) {
-        hpt5 = Math.floor(vidac5.textContent - 10);
-        vidac5.textContent = hpt5;
-    }
-    if(queimando[5] == true) {
-        hpt6 = Math.floor(vidac6.textContent - 10);
-        vidac6.textContent = hpt6;
-    }
-    if(queimando[6] == true) {
-        hpt7 = Math.floor(vidac7.textContent - 10);
-        vidac7.textContent = hpt7;
-    }
     habatv = 0;
     afunali();
     turnoa = false;
@@ -750,6 +476,9 @@ function turnoini() {
     switch(true) {
         case incis[0].style.display != "flex":
             cartasi[0].style.animationName = "shake";
+        break;
+        case incis[0].style.display == "flex":
+            cartasi[1].style.animationName = "shake";
         break;
         case incis[5].style.display == "flex" && incis[4].style.display == "flex" && incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
             cartasi[6].style.animationName = "shake";
@@ -766,9 +495,6 @@ function turnoini() {
         case incis[1].style.display == "flex" && incis[0].style.display == "flex":
             cartasi[2].style.animationName = "shake";
         break;
-        case incis[0].style.display == "flex":
-            cartasi[1].style.animationName = "shake";
-        break;
     }
     inijog();
     dado.style.display = "flex";
@@ -778,7 +504,7 @@ function turnoini() {
         setTimeout(() => {
         alvos();
         danoinimigo();
-        }, 50)
+        }, 150)
     }
 }
 
@@ -1126,22 +852,27 @@ function rodar() {
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
+                mnscool();
             }
             else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
                 cta2.style.animationName = "shake";
                 per = 2;
+                mnscool();
             }
             else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
                 cta3.style.animationName = "shake";
                 per = 3;
+                mnscool();
             }
             else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
                 cta4.style.animationName = "shake";
                 per = 4;
+                mnscool();
             }
             else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
                 cta5.style.animationName = "shake";
                 per = 5;
+                mnscool();
             }
             trocar();
             turnoa = true;
@@ -1165,7 +896,7 @@ function btd(e) {
     limp();
     apcdado();
     rmvcnmira();
-    if(vez.style.top == "40vh") {
+    if(miraspr == true) {
     if(itembarco == true) {
         quants.textContent++;
     }
@@ -1228,6 +959,8 @@ function frio() {
             imgdbs[i].src = "https://cdn-icons-png.flaticon.com/512/1553/1553283.png";
             db1s[i].style.backgroundColor = "#0f191a";
             confogos[i].style.animationName = "congelado";
+            gelos[i] = true;
+            durafrios[i] = 3;
         }
     }
     mirando = false;
@@ -1257,6 +990,283 @@ for (let i = 0; i < cartasi.length; i++) {
 }
 
 cta1.style.animationName = "shake";
+
+function mnscool() {
+    if(essencia == true) {
+        duracri--;
+    }
+    if(duracri == 0) {
+        for (let i = 0; i < imgdbsa.length; i++) {
+        if(imgdbsa[i].src == "https://cdn-icons-png.flaticon.com/512/912/912791.png") {
+            db1sa[i].style.display = "none";
+        }
+        }
+        essencia = false;
+        numbuffsp1--;
+    }
+    if(auriano == true) {
+        duraaur--;
+    }
+    if(aurianop2 == true) {
+        duraaurp2--;
+    }
+    if(aurianop3 == true) {
+        duraaurp3--;
+    }
+    if(aurianop4 == true) {
+        duraaurp4--;
+    }
+    if(aurianop5 == true) {
+        duraaurp5--;
+    }
+    switch (true) {
+        case duraaur == 0 && imgdb.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1.style.display = "none";
+            auriano = false;
+            dans1 = Math.floor(dans1 * 0.77);
+            numbuffsp1--;
+        break;
+        case duraaur == 0 && imgdb2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2.style.display = "none";
+            auriano = false;
+            dans1 = Math.floor(dans1 * 0.77);
+            numbuffsp1--;
+        break;
+        case duraaur == 0 && imgdb3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3.style.display = "none";
+            auriano = false;
+            dans1 = Math.floor(dans1 * 0.77);
+            numbuffsp1--;
+        break;
+    }
+    switch (true) {
+        case duraaurp2 == 0 && imgdbp2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p2.style.display = "none";
+            aurianop2 = false;
+            dans2 = Math.floor(dans2 * 0.77);
+            numbuffsp2--;
+        break;
+        case duraaurp2 == 0 && imgdb2p2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p2.style.display = "none";
+            aurianop2 = false;
+            dans2 = Math.floor(dans2 * 0.77);
+            numbuffsp2--;
+        break;
+        case duraaurp2 == 0 && imgdb3p2.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p2.style.display = "none";
+            aurianop2 = false;
+            dans2 = Math.floor(dans2 * 0.77);
+            numbuffsp2--;
+        break;
+    }
+    switch (true) {
+        case duraaurp3 == 0 && imgdbp3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p3.style.display = "none";
+            aurianop3 = false;
+            dans3 = Math.floor(dans3 * 0.77);
+            numbuffsp3--;
+        break;
+        case duraaurp3 == 0 && imgdb2p3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p3.style.display = "none";
+            aurianop3 = false;
+            dans3 = Math.floor(dans3 * 0.77);
+            numbuffsp3--;
+        break;
+        case duraaurp3 == 0 && imgdb3p3.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p3.style.display = "none";
+            aurianop3 = false;
+            dans3 = Math.floor(dans3 * 0.77);
+            numbuffsp3--;
+        break;
+    }
+    switch (true) {
+        case duraaurp4 == 0 && imgdbp4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p4.style.display = "none";
+            aurianop4 = false;
+            dans4 = Math.floor(dans4 * 0.77);
+            numbuffsp4--;
+        break;
+        case duraaurp4 == 0 && imgdb2p4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p4.style.display = "none";
+            aurianop4 = false;
+            dans4 = Math.floor(dans4 * 0.77);
+            numbuffsp4--;
+        break;
+        case duraaurp4 == 0 && imgdb3p4.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p4.style.display = "none";
+            aurianop4 = false;
+            dans4 = Math.floor(dans4 * 0.77);
+            numbuffsp4--;
+        break;
+    }
+    switch (true) {
+        case duraaurp5 == 0 && imgdbp5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db1p5.style.display = "none";
+            aurianop5 = false;
+            dans5 = Math.floor(dans5 * 0.77);
+            numbuffsp5--;
+        break;
+        case duraaurp5 == 0 && imgdb2p5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db2p5.style.display = "none";
+            aurianop5 = false;
+            dans5 = Math.floor(dans5 * 0.77);
+            numbuffsp5--;
+        break;
+        case duraaurp5 == 0 && imgdb3p5.src == "https://cdn-icons-png.flaticon.com/512/10570/10570191.png":
+            db3p5.style.display = "none";
+            aurianop5 = false;
+            dans5 = Math.floor(dans5 * 0.77);
+            numbuffsp5--;
+        break;
+    }
+    if(aquecida == true) {
+        duraaquece--;
+    }
+    if(aquecidap2 == true) {
+        duraaquecep2--;
+    }
+    if(aquecidap3 == true) {
+        duraaquecep3--;
+    }
+    if(aquecidap4 == true) {
+        duraaquecep4--;
+    }
+    if(aquecidap5 == true) {
+        duraaquecep5--;
+    }
+    switch (true) {
+        case duraaquece == 0 && db == 1:
+            db1.style.display = "none";
+            aquecida = false;
+            dans1 = danoc1a.textContent - laminau;
+            numbuffsp1--;
+        break;
+        case duraaquece == 0 && db == 2:
+            db2.style.display = "none";
+            aquecida = false;
+            dans1 = danoc1a.textContent - laminau;
+            numbuffsp1--;
+        break;
+        case duraaquece == 0 && db == 3:
+            db3.style.display = "none";
+            aquecida = false;
+            dans1 = danoc1a.textContent - laminau;
+            numbuffsp1--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep2 == 0 && dbp2 == 1:
+            db1p2.style.display = "none";
+            aquecidap2 = false;
+            dans2 = danoc2a.textContent - laminau;
+            numbuffsp2--;
+        break;
+        case duraaquecep2 == 0 && dbp2 == 2:
+            db2p2.style.display = "none";
+            aquecidap2 = false;
+            dans2 = danoc2a.textContent - laminau;
+            numbuffsp2--;
+        break;
+        case duraaquecep2 == 0 && dbp2 == 3:
+            db3p2.style.display = "none";
+            aquecidap2 = false;
+            dans2 = danoc2a.textContent - laminau;
+            numbuffsp2--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep3 == 0 && dbp3 == 1:
+            db1p3.style.display = "none";
+            aquecidap3 = false;
+            dans3 = danoc3a.textContent - laminau;
+            numbuffsp3--;
+        break;
+        case duraaquecep3 == 0 && dbp3 == 2:
+            db2p3.style.display = "none";
+            aquecidap3 = false;
+            dans3 = danoc3a.textContent - laminau;
+            numbuffsp3--;
+        break;
+        case duraaquecep3 == 0 && dbp3 == 3:
+            db3p3.style.display = "none";
+            aquecidap3 = false;
+            dans3 = danoc3a.textContent - laminau;
+            numbuffsp3--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep4 == 0 && dbp4 == 1:
+            db1p4.style.display = "none";
+            aquecidap4 = false;
+            dans4 = danoc4a.textContent - laminau;
+            numbuffsp4--;
+        break;
+        case duraaquecep4 == 0 && dbp4 == 2:
+            db2p4.style.display = "none";
+            aquecidap4 = false;
+            dans4 = danoc4a.textContent - laminau;
+            numbuffsp4--;
+        break;
+        case duraaquecep4 == 0 && dbp4 == 3:
+            db3p4.style.display = "none";
+            aquecidap4 = false;
+            dans4 = danoc4a.textContent - laminau;
+            numbuffsp4--;
+        break;
+    }
+    switch (true) {
+        case duraaquecep5 == 0 && dbp5 == 1:
+            db1p5.style.display = "none";
+            aquecidap5 = false;
+            dans5 = danoc5a.textContent - laminau;
+            numbuffsp5--;
+        break;
+        case duraaquecep5 == 0 && dbp5 == 2:
+            db2p5.style.display = "none";
+            aquecidap5 = false;
+            dans5 = danoc5a.textContent - laminau;
+            numbuffsp5--;
+        break;
+        case duraaquecep5 == 0 && dbp5 == 3:
+            db3p5.style.display = "none";
+            aquecidap5 = false;
+            dans5 = danoc5a.textContent - laminau;
+            numbuffsp5--;
+        break;
+    }
+    for (let i = 0; i < duraqmds.length; i++) {
+        duraqmds[i]--;
+        durafrios[i]--;
+    }
+    if(queimando[0] == true) {
+        hpt = Math.floor(vidac1.textContent - 10);
+        vidac1.textContent = hpt;
+    }
+    if(queimando[1] == true) {
+        hpt2 = Math.floor(vidac2.textContent - 10);
+        vidac2.textContent = hpt2;
+    }
+    if(queimando[2] == true) {
+        hpt3 = Math.floor(vidac3.textContent - 10);
+        vidac3.textContent = hpt3;
+    }
+    if(queimando[3] == true) {
+        hpt4 = Math.floor(vidac4.textContent - 10);
+        vidac4.textContent = hpt4;
+    }
+    if(queimando[4] == true) {
+        hpt5 = Math.floor(vidac5.textContent - 10);
+        vidac5.textContent = hpt5;
+    }
+    if(queimando[5] == true) {
+        hpt6 = Math.floor(vidac6.textContent - 10);
+        vidac6.textContent = hpt6;
+    }
+    if(queimando[6] == true) {
+        hpt7 = Math.floor(vidac7.textContent - 10);
+        vidac7.textContent = hpt7;
+    }
+}
 
 function trocar() {
     ini = 0;
@@ -1519,6 +1529,8 @@ function rolar() {
         for(let i = 0; i < db1s.length; i++) {
             if(numdado > 3 || aurianos[i] == true) {
             if(miras[i].style.display == "block") {
+                durafrios[i] = -1;
+                gelos[i] = false;
                 db1s[i].style.display = "block";
                 imgdbs[i].src = "https://cdn-icons-png.flaticon.com/512/785/785116.png";
                 db1s[i].style.backgroundColor = "#ba0909";

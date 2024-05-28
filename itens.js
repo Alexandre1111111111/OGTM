@@ -782,12 +782,12 @@ function use() {
                     break;
                 }
             }
+            miraspr = true;
             mirando = true;
             vez.style.top = "40vh";
             mrcanhao = false;
             vez.style.backgroundColor = "rgba(255, 0, 0, 0.842)";
             area = true;
-            durafrio = 3;
             mira();
         break;
         case nomeitm.textContent == "Bala Explosiva":
