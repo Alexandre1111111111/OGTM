@@ -153,8 +153,8 @@ function incendiariof2() {
     espitem.style.display = "flex";
     espimg.src = "flecha.png";
     nomeitm.textContent = "Virote Incendiário";
-    efeito.textContent = "Causa 10 de dano de fogo por turno se aplicado a uma besta";
-    duracao.textContent = "3 Turnos";
+    efeito.textContent = "Causa 25 de dano de fogo por turno durante 3 turnos se aplicado a uma besta";
+    duracao.textContent = "Instantâneo";
     nomeitm.style.fontSize = "5vh";
     nomeitm.style.padding = "0vh";
     itembarco = true;
@@ -250,54 +250,181 @@ function defitens() {
 function use() {
     switch (true) {
         case nomeitm.textContent == "Kit Médico":
-            espitem.style.display = "none";
-            utitensct.style.opacity = "0";
-            utitensct.style.display = "flex";
-            setTimeout(() => {
-                utitensct.style.display = "none";
-            }, 500)
-            if(itembarco == true) {
-                quantm.textContent--;
-            }
-            else {
-                quantmp.textContent--;
-                switch (per) {
-                    case 1:
-                        defmp1--;
-                    break;
-                    case 2:
-                        defmp2--;
-                    break;
-                    case 3:
-                        defmp3--;
-                    break;
-                    case 4:
-                        defmp4--;
-                    break;
-                    case 5:
-                        defmp5--;
-                    break;
-                }
-            }
             switch (per) {
                 case 1:
+                    if(vidas[0].textContent * 1 < vds[0] * 1) {
                     vidac1a.textContent -= -150;
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
+                    if(itembarco == true) {
+                        quantm.textContent--;
+                    }
+                    else {
+                        quantmp.textContent--;
+                        switch (per) {
+                            case 1:
+                                defmp1--;
+                            break;
+                            case 2:
+                                defmp2--;
+                            break;
+                            case 3:
+                                defmp3--;
+                            break;
+                            case 4:
+                                defmp4--;
+                            break;
+                            case 5:
+                                defmp5--;
+                            break;
+                        }
+                    }
+                    }
                 break;
                 case 2:
+                    if(vidas[1].textContent * 1 < vds[1] * 1) {
                     vidac2a.textContent -= -150;
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
+                    if(itembarco == true) {
+                        quantm.textContent--;
+                    }
+                    else {
+                        quantmp.textContent--;
+                        switch (per) {
+                            case 1:
+                                defmp1--;
+                            break;
+                            case 2:
+                                defmp2--;
+                            break;
+                            case 3:
+                                defmp3--;
+                            break;
+                            case 4:
+                                defmp4--;
+                            break;
+                            case 5:
+                                defmp5--;
+                            break;
+                        }
+                    }
+                    }
                 break;
                 case 3:
+                    if(vidas[2].textContent * 1 < vds[2] * 1) {
                     vidac3a.textContent -= -150;
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
+                    if(itembarco == true) {
+                        quantm.textContent--;
+                    }
+                    else {
+                        quantmp.textContent--;
+                        switch (per) {
+                            case 1:
+                                defmp1--;
+                            break;
+                            case 2:
+                                defmp2--;
+                            break;
+                            case 3:
+                                defmp3--;
+                            break;
+                            case 4:
+                                defmp4--;
+                            break;
+                            case 5:
+                                defmp5--;
+                            break;
+                        }
+                    }
+                    }
                 break;
                 case 4:
+                    if(vidas[3].textContent * 1 < vds[3] * 1) {
                     vidac4a.textContent -= -150;
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
+                    if(itembarco == true) {
+                        quantm.textContent--;
+                    }
+                    else {
+                        quantmp.textContent--;
+                        switch (per) {
+                            case 1:
+                                defmp1--;
+                            break;
+                            case 2:
+                                defmp2--;
+                            break;
+                            case 3:
+                                defmp3--;
+                            break;
+                            case 4:
+                                defmp4--;
+                            break;
+                            case 5:
+                                defmp5--;
+                            break;
+                        }
+                    }
+                    }
                 break;
                 case 5:
+                    if(vidas[4].textContent * 1 < vds[4] * 1) {
                     vidac5a.textContent -= -150;
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
+                    if(itembarco == true) {
+                        quantm.textContent--;
+                    }
+                    else {
+                        quantmp.textContent--;
+                        switch (per) {
+                            case 1:
+                                defmp1--;
+                            break;
+                            case 2:
+                                defmp2--;
+                            break;
+                            case 3:
+                                defmp3--;
+                            break;
+                            case 4:
+                                defmp4--;
+                            break;
+                            case 5:
+                                defmp5--;
+                            break;
+                        }
+                    }
+                    }
                 break;
             }
         break;
         case nomeitm.textContent == "Kit de Reparo":
+            if(vidabarcoa.textContent * 1 < vidaa * 1) {
             espitem.style.display = "none";
             utitensct.style.opacity = "0";
             utitensct.style.display = "flex";
@@ -328,6 +455,7 @@ function use() {
                 }
             }
             vidabarcoa.textContent -= Math.floor(-vidaa * 0.4);
+        }
         break;
         case nomeitm.textContent == "Bebida Auriana":
             espitem.style.display = "none";
@@ -361,9 +489,7 @@ function use() {
             }
             switch (per) {
                 case 1:
-                    if(numbuffsp1 == 0) {
                         numbuffsp1++;
-                    }
                     switch (numbuffsp1) {
                         case 1:
                             db1.style.display = "flex";
@@ -373,9 +499,6 @@ function use() {
                             auriano = true;
                             dans1 *= 1.30;
                             utili = 1;
-                            if(numbuffsp1 != 0) {
-                                numbuffsp1++;
-                            }
                         break;
                         case 2:
                             if(imgdb.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
@@ -384,9 +507,6 @@ function use() {
                             db2.style.backgroundColor = "#d1d42c";
                             dans1 *= 1.30;
                             utili = 1;
-                            if(numbuffsp1 != 0) {
-                                numbuffsp1++;
-                            }
                 }
                             duraaur = 2;
                             auriano = true;
@@ -398,9 +518,6 @@ function use() {
                             db3.style.backgroundColor = "#d1d42c";
                             dans1 *= 1.30;
                             utili = 1;
-                            if(numbuffsp1 != 0) {
-                                numbuffsp1++;
-                            }
             }
                             duraaur = 2;
                             auriano = true;
@@ -408,9 +525,7 @@ function use() {
                     }
                 break;
                 case 2:
-                    if(numbuffsp2 == 0) {
                         numbuffsp2++;
-                    }
                     switch (numbuffsp2) {
                         case 1:
                             db1p2.style.display = "flex";
@@ -420,9 +535,6 @@ function use() {
                             aurianop2 = true;
                             dans2 *= 1.30;
                             utili = 2;
-                            if(numbuffsp2 != 0) {
-                                numbuffsp2++;
-                            }
                         break;
                         case 2:
                             if(imgdbp2.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
@@ -431,9 +543,6 @@ function use() {
                             db2p2.style.backgroundColor = "#d1d42c";
                             dans2 *= 1.30;
                             utili = 2;
-                            if(numbuffsp2 != 0) {
-                                numbuffsp2++;
-                            }
                 }
                             duraaurp2 = 2;
                             aurianop2 = true;
@@ -445,9 +554,6 @@ function use() {
                             db3p2.style.backgroundColor = "#d1d42c";
                             dans2 *= 1.30;
                             utili = 2;
-                            if(numbuffsp2 != 0) {
-                                numbuffsp2++;
-                            }
             }
                             duraaurp2 = 2;
                             aurianop2 = true;
@@ -455,9 +561,7 @@ function use() {
                     }
                 break;
                 case 3:
-                    if(numbuffsp3 == 0) {
                         numbuffsp3++;
-                    }
                     switch (numbuffsp3) {
                         case 1:
                             db1p3.style.display = "flex";
@@ -467,9 +571,6 @@ function use() {
                             aurianop3 = true;
                             dans3 *= 1.30;
                             utili = 3;
-                            if(numbuffsp3 != 0) {
-                                numbuffsp3++;
-                            }
                         break;
                         case 2:
                             if(imgdbp3.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
@@ -478,9 +579,6 @@ function use() {
                             db2p3.style.backgroundColor = "#d1d42c";
                             dans3 *= 1.30;
                             utili = 3;
-                            if(numbuffsp3 != 0) {
-                                numbuffsp3++;
-                            }
                 }
                             duraaurp3 = 2;
                             aurianop3 = true;
@@ -492,9 +590,6 @@ function use() {
                             db3p3.style.backgroundColor = "#d1d42c";
                             dans3 *= 1.30;
                             utili = 3;
-                            if(numbuffsp3 != 0) {
-                                numbuffsp3++;
-                            }
             }
                             duraaurp3 = 2;
                             aurianop3 = true;
@@ -502,9 +597,7 @@ function use() {
                     }
                 break;
                 case 4:
-                    if(numbuffsp4 == 0) {
                         numbuffsp4++;
-                    }
                     switch (numbuffsp4) {
                         case 1:
                             db1p4.style.display = "flex";
@@ -514,9 +607,6 @@ function use() {
                             aurianop4 = true;
                             dans4 *= 1.30;
                             utili = 4;
-                            if(numbuffsp4 != 0) {
-                                numbuffsp4++;
-                            }
                         break;
                         case 2:
                             if(imgdbp4.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
@@ -525,9 +615,6 @@ function use() {
                             db2p4.style.backgroundColor = "#d1d42c";
                             dans4 *= 1.30;
                             utili = 4;
-                            if(numbuffsp4 != 0) {
-                                numbuffsp4++;
-                            }
                 }
                             duraaurp4 = 2;
                             aurianop4 = true;
@@ -539,9 +626,6 @@ function use() {
                             db3p4.style.backgroundColor = "#d1d42c";
                             dans4 *= 1.30;
                             utili = 4;
-                            if(numbuffsp4 != 0) {
-                                numbuffsp4++;
-                            }
             }
                             duraaurp4 = 2;
                             aurianop4 = true;
@@ -551,9 +635,7 @@ function use() {
                 case 5:
                     dans5 *= 1.30;
                     utili = 5;
-                    if(numbuffsp5 == 0) {
                         numbuffsp5++;
-                    }
                     switch (numbuffsp5) {
                         case 1:
                             db1p5.style.display = "flex";
@@ -563,9 +645,6 @@ function use() {
                             aurianop5 = true;
                             dans5 *= 1.30;
                             utili = 5;
-                            if(numbuffsp5 != 0) {
-                                numbuffsp5++;
-                            }
                         break;
                         case 2:
                             if(imgdbp5.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
@@ -574,9 +653,6 @@ function use() {
                             db2p5.style.backgroundColor = "#d1d42c";
                             dans5 *= 1.30;
                             utili = 5;
-                            if(numbuffsp5 != 0) {
-                                numbuffsp5++;
-                            }
                 }
                             duraaurp5 = 2;
                             aurianop5 = true;
@@ -588,9 +664,6 @@ function use() {
                             db3p5.style.backgroundColor = "#d1d42c";
                             dans5 *= 1.30;
                             utili = 5;
-                            if(numbuffsp5 != 0) {
-                                numbuffsp5++;
-                            }
             }
                             duraaurp5 = 2;
                             aurianop5 = true;
@@ -606,21 +679,11 @@ function use() {
             setTimeout(() => {
                 utitensct.style.display = "none";
             }, 500)
-            if(numbuffsp1 == 0) {
                 numbuffsp1++;
-            }
-            if(numbuffsp2 == 0) {
                 numbuffsp2++;
-            }
-            if(numbuffsp3 == 0) {
                 numbuffsp3++;
-            }
-            if(numbuffsp4 == 0) {
                 numbuffsp4++;
-            }
-            if(numbuffsp5 == 0) {
                 numbuffsp5++;
-            }
             switch (numbuffsp1) {
                 case 1:
                     db1.style.display = "block";
@@ -791,6 +854,7 @@ function use() {
             mira();
         break;
         case nomeitm.textContent == "Bala Explosiva":
+            if(expl == false) {
             munesp.src = "https://cdn-icons-png.flaticon.com/512/3553/3553208.png";
             for(let i = 0; i < armasf.length; i++) {
             switch(per) {
@@ -991,14 +1055,9 @@ function use() {
                 break;
             }
         }
+    }
         break;
         case nomeitm.textContent == "Essência de Ferro Derretido":
-            espitem.style.display = "none";
-            utitensct.style.opacity = "0";
-            utitensct.style.display = "flex";
-            setTimeout(() => {
-                utitensct.style.display = "none";
-            }, 500)
             for(let i = 0; i < armas.length; i++) {
                 switch (true) {
                     case armas[i] == punhal && per == i + 1:
@@ -1025,9 +1084,7 @@ function use() {
             switch (per) {
                 case 1:
                     if(armas[0] == armasb[0] || armas[0] == armasb[1] || armas[0] == armasb[2] || armas[0] == armasb[3] || armas[0] == armasb[4] || armas[0] == armasb[5]) {
-                        if(numbuffsp1 == 0) {
                             numbuffsp1++;
-                        }
                     duraaquece = 4;
                     aquecida = true;
                     if(itembarco == true) {
@@ -1053,6 +1110,12 @@ function use() {
                             break;
                         }
                     }
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
                     switch (numbuffsp1) {
                         case 1:
                             db1.style.display = "flex";
@@ -1060,9 +1123,6 @@ function use() {
                             db1.style.backgroundColor = "#a83232";
                             db = 1;
                             dans1 = danoc1a.textContent * 1 + laminau;
-                            if(numbuffsp1 != 0) {
-                                numbuffsp1++;
-                            }
                         break;
                         case 2:
                             if(db != 1) {
@@ -1071,9 +1131,6 @@ function use() {
                             db2.style.backgroundColor = "#a83232";
                             db = 2;
                             dans1 = danoc1a.textContent * 1 + laminau;
-                            if(numbuffsp1 != 0) {
-                                numbuffsp1++;
-                            }
                             }
                         break;
                         case 3:
@@ -1083,9 +1140,6 @@ function use() {
                             db3.style.backgroundColor = "#a83232";
                             db = 3;
                             dans1 = danoc1a.textContent * 1 + laminau;
-                            if(numbuffsp1 != 0) {
-                                numbuffsp1++;
-                            }
                             }
                         break;
                     }
@@ -1093,9 +1147,7 @@ function use() {
                 break;
                 case 2:
                     if(armas[1] == armasb[0] || armas[1] == armasb[1] || armas[1] == armasb[2] || armas[1] == armasb[3] || armas[1] == armasb[4] || armas[1] == armasb[5]) {
-                        if(numbuffsp2 == 0) {
                             numbuffsp2++;
-                        }
                     duraaquecep2 = 4;
                     aquecidap2 = true;
                     if(itembarco == true) {
@@ -1121,6 +1173,12 @@ function use() {
                             break;
                         }
                     }
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
                     switch (numbuffsp2) {
                         case 1:
                             db1p2.style.display = "flex";
@@ -1128,9 +1186,6 @@ function use() {
                             db1p2.style.backgroundColor = "#a83232";
                             dbp2 = 1;
                             dans2 = danoc2a.textContent * 1 + laminau;
-                            if(numbuffsp2 != 0) {
-                                numbuffsp2++;
-                            }
                         break;
                         case 2:
                             if(dbp2 != 1) {
@@ -1139,9 +1194,6 @@ function use() {
                             db2p2.style.backgroundColor = "#a83232";
                             dbp2 = 2;
                             dans2 = danoc2a.textContent * 1 + laminau;
-                            if(numbuffsp2 != 0) {
-                                numbuffsp2++;
-                            }
                             }
                         break;
                         case 3:
@@ -1151,9 +1203,6 @@ function use() {
                             db3p2.style.backgroundColor = "#a83232";
                             dbp2 = 3;
                             dans2 = danoc2a.textContent * 1 + laminau;
-                            if(numbuffsp2 != 0) {
-                                numbuffsp2++;
-                            }
                             }
                         break;
                     }
@@ -1161,9 +1210,7 @@ function use() {
                 break;
                 case 3:
                     if(armas[2] == armasb[0] || armas[2] == armasb[1] || armas[2] == armasb[2] || armas[2] == armasb[3] || armas[2] == armasb[4] || armas[2] == armasb[5]) {
-                        if(numbuffsp3 == 0) {
                             numbuffsp3++;
-                        }
                     duraaquecep3 = 4;
                     aquecidap3 = true;
                     if(itembarco == true) {
@@ -1189,6 +1236,12 @@ function use() {
                             break;
                         }
                     }
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
                     switch (numbuffsp3) {
                         case 1:
                             db1p3.style.display = "flex";
@@ -1196,9 +1249,6 @@ function use() {
                             db1p3.style.backgroundColor = "#a83232";
                             dbp3 = 1;
                             dans3 = danoc3a.textContent * 1 + laminau;
-                            if(numbuffsp3 != 0) {
-                                numbuffsp3++;
-                            }
                         break;
                         case 2:
                             if(dbp3 != 1) {
@@ -1207,9 +1257,6 @@ function use() {
                             db2p3.style.backgroundColor = "#a83232";
                             dbp3 = 2;
                             dans3 = danoc3a.textContent * 1 + laminau;
-                            if(numbuffsp3 != 0) {
-                                numbuffsp3++;
-                            }
                             }
                         break;
                         case 3:
@@ -1219,9 +1266,6 @@ function use() {
                             db3p3.style.backgroundColor = "#a83232";
                             dbp3 = 3;
                             dans3 = danoc3a.textContent * 1 + laminau;
-                            if(numbuffsp3 != 0) {
-                                numbuffsp3++;
-                            }
                             }
                         break;
                     }
@@ -1229,9 +1273,7 @@ function use() {
                 break;
                 case 4:
                     if(armas[3] == armasb[0] || armas[3] == armasb[1] || armas[3] == armasb[2] || armas[3] == armasb[3] || armas[3] == armasb[4] || armas[3] == armasb[5]) {
-                        if(numbuffsp4 == 0) {
                             numbuffsp4++;
-                        }
                     duraaquecep4 = 4;
                     aquecidap4 = true;
                     if(itembarco == true) {
@@ -1257,6 +1299,12 @@ function use() {
                             break;
                         }
                     }
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
                     switch (numbuffsp4) {
                         case 1:
                             db1p4.style.display = "flex";
@@ -1264,9 +1312,6 @@ function use() {
                             db1p4.style.backgroundColor = "#a83232";
                             dbp4 = 1;
                             dans4 = danoc4a.textContent * 1 + laminau;
-                            if(numbuffsp4 != 0) {
-                                numbuffsp4++;
-                            }
                         break;
                         case 2:
                             if(dbp4 != 1) {
@@ -1275,9 +1320,6 @@ function use() {
                             db2p4.style.backgroundColor = "#a83232";
                             dbp4 = 2;
                             dans4 = danoc4a.textContent * 1 + laminau;
-                            if(numbuffsp4 != 0) {
-                                numbuffsp4++;
-                            }
                             }
                         break;
                         case 3:
@@ -1287,9 +1329,6 @@ function use() {
                             db3p4.style.backgroundColor = "#a83232";
                             dbp4 = 3;
                             dans4 = danoc4a.textContent * 1 + laminau;
-                            if(numbuffsp4 != 0) {
-                                numbuffsp4++;
-                            }
                             }
                         break;
                     }
@@ -1297,9 +1336,7 @@ function use() {
                 break;
                 case 5:
                     if(armas[4] == armasb[0] || armas[4] == armasb[1] || armas[4] == armasb[2] || armas[4] == armasb[3] || armas[4] == armasb[4] || armas[4] == armasb[5]) {
-                        if(numbuffsp5 == 0) {
                             numbuffsp5++;
-                        }
                     duraaquecep5 = 4;
                     aquecidap5 = true;
                     if(itembarco == true) {
@@ -1325,6 +1362,12 @@ function use() {
                             break;
                         }
                     }
+                    espitem.style.display = "none";
+                    utitensct.style.opacity = "0";
+                    utitensct.style.display = "flex";
+                    setTimeout(() => {
+                        utitensct.style.display = "none";
+                    }, 500)
                     switch (numbuffsp5) {
                         case 1:
                             db1p5.style.display = "flex";
@@ -1332,9 +1375,6 @@ function use() {
                             db1p5.style.backgroundColor = "#a83232";
                             dbp5 = 1;
                             dans5 = danoc5a.textContent * 1 + laminau;
-                            if(numbuffsp5 != 0) {
-                                numbuffsp5++;
-                            }
                         break;
                         case 2:
                             if(dbp5 != 1) {
@@ -1343,9 +1383,6 @@ function use() {
                             db2p5.style.backgroundColor = "#a83232";
                             dbp5 = 2;
                             dans5 = danoc5a.textContent * 1 + laminau;
-                            if(numbuffsp5 != 0) {
-                                numbuffsp5++;
-                            }
                             }
                         break;
                         case 3:
@@ -1355,9 +1392,6 @@ function use() {
                             db3p5.style.backgroundColor = "#a83232";
                             dbp5 = 3;
                             dans5 = danoc5a.textContent * 1 + laminau;
-                            if(numbuffsp5 != 0) {
-                                numbuffsp5++;
-                            }
                             }
                         break;
                     }

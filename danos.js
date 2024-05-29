@@ -118,12 +118,12 @@ function dano() {
     else if(per == utili) {
         if(numdado == 1 || numdado == 2 || numdado == 3){
         hpt = Math.floor(vidac1.textContent - danototal + 5 * rest);
-        hpt2 = Math.floor(vidac2.textContent - danototal + 5 * rest);
-        hpt3 = Math.floor(vidac3.textContent - danototal + 5 * rest);
-        hpt4 = Math.floor(vidac4.textContent - danototal + 5 * rest);
-        hpt5 = Math.floor(vidac5.textContent - danototal + 5 * rest);
-        hpt6 = Math.floor(vidac6.textContent - danototal + 5 * rest);
-        hpt7 = Math.floor(vidac7.textContent - danototal + 5 * rest);
+        hpt2 = Math.floor(vidac2.textContent - danototal + 5 * restp2);
+        hpt3 = Math.floor(vidac3.textContent - danototal + 5 * restp3);
+        hpt4 = Math.floor(vidac4.textContent - danototal + 5 * restp4);
+        hpt5 = Math.floor(vidac5.textContent - danototal + 5 * restp5);
+        hpt6 = Math.floor(vidac6.textContent - danototal + 5 * restp6);
+        hpt7 = Math.floor(vidac7.textContent - danototal + 5 * restp7);
         est.textContent = "Ataque Fraco";
         est.style.color = "#f7847c";
         }
@@ -141,24 +141,24 @@ function dano() {
     }
 if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
     hpt = Math.floor(vidac1.textContent - danototal + 5 * rest);
-    hpt2 = Math.floor(vidac2.textContent - danototal + 5 * rest);
-    hpt3 = Math.floor(vidac3.textContent - danototal + 5 * rest);
-    hpt4 = Math.floor(vidac4.textContent - danototal + 5 * rest);
-    hpt5 = Math.floor(vidac5.textContent - danototal + 5 * rest);
-    hpt6 = Math.floor(vidac6.textContent - danototal + 5 * rest);
-    hpt7 = Math.floor(vidac7.textContent - danototal + 5 * rest);
+    hpt2 = Math.floor(vidac2.textContent - danototal + 5 * restp2);
+    hpt3 = Math.floor(vidac3.textContent - danototal + 5 * restp3);
+    hpt4 = Math.floor(vidac4.textContent - danototal + 5 * restp4);
+    hpt5 = Math.floor(vidac5.textContent - danototal + 5 * restp5);
+    hpt6 = Math.floor(vidac6.textContent - danototal + 5 * restp6);
+    hpt7 = Math.floor(vidac7.textContent - danototal + 5 * restp7);
     est.textContent = "Ataque Fraco";
     est.style.color = "#f7847c";
 }
 
 else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
     hpt = Math.floor(vidac1.textContent - danototal * rest);
-    hpt2 = Math.floor(vidac2.textContent - danototal * rest);
-    hpt3 = Math.floor(vidac3.textContent - danototal * rest);
-    hpt4 = Math.floor(vidac4.textContent - danototal * rest);
-    hpt5 = Math.floor(vidac5.textContent - danototal * rest);
-    hpt6 = Math.floor(vidac6.textContent - danototal * rest);
-    hpt7 = Math.floor(vidac7.textContent - danototal * rest);
+    hpt2 = Math.floor(vidac2.textContent - danototal * restp2);
+    hpt3 = Math.floor(vidac3.textContent - danototal * restp3);
+    hpt4 = Math.floor(vidac4.textContent - danototal * restp4);
+    hpt5 = Math.floor(vidac5.textContent - danototal * restp5);
+    hpt6 = Math.floor(vidac6.textContent - danototal * restp6);
+    hpt7 = Math.floor(vidac7.textContent - danototal * restp7);
     est.textContent = "Ataque Normal";
     est.style.color = "#fbff08";
 }
@@ -188,7 +188,18 @@ else if (numdado == 19 || numdado == 20){
 }
     }
     else {
-        if(numdado <= 3){
+        if(numdado > 3 || auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5){
+            hpt = Math.floor(vidac1.textContent - 500 * rest);
+            hpt2 = Math.floor(vidac2.textContent - 500 * restp2);
+            hpt3 = Math.floor(vidac3.textContent - 500 * restp3);
+            hpt4 = Math.floor(vidac4.textContent - 500 * restp4);
+            hpt5 = Math.floor(vidac5.textContent - 500 * restp5);
+            hpt6 = Math.floor(vidac6.textContent - 500 * restp6);
+            hpt7 = Math.floor(vidac7.textContent - 500 * restp7);
+            est.textContent = "Ataque Arcetivo";
+            est.style.color = "#a0ff08";
+        }
+        else{
             hpt = vidac1.textContent;
             hpt2 = vidac2.textContent;
             hpt3 = vidac3.textContent;
@@ -196,20 +207,8 @@ else if (numdado == 19 || numdado == 20){
             hpt5 = vidac5.textContent;
             hpt6 = vidac6.textContent;
             hpt7 = vidac7.textContent;
-            est.textContent = "Ataque Falho";
+            est.textContent = "Ataque Fraco";
             est.style.color = "#fc1303";
         }
-        else if (numdado > 3){ {
-            hpt = Math.floor(vidac1.textContent - 500);
-            hpt2 = Math.floor(vidac2.textContent - 500);
-            hpt3 = Math.floor(vidac3.textContent - 500);
-            hpt4 = Math.floor(vidac4.textContent - 500);
-            hpt5 = Math.floor(vidac5.textContent - 500);
-            hpt6 = Math.floor(vidac6.textContent - 500);
-            hpt7 = Math.floor(vidac7.textContent - 500);
-            est.textContent = "Ataque Arcetivo";
-            est.style.color = "#a0ff08";
-        }
     }
-}
 }

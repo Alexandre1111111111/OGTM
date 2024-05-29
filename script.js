@@ -72,9 +72,7 @@ function limp() {
     mrcanhao = false;
     vez.style.backgroundColor = "rgba(0, 0, 255, 0.842)";
     damage.style.right = "30vh";
-    setTimeout(() => {
-        damage.style.visibility = "hidden";
-    }, 100)
+    damage.style.visibility = "hidden";
     mirando = false;
     total.textContent = "---";
     atacar.addEventListener("click", rvmatq);
@@ -228,6 +226,35 @@ opcnn.addEventListener("click", () => {
 })
 
 function odm() {
+    if(miraspr == true) {
+        miraspr = false;
+        limp();
+        apcdado();
+        rmvcnmira();
+    if(itembarco == true) {
+        quants.textContent++;
+    }
+    else {
+        quantsp.textContent++;
+        switch(per) {
+            case 1:
+                defsp1++;
+            break;
+            case 2:
+                defsp2++;
+            break;
+            case 3:
+                defsp3++;
+            break;
+            case 4:
+                defsp4++;
+            break;
+            case 5:
+                defsp5++;
+            break;
+        }
+    }
+}
     if(ordem.style.display != "flex") {
         ordem.style.display = "flex";
         limp();
@@ -353,10 +380,44 @@ nvs();
 personagem();
 
 function ulitens() {
+    if(miraspr == true) {
+        miraspr = false;
+        limp();
+        apcdado();
+        rmvcnmira();
+    if(itembarco == true) {
+        quants.textContent++;
+    }
+    else {
+        quantsp.textContent++;
+        switch(per) {
+            case 1:
+                defsp1++;
+            break;
+            case 2:
+                defsp2++;
+            break;
+            case 3:
+                defsp3++;
+            break;
+            case 4:
+                defsp4++;
+            break;
+            case 5:
+                defsp5++;
+            break;
+        }
+    }
+}
+    limp();
     utitensct.style.display = "flex";
     setTimeout(() => {
         utitensct.style.opacity = "1";
     }, 50)
+    ordem.style.opacity = "0";
+    setTimeout(() => {
+        ordem.style.display = "none";
+    }, 250)
 }
 
 fechar.addEventListener("click", () => {
@@ -371,6 +432,35 @@ itens.addEventListener("click", ulitens);
 
 function atacando() {
     area = false;
+    if(miraspr == true) {
+        miraspr = false;
+        limp();
+        apcdado();
+        rmvcnmira();
+    if(itembarco == true) {
+        quants.textContent++;
+    }
+    else {
+        quantsp.textContent++;
+        switch(per) {
+            case 1:
+                defsp1++;
+            break;
+            case 2:
+                defsp2++;
+            break;
+            case 3:
+                defsp3++;
+            break;
+            case 4:
+                defsp4++;
+            break;
+            case 5:
+                defsp5++;
+            break;
+        }
+    }
+}
     if(expl == true) {
         area = true;
     }
@@ -438,36 +528,44 @@ function turnoini() {
             case cn1i.style.display == "flex" && ini == 1:
                    miras[i].style.display = "none"; 
                 usandoci = true;
+                armai = "canhoes";
             break;
             case cn2i.style.display == "flex" && ini == 2:
                     miras[i].style.display = "none"; 
                 usandoci = true;
+                armai = "canhoes";
             break;
             case cn3i.style.display == "flex" && ini == 3:
                     miras[i].style.display = "none"; 
                 usandoci = true;
+                armai = "canhoes";
             break;
             case cn4i.style.display == "flex" && ini == 4:
                     miras[i].style.display = "none"; 
                 usandoci = true;
+                armai = "canhoes";
             break;
             case cn5i.style.display == "flex" && ini == 5:
                     miras[i].style.display = "none"; 
                 usandoci = true;
+                armai = "canhoes";
             break;
             case cn6i.style.display == "flex" && ini == 6:
                     miras[i].style.display = "none"; 
                 usandoci = true;
+                armai = "canhoes";
             break;
             case cn7i.style.display == "flex" && ini == 7:
                     miras[i].style.display = "none"; 
                 usandoci = true;
+                armai = "canhoes";
             break;
             default:
                 usandoci = false;
+                armai = "mosquete";
         }
     }
-    }, 10)
+    }, 0)
     habatv = 0;
     afunali();
     turnoa = false;
@@ -476,9 +574,6 @@ function turnoini() {
     switch(true) {
         case incis[0].style.display != "flex":
             cartasi[0].style.animationName = "shake";
-        break;
-        case incis[0].style.display == "flex":
-            cartasi[1].style.animationName = "shake";
         break;
         case incis[5].style.display == "flex" && incis[4].style.display == "flex" && incis[3].style.display == "flex" && incis[2].style.display == "flex" && incis[1].style.display == "flex" && incis[0].style.display == "flex":
             cartasi[6].style.animationName = "shake";
@@ -495,6 +590,9 @@ function turnoini() {
         case incis[1].style.display == "flex" && incis[0].style.display == "flex":
             cartasi[2].style.animationName = "shake";
         break;
+        case incis[0].style.display == "flex":
+            cartasi[1].style.animationName = "shake";
+        break;
     }
     inijog();
     dado.style.display = "flex";
@@ -504,7 +602,7 @@ function turnoini() {
         setTimeout(() => {
         alvos();
         danoinimigo();
-        }, 150)
+        }, 50)
     }
 }
 
@@ -518,22 +616,27 @@ function rodar() {
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
+                mnscool();
             }
             else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
                 cta2.style.animationName = "shake";
                 per = 2;
+                mnscool();
             }
             else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
                 cta3.style.animationName = "shake";
                 per = 3;
+                mnscool();
             }
             else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
                 cta4.style.animationName = "shake";
                 per = 4;
+                mnscool();
             }
             else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
                 cta5.style.animationName = "shake";
                 per = 5;
+                mnscool();
             }
             trocar();
             turnoa = true;
@@ -545,22 +648,27 @@ function rodar() {
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
+                mnscool();
             }
             else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
                 cta2.style.animationName = "shake";
                 per = 2;
+                mnscool();
             }
             else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
                 cta3.style.animationName = "shake";
                 per = 3;
+                mnscool();
             }
             else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
                 cta4.style.animationName = "shake";
                 per = 4;
+                mnscool();
             }
             else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
                 cta5.style.animationName = "shake";
                 per = 5;
+                mnscool();
             }
             trocar();
             turnoa = true;
@@ -572,22 +680,27 @@ function rodar() {
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
+                mnscool();
             }
             else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
                 cta2.style.animationName = "shake";
                 per = 2;
+                mnscool();
             }
             else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
                 cta3.style.animationName = "shake";
                 per = 3;
+                mnscool();
             }
             else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
                 cta4.style.animationName = "shake";
                 per = 4;
+                mnscool();
             }
             else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
                 cta5.style.animationName = "shake";
                 per = 5;
+                mnscool();
             }
             trocar();
             turnoa = true;
@@ -599,22 +712,27 @@ function rodar() {
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
+                mnscool();
             }
             else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
                 cta2.style.animationName = "shake";
                 per = 2;
+                mnscool();
             }
             else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
                 cta3.style.animationName = "shake";
                 per = 3;
+                mnscool();
             }
             else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
                 cta4.style.animationName = "shake";
                 per = 4;
+                mnscool();
             }
             else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
                 cta5.style.animationName = "shake";
                 per = 5;
+                mnscool();
             }
             trocar();
             turnoa = true;
@@ -626,22 +744,27 @@ function rodar() {
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
+                mnscool();
             }
             else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
                 cta2.style.animationName = "shake";
                 per = 2;
+                mnscool();
             }
             else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
                 cta3.style.animationName = "shake";
                 per = 3;
+                mnscool();
             }
             else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
                 cta4.style.animationName = "shake";
                 per = 4;
+                mnscool();
             }
             else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
                 cta5.style.animationName = "shake";
                 per = 5;
+                mnscool();
             }
             trocar();
             turnoa = true;
@@ -653,22 +776,27 @@ function rodar() {
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
                 per = 1;
+                mnscool();
             }
             else if (inc1.style.display == "flex" && inc2.style.display != "flex") {
                 cta2.style.animationName = "shake";
                 per = 2;
+                mnscool();
             }
             else if (inc2.style.display == "flex" && inc3.style.display != "flex") {
                 cta3.style.animationName = "shake";
                 per = 3;
+                mnscool();
             }
             else if (inc3.style.display == "flex" && inc4.style.display != "flex") {
                 cta4.style.animationName = "shake";
                 per = 4;
+                mnscool();
             }
             else if (inc4.style.display == "flex" && inc5.style.display != "flex") {
                 cta5.style.animationName = "shake";
                 per = 5;
+                mnscool();
             }
             trocar();
             turnoa = true;
@@ -679,175 +807,171 @@ function rodar() {
             cartasi[1].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
             cartasi[0].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
             cartasi[0].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
             cartasi[0].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex" && incis[2].style.display == "flex":
             cartasi[0].style.animationName = "unset";
             cartasi[3].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[0].style.animationName == "shake" && incis[1].style.display == "flex":
             cartasi[0].style.animationName = "unset";
             cartasi[2].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
             cartasi[1].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
             cartasi[1].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex" && incis[3].style.display == "flex":
             cartasi[1].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[1].style.animationName == "shake" && incis[2].style.display == "flex":
             cartasi[1].style.animationName = "unset";
             cartasi[3].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[1].style.animationName == "shake" && incis[2].style.display != "flex":
             cartasi[1].style.animationName = "unset";
             cartasi[2].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
             cartasi[2].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex" && incis[4].style.display == "flex":
             cartasi[2].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[2].style.animationName == "shake" && incis[3].style.display == "flex":
             cartasi[2].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[2].style.animationName == "shake" && incis[3].style.display != "flex":
             cartasi[2].style.animationName = "unset";
             cartasi[3].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex" && incis[5].style.display == "flex":
             cartasi[3].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[3].style.animationName == "shake" && incis[4].style.display == "flex":
             cartasi[3].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[3].style.animationName == "shake" && incis[4].style.display != "flex":
             cartasi[3].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[4].style.animationName == "shake" && incis[5].style.display == "flex":
             cartasi[4].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[4].style.animationName == "shake" && incis[5].style.display != "flex":
             cartasi[4].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[5].style.animationName == "shake" && incis[6].style.display != "flex":
             cartasi[5].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             setTimeout(() => {
                 alvos();
-            }, 15)
-            rolar();
+                rolar();
+            }, 100)
         break;
         case cartasi[6].style.animationName == "shake":
             cartasi[6].style.animationName = "unset";
-            if(usandoci == true) {
-                atqcanhao();
-                usandoci = false;
-            }
             afunini();
             if(inc1.style.display != "flex") {
                 cta1.style.animationName = "shake";
@@ -1239,31 +1363,31 @@ function mnscool() {
         durafrios[i]--;
     }
     if(queimando[0] == true) {
-        hpt = Math.floor(vidac1.textContent - 10);
+        hpt = Math.floor(vidac1.textContent - 25);
         vidac1.textContent = hpt;
     }
     if(queimando[1] == true) {
-        hpt2 = Math.floor(vidac2.textContent - 10);
+        hpt2 = Math.floor(vidac2.textContent - 25);
         vidac2.textContent = hpt2;
     }
     if(queimando[2] == true) {
-        hpt3 = Math.floor(vidac3.textContent - 10);
+        hpt3 = Math.floor(vidac3.textContent - 25);
         vidac3.textContent = hpt3;
     }
     if(queimando[3] == true) {
-        hpt4 = Math.floor(vidac4.textContent - 10);
+        hpt4 = Math.floor(vidac4.textContent - 25);
         vidac4.textContent = hpt4;
     }
     if(queimando[4] == true) {
-        hpt5 = Math.floor(vidac5.textContent - 10);
+        hpt5 = Math.floor(vidac5.textContent - 25);
         vidac5.textContent = hpt5;
     }
     if(queimando[5] == true) {
-        hpt6 = Math.floor(vidac6.textContent - 10);
+        hpt6 = Math.floor(vidac6.textContent - 25);
         vidac6.textContent = hpt6;
     }
     if(queimando[6] == true) {
-        hpt7 = Math.floor(vidac7.textContent - 10);
+        hpt7 = Math.floor(vidac7.textContent - 25);
         vidac7.textContent = hpt7;
     }
 }
@@ -1286,21 +1410,141 @@ function trocar() {
     switch(true) {
         case cta1.style.animationName == "shake" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc5.style.display == "flex" && inc4.style.display == "flex":
             cta1.style.animationName = "unset";
+            switch (true) {
+                case cn1i.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn6i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn5i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn4i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn3i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn2i.style.display == "flex" && inci1.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+            }
             incinimigo();
             turnoini();
         break;
         case cta2.style.animationName == "shake" && inc3.style.display == "flex" && inc5.style.display == "flex" && inc4.style.display == "flex":
             cta2.style.animationName = "unset";
+            switch (true) {
+                case cn1i.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn6i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn5i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn4i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn3i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn2i.style.display == "flex" && inci1.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+            }
             incinimigo();
             turnoini();
         break;
         case cta3.style.animationName == "shake" && inc5.style.display == "flex" && inc4.style.display == "flex":
             cta3.style.animationName = "unset";
+            switch (true) {
+                case cn1i.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn6i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn5i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn4i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn3i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn2i.style.display == "flex" && inci1.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+            }
             incinimigo();
             turnoini();
         break;
         case cta4.style.animationName == "shake" && inc5.style.display == "flex":
             cta4.style.animationName = "unset";
+            switch (true) {
+                case cn1i.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn6i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn5i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn4i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn3i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn2i.style.display == "flex" && inci1.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+            }
             incinimigo();
             turnoini();
         break;
@@ -1407,11 +1651,71 @@ function trocar() {
         case cta5.style.animationName != "shake" && inc1.style.display == "flex" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
             cta5.style.animationName = "shake";
             per = 5;
+            switch (true) {
+                case cn1i.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn6i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn5i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn4i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn3i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn2i.style.display == "flex" && inci1.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+            }
             incinimigo();
             turnoini();
         break;
         case cta5.style.animationName == "shake" && cta2.style.animationName != "shake" && cta3.style.animationName != "shake" && cta4.style.animationName != "shake" && cta1.style.animationName != "shake":
             cta5.style.animationName = "unset";
+            switch (true) {
+                case cn1i.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn6i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn5i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn4i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn3i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+                case cn2i.style.display == "flex" && inci1.style.display == "flex":
+                    usandoci = true; 
+                    armai = "canhoes";
+                break;
+            }
             incinimigo();
             turnoini();
         break;
@@ -1446,6 +1750,29 @@ else {
             ordenar.style.display = "block";
             btns.style.bottom = "14vh";
             per = 1;
+            switch (true) {
+                case cn1i.style.display == "flex":
+                    usandoci = true; 
+                break;
+                case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex":
+                    usandoci = true; 
+                break;
+                case cn6i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex":
+                    usandoci = true; 
+                break;
+                case cn5i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex":
+                    usandoci = true; 
+                break;
+                case cn4i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex":
+                    usandoci = true; 
+                break;
+                case cn3i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex":
+                    usandoci = true; 
+                break;
+                case cn2i.style.display == "flex" && inci1.style.display == "flex":
+                    usandoci = true; 
+                break;
+            }
             incinimigo();
             turnoini();
         break;
@@ -1469,17 +1796,15 @@ function rolar() {
         Comm();
     }
     else if(usandoci == true) {
-        danoinimigo();
         atqcanhao();
     }
     else if(!turnoa) {
         danoinimigo();
     }
-    else if(usandoc == true) {
-        setTimeout(() => {
-            atqcanhao();
-        }, 1000);
+    else if(turnoa && usandoc == true) {
+        atqcanhao();
     }
+    if(expl == false) {
     if(usandoc == false) {
     if(auriano == false) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
@@ -1523,6 +1848,21 @@ function rolar() {
         est.textContent = "Ataque Perfeito";
         est.style.color = "#008013";
     }
+}
+else {
+    if (numdado > 3){
+        est.textContent = "Ataque Arcetivo";
+        est.style.color = "#a0ff08";
+    }
+    else if(auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5) {
+        est.textContent = "Ataque Fraco";
+        est.style.color = "#f7847c";
+    }
+    else if(numdado <= 3){
+        est.textContent = "Ataque Falho";
+        est.style.color = "#fc1303";
+    }
+}
     dado.style.display = "flex";
     setTimeout(() => {
         if(aquecida == true && per == 1 || aquecidap2 == true && per == 2 || aquecidap3 == true && per == 3 || aquecidap4 == true && per == 4 || aquecidap5 == true && per == 5) {
@@ -1554,7 +1894,7 @@ function rolar() {
         amuletos();
         window.addEventListener("contextmenu", btd, false);
         if(!turnoa) {
-            if(usandoci == false) {
+            if(armai == "mosquete") {
                 sons[2].currentTime = 0.5;
                 sons[2].play();
             }
@@ -1568,7 +1908,9 @@ function rolar() {
             case 1:
                 if(armas[0] == perdeneira || armas[0] == pistola || armas[0] == mosquete) {
                     audios[1].currentTime = 0.5;
-                    muns[0]--;
+                    if(expl == false) {
+                        muns[0]--;
+                    }
                 }
                 if(armas[0] == besta || armas[0] == molotov || armas[0] == granada || armas[0] == nock) {
                     muns[0]--;
@@ -1583,7 +1925,7 @@ function rolar() {
             case 2:
                 if(armas[1] == perdeneira || armas[1] == pistola || armas[1] == mosquete) {
                     audios[1].currentTime = 0.5;
-                    if(munp1 != 0) {
+                    if(munp1 != 0 && expl == false) {
                         muns[1]--;
                     }
                 }
@@ -1602,7 +1944,7 @@ function rolar() {
             case 3:
                 if(armas[2] == perdeneira || armas[2] == pistola || armas[2] == mosquete) {
                     audios[1].currentTime = 0.5;
-                    if(munp2 != 0) {
+                    if(munp2 != 0 && expl == false) {
                         muns[2]--;
                     }
                 }
@@ -1621,7 +1963,7 @@ function rolar() {
             case 4:
                 if(armas[3] == perdeneira || armas[3] == pistola || armas[3] == mosquete) {
                     audios[1].currentTime = 0.5;
-                    if(munp3 != 0) {
+                    if(munp3 != 0 && expl == false) {
                         muns[3]--;
                     }
                 }
@@ -1640,7 +1982,7 @@ function rolar() {
             case 5:
                 if(armas[4] == perdeneira || armas[4] == pistola || armas[4] == mosquete) {
                     audios[1].currentTime = 0.5;
-                    if(munp4 != 0) {
+                    if(munp4 != 0 && expl == false) {
                         muns[4]--;
                     }
                 }

@@ -11,6 +11,12 @@ setInterval(() => {
     if(vidasi[i].textContent < vidat) {
         vidasi[i].style.color ="#e31212";
     }
+    if(danoini[i].textContent > danost[i]) {
+        danoini[i].style.color = "#006e06";
+    }
+    else {
+        danoini[i].style.color = "#000";
+    }
 }
 switch (true) {
     case cartasi[0].style.animationName == "shake":
@@ -35,7 +41,7 @@ switch (true) {
         ini = 7;
     break;
 }
-}, 10)
+}, 0)
 
 setInterval(() => {
     for(let i = 0; i < vidas.length; i++) {
@@ -391,14 +397,6 @@ setInterval(() => {
         }
         else {
             dns[i].style.color = "#000";
-        }
-    }
-    for (let i = 0; i < dns.length; i++) {
-        if(danoini[i].textContent > danost[i]) {
-            danoini[i].style.color = "#006e06";
-        }
-        else {
-            danoini[i].style.color = "#000";
         }
     }
     if(cooldown.textContent != "0") {

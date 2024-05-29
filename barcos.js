@@ -1,8 +1,9 @@
 function atqcanhao() {
+    setTimeout(() => {
     if(usandoci == false) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - canhaodmg + 50);
-        est.textContent = "Ataque Falho";
+        est.textContent = "Ataque Leve";
         est.style.color = "#fc1303";
     }
     else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
@@ -33,7 +34,7 @@ function atqcanhao() {
 else {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         vidabarcoa.textContent = Math.floor(vidabarcoa.textContent - canhaodmg + 50);
-        est.textContent = "Ataque Falho";
+        est.textContent = "Ataque Leve";
         est.style.color = "#fc1303";
     }
     else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
@@ -62,6 +63,7 @@ else {
     }
 }
 usandoci = false;
+    }, 1000)
 }
 function afunali() {
     if(nvila == 3) {
