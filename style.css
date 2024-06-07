@@ -1,5 +1,5 @@
 body {
-    background-image: url('campo.png');
+    background-image: url('campo.gif');
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,11 +22,11 @@ html {
     height: 100%;
     padding: 0;
     padding-bottom: 0;
-    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    box-shadow: 0 0.2vh 0.8vh 0 rgba(63,69,81,0.16);
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    border: 3px solid #000;
+    border: 0.3vh solid #000;
     font-family: "Nunito", sans-serif;
     cursor: pointer;
     flex-direction: column;
@@ -38,7 +38,7 @@ html {
 .personagens {
     display: flex;
     position: absolute;
-    bottom: 2vh;
+    bottom: 1.5vh;
     margin: 0 auto;
     justify-content: space-evenly;
     width: 130vh;
@@ -50,9 +50,10 @@ html {
     background-color: rgba(0, 0, 255, 0.644);
     position: absolute;
     left: 0;
-    border: 3px solid #000;
+    border: 0.5vh solid #000;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
+    display: none;
 }
 
 @keyframes pulsebg {
@@ -85,14 +86,15 @@ html {
     background-color: rgba(255, 0, 0, 0.644);
     position: absolute;
     right: 0;
-    border: 3px solid #000;
+    border: 0.5vh solid #000;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
+    display: none;
 }
 .rivais {
     display: flex;
     position: absolute;
-    top: 2vh;
+    top: 1vh;
     margin: 0 auto;
     justify-content: space-evenly;
     width: 160vh;;
@@ -104,14 +106,13 @@ html {
     height: 100%;
     padding: 0;
     position: relative;
-    top: 1vh;
+    top: 0vh;
     padding-bottom: 0;
-    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    box-shadow: 0 0.2vh 0.8vh 0 rgba(63,69,81,0.16);
     overflow: hidden;
-    background-image: url(thesauriano.png);
     background-size: cover;
     background-position: center;
-    border: 3px solid #000;
+    border: 0.3vh solid #000;
     font-family: "Nunito", sans-serif;
     cursor: pointer;
     align-items: center; 
@@ -132,11 +133,11 @@ html {
 }
 .baixo {
     position: relative;
-    top: 4vh;
+    top: 2vh;
 }
 .alto {
     position: relative;
-    bottom: 3vh;
+    bottom: 2vh;
 }
 #danoc1, #danoc2, #danoc3, #danoc4, #danoc5, #danoc6, #danoc7 {
     width: 28%;
@@ -244,7 +245,7 @@ html {
 #atacar {
     background-color: rgba(255, 0, 0, 0.87);
     color: rgb(255, 203, 154);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     font-size: 5vh;
 }
 #atacar:hover {
@@ -253,7 +254,7 @@ html {
 #ordenar {
     background-color: rgba(0, 26, 255, 0.87);
     color: rgb(249, 255, 170);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     font-size: 5vh;
 }
 #ordenar:hover {
@@ -262,7 +263,7 @@ html {
 #itens {
     background-color: rgba(47, 182, 130, 0.87);
     color: rgb(255, 255, 255);
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     font-size: 5vh;
 }
 #itens:hover {
@@ -314,10 +315,11 @@ html {
     width: 40vh;
     height: 40vh;
     background-color: #000000ea;
-    z-index: 10;
+    z-index: 30;
     border: 0.3vh solid #fff;
     border-radius: 3vh;
     margin: 0 auto;
+    position: absolute;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -336,12 +338,12 @@ html {
     border-radius: 3vh;
     cursor: pointer;
     font-size: 4vh;
-    text-shadow: -1px 0 #ffb394, 0 1px #ffb394, 1px 0 #ffb394, 0 -1px #ffb394;
+    text-shadow: -0.1vh 0 #ffb394, 0 0.1vh #ffb394, 0.1vh 0 #ffb394, 0 -0.1vh #ffb394;
 }
 #rolln {
     color: #43c8d1;
     font-size: 10vh;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
 }
 .nivel {
     width: 100%;
@@ -353,7 +355,7 @@ html {
 #nvc1, #nvc2, #nvc3, #nvc4, #nvc5 {
     font-size: 1.8vh;
     color: #fff;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     margin: 0 auto;
 }
 #cartai1, #cartai2, #cartai3, #cartai4, #cartai5, #cartai6, #cartai7 {
@@ -371,7 +373,7 @@ html {
 .incapacitado h1 {
     color: #ff0000;
     font-size: 2.8vh;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     margin: 0 auto;
 }
 #inc1, #inc2, #inc3, #inc4, #inc5 {
@@ -388,10 +390,10 @@ html {
     background-color: rgba(0, 0, 255, 0.842);
     position: absolute;
     top: 2vh;
-    border: 3px solid #000;
+    border: 0.3vh solid #000;
     border-radius: 10vh;
-    z-index: 10;
-    display: flex;
+    z-index: 18;
+    display: none;
     justify-content: center;
     align-items: center;
     transition-duration: 0.7s;
@@ -399,7 +401,7 @@ html {
 .vez h1 {
     color: #ffe674;
     font-size: 5vh;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     margin: 0 auto;
     animation-duration: 0.5s;
     animation-iteration-count: infinite;
@@ -457,9 +459,9 @@ html {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-bottom: 3px solid #fff;
+    border-bottom: 0.3vh solid #fff;
     transition-duration: 0.5s;
-    border-right: 1px solid #fff;
+    border-right: 0.1vh solid #fff;
 }
 .damage h1 {
     color: #ffffff;
@@ -469,7 +471,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     margin: 0 auto;
     border-bottom: 0.1vh solid #fff;
 }
@@ -479,7 +481,7 @@ html {
     align-items: center;
     font-size: 5vh;
     height: 100%;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
     margin: 0 auto;
 }
 .ordem {
@@ -489,28 +491,184 @@ html {
     z-index: 20;
     display: none;
     opacity: 0;
-    border: 3px solid #fff;
+    border: 0.3vh solid #fff;
     border-radius: 10vh;
     transition-duration: 0.5s;
+    position: absolute;
 }
 .inisel {
-    height: 90vh;
-    width: 70vh;
+    height: 95vh;
+    width: 80vh;
     background-color: #000;
     z-index: 50;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 0.5vh solid #bb8b06;
     border-radius: 5vh;
+    flex-direction: column;
     position: absolute;
 }
 .inisel button {
     font-size: 6vh; 
-    width: 40vh;
+    width: 50vh;
     height: 10vh;
     border-radius: 2vh;
     cursor: pointer;
     background-color: #9bdb88;
+    margin: 5vh;
+}
+.selec {
+    width: 100%;
+    height: 75vh;
+    border-bottom: 0.3vh solid #bb8b06;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.selec::-webkit-scrollbar {
+    width: 2vh;
+}
+
+.selec::-webkit-scrollbar-thumb {
+    background: #e2a600;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.selec::-webkit-scrollbar-thumb:hover {
+    background: #bb8b06;
+}
+
+.selec::-webkit-scrollbar-track {
+    background: #11110f;
+    border-radius: 1vh;
+    border: 0.3vh solid #fdb00b;
+}
+.inissl {
+    width: 100%;
+    height: 90vh;
+    border-bottom: 0.3vh solid #bb8b06;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.inissl h1 {
+    width: 100%;
+    font-size: 7vh;
+    color: #ddbd2f;
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: #141414;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    border: 0.3vh solid #bb8b06;
+    border-radius: 5vh;
+}
+#selini {
+    font-size: 6vh;
+    color: #000000;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    width: 85%;
+    background-color: #e6b52e;
+    height: 10vh;
+    border: 0.3vh solid #553f04;
+    border-radius: 5vh;
+}
+.inis {
+    width: 90%;
+    height: 55vh;
+    background-color: rgb(0, 0, 0);
+    border: 0.5vh solid #bb8b06;
+    border-top-left-radius: 10vh;
+    border-top-right-radius: 10vh;
+    transition-duration: 0.3s;
+    display: none;
+    z-index: 80;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    bottom: -55vh;
+}
+.btninis {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+}
+.btninis button {
+    width: 100%;
+    height: 7vh;
+    font-size: 4vh;
+    background-color: #000;
+    color: #bb8b06;
+    border: 0.3vh solid #bb8b06;
+    cursor: pointer;
+}
+#btnh {
+    border-top-left-radius: 10vh;
+    background-color: #2b1501;
+    transition-duration: 0.3s;
+}
+#btnc {
+    border-top-right-radius: 10vh;
+    transition-duration: 0.3s;
+}
+#btnh:hover, #btnc:hover {
+    background-color: #412e01;
+}
+.hordas {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.hordas::-webkit-scrollbar {
+    width: 1.5vh;
+}
+
+.hordas::-webkit-scrollbar-thumb {
+    background: #e2a600;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.hordas::-webkit-scrollbar-thumb:hover {
+    background: #bb8b06;
+}
+
+.hordas::-webkit-scrollbar-track {
+    background: #11110f;
+    border-radius: 1vh;
+    border: 0.3vh solid #fdb00b;
+}
+.chefes {
+    width: 100%;
+    height: 100%;
+    display: none;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    overflow-x: hidden;
+}
+.horda1m, .horda2m, .horda3m, .horda4m, .horda5m, .horda6m, .horda7m, .horda8m, .chefe1m, .chefe2m {
+    width: 27vh;
+    height: 27vh;
+    border: 0.3vh solid #bb8b06;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    transition-duration: 0.3s;
+    align-items: center;
+    overflow: hidden;
+}
+.horda1m:hover, .horda2m:hover, .horda3m:hover, .horda4m:hover, .horda5m:hover, .horda6m:hover, .horda7m:hover, .horda8m:hover, .chefe1m:hover, .chefe2m:hover {
+    border-color: #f8cd58;
+}
+.horda1m img, .horda2m img, .horda3m img, .horda4m img, .horda5m img, .horda6m img, .horda7m img, .horda8m img, .chefe1m img, .chefe2m img {
+    height: 25vh;
 }
 .vd {
     align-items: center;
@@ -716,7 +874,7 @@ html {
 .niveis {
     width: 100%;
     height: 6vh;
-    border-bottom: 3px solid #fff;
+    border-bottom: 0.3vh solid #fff;
     display: block;
 }
 .vidabc {
@@ -767,7 +925,7 @@ html {
 .niveisi {
     width: 100%;
     height: 6vh;
-    border-top: 3px solid #fff;
+    border-top: 0.3vh solid #fff;
     display: block;
 }
 #opcnn {
@@ -787,7 +945,7 @@ html {
     background-color: rgba(110, 14, 14, 0.315);
 }
 #vidabarcoi {
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
 }
 .hab {
     width: 9vh;
@@ -1144,7 +1302,7 @@ html {
 #defvt {
     font-size: 10vh;
     color: #e2a600;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
 }
 
 .confogo1, .confogo2, .confogo3, .confogo4, .confogo5, .confogo6, .confogo7 {
@@ -1180,6 +1338,164 @@ html {
 .balaset img {
     height: 7vh;
     margin-right: 1.5vh;
+}
+
+.canhaoi {
+    width: 71%;
+    height: 10%;
+    display: none;
+    align-items: center;
+    z-index: 15;
+    position: relative;
+    justify-content: center;
+    top: 4vh;
+    right: 3vh;
+}
+
+.cnesq {
+    width: 72%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 11vh;
+}
+
+.cndir {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 11vh;
+}
+
+.canhaoi img {
+    height: 18vh;
+    transform: rotate(180deg);
+}
+
+.canhaoa {
+    width: 51%;
+    height: 10%;
+    display: none;
+    align-items: center;
+    z-index: 15;
+    position: relative;
+    justify-content: space-between;
+    bottom: 4vh;
+    right: 1.5vh;
+}
+
+.canhaoa img {
+    height: 18vh;
+}
+
+.cura1, .cura2, .cura3, .cura4, .cura5 {
+    width: 20vh;
+    height: 100%;
+    background-color: #04aa6d9c;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0vh 0vh 1vh 1vh #1bce39c7;
+}
+
+.cura1 img, .cura2 img, .cura3 img, .cura4 img, .cura5 img {
+    height: 10vh;
+}
+
+.tb {
+    width: 100%;
+    display: none;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.tb img {
+    height: 33vh;
+    position: relative;
+    left: 8vh;
+    bottom: 1.5vh;
+    z-index: 16;
+}
+
+.lifebara {
+    width: 100%;
+    height: 3vh;
+    border-top: 0.3vh solid #fff;
+    display: flex;
+    justify-content: left;
+}
+
+.lifea {
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.3s;
+    background-color: #04AA6D;
+    border-right: 0.5vh solid #075004;
+    z-index: 5;
+}
+
+.lifedanoa {
+    width: 98%;
+    height: 1.9vh;
+    position: absolute;
+    transition-duration: 1.5s;
+    background-color: #d41818;
+    border-left: 0.5vh solid #500404;
+}
+
+.lifebari {
+    width: 100%;
+    height: 3vh;
+    border-bottom: 0.3vh solid #fff;
+    display: flex;
+    justify-content: right;
+}
+
+.lifei {
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.3s;
+    background-color: #04AA6D;
+    border-left: 0.5vh solid #075004;
+    z-index: 5;
+}
+
+.lifedanoi {
+    width: 98%;
+    height: 1.9vh;
+    position: absolute;
+    transition-duration: 1.5s;
+    background-color: #d41818;
+    border-left: 0.5vh solid #500404;
+}
+
+.atordoa1, .atordoa2, .atordoa3, .atordoa4, .atordoa5 {
+    width: 20vh;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    position: absolute;
+    background-color: #00000027;
+}
+
+.atordoa1 img, .atordoa2 img, .atordoa3 img, .atordoa4 img, .atordoa5 img {
+    height: 10vh;
+    margin-top: 2vh;
+    animation-name: gira;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes gira {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes congelado {

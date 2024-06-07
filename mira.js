@@ -223,71 +223,72 @@ else {
         }
 }
 }
+
 function alvos() {
     if(usandoci == false) {
     alvo = Math.floor(Math.random() * 5) + 1;
     switch (true) {
-        case inc1.style.display == "flex" && alvo == 1 && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
+        case inc1.style.display == "flex" && inc1.style.visibility == "visible" && alvo == 1 && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex":
             alvo += 4;
         break;
-        case inc1.style.display == "flex" && alvo == 1 && inc2.style.display == "flex" && inc3.style.display == "flex":
+        case inc1.style.display == "flex" && inc1.style.visibility == "visible" && alvo == 1 && inc2.style.display == "flex" && inc3.style.display == "flex":
             alvo += 3;
         break;
-        case inc1.style.display == "flex" && alvo == 1 && inc2.style.display == "flex":
+        case inc1.style.display == "flex" && inc1.style.visibility == "visible" && alvo == 1 && inc2.style.display == "flex":
             alvo += 2;
         break;
-        case inc1.style.display == "flex" && alvo == 1 && inc2.style.display != "flex":
+        case inc1.style.display == "flex" && inc1.style.visibility == "visible" && alvo == 1 && inc2.style.display != "flex":
             alvo += 1;
         break;
-        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex":
+        case inc2.style.display == "flex" && inc2.style.visibility == "visible" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex":
             alvo -= 1;
         break;
-        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex":
+        case inc2.style.display == "flex" && inc2.style.visibility == "visible" && alvo == 2 && inc3.style.display == "flex" && inc4.style.display == "flex":
             alvo += 3;
         break;
-        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display == "flex":
+        case inc2.style.display == "flex" && inc2.style.visibility == "visible" && alvo == 2 && inc3.style.display == "flex":
             alvo += 2;
         break;
-        case inc2.style.display == "flex" && alvo == 2 && inc3.style.display != "flex":
+        case inc2.style.display == "flex" && inc2.style.visibility == "visible" && alvo == 2 && inc3.style.display != "flex":
             alvo += 1;
         break;
-        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex" && inc2.style.display == "flex":
+        case inc3.style.display == "flex" && inc3.style.visibility == "visible" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex" && inc2.style.display == "flex":
             alvo -= 2;
         break;
-        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex":
+        case inc3.style.display == "flex" && inc3.style.visibility == "visible" && alvo == 3 && inc4.style.display == "flex" && inc5.style.display == "flex":
             alvo -= 1;
         break;
-        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display == "flex":
+        case inc3.style.display == "flex" && inc3.style.visibility == "visible" && alvo == 3 && inc4.style.display == "flex":
             alvo += 2;
         break;
-        case inc3.style.display == "flex" && alvo == 3 && inc4.style.display != "flex":
+        case inc3.style.display == "flex" && inc3.style.visibility == "visible" && alvo == 3 && inc4.style.display != "flex":
             alvo += 1;
         break;
-        case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex" && inc1.style.display == "flex":
+        case inc4.style.display == "flex" && inc4.style.visibility == "visible" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex" && inc1.style.display == "flex":
             alvo += 1;
         break;
-        case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex":
+        case inc4.style.display == "flex" && inc4.style.visibility == "visible" && alvo == 4 && inc3.style.display == "flex" && inc2.style.display == "flex":
             alvo -= 3;
         break;
-        case inc4.style.display == "flex" && alvo == 4 && inc3.style.display == "flex":
+        case inc4.style.display == "flex" && inc4.style.visibility == "visible" && alvo == 4 && inc3.style.display == "flex":
             alvo -= 2;
         break;
-        case inc4.style.display == "flex" && alvo == 4 && inc5.style.display == "flex":
+        case inc4.style.display == "flex" && inc4.style.visibility == "visible" && alvo == 4 && inc5.style.display == "flex":
             alvo -= 1;
         break;
-        case inc4.style.display == "flex" && alvo == 4 && inc5.style.display != "flex":
+        case inc4.style.display == "flex" && inc4.style.visibility == "visible" && alvo == 4 && inc5.style.display != "flex":
             alvo += 1;
         break;
-        case inc5.style.display == "flex" && alvo == 5 && inc4.style.display == "flex" && inc3.style.display == "flex" && inc2.style.display == "flex":
+        case inc5.style.display == "flex" && inc5.style.visibility == "visible" && alvo == 5 && inc4.style.display == "flex" && inc3.style.display == "flex" && inc2.style.display == "flex":
             alvo -= 4;
         break;
-        case inc5.style.display == "flex" && alvo == 5 && inc3.style.display == "flex" && inc4.style.display == "flex":
+        case inc5.style.display == "flex" && inc5.style.visibility == "visible" && alvo == 5 && inc3.style.display == "flex" && inc4.style.display == "flex":
             alvo -= 3;
         break;
-        case inc5.style.display == "flex" && alvo == 5 && inc4.style.display == "flex":
+        case inc5.style.display == "flex" && inc5.style.visibility == "visible" && alvo == 5 && inc4.style.display == "flex":
             alvo -= 2;
         break;
-        case inc5.style.display == "flex" && alvo == 5 && inc4.style.display != "flex":
+        case inc5.style.display == "flex" && inc5.style.visibility == "visible" && alvo == 5 && inc4.style.display != "flex":
             alvo -= 1;
         break;
     }

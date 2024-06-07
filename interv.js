@@ -1,5 +1,5 @@
-setInterval(inc, 50);
-setInterval(incinimigo, 50);
+setInterval(inc, 0);
+setInterval(incinimigo, 0);
 setInterval(() => {
     if(turnoa) {
         btns.style.display = "block";
@@ -7,17 +7,69 @@ setInterval(() => {
     }
 }, 0)
 setInterval(() => {
-    for(let i = 0; i < vidasi.length; i++) {
-    if(vidasi[i].textContent < vidat) {
-        vidasi[i].style.color ="#e31212";
+    if(vidac1.textContent < vidast[0]) {
+        vidac1.style.color ="#e31212";
     }
-    if(danoini[i].textContent > danost[i]) {
-        danoini[i].style.color = "#006e06";
+    if(vidac2.textContent < vidast[1]) {
+        vidac2.style.color ="#e31212";
+    }
+    if(vidac3.textContent < vidast[2]) {
+        vidac3.style.color ="#e31212";
+    }
+    if(vidac4.textContent < vidast[3]) {
+        vidac4.style.color ="#e31212";
+    }
+    if(vidac5.textContent < vidast[4]) {
+        vidac5.style.color ="#e31212";
+    }
+    if(vidac6.textContent < vidast[5]) {
+        vidac6.style.color ="#e31212";
+    }
+    if(vidac7.textContent < vidast[6]) {
+        vidac7.style.color ="#e31212";
+    }
+    if(danoini[0].textContent > danost[0]) {
+        danoini[0].style.color = "#006e06";
     }
     else {
-        danoini[i].style.color = "#000";
+        danoini[0].style.color = "#000";
     }
-}
+    if(danoini[1].textContent > danost[1]) {
+        danoini[1].style.color = "#006e06";
+    }
+    else {
+        danoini[1].style.color = "#000";
+    }
+    if(danoini[2].textContent > danost[2]) {
+        danoini[2].style.color = "#006e06";
+    }
+    else {
+        danoini[2].style.color = "#000";
+    }
+    if(danoini[3].textContent > danost[3]) {
+        danoini[3].style.color = "#006e06";
+    }
+    else {
+        danoini[3].style.color = "#000";
+    }
+    if(danoini[4].textContent > danost[4]) {
+        danoini[4].style.color = "#006e06";
+    }
+    else {
+        danoini[4].style.color = "#000";
+    }
+    if(danoini[5].textContent > danost[5]) {
+        danoini[5].style.color = "#006e06";
+    }
+    else {
+        danoini[5].style.color = "#000";
+    }
+    if(danoini[6].textContent > danost[6]) {
+        danoini[6].style.color = "#006e06";
+    }
+    else {
+        danoini[6].style.color = "#000";
+    }
 switch (true) {
     case cartasi[0].style.animationName == "shake":
         ini = 1;
@@ -263,7 +315,12 @@ setInterval(() => {
     }
 }
 if(habatv == 1) {
-    if(per != 1) {
+    if(miraspr == true) {
+        for (let i = 0; i < cartasi.length; i++) {
+            cartasi[i].addEventListener("click", apcdado);
+        }
+    }
+    else if(per != 1) {
         for (let i = 0; i < cartasi.length; i++) {
             cartasi[i].removeEventListener("click", apcdado);
         }
@@ -276,7 +333,9 @@ if(habatv == 1) {
 }
 else {
     for (let i = 0; i < cartasi.length; i++) {
+        if(incis[i].style.display != "flex") {
         cartasi[i].addEventListener("click", apcdado);
+        }
     }
 }
 if(vez.style.top == "2vh" && per == 1 && habatv == 1) {
@@ -285,10 +344,10 @@ if(vez.style.top == "2vh" && per == 1 && habatv == 1) {
     }
 }
 for(let i = 0; i < 7; i++) {
-    if(habatv == 1) {
-        miras[i].src = "https://cdn-icons-png.flaticon.com/512/4018/4018979.png";
+    if(habatv == 1 && miraspr == false) {
+        miras[i].src = "https://cdn-icons-png.flaticon.com/512/3384/3384664.png";
     }
-    else {
+    else if(numhab != 2) {
         miras[i].src = "https://cdn-icons-png.flaticon.com/512/487/487009.png";
     }
 }
@@ -535,40 +594,232 @@ setInterval(() => {
         confogos[i].style.animationName = "descongelado";
         }
     else {
-    switch (true) {
-        case imgdbi1.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac1.style.display == "block":
+        if(imgdbi1.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac1.style.display == "block") {
             gelo = true;
             ttl();
-        break;
-        case imgdbi2.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac2.style.display == "block":
-            gelo = true;
-            ttl();
-        break;
-        case imgdbi3.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac3.style.display == "block":
-            gelo = true;
-            ttl();
-        break;
-        case imgdbi4.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac4.style.display == "block":
-            gelo = true;
-            ttl();
-        break;
-        case imgdbi5.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac5.style.display == "block":
-            gelo = true;
-            ttl();
-        break;
-        case imgdbi6.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac6.style.display == "block":
-            gelo = true;
-            ttl();
-        break;
-        case imgdbi7.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac7.style.display == "block":
-            gelo = true;
-            ttl();
-        break;
-        default:
+        }
+        else {
             gelo = false;
-    }
+            if(mirac1.style.display == "block") {
+                ttl();
+            }
+        }
+        if(imgdbi2.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac2.style.display == "block") {
+            gelop2 = true;
+            ttl();
+        }
+        else {
+            gelop2 = false;
+            if(mirac2.style.display == "block") {
+                ttl();
+            }
+        }
+        if(imgdbi3.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac3.style.display == "block") {
+            gelop3 = true;
+            ttl();
+        }
+        else {
+            gelop3 = false;
+            if(mirac3.style.display == "block") {
+                ttl();
+            }
+        }
+        if(imgdbi4.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac4.style.display == "block") {
+            gelop4 = true;
+            ttl();
+        }
+        else {
+            gelop4 = false;
+            if(mirac4.style.display == "block") {
+                ttl();
+            }
+        }
+        if(imgdbi5.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac5.style.display == "block") {
+            gelop5 = true;
+            ttl();
+        }
+        else {
+            gelop5 = false;
+            if(mirac5.style.display == "block") {
+                ttl();
+            }
+        }
+        if(imgdbi6.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac6.style.display == "block") {
+            gelop6 = true;
+            ttl();
+        }
+        else {
+            gelop6 = false;
+            if(mirac6.style.display == "block") {
+                ttl();
+            }
+        }
+        if(imgdbi7.src == "https://cdn-icons-png.flaticon.com/512/1553/1553283.png" && mirac7.style.display == "block") {
+            gelop7 = true;
+            ttl();
+        }
+        else {
+            gelop7 = false;
+            if(mirac7.style.display == "block") {
+                ttl();
+            }
+        }
 }
     }
+    if (area == false) {
+        switch (true) {
+            case miras[0].style.display == "block":
+                miraatl = 1;
+            break;
+            case miras[1].style.display == "block":
+                miraatl = 2;
+            break;
+            case miras[2].style.display == "block":
+                miraatl = 3;
+            break;
+            case miras[3].style.display == "block":
+                miraatl = 4; 
+            break;
+            case miras[4].style.display == "block":
+                miraatl = 5;
+            break;
+            case miras[5].style.display == "block":
+                miraatl = 6;
+            break;
+            case miras[6].style.display == "block":
+                miraatl = 7;
+            break;
+        }
+    }
+    if(area == true && habatv == 1 && miraspr == false && expl == false) {
+        switch (miraatl) {
+            case 1:
+                miras[0].style.display = "block";
+                miras[1].style.display = "none";
+                miras[2].style.display = "none";
+                miras[3].style.display = "none";
+                miras[4].style.display = "none";
+                miras[5].style.display = "none";
+                miras[6].style.display = "none";
+            break;
+            case 2:
+                miras[0].style.display = "none";
+                miras[1].style.display = "block";
+                miras[2].style.display = "none";
+                miras[3].style.display = "none";
+                miras[4].style.display = "none";
+                miras[5].style.display = "none";
+                miras[6].style.display = "none";
+            break;
+            case 3:
+                miras[0].style.display = "none";
+                miras[1].style.display = "none";
+                miras[2].style.display = "block";
+                miras[3].style.display = "none";
+                miras[4].style.display = "none";
+                miras[5].style.display = "none";
+                miras[6].style.display = "none";
+            break;
+            case 4:
+                miras[0].style.display = "none";
+                miras[1].style.display = "none";
+                miras[2].style.display = "none";
+                miras[3].style.display = "block";
+                miras[4].style.display = "none";
+                miras[5].style.display = "none";
+                miras[6].style.display = "none";
+            break;
+            case 5:
+                miras[0].style.display = "none";
+                miras[1].style.display = "none";
+                miras[2].style.display = "none";
+                miras[3].style.display = "none";
+                miras[4].style.display = "block";
+                miras[5].style.display = "none";
+                miras[6].style.display = "none";
+            break;
+            case 6:
+                miras[0].style.display = "none";
+                miras[1].style.display = "none";
+                miras[2].style.display = "none";
+                miras[3].style.display = "none";
+                miras[4].style.display = "none";
+                miras[5].style.display = "block";
+                miras[6].style.display = "none";
+            break;
+            case 7:
+                miras[0].style.display = "none";
+                miras[1].style.display = "none";
+                miras[2].style.display = "none";
+                miras[3].style.display = "none";
+                miras[4].style.display = "none";
+                miras[5].style.display = "none";
+                miras[6].style.display = "block";
+            break;
+        }
+    }
+if(habatv == 1 && per != 1 && miraspr == false) {
+    for (let i = 0; i < cartasi.length; i++) {
+        cartasi[i].removeEventListener("click", apcdado);
+    }
+}
+if(numhab == 2 && miraspr == false && habatv != 1) {
+    for (let i = 0; i < cartasi.length; i++) {
+        miras[i].src = "https://cdn-icons-png.flaticon.com/512/2723/2723616.png";
+    }
+}
+else if(habatv != 1) {
+    for (let i = 0; i < cartasi.length; i++) {
+        miras[i].src = "https://cdn-icons-png.flaticon.com/512/487/487009.png";
+    }
+}
+if(prancha == false && usandoc == false) {
+    switch (per) {
+        case 1:
+            if(armas[0] == armasb[0] || armas[0] == armasb[1] || armas[0] == armasb[2] || armas[0] == armasb[3] || armas[0] == armasb[4] || armas[0] == armasb[5] || armas[0] == coronhada || armas[0] == espada) {
+                atacar.textContent = "Prancha";
+            }
+            else {
+                atacar.textContent = "Atacar";
+            }
+        break;
+        case 2:
+            if(armas[1] == armasb[0] || armas[1] == armasb[1] || armas[1] == armasb[2] || armas[1] == armasb[3] || armas[1] == armasb[4] || armas[1] == armasb[5] || armas[1] == coronhada || armas[0] == espada) {
+                atacar.textContent = "Prancha";
+            }
+            else {
+                atacar.textContent = "Atacar";
+            }
+        break;
+        case 3:
+            if(armas[2] == armasb[0] || armas[2] == armasb[1] || armas[2] == armasb[2] || armas[2] == armasb[3] || armas[2] == armasb[4] || armas[2] == armasb[5] || armas[2] == coronhada || armas[0] == espada) {
+                atacar.textContent = "Prancha";
+            }
+            else {
+                atacar.textContent = "Atacar";
+            }
+        break;
+        case 4:
+            if(armas[3] == armasb[0] || armas[3] == armasb[1] || armas[3] == armasb[2] || armas[3] == armasb[3] || armas[3] == armasb[4] || armas[3] == armasb[5] || armas[3] == coronhada || armas[0] == espada) {
+                atacar.textContent = "Prancha";
+            }
+            else {
+                atacar.textContent = "Atacar";
+            }
+        break;
+        case 5:
+            if(armas[4] == armasb[0] || armas[4] == armasb[1] || armas[4] == armasb[2] || armas[4] == armasb[3] || armas[4] == armasb[4] || armas[4] == armasb[5] || armas[4] == coronhada || armas[0] == espada) {
+                atacar.textContent = "Prancha";
+            }
+            else {
+                atacar.textContent = "Atacar";
+            }
+        break;
+    }
+}
+else {
+    atacar.textContent = "Atacar";
+}
 defitens();
 }, 10)
 
@@ -610,4 +861,13 @@ setInterval(() => {
         vt = true;
         defvt.textContent = "Derrota";
     }
+    if(inc1.style.display == "flex" && inc1.style.visibility == "hidden" || inc2.style.display == "flex" && inc2.style.visibility == "hidden" || inc3.style.display == "flex" && inc3.style.visibility == "hidden" || inc4.style.display == "flex" && inc4.style.visibility == "hidden" || inc5.style.display == "flex" && inc5.style.visibility == "hidden") {
+        atordoados = true;
+    }
+    else {
+        atordoados = false;
+    }
+        if(incs[0].style.display == "flex" && incs[1].style.display == "flex" && incs[2].style.display == "flex" && incs[3].style.display == "flex" && incs[4].style.display == "flex" && atordoados == true) {
+            trocar();
+        }
 }, 0)

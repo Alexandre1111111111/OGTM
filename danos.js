@@ -60,41 +60,41 @@ if(numdado == 1 || numdado == 2 || numdado == 3){
     est.style.color = "#fc1303";
 }
 else if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
-    hpp = Math.floor(vidas[0].textContent - danototalini + 5 * resp1);
-    hpp2 = Math.floor(vidas[1].textContent - danototalini + 5 * resp2);
-    hpp3 = Math.floor(vidas[2].textContent - danototalini + 5 * resp3);
-    hpp4 = Math.floor(vidas[3].textContent - danototalini + 5 * resp4);
-    hpp5 = Math.floor(vidas[4].textContent - danototalini + 5 * resp5);
+    hpp = Math.floor(vidas[0].textContent * 1 - -5 - (danototalini * resps[0]));
+    hpp2 = Math.floor(vidas[1].textContent * 1 - -5 - (danototalini * resps[1]));
+    hpp3 = Math.floor(vidas[2].textContent * 1 - -5 - (danototalini * resps[2]));
+    hpp4 = Math.floor(vidas[3].textContent * 1 - -5 - (danototalini * resps[3]));
+    hpp5 = Math.floor(vidas[4].textContent * 1 - -5 - (danototalini * resps[4]));
     est.textContent = "Ataque Fraco";
     est.style.color = "#f7847c";
 }
 
 else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
-    hpp = Math.floor(vidas[0].textContent - danototalini + 5 * resp1);
-    hpp2 = Math.floor(vidas[1].textContent - danototalini + 5 * resp2);
-    hpp3 = Math.floor(vidas[2].textContent - danototalini + 5 * resp3);
-    hpp4 = Math.floor(vidas[3].textContent - danototalini + 5 * resp4);
-    hpp5 = Math.floor(vidas[4].textContent - danototalini + 5 * resp5);
+    hpp = Math.floor(vidas[0].textContent * 1 - (danototalini * resps[0]));
+    hpp2 = Math.floor(vidas[1].textContent * 1 - (danototalini * resps[1]));
+    hpp3 = Math.floor(vidas[2].textContent * 1 - (danototalini * resps[2]));
+    hpp4 = Math.floor(vidas[3].textContent * 1 - (danototalini * resps[3]));
+    hpp5 = Math.floor(vidas[4].textContent * 1 - (danototalini * resps[4]));
     est.textContent = "Ataque Normal";
     est.style.color = "#fbff08";
 }
 
 else if (numdado == 16 || numdado == 17 || numdado == 18){
-    hpp = Math.floor(vidas[0].textContent - danototalini);
-    hpp2 = Math.floor(vidas[1].textContent - danototalini);
-    hpp3 = Math.floor(vidas[2].textContent - danototalini);
-    hpp4 = Math.floor(vidas[3].textContent - danototalini);
-    hpp5 = Math.floor(vidas[4].textContent - danototalini);
+    hpp = Math.floor(vidas[0].textContent * 1 - danototalini);
+    hpp2 = Math.floor(vidas[1].textContent * 1 - danototalini);
+    hpp3 = Math.floor(vidas[2].textContent * 1 - danototalini);
+    hpp4 = Math.floor(vidas[3].textContent * 1 - danototalini);
+    hpp5 = Math.floor(vidas[4].textContent * 1 - danototalini);
     est.textContent = "Ataque Forte";
     est.style.color = "#a0ff08";
 }
 
 else if (numdado == 19 || numdado == 20){
-    hpp = Math.floor(vidas[0].textContent - danototalini - 15);
-    hpp2 = Math.floor(vidas[1].textContent - danototalini - 15);
-    hpp3 = Math.floor(vidas[2].textContent - danototalini - 15);
-    hpp4 = Math.floor(vidas[3].textContent - danototalini - 15);
-    hpp5 = Math.floor(vidas[4].textContent - danototalini - 15);
+    hpp = Math.floor(vidas[0].textContent * 1 - danototalini - 15);
+    hpp2 = Math.floor(vidas[1].textContent * 1 - danototalini - 15);
+    hpp3 = Math.floor(vidas[2].textContent * 1 - danototalini - 15);
+    hpp4 = Math.floor(vidas[3].textContent * 1 - danototalini - 15);
+    hpp5 = Math.floor(vidas[4].textContent * 1 - danototalini - 15);
     est.textContent = "Ataque Perfeito";
     est.style.color = "#008013";
 }
@@ -102,7 +102,7 @@ else if (numdado == 19 || numdado == 20){
 
 function dano() {
     if(expl == false) {
-    if(auriano == false) {
+    if(auriano == false && per == 1 || aurianop2 == false && per == 2 || aurianop3 == false && per == 3 || aurianop4 == false && per == 4 || aurianop5 == false && per == 5) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         hpt = vidac1.textContent;
         hpt2 = vidac2.textContent;
@@ -115,15 +115,15 @@ function dano() {
         est.style.color = "#fc1303";
     }
     }
-    else if(per == utili) {
+    else if(auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5) {
         if(numdado == 1 || numdado == 2 || numdado == 3){
-        hpt = Math.floor(vidac1.textContent - danototal + 5 * rest);
-        hpt2 = Math.floor(vidac2.textContent - danototal + 5 * restp2);
-        hpt3 = Math.floor(vidac3.textContent - danototal + 5 * restp3);
-        hpt4 = Math.floor(vidac4.textContent - danototal + 5 * restp4);
-        hpt5 = Math.floor(vidac5.textContent - danototal + 5 * restp5);
-        hpt6 = Math.floor(vidac6.textContent - danototal + 5 * restp6);
-        hpt7 = Math.floor(vidac7.textContent - danototal + 5 * restp7);
+        hpt = Math.floor(vidac1.textContent * 1 - -5 - (danototal * rests[0]));
+        hpt2 = Math.floor(vidac2.textContent * 1 - -5 - (danototal * rests[1]));
+        hpt3 = Math.floor(vidac3.textContent * 1 - -5 - (danototal * rests[2]));
+        hpt4 = Math.floor(vidac4.textContent * 1 - -5 - (danototal * rests[3]));
+        hpt5 = Math.floor(vidac5.textContent * 1 - -5 - (danototal * rests[4]));
+        hpt6 = Math.floor(vidac6.textContent * 1 - -5 - (danototal * rests[5]));
+        hpt7 = Math.floor(vidac7.textContent * 1 - -5 - (danototal * rests[6]));
         est.textContent = "Ataque Fraco";
         est.style.color = "#f7847c";
         }
@@ -140,62 +140,62 @@ function dano() {
         est.style.color = "#fc1303";
     }
 if(numdado == 4 || numdado == 5 || numdado == 6 || numdado == 7 || numdado == 8){
-    hpt = Math.floor(vidac1.textContent - danototal + 5 * rest);
-    hpt2 = Math.floor(vidac2.textContent - danototal + 5 * restp2);
-    hpt3 = Math.floor(vidac3.textContent - danototal + 5 * restp3);
-    hpt4 = Math.floor(vidac4.textContent - danototal + 5 * restp4);
-    hpt5 = Math.floor(vidac5.textContent - danototal + 5 * restp5);
-    hpt6 = Math.floor(vidac6.textContent - danototal + 5 * restp6);
-    hpt7 = Math.floor(vidac7.textContent - danototal + 5 * restp7);
+    hpt = Math.floor(vidac1.textContent * 1 - -5 - (danototal * rests[0]));
+    hpt2 = Math.floor(vidac2.textContent * 1 - -5 - (danototal * rests[1]));
+    hpt3 = Math.floor(vidac3.textContent * 1 - -5 - (danototal * rests[2]));
+    hpt4 = Math.floor(vidac4.textContent * 1 - -5 - (danototal * rests[3]));
+    hpt5 = Math.floor(vidac5.textContent * 1 - -5 - (danototal * rests[4]));
+    hpt6 = Math.floor(vidac6.textContent * 1 - -5 - (danototal * rests[5]));
+    hpt7 = Math.floor(vidac7.textContent * 1 - -5 - (danototal * rests[6]));
     est.textContent = "Ataque Fraco";
     est.style.color = "#f7847c";
 }
 
 else if (numdado == 9 || numdado == 10 || numdado == 11 || numdado == 12 || numdado == 13 || numdado == 14 || numdado == 15){
-    hpt = Math.floor(vidac1.textContent - danototal * rest);
-    hpt2 = Math.floor(vidac2.textContent - danototal * restp2);
-    hpt3 = Math.floor(vidac3.textContent - danototal * restp3);
-    hpt4 = Math.floor(vidac4.textContent - danototal * restp4);
-    hpt5 = Math.floor(vidac5.textContent - danototal * restp5);
-    hpt6 = Math.floor(vidac6.textContent - danototal * restp6);
-    hpt7 = Math.floor(vidac7.textContent - danototal * restp7);
+    hpt = Math.floor(vidac1.textContent * 1 - (danototal * rests[0]));
+    hpt2 = Math.floor(vidac2.textContent * 1 - (danototal * rests[1]));
+    hpt3 = Math.floor(vidac3.textContent * 1 - (danototal * rests[2]));
+    hpt4 = Math.floor(vidac4.textContent * 1 - (danototal * rests[3]));
+    hpt5 = Math.floor(vidac5.textContent * 1 - (danototal * rests[4]));
+    hpt6 = Math.floor(vidac6.textContent * 1 - (danototal * rests[5]));
+    hpt7 = Math.floor(vidac7.textContent * 1 - (danototal * rests[6]));
     est.textContent = "Ataque Normal";
     est.style.color = "#fbff08";
 }
 
 else if (numdado == 16 || numdado == 17 || numdado == 18){
-    hpt = Math.floor(vidac1.textContent - danototal);
-    hpt2 = Math.floor(vidac2.textContent - danototal);
-    hpt3 = Math.floor(vidac3.textContent - danototal);
-    hpt4 = Math.floor(vidac4.textContent - danototal);
-    hpt5 = Math.floor(vidac5.textContent - danototal);
-    hpt6 = Math.floor(vidac6.textContent - danototal);
-    hpt7 = Math.floor(vidac7.textContent - danototal);
+    hpt = Math.floor(vidac1.textContent * 1 - danototal);
+    hpt2 = Math.floor(vidac2.textContent * 1 - danototal);
+    hpt3 = Math.floor(vidac3.textContent * 1 - danototal);
+    hpt4 = Math.floor(vidac4.textContent * 1 - danototal);
+    hpt5 = Math.floor(vidac5.textContent * 1 - danototal);
+    hpt6 = Math.floor(vidac6.textContent * 1 - danototal);
+    hpt7 = Math.floor(vidac7.textContent * 1 - danototal);
     est.textContent = "Ataque Forte";
     est.style.color = "#a0ff08";
 }
 
 else if (numdado == 19 || numdado == 20){
-    hpt = Math.floor(vidac1.textContent - danototal - 15);
-    hpt2 = Math.floor(vidac2.textContent - danototal - 15);
-    hpt3 = Math.floor(vidac3.textContent - danototal - 15);
-    hpt4 = Math.floor(vidac4.textContent - danototal - 15);
-    hpt5 = Math.floor(vidac5.textContent - danototal - 15);
-    hpt6 = Math.floor(vidac6.textContent - danototal - 15);
-    hpt7 = Math.floor(vidac7.textContent - danototal - 15);
+    hpt = Math.floor(vidac1.textContent * 1 - danototal - 15);
+    hpt2 = Math.floor(vidac2.textContent * 1 - danototal - 15);
+    hpt3 = Math.floor(vidac3.textContent * 1 - danototal - 15);
+    hpt4 = Math.floor(vidac4.textContent * 1 - danototal - 15);
+    hpt5 = Math.floor(vidac5.textContent * 1 - danototal - 15);
+    hpt6 = Math.floor(vidac6.textContent * 1 - danototal - 15);
+    hpt7 = Math.floor(vidac7.textContent * 1 - danototal - 15);
     est.textContent = "Ataque Perfeito";
     est.style.color = "#008013";
 }
     }
     else {
         if(numdado > 3 || auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5){
-            hpt = Math.floor(vidac1.textContent - 500 * rest);
-            hpt2 = Math.floor(vidac2.textContent - 500 * restp2);
-            hpt3 = Math.floor(vidac3.textContent - 500 * restp3);
-            hpt4 = Math.floor(vidac4.textContent - 500 * restp4);
-            hpt5 = Math.floor(vidac5.textContent - 500 * restp5);
-            hpt6 = Math.floor(vidac6.textContent - 500 * restp6);
-            hpt7 = Math.floor(vidac7.textContent - 500 * restp7);
+            hpt = Math.floor(vidac1.textContent * 1 - (500 * rests[0]));
+            hpt2 = Math.floor(vidac2.textContent * 1 - (500 * rests[1]));
+            hpt3 = Math.floor(vidac3.textContent * 1 - (500 * rests[2]));
+            hpt4 = Math.floor(vidac4.textContent * 1 - (500 * rests[3]));
+            hpt5 = Math.floor(vidac5.textContent * 1 - (500 * rests[4]));
+            hpt6 = Math.floor(vidac6.textContent * 1 - (500 * rests[5]));
+            hpt7 = Math.floor(vidac7.textContent * 1 - (500 * rests[6]));
             est.textContent = "Ataque Arcetivo";
             est.style.color = "#a0ff08";
         }

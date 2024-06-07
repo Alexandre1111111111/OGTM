@@ -22,7 +22,7 @@ function aurianaf() {
     espitem.style.display = "flex";
     espimg.src = "https://cdn-icons-png.flaticon.com/512/2190/2190855.png";
     nomeitm.textContent = "Bebida Auriana";
-    efeito.textContent = "Os próximos ataques terão 100% de chance de acerto e mais 30% de dano";
+    efeito.textContent = "Os próximos ataques terão 100% de chance de acerto e mais 75 pontos de dano";
     duracao.textContent = "2 Turnos";
     nomeitm.style.fontSize = "5vh";
     nomeitm.style.padding = "0vh";
@@ -72,7 +72,7 @@ function incendiariof() {
     espitem.style.display = "flex";
     espimg.src = "flecha.png";
     nomeitm.textContent = "Virote Incendiário";
-    efeito.textContent = "Causa 10 de dano de fogo por turno se aplicado a uma besta";
+    efeito.textContent = "Causa 25 de dano de fogo por turno se aplicado a uma besta";
     duracao.textContent = "3 Turnos";
     nomeitm.style.fontSize = "5vh";
     nomeitm.style.padding = "0vh";
@@ -103,7 +103,7 @@ function aurianaf2() {
     espitem.style.display = "flex";
     espimg.src = "https://cdn-icons-png.flaticon.com/512/2190/2190855.png";
     nomeitm.textContent = "Bebida Auriana";
-    efeito.textContent = "Os próximos ataques terão 100% de chance de acerto e mais 30% de dano";
+    efeito.textContent = "Os próximos ataques terão 100% de chance de acerto e mais 75 pontos de dano";
     duracao.textContent = "2 Turnos";
     nomeitm.style.fontSize = "5vh";
     nomeitm.style.padding = "0vh";
@@ -455,6 +455,12 @@ function use() {
                 }
             }
             vidabarcoa.textContent -= Math.floor(-vidaa * 0.4);
+            pca += 40;
+            if(pca >= 100) {
+                pca = 100;
+            }
+            lifea.style.width = `${pca}%`;
+            lifedanoa.style.width = `${pca}%`;
         }
         break;
         case nomeitm.textContent == "Bebida Auriana":
@@ -497,16 +503,14 @@ function use() {
                             db1.style.backgroundColor = "#d1d42c";
                             duraaur = 2;
                             auriano = true;
-                            dans1 *= 1.30;
-                            utili = 1;
+                            dans1 -= -danoextaur;
                         break;
                         case 2:
                             if(imgdb.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
                             db2.style.display = "flex";
                             imgdb2.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db2.style.backgroundColor = "#d1d42c";
-                            dans1 *= 1.30;
-                            utili = 1;
+                            dans1 -= -danoextaur;
                 }
                             duraaur = 2;
                             auriano = true;
@@ -516,8 +520,7 @@ function use() {
                             db3.style.display = "flex";
                             imgdb3.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db3.style.backgroundColor = "#d1d42c";
-                            dans1 *= 1.30;
-                            utili = 1;
+                            dans1 -= -danoextaur;
             }
                             duraaur = 2;
                             auriano = true;
@@ -533,16 +536,14 @@ function use() {
                             db1p2.style.backgroundColor = "#d1d42c";
                             duraaurp2 = 2;
                             aurianop2 = true;
-                            dans2 *= 1.30;
-                            utili = 2;
+                            dans2 -= -danoextaur;
                         break;
                         case 2:
                             if(imgdbp2.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
                             db2p2.style.display = "flex";
                             imgdb2p2.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db2p2.style.backgroundColor = "#d1d42c";
-                            dans2 *= 1.30;
-                            utili = 2;
+                            dans2 -= -danoextaur;
                 }
                             duraaurp2 = 2;
                             aurianop2 = true;
@@ -552,8 +553,7 @@ function use() {
                             db3p2.style.display = "flex";
                             imgdb3p2.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db3p2.style.backgroundColor = "#d1d42c";
-                            dans2 *= 1.30;
-                            utili = 2;
+                            dans2 -= -danoextaur;
             }
                             duraaurp2 = 2;
                             aurianop2 = true;
@@ -569,16 +569,14 @@ function use() {
                             db1p3.style.backgroundColor = "#d1d42c";
                             duraaurp3 = 2;
                             aurianop3 = true;
-                            dans3 *= 1.30;
-                            utili = 3;
+                            dans3 -= -danoextaur;
                         break;
                         case 2:
                             if(imgdbp3.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
                             db2p3.style.display = "flex";
                             imgdb2p3.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db2p3.style.backgroundColor = "#d1d42c";
-                            dans3 *= 1.30;
-                            utili = 3;
+                            dans3 -= -danoextaur;
                 }
                             duraaurp3 = 2;
                             aurianop3 = true;
@@ -588,8 +586,7 @@ function use() {
                             db3p3.style.display = "flex";
                             imgdb3p3.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db3p3.style.backgroundColor = "#d1d42c";
-                            dans3 *= 1.30;
-                            utili = 3;
+                            dans3 -= -danoextaur;
             }
                             duraaurp3 = 2;
                             aurianop3 = true;
@@ -605,16 +602,14 @@ function use() {
                             db1p4.style.backgroundColor = "#d1d42c";
                             duraaurp4 = 2;
                             aurianop4 = true;
-                            dans4 *= 1.30;
-                            utili = 4;
+                            dans4 -= -danoextaur;
                         break;
                         case 2:
                             if(imgdbp4.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
                             db2p4.style.display = "flex";
                             imgdb2p4.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db2p4.style.backgroundColor = "#d1d42c";
-                            dans4 *= 1.30;
-                            utili = 4;
+                            dans4 -= -danoextaur;
                 }
                             duraaurp4 = 2;
                             aurianop4 = true;
@@ -624,8 +619,7 @@ function use() {
                             db3p4.style.display = "flex";
                             imgdb3p4.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db3p4.style.backgroundColor = "#d1d42c";
-                            dans4 *= 1.30;
-                            utili = 4;
+                            dans4 -= -danoextaur;
             }
                             duraaurp4 = 2;
                             aurianop4 = true;
@@ -633,8 +627,6 @@ function use() {
                     }
                 break;
                 case 5:
-                    dans5 *= 1.30;
-                    utili = 5;
                         numbuffsp5++;
                     switch (numbuffsp5) {
                         case 1:
@@ -643,16 +635,14 @@ function use() {
                             db1p5.style.backgroundColor = "#d1d42c";
                             duraaurp5 = 2;
                             aurianop5 = true;
-                            dans5 *= 1.30;
-                            utili = 5;
+                            dans5 -= -danoextaur;
                         break;
                         case 2:
                             if(imgdbp5.src != "https://cdn-icons-png.flaticon.com/512/10570/10570191.png") {
                             db2p5.style.display = "flex";
                             imgdb2p5.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db2p5.style.backgroundColor = "#d1d42c";
-                            dans5 *= 1.30;
-                            utili = 5;
+                            dans5 -= -danoextaur;
                 }
                             duraaurp5 = 2;
                             aurianop5 = true;
@@ -662,8 +652,7 @@ function use() {
                             db3p5.style.display = "flex";
                             imgdb3p5.src = "https://cdn-icons-png.flaticon.com/512/10570/10570191.png";
                             db3p5.style.backgroundColor = "#d1d42c";
-                            dans5 *= 1.30;
-                            utili = 5;
+                            dans5 -= -danoextaur;
             }
                             duraaurp5 = 2;
                             aurianop5 = true;
@@ -819,6 +808,13 @@ function use() {
             espitem.style.display = "none";
             utitensct.style.opacity = "0";
             utitensct.style.display = "flex";
+            miras[0].style.display = "none";
+            miras[1].style.display = "none";
+            miras[2].style.display = "none";
+            miras[3].style.display = "none";
+            miras[4].style.display = "none";
+            miras[5].style.display = "none";
+            miras[6].style.display = "none";
             setTimeout(() => {
                 utitensct.style.display = "none";
             }, 500)
@@ -855,6 +851,38 @@ function use() {
         break;
         case nomeitm.textContent == "Bala Explosiva":
             if(expl == false) {
+                if(habatv == 1) {
+                    switch (true) {
+                        case miras[0].style.display == "block":
+                            area = true;
+                            c1();
+                        break;
+                        case miras[1].style.display == "block":
+                            area = true;
+                            c2();
+                        break;
+                        case miras[2].style.display == "block":
+                            area = true;
+                            c3();
+                        break;
+                        case miras[3].style.display == "block":
+                            area = true;
+                            c4(); 
+                        break;
+                        case miras[4].style.display == "block":
+                            area = true;
+                            c5();  
+                        break;
+                        case miras[5].style.display == "block":
+                            area = true;
+                            c6(); 
+                        break;
+                        case miras[6].style.display == "block":
+                            area = true;
+                            c7();
+                        break;
+                    }
+                }
             munesp.src = "https://cdn-icons-png.flaticon.com/512/3553/3553208.png";
             for(let i = 0; i < armasf.length; i++) {
             switch(per) {
@@ -1084,7 +1112,7 @@ function use() {
             switch (per) {
                 case 1:
                     if(armas[0] == armasb[0] || armas[0] == armasb[1] || armas[0] == armasb[2] || armas[0] == armasb[3] || armas[0] == armasb[4] || armas[0] == armasb[5]) {
-                            numbuffsp1++;
+                    numbuffsp1++;
                     duraaquece = 4;
                     aquecida = true;
                     if(itembarco == true) {
@@ -1427,6 +1455,7 @@ function use() {
                                     break;
                                 }
                             }
+                            viroin = true;
                         aquecida = true;
                         balaset.style.display = "flex";
                         setTimeout(() => {
@@ -1466,6 +1495,7 @@ function use() {
                                     break;
                                 }
                             }
+                            viroin = true;
                         aquecidap2 = true;
                         balaset.style.display = "flex";
                         setTimeout(() => {
@@ -1505,6 +1535,7 @@ function use() {
                                     break;
                                 }
                             }
+                            viroin = true;
                         aquecidap3 = true;
                         balaset.style.display = "flex";
                         setTimeout(() => {
@@ -1544,6 +1575,7 @@ function use() {
                                     break;
                                 }
                             }
+                            viroin = true;
                         aquecidap4 = true;
                         balaset.style.display = "flex";
                         setTimeout(() => {
@@ -1583,6 +1615,7 @@ function use() {
                                     break;
                                 }
                             }
+                            viroin = true;
                         aquecidap5 = true;
                         balaset.style.display = "flex";
                         munesp.src = "flecha.png";

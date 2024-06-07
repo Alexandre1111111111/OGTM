@@ -2,66 +2,92 @@ function inc() {
     if (vidac1a.textContent <= 0) {
         inc1.style.display = "flex";
         vidac1a.textContent = 0;
+        incs[0].style.visibility = "visible";
+        atordoas[0].style.display = "none";
         limpcn();
     }
     if (vidac2a.textContent <= 0) {
         inc2.style.display = "flex";
         vidac2a.textContent = 0;
+        incs[1].style.visibility = "visible";
+        atordoas[1].style.display = "none";
     }
     if (vidac3a.textContent <= 0) {
         inc3.style.display = "flex";
         vidac3a.textContent = 0;
+        incs[2].style.visibility = "visible";
+        atordoas[2].style.display = "none";
     }
     if (vidac4a.textContent <= 0) {
         inc4.style.display = "flex";
         vidac4a.textContent = 0;
+        incs[3].style.visibility = "visible";
+        atordoas[3].style.display = "none";
     }
     if (vidac5a.textContent <= 0) {
         inc5.style.display = "flex";
         vidac5a.textContent = 0;
+        incs[4].style.visibility = "visible";
+        atordoas[4].style.display = "none";
     }
 }
 function incinimigo() {
+    if(escolhendo == false) {
 if (vidac1.textContent <= 0) {
     incis[0].style.display = "flex";
     vidac1.textContent = 0;
-    habatv = 0;
+    if(habatv == 1 && miras[0].style.display == "block") {
+        habatv = 0;
+    }
     mirac1.style.display = "none";
 }
 if (vidac2.textContent <= 0) {
     incis[1].style.display = "flex";
     vidac2.textContent = 0;
-    habatv = 0;
+    if(habatv == 1 && miras[1].style.display == "block") {
+        habatv = 0;
+    }
     mirac2.style.display = "none";
 }
 if (vidac3.textContent <= 0) {
     incis[2].style.display = "flex";
     vidac3.textContent = 0;
-    habatv = 0;
+    if(habatv == 1 && miras[2].style.display == "block") {
+        habatv = 0;
+    }
     mirac3.style.display = "none";
 }
 if (vidac4.textContent <= 0) {
     incis[3].style.display = "flex";
     vidac4.textContent = 0;
-    habatv = 0;
+    if(habatv == 1 && miras[3].style.display == "block") {
+        habatv = 0;
+    }
     mirac4.style.display = "none";
 }
 if (vidac5.textContent <= 0) {
     incis[4].style.display = "flex";
     vidac5.textContent = 0;
-    habatv = 0;
+    if(habatv == 1 && miras[4].style.display == "block") {
+        habatv = 0;
+    }
     mirac5.style.display = "none";
 }
 if (vidac6.textContent <= 0) {
     incis[5].style.display = "flex";
     vidac6.textContent = 0;
-    habatv = 0;
+    if(habatv == 1 && miras[5].style.display == "block") {
+        habatv = 0;
+    }
     mirac6.style.display = "none";
 }
 if (vidac7.textContent <= 0) {
     incis[6].style.display = "flex";
     vidac7.textContent = 0;
-    habatv = 0;
+    if(habatv == 1 && miras[6].style.display == "block") {
+        habatv = 0;
+    }
     mirac7.style.display = "none";
+}
 }
 }
