@@ -567,6 +567,26 @@ html {
     border: 0.3vh solid #bb8b06;
     border-radius: 5vh;
 }
+.perssl {
+    width: 100%;
+    height: fit-content;
+    border-bottom: 0.3vh solid #bb8b06;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.perssl h1 {
+    width: 100%;
+    font-size: 7vh;
+    color: #ddbd2f;
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: #141414;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    border: 0.3vh solid #bb8b06;
+    border-radius: 5vh;
+}
 #selini {
     font-size: 6vh;
     color: #000000;
@@ -577,6 +597,156 @@ html {
     border: 0.3vh solid #553f04;
     border-radius: 5vh;
 }
+.itenssel {
+    width: 100%;
+    height: 90vh;
+    border-bottom: 0.3vh solid #bb8b06;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.itenssel h1 {
+    width: 100%;
+    font-size: 7vh;
+    color: #ddbd2f;
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: #141414;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    border: 0.3vh solid #bb8b06;
+    border-radius: 5vh;
+}
+.p1itns, .p2itns, .p3itns, .p4itns, .p5itns, .barcoitns {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh;
+    border-bottom: 0.3vh solid #bb8b06;
+}
+.p1itns h1, .p2itns h1, .p3itns h1, .p4itns h1, .p5itns h1, .barcoitns h1 {
+    font-size: 5vh;
+    color: #ddbd2f;
+    background-color: unset;
+    border: unset;
+    width: 50%;
+}
+.p1itns button, .p2itns button, .p3itns button, .p4itns button, .p5itns button, .barcoitns button {
+    width: 10vh;
+    height: 10vh;
+    font-size: 8vh;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    border: 0.3vh solid #000;
+}
+.p1itns button:hover, .p2itns button:hover, .p3itns button:hover, .p4itns button:hover, .p5itns button:hover, .barcoitns button:hover {
+    color: #ddbd2f;
+    border-color: #e0912a;
+    background-color: #2eda92;
+}
+#numitp1, #numitp2, #numitp3, #numitp4, #numitp5, #numitb {
+    margin: 0;
+    width: 0%;
+    font-size: 6vh;
+}
+#armatxt {
+    background-color: unset;
+    border: unset;
+    font-size: 5vh;
+    border-top: 0.3vh solid #ddbd2f;
+    border-radius: 0;
+    width: 100%;
+    padding: 1vh;
+}
+.nvls {
+    color: #ddbd2f;
+    font-size: 5vh;
+    display: flex;
+    align-items: center;
+}
+.nvls h1 {
+    color: #ddbd2f;
+    font-size: 5vh;
+    background-color: unset;
+    border: unset;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#nummunp1, #nummunp2, #nummunp3, #nummunp4, #nummunp5 {
+    width: 6vh;
+    height: 5vh;
+    background-color: #000;
+    border: 0.3vh solid #bb8b06;
+    color: #ddbd2f;
+    display: none;
+    font-size: 3vh;
+}
+.armaselp1, .armaselp2, .armaselp3, .armaselp4, .armaselp5 {
+    color: #ddbd2f;
+    font-size: 4vh;
+    display: flex;
+    align-items: center;
+}
+.armaselp1 h1, .armaselp2 h1, .armaselp3 h1, .armaselp4 h1, .armaselp5 h1 {
+    color: #ddbd2f;
+    font-size: 5vh;
+    background-color: unset;
+    border: unset;
+    width: 30vh;
+}
+.custom-select {
+    position: relative;
+    width: 30vh;
+    margin: 3vh;
+}
+.custom-select select {
+    display: none;
+}
+.select-selected {
+    background-color: rgb(180, 173, 41);
+  }
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 0.7vh;
+  }
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 1.4vh;
+    right: 1vh;
+    width: 0;
+    height: 0;
+    border: 0.6vh solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  .select-items div,.select-selected {
+    color: #ffffff;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    padding: 0.1vh 0.5vh;
+    border: 0.3vh solid transparent;
+    border-radius: 0.5vh;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    text-align: center;
+  }
+  .select-items {
+    position: absolute;
+    background-color: rgb(180, 173, 41);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  .select-hide {
+    display: none;
+  }
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 .inis {
     width: 90%;
     height: 55vh;
@@ -622,8 +792,8 @@ html {
 .hordas {
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -654,8 +824,8 @@ html {
     overflow-x: hidden;
 }
 .horda1m, .horda2m, .horda3m, .horda4m, .horda5m, .horda6m, .horda7m, .horda8m, .chefe1m, .chefe2m {
-    width: 27vh;
-    height: 27vh;
+    width: 26vh;
+    height: 26vh;
     border: 0.3vh solid #bb8b06;
     cursor: pointer;
     display: flex;
@@ -683,6 +853,14 @@ html {
 .vd h1 {
     font-size: 2.5vh;
 }
+#ver {
+    font-size: 3vh;
+    color: #fff;
+    top: 0;
+    left: 0;
+    margin: 1vh;
+    position: absolute;
+}
 #cog {
     height: 10vh;
     margin: 0 auto;
@@ -699,7 +877,7 @@ html {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.384);
-    z-index: 70;
+    z-index: 170;
     opacity: 0;
     display: none;
     align-items: center;
@@ -1103,7 +1281,12 @@ html {
     border-bottom: 0.3vh solid #e2a600;
     border-top: 0.3vh solid #e2a600;
 }
-
+.barcoit {
+    height: fit-content;
+}
+.perit {
+    height: fit-content;
+}
 .fechar {
     width: 8vh;
     height: 8vh;
@@ -1341,29 +1524,34 @@ html {
 }
 
 .canhaoi {
-    width: 71%;
+    width: 100%;
     height: 10%;
     display: none;
     align-items: center;
     z-index: 15;
     position: relative;
-    justify-content: center;
     top: 4vh;
     right: 3vh;
 }
 
-.cnesq {
-    width: 72%;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 11vh;
+#cn1d {
+    position: absolute;
+    right: 34.5%;
 }
 
-.cndir {
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 11vh;
+#cn2d {
+    position: absolute;
+    right: 14.5%;
+}
+
+#cn1e {
+    position: absolute;
+    left: 35%;
+}
+
+#cn2e {
+    position: absolute;
+    left: 14.5%;
 }
 
 .canhaoi img {

@@ -160,38 +160,6 @@ function incendiariof2() {
     itembarco = true;
 }
 
-kit.addEventListener("click", kitf);
-
-reparo.addEventListener("click", reparof);
-
-auriana.addEventListener("click", aurianaf);
-
-cristais.addEventListener("click", cristaisf);
-
-sopro.addEventListener("click", soprof);
-
-explosiva.addEventListener("click", explosivaf);
-
-ferro.addEventListener("click", ferrof);
-
-incendiario.addEventListener("click", incendiariof);
-
-kit2.addEventListener("click", kitf2);
-
-reparo2.addEventListener("click", reparof2);
-
-auriana2.addEventListener("click", aurianaf2);
-
-cristais2.addEventListener("click", cristaisf2);
-
-sopro2.addEventListener("click", soprof2);
-
-explosiva2.addEventListener("click", explosivaf2);
-
-ferro2.addEventListener("click", ferrof2);
-
-incendiario2.addEventListener("click", incendiariof2);
-
 function defitens() {
     switch (per) {
         case 1:

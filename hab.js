@@ -26,6 +26,13 @@ function habilidades() {
             cta3.addEventListener("click", curar);
             cta4.addEventListener("click", curar);
             cta5.addEventListener("click", curar);
+            cartai1.removeEventListener("mouseover", c1);
+            cartai2.removeEventListener("mouseover", c2);
+            cartai3.removeEventListener("mouseover", c3);
+            cartai4.removeEventListener("mouseover", c4);
+            cartai5.removeEventListener("mouseover", c5);
+            cartai6.removeEventListener("mouseover", c6);
+            cartai7.removeEventListener("mouseover", c7);
             vez.style.top = "50vh";
             vez.style.backgroundColor = "rgba(0, 200, 0, 0.842)";
             hab3 = true;

@@ -96,11 +96,6 @@ switch (true) {
 }, 0)
 
 setInterval(() => {
-    for(let i = 0; i < vidas.length; i++) {
-        if(vidas[i].textContent < vds[i]) {
-            vidas[i].style.color ="#e31212";
-        }
-    }
     if(mirando) {
         cog.style.opacity = "0";
         setTimeout(() => {
@@ -466,7 +461,7 @@ setInterval(() => {
         hab.addEventListener("click", habilidades);
         cool.style.display = "none";
     }
-
+if(escolhendo == false) {
     if(quantmp.textContent == 0) {
         kit.removeEventListener("click", kitf);
     }
@@ -564,6 +559,15 @@ setInterval(() => {
     else {
         incendiario2.addEventListener("click", incendiariof2);
     }
+}
+
+totalitnb = quantm.textContent - -quantr.textContent - -quanta.textContent - -quantc.textContent - -quants.textContent - -quante.textContent - -quantf.textContent - -quanti.textContent;
+totalitnp1 = defmp1 + defrp1 + defap1 + defcp1 + defsp1 + defep1 + deffp1 + defip1;
+totalitnp2 = defmp2 + defrp2 + defap2 + defcp2 + defsp2 + defep2 + deffp2 + defip2;
+totalitnp3 = defmp3 + defrp3 + defap3 + defcp3 + defsp3 + defep3 + deffp3 + defip3;
+totalitnp4 = defmp4 + defrp4 + defap4 + defcp4 + defsp4 + defep4 + deffp4 + defip4;
+totalitnp5 = defmp5 + defrp5 + defap5 + defcp5 + defsp5 + defep5 + deffp5 + defip5;
+
     if(vez.style.top == "2vh") {
         miraspr = false;
     }
@@ -776,7 +780,7 @@ else if(habatv != 1) {
 if(prancha == false && usandoc == false) {
     switch (per) {
         case 1:
-            if(armas[0] == armasb[0] || armas[0] == armasb[1] || armas[0] == armasb[2] || armas[0] == armasb[3] || armas[0] == armasb[4] || armas[0] == armasb[5] || armas[0] == coronhada || armas[0] == espada) {
+            if(armas[0] == armasb[0] || armas[0] == armasb[1] || armas[0] == armasb[2] || armas[0] == armasb[3] || armas[0] == armasb[4] || armas[0] == armasb[5] || armas[0] == coronhada || armas[0] == espada ) {
                 atacar.textContent = "Prancha";
             }
             else {
@@ -784,7 +788,7 @@ if(prancha == false && usandoc == false) {
             }
         break;
         case 2:
-            if(armas[1] == armasb[0] || armas[1] == armasb[1] || armas[1] == armasb[2] || armas[1] == armasb[3] || armas[1] == armasb[4] || armas[1] == armasb[5] || armas[1] == coronhada || armas[0] == espada) {
+            if(armas[1] == armasb[0] || armas[1] == armasb[1] || armas[1] == armasb[2] || armas[1] == armasb[3] || armas[1] == armasb[4] || armas[1] == armasb[5] || armas[1] == coronhada || armas[1] == espada) {
                 atacar.textContent = "Prancha";
             }
             else {
@@ -792,7 +796,7 @@ if(prancha == false && usandoc == false) {
             }
         break;
         case 3:
-            if(armas[2] == armasb[0] || armas[2] == armasb[1] || armas[2] == armasb[2] || armas[2] == armasb[3] || armas[2] == armasb[4] || armas[2] == armasb[5] || armas[2] == coronhada || armas[0] == espada) {
+            if(armas[2] == armasb[0] || armas[2] == armasb[1] || armas[2] == armasb[2] || armas[2] == armasb[3] || armas[2] == armasb[4] || armas[2] == armasb[5] || armas[2] == coronhada || armas[2] == espada) {
                 atacar.textContent = "Prancha";
             }
             else {
@@ -800,7 +804,7 @@ if(prancha == false && usandoc == false) {
             }
         break;
         case 4:
-            if(armas[3] == armasb[0] || armas[3] == armasb[1] || armas[3] == armasb[2] || armas[3] == armasb[3] || armas[3] == armasb[4] || armas[3] == armasb[5] || armas[3] == coronhada || armas[0] == espada) {
+            if(armas[3] == armasb[0] || armas[3] == armasb[1] || armas[3] == armasb[2] || armas[3] == armasb[3] || armas[3] == armasb[4] || armas[3] == armasb[5] || armas[3] == coronhada || armas[3] == espada) {
                 atacar.textContent = "Prancha";
             }
             else {
@@ -808,7 +812,7 @@ if(prancha == false && usandoc == false) {
             }
         break;
         case 5:
-            if(armas[4] == armasb[0] || armas[4] == armasb[1] || armas[4] == armasb[2] || armas[4] == armasb[3] || armas[4] == armasb[4] || armas[4] == armasb[5] || armas[4] == coronhada || armas[0] == espada) {
+            if(armas[4] == armasb[0] || armas[4] == armasb[1] || armas[4] == armasb[2] || armas[4] == armasb[3] || armas[4] == armasb[4] || armas[4] == armasb[5] || armas[4] == coronhada || armas[4] == espada) {
                 atacar.textContent = "Prancha";
             }
             else {
@@ -820,7 +824,27 @@ if(prancha == false && usandoc == false) {
 else {
     atacar.textContent = "Atacar";
 }
+numitp1.textContent = totalitnp1;
+numitp2.textContent = totalitnp2;
+numitp3.textContent = totalitnp3;
+numitp4.textContent = totalitnp4;
+numitp5.textContent = totalitnp5;
+numitb.textContent = totalitnb;
 defitens();
+if(horda != 0 || chefe != 0) {
+    btncom.addEventListener("click", inicio);
+}
+else {
+    btncom.removeEventListener("click", inicio);
+}
+for (let i = 0; i < selarmas.length; i++) {
+    if(selarmas[i].value == "mosquete" || selarmas[i].value == "perdeneira" || selarmas[i].value == "besta" || selarmas[i].value == "granada" || selarmas[i].value == "molotov" || selarmas[i].value == "nock" || selarmas[i].value == "pistola") {
+        nummuns[i].style.display = "block";
+    }
+    else {
+        nummuns[i].style.display = "none";
+    }
+}
 }, 10)
 
 setInterval(() => {
@@ -837,6 +861,11 @@ setInterval(() => {
 }, 50)
 
 setInterval(() => {
+    for(let i = 0; i < vidas.length; i++) {
+        if(vidas[i].textContent * 1 < vds[i]) {
+            vidas[i].style.color = "#e31212";
+        }
+    }
     if(vidabarcoi.textContent <= 0) {
         vidabarcoi.textContent = 0;
     }
@@ -855,17 +884,23 @@ setInterval(() => {
             musica[1].play();
         }
     }
-    if(inc1.style.display == "flex" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex") {
-        vtdrct.style.display = "flex";
-        vez.style.display = "none";
-        vt = true;
-        defvt.textContent = "Derrota";
-    }
     if(inc1.style.display == "flex" && inc1.style.visibility == "hidden" || inc2.style.display == "flex" && inc2.style.visibility == "hidden" || inc3.style.display == "flex" && inc3.style.visibility == "hidden" || inc4.style.display == "flex" && inc4.style.visibility == "hidden" || inc5.style.display == "flex" && inc5.style.visibility == "hidden") {
         atordoados = true;
     }
     else {
         atordoados = false;
+    }
+    if(inc1.style.display == "flex" && inc2.style.display == "flex" && inc3.style.display == "flex" && inc4.style.display == "flex" && inc5.style.display == "flex" && atordoados == false) {
+        vtdrct.style.display = "flex";
+        vez.style.display = "none";
+        vt = true;
+        defvt.textContent = "Derrota";
+        for (let i = 0; i < 3; i++) {
+            musica[i].pause();
+        }
+        if(musica[4].paused == true) {
+            musica[4].play();
+        }
     }
         if(incs[0].style.display == "flex" && incs[1].style.display == "flex" && incs[2].style.display == "flex" && incs[3].style.display == "flex" && incs[4].style.display == "flex" && atordoados == true) {
             trocar();

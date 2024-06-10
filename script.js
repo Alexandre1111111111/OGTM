@@ -89,6 +89,26 @@ function canhaoadv() {
                 canhaoadv();
             }
         break;
+        case 2:
+            if(canhoneiro == 1 || canhoneiro == 7) {
+                canhaoadv();
+            }
+        break;
+        case 4:
+            if(canhoneiro == 1 || canhoneiro == 6 || canhoneiro == 7) {
+                canhaoadv();
+            }
+        break;
+        case 5:
+            if(canhoneiro == 1 || canhoneiro == 7) {
+                canhaoadv();
+            }
+        break;
+        case 6:
+            if(canhoneiro == 7) {
+                canhaoadv();
+            }
+        break;
     }
     switch(canhoneiro) {
         case 1:
@@ -134,86 +154,277 @@ function ttl() {
     }
 }
 
-btncom.addEventListener("click", () => {
-    danttls[0] = danoini[0].textContent * 1;
-    danttls[1] = danoini[1].textContent * 1;
-    danttls[2] = danoini[2].textContent * 1;
-    danttls[3] = danoini[3].textContent * 1;
-    danttls[4] = danoini[4].textContent * 1;
-    danttls[5] = danoini[5].textContent * 1;
-    danttls[6] = danoini[6].textContent * 1;
-    switch (horda) {
-        case 1:
-            cartai1.style.display = "none";
-            cartai2.style.display = "none";
-            cartai6.style.display = "none";
-            cartai7.style.display = "none";
-        break;
-        case 2:
-            cartai1.style.display = "none";
-            cartai7.style.display = "none";
-        break;
-        case 4:
-            cartai1.style.display = "none";
-            cartai6.style.display = "none";
-            cartai7.style.display = "none";
-        break;
-        case 5:
-            cartai1.style.display = "none";
-            cartai7.style.display = "none";
-        break;
-        case 6:
-            cartai7.style.display = "none";
-        break;
+function inicio() {
+    per = 1;
+    for (let i = 0; i < nummuns.length; i++) {
+        if(nummuns[i].style.display == "none") {
+            nummuns[i].value = 1;
+        }
+        muns[i] = nummuns[i].value;
     }
-    ctinisel.style.display = "none";
-    vez.style.display = "flex";
-    escolhendo = false;
-    aliado.style.display = "block";
-    inimigoc.style.display = "block";
-    canhaoadv();
-    musicas();
-    cta1.style.animationName = "shake";
-})
-
-atacar.addEventListener("click", rvmatq);
-
-function trocatxt() {
-    switch(true) {
-        case vt == true:
-            vez.style.display = "none";
-        break;
-        case mrcanhao:
-            vez.style.backgroundColor = "rgba(0, 50, 155, 0.842)";
-            veztxt.textContent = "Escolha o Operador";
-        break;
-        case mirando && habatv == 0 || numhab == 3 || per == 1 && mirando:
-            veztxt.textContent = "Escolha o Alvo";
-        break;
-        case cta1.style.animationName == "shake":
-            vez.style.display = "flex";
-            veztxt.textContent = "Turno de Barbarovsk";
-        break;
-        case cta2.style.animationName == "shake":
-            vez.style.display = "flex";
-            veztxt.textContent = "Turno de Crowly";
-        break;
-        case cta3.style.animationName == "shake":
-            vez.style.display = "flex";
-            veztxt.textContent = "Turno de Lysa";
-        break;
-        case cta4.style.animationName == "shake":
-            vez.style.display = "flex";
-            veztxt.textContent = "Turno de Darban";
-        break;
-        case cta5.style.animationName == "shake":
-            vez.style.display = "flex";
-            veztxt.textContent = "Turno de Gabriele";
-        break;
-        case !turnoa:
-            vez.style.display = "none";
-        break;
+    for (let i = 0; i < selarmas.length; i++) {
+        switch (selarmas[i].value) {
+            case "punhal":
+                armas[i] = punhal;
+            break;
+            case "rapieira":
+                armas[i] = rapieira;
+            break;
+            case "sabre":
+                armas[i] = sabre;
+            break;
+            case "mosquete":
+                armas[i] = mosquete;
+            break;
+            case "perdeneira":
+                armas[i] = perdeneira;
+            break;
+            case "machado":
+                armas[i] = machado;
+            break;
+            case "besta":
+                armas[i] = besta;
+            break;
+            case "pistola":
+                armas[i] = pistola;
+            break;
+            case "granada":
+                armas[i] = granada;
+            break;
+            case "adaga":
+                armas[i] = adaga;
+            break;
+            case "molotov":
+                armas[i] = molotov;
+            break;
+            case "nock":
+                armas[i] = nock;
+            break;
+            case "arpao":
+                armas[i] = arpão;
+            break;
+            case "foice":
+                armas[i] = foice;
+            break;
+            case "espada":
+                armas[i] = espada;
+            break;
+        }
     }
+    for (let i = 0; i < niveis.length; i++) {
+        switch (selniv.value) {
+            case "I":
+                niveis[i].textContent = "NV: I";
+            break;
+            case "II":
+                niveis[i].textContent = "NV: II";
+            break;
+            case "III":
+                niveis[i].textContent = "NV: III";
+            break;
+            case "IV":
+                niveis[i].textContent = "NV: IV";
+            break;
+            case "V":
+                niveis[i].textContent = "NV: V";
+            break;
+            case "VI":
+                niveis[i].textContent = "NV: VI";
+            break;
+            case "VII":
+                niveis[i].textContent = "NV: VII";
+            break;
+            case "VIII":
+                niveis[i].textContent = "NV: VIII";
+            break;
+            case "IX":
+                niveis[i].textContent = "NV: IX";
+            break;
+            case "X":
+                niveis[i].textContent = "NV: X";
+            break;
+        }
+    }
+    it.style.display = "block";
+    ib.style.display = "block";
+    perit.style.display = "grid";
+    barcoit.style.display = "grid";
+
+    kit.removeEventListener("click", pitnsm);
+
+    reparo.removeEventListener("click", pitnsr);
+    
+    auriana.removeEventListener("click", pitnsa);
+    
+    cristais.removeEventListener("click", pitnsc);
+    
+    sopro.removeEventListener("click", pitnss);
+    
+    explosiva.removeEventListener("click", pitnse);
+    
+    ferro.removeEventListener("click", pitnsf);
+    
+    incendiario.removeEventListener("click", pitnsi);
+    
+    kit2.removeEventListener("click", pitnsm2);
+    
+    reparo2.removeEventListener("click", pitnsr2);
+    
+    auriana2.removeEventListener("click", pitnsa2);
+    
+    cristais2.removeEventListener("click", pitnsc2);
+    
+    sopro2.removeEventListener("click", pitnss2);
+    
+    explosiva2.removeEventListener("click", pitnse2);
+    
+    ferro2.removeEventListener("click", pitnsf2);
+    
+    incendiario2.removeEventListener("click", pitnsi2);
+
+
+    kit.removeEventListener("contextmenu", mitnsm);
+
+    reparo.removeEventListener("contextmenu", mitnsr);
+    
+    auriana.removeEventListener("contextmenu", mitnsa);
+    
+    cristais.removeEventListener("contextmenu", mitnsc);
+    
+    sopro.removeEventListener("contextmenu", mitnss);
+    
+    explosiva.removeEventListener("contextmenu", mitnse);
+    
+    ferro.removeEventListener("contextmenu", mitnsf);
+    
+    incendiario.removeEventListener("contextmenu", mitnsi);
+    
+    kit2.removeEventListener("contextmenu", mitnsm2);
+    
+    reparo2.removeEventListener("contextmenu", mitnsr2);
+    
+    auriana2.removeEventListener("contextmenu", mitnsa2);
+    
+    cristais2.removeEventListener("contextmenu", mitnsc2);
+    
+    sopro2.removeEventListener("contextmenu", mitnss2);
+    
+    explosiva2.removeEventListener("contextmenu", mitnse2);
+    
+    ferro2.removeEventListener("contextmenu", mitnsf2);
+    
+    incendiario2.removeEventListener("contextmenu", mitnsi2);
+        nvs();
+        danttls[0] = danoini[0].textContent * 1;
+        danttls[1] = danoini[1].textContent * 1;
+        danttls[2] = danoini[2].textContent * 1;
+        danttls[3] = danoini[3].textContent * 1;
+        danttls[4] = danoini[4].textContent * 1;
+        danttls[5] = danoini[5].textContent * 1;
+        danttls[6] = danoini[6].textContent * 1;
+        switch (horda) {
+            case 1:
+                cartai1.style.display = "none";
+                cartai2.style.display = "none";
+                cartai6.style.display = "none";
+                cartai7.style.display = "none";
+            break;
+            case 2:
+                cartai1.style.display = "none";
+                cartai7.style.display = "none";
+            break;
+            case 4:
+                cartai1.style.display = "none";
+                cartai6.style.display = "none";
+                cartai7.style.display = "none";
+            break;
+            case 5:
+                cartai1.style.display = "none";
+                cartai7.style.display = "none";
+            break;
+            case 6:
+                cartai7.style.display = "none";
+            break;
+        }
+        ctinisel.style.display = "none";
+        vez.style.display = "flex";
+        escolhendo = false;
+        aliado.style.display = "block";
+        inimigoc.style.display = "block";
+        canhaoadv();
+        musicas();
+        cta1.style.animationName = "shake";
+        kit.addEventListener("click", kitf);
+
+        reparo.addEventListener("click", reparof);
+        
+        auriana.addEventListener("click", aurianaf);
+        
+        cristais.addEventListener("click", cristaisf);
+        
+        sopro.addEventListener("click", soprof);
+        
+        explosiva.addEventListener("click", explosivaf);
+        
+        ferro.addEventListener("click", ferrof);
+        
+        incendiario.addEventListener("click", incendiariof);
+        
+        kit2.addEventListener("click", kitf2);
+        
+        reparo2.addEventListener("click", reparof2);
+        
+        auriana2.addEventListener("click", aurianaf2);
+        
+        cristais2.addEventListener("click", cristaisf2);
+        
+        sopro2.addEventListener("click", soprof2);
+        
+        explosiva2.addEventListener("click", explosivaf2);
+        
+        ferro2.addEventListener("click", ferrof2);
+        
+        incendiario2.addEventListener("click", incendiariof2);
+    }
+    
+    atacar.addEventListener("click", rvmatq);
+    
+    function trocatxt() {
+        switch(true) {
+            case vt == true:
+                vez.style.display = "none";
+            break;
+            case mrcanhao:
+                vez.style.backgroundColor = "rgba(0, 50, 155, 0.842)";
+                veztxt.textContent = "Escolha o Operador";
+            break;
+            case mirando && habatv == 0 || numhab == 3 || per == 1 && mirando:
+                veztxt.textContent = "Escolha o Alvo";
+            break;
+            case cta1.style.animationName == "shake":
+                vez.style.display = "flex";
+                veztxt.textContent = "Turno de Barbarovsk";
+            break;
+            case cta2.style.animationName == "shake":
+                vez.style.display = "flex";
+                veztxt.textContent = "Turno de Crowly";
+            break;
+            case cta3.style.animationName == "shake":
+                vez.style.display = "flex";
+                veztxt.textContent = "Turno de Lysa";
+            break;
+            case cta4.style.animationName == "shake":
+                vez.style.display = "flex";
+                veztxt.textContent = "Turno de Darban";
+            break;
+            case cta5.style.animationName == "shake":
+                vez.style.display = "flex";
+                veztxt.textContent = "Turno de Gabriele";
+            break;
+            case !turnoa:
+                vez.style.display = "none";
+            break;
+        }
 }
 
 cog.addEventListener("click", () => {
@@ -572,6 +783,12 @@ fechar.addEventListener("click", () => {
     setTimeout(() => {
         utitensct.style.display = "none";
     }, 500)
+    if(escolhendo) {
+        ctinisel.style.display = "flex";
+        setTimeout(() => {
+            inis.style.display = "none";
+        }, 300)
+    }
 })
 
 itens.addEventListener("click", ulitens);
@@ -749,7 +966,11 @@ function turnoini() {
             break;
             default:
                 usandoci = false;
-                armai = "mosquete";
+                switch (true) {
+                    case horda == 1 || horda == 2 || horda == 3 || horda == 4 || horda == 5 || horda == 6 || horda == 7 || horda == 8 || chefe == 1 || chefe == 2:
+                        armai = "lamina";
+                    break;
+                }
         }
     }
     }, 0)
@@ -799,6 +1020,7 @@ function turnoini() {
 }
 
 function rodar() {
+    if(vt == false) {
     roll.style.visibility = "hidden";
     estatq.style.display = "flex";
     switch (true) {
@@ -1315,6 +1537,7 @@ function rodar() {
         break;
     }
 }
+}
 
 function inijog() {
     rd = setInterval(rodar, 2000);
@@ -1364,7 +1587,7 @@ function btd(e) {
         }
     }
 }
-    if(escolhendo) {
+    if(escolhendo && utitensct.style.display != "flex") {
         ctinisel.style.display = "flex";
         inis.style.bottom = "-55vh";
         setTimeout(() => {
@@ -2064,6 +2287,73 @@ function mnscool() {
     }
 }
 
+let x, i, j, l, ll, selElmnt, a, b, c;
+x = document.getElementsByClassName("custom-select");
+l = x.length;
+for (i = 0; i < l; i++) {
+  selElmnt = x[i].getElementsByTagName("select")[0];
+  ll = selElmnt.length;
+  a = document.createElement("DIV");
+  a.setAttribute("class", "select-selected");
+  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+  x[i].appendChild(a);
+  b = document.createElement("DIV");
+  b.setAttribute("class", "select-items select-hide");
+  for (j = 1; j < ll; j++) {
+    c = document.createElement("DIV");
+    c.innerHTML = selElmnt.options[j].innerHTML;
+    c.addEventListener("click", function(e) {
+        var y, i, k, s, h, sl, yl;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
+            }
+            this.setAttribute("class", "same-as-selected");
+            break;
+          }
+        }
+        h.click();
+    });
+    b.appendChild(c);
+  }
+  x[i].appendChild(b);
+  a.addEventListener("click", function(e) {
+    e.stopPropagation();
+    closeAllSelect(this);
+    this.nextSibling.classList.toggle("select-hide");
+    this.classList.toggle("select-arrow-active");
+  });
+}
+
+function closeAllSelect(elmnt) {
+  var x, y, i, xl, yl, arrNo = [];
+  x = document.getElementsByClassName("select-items");
+  y = document.getElementsByClassName("select-selected");
+  xl = x.length;
+  yl = y.length;
+  for (i = 0; i < yl; i++) {
+    if (elmnt == y[i]) {
+      arrNo.push(i)
+    } else {
+      y[i].classList.remove("select-arrow-active");
+    }
+  }
+  for (i = 0; i < xl; i++) {
+    if (arrNo.indexOf(i)) {
+      x[i].classList.add("select-hide");
+    }
+  }
+}
+document.addEventListener("click", closeAllSelect);
+
 function trocar() {
     ini = 0;
     danototal = 0;
@@ -2591,12 +2881,19 @@ if(usandoci == true) {
         amuletos();
         window.addEventListener("contextmenu", btd, false);
         if(!turnoa) {
-            if(armai == "mosquete") {
-                sons[2].currentTime = 0.5;
-                sons[2].play();
-            }
-            else {
-                sons[3].play();
+            switch (armai) {
+                case "lamina":
+                    sons[1].currentTime = 0;
+                    sons[1].play();
+                break;
+                case "mosquete":
+                    sons[2].currentTime = 0.5;
+                    sons[2].play();
+                break;
+                case "canhoes":
+                    sons[3].currentTime = 0;
+                    sons[3].play();
+                break;
             }
         }
         else {

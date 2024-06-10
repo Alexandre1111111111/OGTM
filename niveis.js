@@ -15,7 +15,7 @@ function nvs() {
             case "NV: II":
                 danos[i] = 10 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 10);
-                vidas[i].textContent = vds[i] + 20;
+                vidas[i].textContent = vds[i] - -20;
                 resistencias[i].textContent = `${rss[i] + 1}%`;
                 resps[i] -= 0.01;
                 vds[i] = vidas[i].textContent;
@@ -28,7 +28,7 @@ function nvs() {
             case "NV: III":
                 danos[i] = 25 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 25);
-                vidas[i].textContent = vds[i] + 45;
+                vidas[i].textContent = vds[i] - -45;
                 resistencias[i].textContent = `${rss[i] + 3}%`;
                 resps[i] -= 0.03;
                 vds[i] = vidas[i].textContent;
@@ -41,7 +41,7 @@ function nvs() {
             case "NV: IV":
                 danos[i] = 45 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 45);
-                vidas[i].textContent = vds[i] + 75;
+                vidas[i].textContent = vds[i] - -75;
                 resistencias[i].textContent = `${rss[i] + 6}%`;
                 resps[i] -= 0.06;
                 vds[i] = vidas[i].textContent;
@@ -54,7 +54,7 @@ function nvs() {
             case "NV: V":
                 danos[i] = 65 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 65);
-                vidas[i].textContent = vds[i] + 120;
+                vidas[i].textContent = vds[i] - -120;
                 resistencias[i].textContent = `${rss[i] + 9}%`;
                 resps[i] -= 0.09;
                 vds[i] = vidas[i].textContent;
@@ -67,7 +67,7 @@ function nvs() {
             case "NV: VI":
                 danos[i] = 95 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 95);
-                vidas[i].textContent = vds[i] + 170;
+                vidas[i].textContent = vds[i] - -170;
                 resistencias[i].textContent = `${rss[i] + 12}%`;
                 resps[i] -= 0.12;
                 vds[i] = vidas[i].textContent;
@@ -80,7 +80,7 @@ function nvs() {
             case "NV: VII":
                 danos[i] = 130 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 130);
-                vidas[i].textContent = vds[i] + 235;
+                vidas[i].textContent = vds[i] - -235;
                 resistencias[i].textContent = `${rss[i] + 15}%`;
                 resps[i] -= 0.15;
                 vds[i] = vidas[i].textContent;
@@ -93,7 +93,7 @@ function nvs() {
             case "NV: VIII":
                 danos[i] = 170 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 170);
-                vidas[i].textContent = vds[i] + 320;
+                vidas[i].textContent = vds[i] - -320;
                 resistencias[i].textContent = `${rss[i] + 18}%`;
                 resps[i] -= 0.18;
                 vds[i] = vidas[i].textContent;
@@ -106,7 +106,7 @@ function nvs() {
             case "NV: IX":
                 danos[i] = 215 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 215);
-                vidas[i].textContent = vds[i] + 420;
+                vidas[i].textContent = vds[i] - -420;
                 resistencias[i].textContent = `${rss[i] + 21}%`;
                 resps[i] -= 0.21;
                 vds[i] = vidas[i].textContent;
@@ -119,7 +119,7 @@ function nvs() {
             case "NV: X":
                 danos[i] = 265 + armas[i];
                 dns[i].textContent = Math.floor(armas[i] + 265);
-                vidas[i].textContent = vds[i] + 550;
+                vidas[i].textContent = vds[i] - -550;
                 resistencias[i].textContent = `${rss[i] + 26}%`;
                 resps[i] -= 0.26;
                 vds[i] = vidas[i].textContent;

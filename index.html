@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="options">
+        <h1 id="ver">OGTM v0.7.1.09.06.2024</h1>
         <div class="ctop">
             <div class="sonsm">
                 <h1>Volume</h1>
@@ -75,14 +76,10 @@
         <img src="tabua.png" alt="">
     </div>
     <div class="canhaoi">
-        <div class="cnesq">
-        <img src="explosao.gif" alt="">
-        <img src="explosao.gif" alt="">
-    </div>
-    <div class="cndir">
-        <img src="explosao.gif" alt="">
-        <img src="explosao.gif" alt="">
-    </div>
+        <img src="explosao.gif" id="cn1e" alt="">
+        <img src="explosao.gif" id="cn2e" alt="">
+        <img src="explosao.gif" id="cn1d" alt="">
+        <img src="explosao.gif" id="cn2d" alt="">
     </div>
     <div class="canhaoa">
         <img src="explosao.gif" alt="">
@@ -97,6 +94,181 @@
                 <h1>Inimigos</h1>
                 <button id="selini">Escolher os Inimigos</button>
             </div>
+            <div class="perssl">
+                <h1>Personagens</h1>
+                <div class="nvls">
+                    <h1>Nível:</h1>
+                <div class="custom-select">
+                    <select name="niveis" id="selniv">
+                        <option value="I">I</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                        <option value="V">V</option>
+                        <option value="VI">VI</option>
+                        <option value="VII">VII</option>
+                        <option value="VIII">VIII</option>
+                        <option value="IX">IX</option>
+                        <option value="X">X</option>
+                    </select>
+                </div>
+            </div>
+            <h1 id="armatxt">Armas:</h1>
+            <div class="armaselp1">
+                <h1>Barbarovsk:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap1">
+                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp1">
+            </div>
+            <div class="armaselp2">
+            <h1>Crowly:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap2">
+                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp2">
+        </div>
+            <div class="armaselp3">
+            <h1>Lysa:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap3">
+                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp3">
+        </div>
+            <div class="armaselp4">
+            <h1>Darban:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap4">
+                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp4">
+        </div>
+            <div class="armaselp5">
+            <h1>Gabriele:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap5">
+                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp5">
+        </div>
+            </div>
+            <div class="itenssel">
+                <h1>Itens</h1>
+                <div class="p1itns">
+                    <h1>Barbarovsk:</h1>
+                    <button id="p1itn">+</button>
+                    <h1 id="numitp1">0</h1>
+                </div>
+                <div class="p2itns">
+                    <h1>Crowly:</h1>
+                    <button id="p2itn">+</button>
+                    <h1 id="numitp2">0</h1>
+                </div>
+                <div class="p3itns">
+                    <h1>Lysa:</h1>
+                    <button id="p3itn">+</button>
+                    <h1 id="numitp3">0</h1>
+                </div>
+                <div class="p4itns">
+                    <h1>Darban:</h1>
+                    <button id="p4itn">+</button>
+                    <h1 id="numitp4">0</h1>
+                </div>
+                <div class="p5itns">
+                    <h1>Gabriele:</h1>
+                    <button id="p5itn">+</button>
+                    <h1 id="numitp5">0</h1>
+                </div>
+                <div class="barcoitns">
+                    <h1>Barco:</h1>
+                    <button id="pbitn">+</button>
+                    <h1 id="numitb">0</h1>
+                </div>
+            </div>
         </div>
         <button id="btncom">Começar</button>
     </div>
@@ -107,8 +279,8 @@
     <div class="utitensct">
         <div class="utitens">
             <div class="allitens">
-                <h1>Itens:</h1>
-                <div class="gradeit">
+                <h1 id="it">Itens:</h1>
+                <div class="gradeit perit">
                 <div class="itensgr kit">
                     <img src="https://cdn-icons-png.flaticon.com/512/2053/2053884.png" alt="">
                     <div class="quant">
@@ -158,54 +330,54 @@
                     </div>
                 </div>
             </div>
-            <h1>Itens do Barco:</h1>
-            <div class="gradeit">
+            <h1 id="ib">Itens do Barco:</h1>
+            <div class="gradeit barcoit">
                 <div class="itensgr kit2">
                     <img src="https://cdn-icons-png.flaticon.com/512/2053/2053884.png" alt="">
                     <div class="quant">
-                        <h1 id="quantm">1</h1>
+                        <h1 id="quantm">0</h1>
                     </div>
                 </div>
                 <div class="itensgr reparo2">
                     <img src="https://cdn-icons-png.flaticon.com/512/4854/4854866.png" alt="">
                     <div class="quant">
-                        <h1 id="quantr">1</h1>
+                        <h1 id="quantr">0</h1>
                     </div>
                 </div>
                 <div class="itensgr auriana2">
                     <img src="https://cdn-icons-png.flaticon.com/512/2190/2190855.png" alt="">
                     <div class="quant">
-                        <h1 id="quanta">1</h1>
+                        <h1 id="quanta">0</h1>
                     </div>
                 </div>
                 <div class="itensgr cristais2">
                     <img src="https://cdn-icons-png.flaticon.com/512/3753/3753718.png" alt="">
                     <div class="quant">
-                        <h1 id="quantc">1</h1>
+                        <h1 id="quantc">0</h1>
                     </div>
                 </div>
                 <div class="itensgr sopro2">
                     <img src="https://cdn-icons-png.flaticon.com/512/6658/6658725.png" alt="">
                     <div class="quant">
-                        <h1 id="quants">1</h1>
+                        <h1 id="quants">0</h1>
                     </div>
                 </div>
                 <div class="itensgr explosiva2">
                     <img src="https://cdn-icons-png.flaticon.com/512/3553/3553208.png" alt="">
                     <div class="quant">
-                        <h1 id="quante">1</h1>
+                        <h1 id="quante">0</h1>
                     </div>
                 </div>
                 <div class="itensgr ferro2">
                     <img src="https://cdn-icons-png.flaticon.com/512/6984/6984654.png" alt="">
                     <div class="quant">
-                        <h1 id="quantf">1</h1>
+                        <h1 id="quantf">0</h1>
                     </div>
                 </div>
                 <div class="itensgr incendiario2">
                     <img src="flecha.png" alt="">
                     <div class="quant">
-                        <h1 id="quanti">5</h1>
+                        <h1 id="quanti">0</h1>
                     </div>
                 </div>
             </div>
@@ -304,7 +476,7 @@
     <div class="personagens">
     <div id="cta1" class="barbarovsk">
         <div class="nivel">
-            <h1 id="nvc1">NV: VI</h1>
+            <h1 id="nvc1">NV: I</h1>
         </div>
         <div class="debuff">
             <div class="db1">
@@ -343,7 +515,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
         <div class="nivel">
-            <h1 id="nvc2">NV: VI</h1>
+            <h1 id="nvc2">NV: I</h1>
         </div>
         <div class="debuffp2">
             <div class="db1p2">
@@ -382,7 +554,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
         <div class="nivel">
-            <h1 id="nvc3">NV: VI</h1>
+            <h1 id="nvc3">NV: I</h1>
         </div>
         <div class="debuffp3">
             <div class="db1p3">
@@ -421,7 +593,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
         <div class="nivel">
-            <h1 id="nvc4">NV: VI</h1>
+            <h1 id="nvc4">NV: I</h1>
         </div>
         <div class="debuffp4">
             <div class="db1p4">
@@ -460,7 +632,7 @@
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
         <div class="nivel">
-            <h1 id="nvc5">NV: VI</h1>
+            <h1 id="nvc5">NV: I</h1>
         </div>
         <div class="debuffp5">
             <div class="db1p5">
@@ -698,5 +870,6 @@
     <script src="interv.js"></script>
     <script src="itens.js"></script>
     <script src="script.js"></script>
+    <script src="save.js"></script>
 </body>
 </html>
