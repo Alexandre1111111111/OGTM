@@ -2184,30 +2184,37 @@ function mnscool() {
     if(queimando[0] == true) {
         hpt = Math.floor(vidac1.textContent - 25);
         vidac1.textContent = hpt;
+        danorei1.style.animationName = "recebido";
     }
     if(queimando[1] == true) {
         hpt2 = Math.floor(vidac2.textContent - 25);
         vidac2.textContent = hpt2;
+        danorei2.style.animationName = "recebido";
     }
     if(queimando[2] == true) {
         hpt3 = Math.floor(vidac3.textContent - 25);
         vidac3.textContent = hpt3;
+        danorei3.style.animationName = "recebido";
     }
     if(queimando[3] == true) {
         hpt4 = Math.floor(vidac4.textContent - 25);
         vidac4.textContent = hpt4;
+        danorei4.style.animationName = "recebido";
     }
     if(queimando[4] == true) {
         hpt5 = Math.floor(vidac5.textContent - 25);
         vidac5.textContent = hpt5;
+        danorei5.style.animationName = "recebido";
     }
     if(queimando[5] == true) {
         hpt6 = Math.floor(vidac6.textContent - 25);
         vidac6.textContent = hpt6;
+        danorei6.style.animationName = "recebido";
     }
     if(queimando[6] == true) {
         hpt7 = Math.floor(vidac7.textContent - 25);
         vidac7.textContent = hpt7;
+        danorei7.style.animationName = "recebido";
     }
     for (let i = 0; i < atordoas.length; i++) {
         if(atordoas[i].style.display == "flex" && incs[i].style.visibility == "hidden" && duraats[i] == 0) {
