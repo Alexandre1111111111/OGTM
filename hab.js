@@ -5,7 +5,7 @@ function habilidades() {
             cool1 = 5;
             atacando();
         break;
-        case ichab.src == "https://cdn-icons-png.flaticon.com/512/2851/2851844.png":
+        case ichab.src == "https://cdn-icons-png.flaticon.com/512/2851/2851844.png" && atacar.textContent == "Atacar":
             cool2 = 5;
             quantmira = 1;
             numhab = 2;
@@ -33,6 +33,7 @@ function habilidades() {
             cartai5.removeEventListener("mouseover", c5);
             cartai6.removeEventListener("mouseover", c6);
             cartai7.removeEventListener("mouseover", c7);
+            limp();
             vez.style.top = "50vh";
             vez.style.backgroundColor = "rgba(0, 200, 0, 0.842)";
             hab3 = true;

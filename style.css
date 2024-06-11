@@ -659,6 +659,15 @@ html {
     width: 100%;
     padding: 1vh;
 }
+#amultxt {
+    background-color: unset;
+    border: unset;
+    font-size: 5vh;
+    border-top: 0.3vh solid #ddbd2f;
+    border-radius: 0;
+    width: 100%;
+    padding: 1vh;
+}
 .nvls {
     color: #ddbd2f;
     font-size: 5vh;
@@ -697,6 +706,40 @@ input::-webkit-inner-spin-button {
     background-color: unset;
     border: unset;
     width: 30vh;
+}
+.amulp1, .amulp2, .amulp3, .amulp4, .amulp5 {
+    width: 100%;
+    color: #ddbd2f;
+    font-size: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 0.3vh solid #bb8b06;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+.amulp1 h1, .amulp2 h1, .amulp3 h1, .amulp4 h1, .amulp5 h1 {
+    color: #ddbd2f;
+    font-size: 5vh;
+    background-color: unset;
+    border: unset;
+    width: 30vh;
+}
+.esp {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.a1p1, .a1p2, .a1p3, .a1p4, .a1p5, .a2p1, .a2p2, .a2p3, .a2p4, .a2p5, .a3p1, .a3p2, .a3p3, .a3p4, .a3p5 {
+    width: 10vh;
+    height: 10vh;
+    border: 0.3vh solid #bb8b06;
+    border-radius: 10vh;
+    cursor: pointer;
+}
+.a1p1:hover, .a1p2:hover, .a1p3:hover, .a1p4:hover, .a1p5:hover, .a2p1:hover, .a2p2:hover, .a2p3:hover, .a2p4:hover, .a2p5:hover, .a3p1:hover, .a3p2:hover, .a3p3:hover, .a3p4:hover, .a3p5:hover {
+    border-color: #e6cb83;
 }
 .custom-select {
     position: relative;
@@ -1029,6 +1072,10 @@ input::-webkit-inner-spin-button {
     margin: 0 auto;
     align-items: center;
     display: flex;
+}
+#armasatl {
+    text-wrap: nowrap;
+    font-size: 120%;
 }
 .mun {
     width: 100%;
@@ -1500,6 +1547,30 @@ input::-webkit-inner-spin-button {
     animation-fill-mode: forwards;
 }
 
+.danorei1, .danorei2, .danorei3, .danorei4, .danorei5, .danorei6, .danorei7{
+    width: 18vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 6;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.danorea1, .danorea2, .danorea3, .danorea4, .danorea5 {
+    width: 20vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 6;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
 .balaset {
     height: 9vh;
     width: 9vh;
@@ -1683,6 +1754,15 @@ input::-webkit-inner-spin-button {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes recebido {
+    0% {
+        box-shadow: inset 0vh 0vh 2vh 2vh #c01515;
+    }
+    100% {
+        box-shadow: inset 0vh 0vh 0vh 0vh #c01515;
     }
 }
 

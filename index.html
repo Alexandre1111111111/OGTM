@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="options">
-        <h1 id="ver">OGTM v0.7.1.09.06.2024</h1>
+        <h1 id="ver">OGTM v0.7.3.10.06.2024</h1>
         <div class="ctop">
             <div class="sonsm">
                 <h1>Volume</h1>
@@ -100,7 +100,7 @@
                     <h1>Nível:</h1>
                 <div class="custom-select">
                     <select name="niveis" id="selniv">
-                        <option value="I">I</option>
+                        <option value="S">Auto</option>
                         <option value="I">I</option>
                         <option value="II">II</option>
                         <option value="III">III</option>
@@ -119,7 +119,7 @@
                 <h1>Barbarovsk:</h1>
             <div class="custom-select">
                 <select name="armas" id="selarmap1">
-                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Auto</option>
                     <option value="punhal">Punhal</option>
                     <option value="rapieira">Rapieira</option>
                     <option value="sabre">Sabre</option>
@@ -143,7 +143,7 @@
             <h1>Crowly:</h1>
             <div class="custom-select">
                 <select name="armas" id="selarmap2">
-                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Auto</option>
                     <option value="punhal">Punhal</option>
                     <option value="rapieira">Rapieira</option>
                     <option value="sabre">Sabre</option>
@@ -167,7 +167,7 @@
             <h1>Lysa:</h1>
             <div class="custom-select">
                 <select name="armas" id="selarmap3">
-                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Auto</option>
                     <option value="punhal">Punhal</option>
                     <option value="rapieira">Rapieira</option>
                     <option value="sabre">Sabre</option>
@@ -191,7 +191,7 @@
             <h1>Darban:</h1>
             <div class="custom-select">
                 <select name="armas" id="selarmap4">
-                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Auto</option>
                     <option value="punhal">Punhal</option>
                     <option value="rapieira">Rapieira</option>
                     <option value="sabre">Sabre</option>
@@ -215,7 +215,7 @@
             <h1>Gabriele:</h1>
             <div class="custom-select">
                 <select name="armas" id="selarmap5">
-                    <option value="punhal">Punhal</option>
+                    <option value="punhal">Auto</option>
                     <option value="punhal">Punhal</option>
                     <option value="rapieira">Rapieira</option>
                     <option value="sabre">Sabre</option>
@@ -235,6 +235,47 @@
             </div>
             <input type="number" placeholder="mun" id="nummunp5">
         </div>
+        <h1 id="amultxt">Amuletos:</h1>
+        <div class="amulp1">
+            <h1>Barbarovsk:</h1>
+            <div class="esp">
+                <div class="a1p1"></div>
+                <div class="a2p1"></div>
+                <div class="a3p1"></div>
+            </div>
+            </div>
+            <div class="amulp2">
+            <h1>Crowly:</h1>
+            <div class="esp">
+                <div class="a1p2"></div>
+                <div class="a2p2"></div>
+                <div class="a3p2"></div>
+            </div>
+            </div>
+            <div class="amulp3">
+            <h1>Lysa:</h1>
+            <div class="esp">
+                <div class="a1p3"></div>
+                <div class="a2p3"></div>
+                <div class="a3p3"></div>
+            </div>
+            </div>
+            <div class="amulp4">
+            <h1>Darban:</h1>
+            <div class="esp">
+                <div class="a1p4"></div>
+                <div class="a2p4"></div>
+                <div class="a3p4"></div>
+            </div>
+            </div>
+            <div class="amulp5">
+            <h1>Gabriele:</h1>
+            <div class="esp">
+                <div class="a1p5"></div>
+                <div class="a2p5"></div>
+                <div class="a3p5"></div>
+            </div>
+            </div>
             </div>
             <div class="itenssel">
                 <h1>Itens</h1>
@@ -475,6 +516,7 @@
     </div>
     <div class="personagens">
     <div id="cta1" class="barbarovsk">
+        <div class="danorea1"></div>
         <div class="nivel">
             <h1 id="nvc1">NV: I</h1>
         </div>
@@ -511,6 +553,7 @@
         </div>
     </div>
     <div id="cta2" class="barbarovsk alto">
+        <div class="danorea2"></div>
         <div id="cn1" class="canhoneiro">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -550,6 +593,7 @@
     </div>
     </div>
     <div id="cta3" class="barbarovsk">
+        <div class="danorea3"></div>
         <div id="cn2" class="canhoneiro">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -589,6 +633,7 @@
         </div>
     </div>
     <div id="cta4" class="barbarovsk alto">
+        <div class="danorea4"></div>
         <div id="cn3" class="canhoneiro">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -628,6 +673,7 @@
     </div>
     </div>
     <div id="cta5" class="barbarovsk">
+        <div class="danorea5"></div>
         <div id="cn4" class="canhoneiro">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -670,6 +716,7 @@
 <div class="rivais">
     <div id="cartai1" class="thesauriano baixo">
         <div class="confogo1"></div>
+        <div class="danorei1"></div>
         <div id="cn1i" class="canhoneiroi">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -695,6 +742,7 @@
     </div>
     <div id="cartai2" class="thesauriano">
         <div class="confogo2"></div>
+        <div class="danorei2"></div>
         <div id="cn2i" class="canhoneiroi">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -720,6 +768,7 @@
     </div>
     <div id="cartai3" class="thesauriano baixo">
         <div class="confogo3"></div>
+        <div class="danorei3"></div>
         <div id="cn3i" class="canhoneiroi">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -745,6 +794,7 @@
     </div>
     <div id="cartai4" class="thesauriano">
         <div class="confogo4"></div>
+        <div class="danorei4"></div>
         <div id="cn4i" class="canhoneiroi">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -770,6 +820,7 @@
     </div>
     <div id="cartai5" class="thesauriano baixo">
         <div class="confogo5"></div>
+        <div class="danorei5"></div>
         <div id="cn5i" class="canhoneiroi">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -795,6 +846,7 @@
     </div>
     <div id="cartai6" class="thesauriano">
         <div class="confogo6"></div>
+        <div class="danorei6"></div>
         <div id="cn6i" class="canhoneiroi">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>
@@ -820,6 +872,7 @@
     </div>
     <div id="cartai7" class="thesauriano baixo">
         <div class="confogo7"></div>
+        <div class="danorei7"></div>
         <div id="cn7i" class="canhoneiroi">
             <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
         </div>

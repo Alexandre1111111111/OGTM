@@ -562,11 +562,11 @@ if(escolhendo == false) {
 }
 
 totalitnb = quantm.textContent - -quantr.textContent - -quanta.textContent - -quantc.textContent - -quants.textContent - -quante.textContent - -quantf.textContent - -quanti.textContent;
-totalitnp1 = defmp1 + defrp1 + defap1 + defcp1 + defsp1 + defep1 + deffp1 + defip1;
-totalitnp2 = defmp2 + defrp2 + defap2 + defcp2 + defsp2 + defep2 + deffp2 + defip2;
-totalitnp3 = defmp3 + defrp3 + defap3 + defcp3 + defsp3 + defep3 + deffp3 + defip3;
-totalitnp4 = defmp4 + defrp4 + defap4 + defcp4 + defsp4 + defep4 + deffp4 + defip4;
-totalitnp5 = defmp5 + defrp5 + defap5 + defcp5 + defsp5 + defep5 + deffp5 + defip5;
+totalitnp1 = defmp1 - -defrp1 - -defap1 - -defcp1 - -defsp1 - -defep1 - -deffp1 - -defip1;
+totalitnp2 = defmp2 - -defrp2 - -defap2 - -defcp2 - -defsp2 - -defep2 - -deffp2 - -defip2;
+totalitnp3 = defmp3 - -defrp3 - -defap3 - -defcp3 - -defsp3 - -defep3 - -deffp3 - -defip3;
+totalitnp4 = defmp4 - -defrp4 - -defap4 - -defcp4 - -defsp4 - -defep4 - -deffp4 - -defip4;
+totalitnp5 = defmp5 - -defrp5 - -defap5 - -defcp5 - -defsp5 - -defep5 - -deffp5 - -defip5;
 
     if(vez.style.top == "2vh") {
         miraspr = false;
@@ -845,6 +845,37 @@ for (let i = 0; i < selarmas.length; i++) {
         nummuns[i].style.display = "none";
     }
 }
+if(armasatl.textContent == "Granada" && turnoa) {
+    expl = true;
+    area = true;
+}
+switch (per) {
+    case 1:
+        if(armas[0] == molotov) {
+            aquecida = true;
+        }
+    break;
+    case 2:
+        if(armas[1] == molotov) {
+            aquecidap2 = true;
+        }
+    break;
+    case 3:
+        if(armas[2] == molotov) {
+            aquecidap3 = true;
+        }
+    break;
+    case 4:
+        if(armas[3] == molotov) {
+            aquecidap4 = true;
+        }
+    break;
+    case 5:
+        if(armas[4] == molotov) {
+            aquecidap5 = true;
+        }
+    break;
+}
 }, 10)
 
 setInterval(() => {
@@ -895,7 +926,7 @@ setInterval(() => {
         vez.style.display = "none";
         vt = true;
         defvt.textContent = "Derrota";
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i <= 3; i++) {
             musica[i].pause();
         }
         if(musica[4].paused == true) {

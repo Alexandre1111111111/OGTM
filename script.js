@@ -156,6 +156,7 @@ function ttl() {
 
 function inicio() {
     per = 1;
+    save();
     for (let i = 0; i < nummuns.length; i++) {
         if(nummuns[i].style.display == "none") {
             nummuns[i].value = 1;
@@ -1603,12 +1604,6 @@ function btd(e) {
     if(cool3 == 5 && per == 3 && hab3 == true) {
         cool3 = 0;
     }
-    if(cool4 == 7 && per == 4) {
-        cool4 = 0;
-    }
-    if(cool5 == 6 && per == 5) {
-        cool5 = 0;
-    }
     if(per == 1) {
         for (let i = 0; i < cartasi.length; i++) {
             miras[i].style.display = "none";
@@ -1652,9 +1647,11 @@ function frio() {
             durafrios[i] = 3;
         }
     }
+    if(armasatl.textContent != "Espada Congelada") {
     mirando = false;
     area = false;
     limp();
+    }
 }
 
 for (let i = 0; i < cartasi.length; i++) {
@@ -2761,6 +2758,8 @@ else {
     personagem();
 }
     }
+    expl = false;
+    area = false;
 }
 
 function rolar() {
@@ -2852,6 +2851,109 @@ if(usandoci == true) {
 }
     dado.style.display = "flex";
     setTimeout(() => {
+        if(numdado > 3) {
+        switch (true) {
+            case mirac1.style.display == "block" && mirac2.style.display == "block" && mirac3.style.display == "block":
+                danorei1.style.animationName = "recebido";
+                danorei2.style.animationName = "recebido";
+                danorei3.style.animationName = "recebido";
+            break;
+            case mirac2.style.display == "block" && mirac3.style.display == "block" && mirac4.style.display == "block":
+                danorei2.style.animationName = "recebido";
+                danorei3.style.animationName = "recebido";
+                danorei4.style.animationName = "recebido";
+            break;
+            case mirac3.style.display == "block" && mirac4.style.display == "block" && mirac5.style.display == "block":
+                danorei3.style.animationName = "recebido";
+                danorei4.style.animationName = "recebido";
+                danorei5.style.animationName = "recebido";
+            break;
+            case mirac4.style.display == "block" && mirac5.style.display == "block" && mirac6.style.display == "block":
+                danorei4.style.animationName = "recebido";
+                danorei5.style.animationName = "recebido";
+                danorei6.style.animationName = "recebido";
+            break;
+            case mirac5.style.display == "block" && mirac6.style.display == "block" && mirac7.style.display == "block":
+                danorei5.style.animationName = "recebido";
+                danorei6.style.animationName = "recebido";
+                danorei7.style.animationName = "recebido";
+            break;
+            case mirac2.style.display == "block" && mirac3.style.display == "block":
+                danorei2.style.animationName = "recebido";
+                danorei3.style.animationName = "recebido";
+            break;
+            case mirac3.style.display == "block" && mirac4.style.display == "block":
+                danorei3.style.animationName = "recebido";
+                danorei4.style.animationName = "recebido";
+            break;
+            case mirac4.style.display == "block" && mirac5.style.display == "block":
+                danorei4.style.animationName = "recebido";
+                danorei5.style.animationName = "recebido";
+            break;
+            case mirac5.style.display == "block" && mirac6.style.display == "block":
+                danorei5.style.animationName = "recebido";
+                danorei6.style.animationName = "recebido";
+            break;
+            case mirac1.style.display == "block" && mirac2.style.display == "block":
+                danorei1.style.animationName = "recebido";
+                danorei2.style.animationName = "recebido";
+            break;
+            case mirac6.style.display == "block" && mirac7.style.display == "block":
+                danorei6.style.animationName = "recebido";
+                danorei7.style.animationName = "recebido";
+            break;
+            case mirac1.style.display == "block":
+                danorei1.style.animationName = "recebido";
+            break;
+            case mirac2.style.display == "block":
+                danorei2.style.animationName = "recebido";
+            break;
+            case mirac3.style.display == "block":
+                danorei3.style.animationName = "recebido";
+            break;
+            case mirac4.style.display == "block":
+                danorei4.style.animationName = "recebido";
+            break;
+            case mirac5.style.display == "block":
+                danorei5.style.animationName = "recebido";
+            break;
+            case mirac6.style.display == "block":
+                danorei6.style.animationName = "recebido";
+            break;
+            case mirac7.style.display == "block":
+                danorei7.style.animationName = "recebido";
+            break;
+            case mirap1.style.display == "block":
+                danorea1.style.animationName = "recebido";
+            break;
+            case mirap2.style.display == "block":
+                danorea2.style.animationName = "recebido";
+            break;
+            case mirap3.style.display == "block":
+                danorea3.style.animationName = "recebido";
+            break;
+            case mirap4.style.display == "block":
+                danorea4.style.animationName = "recebido";
+            break;
+            case mirap5.style.display == "block":
+                danorea5.style.animationName = "recebido";
+            break;
+        }
+    }
+        setTimeout(() => {
+            danorei1.style.animationName = "unset";
+            danorei2.style.animationName = "unset";
+            danorei3.style.animationName = "unset";
+            danorei4.style.animationName = "unset";
+            danorei5.style.animationName = "unset";
+            danorei6.style.animationName = "unset";
+            danorei7.style.animationName = "unset";
+            danorea1.style.animationName = "unset";
+            danorea2.style.animationName = "unset";
+            danorea3.style.animationName = "unset";
+            danorea4.style.animationName = "unset";
+            danorea5.style.animationName = "unset";
+        }, 1500)
         if(aquecida == true && per == 1 || aquecidap2 == true && per == 2 || aquecidap3 == true && per == 3 || aquecidap4 == true && per == 4 || aquecidap5 == true && per == 5) {
         for(let i = 0; i < db1s.length; i++) {
             if(numdado > 3 || aurianos[i] == true) {
@@ -2901,12 +3003,13 @@ if(usandoci == true) {
         switch (per) {
             case 1:
                 if(armas[0] == perdeneira || armas[0] == pistola || armas[0] == mosquete) {
-                    audios[1].currentTime = 0.5;
+                    audios[0].currentTime = 0.5;
                     if(munp1 != 0 && expl == false) {
                         muns[0]--;
                     }
                 }
                 if(armas[0] == besta || armas[0] == molotov || armas[0] == granada || armas[0] == nock) {
+                    audios[0].currentTime = 0;
                     if(munp1 != 0 && viroin == false) {
                     muns[0]--;
                     }
@@ -2926,6 +3029,7 @@ if(usandoci == true) {
                     }
                 }
                 if(armas[1] == besta || armas[1] == molotov || armas[1] == granada || armas[1] == nock) {
+                    audios[1].currentTime = 0;
                     if(munp2 != 0 && viroin == false) {
                         muns[1]--;
                     }
@@ -2939,12 +3043,13 @@ if(usandoci == true) {
             break;
             case 3:
                 if(armas[2] == perdeneira || armas[2] == pistola || armas[2] == mosquete) {
-                    audios[1].currentTime = 0.5;
+                    audios[2].currentTime = 0.5;
                     if(munp3 != 0 && expl == false) {
                         muns[2]--;
                     }
                 }
                 if(armas[2] == besta || armas[2] == molotov || armas[2] == granada || armas[2] == nock) {
+                    audios[2].currentTime = 0;
                     if(munp3 != 0 && viroin == false) {
                         muns[2]--;
                     }
@@ -2958,12 +3063,13 @@ if(usandoci == true) {
             break;
             case 4:
                 if(armas[3] == perdeneira || armas[3] == pistola || armas[3] == mosquete) {
-                    audios[1].currentTime = 0.5;
+                    audios[3].currentTime = 0.5;
                     if(munp4 != 0 && expl == false) {
                         muns[3]--;
                     }
                 }
                 if(armas[3] == besta || armas[3] == molotov || armas[3] == granada || armas[3] == nock) {
+                    audios[3].currentTime = 0;
                     if(munp4 != 0 && viroin == false) {
                         muns[3]--;
                     }
@@ -2977,12 +3083,13 @@ if(usandoci == true) {
             break;
             case 5:
                 if(armas[4] == perdeneira || armas[4] == pistola || armas[4] == mosquete) {
-                    audios[1].currentTime = 0.5;
+                    audios[4].currentTime = 0.5;
                     if(munp5 != 0 && expl == false) {
                         muns[4]--;
                     }
                 }
                 if(armas[4] == besta || armas[4] == molotov || armas[4] == granada || armas[4] == nock) {
+                    audios[4].currentTime = 0;
                     if(munp5 != 0 && viroin == false) {
                         muns[4]--;
                     }
@@ -2997,8 +3104,12 @@ if(usandoci == true) {
         }
     }
     else {
+        sons[3].currentTime = 0;
         sons[3].play();
     }
+    }
+    if(armasatl.textContent == "Espada Congelada" && numdado > 3) {
+        frio();
     }
     if(expl == false) {
         if(turnoa) {
@@ -3221,8 +3332,9 @@ if(viroin == true) {
         break;
     }
 }
-    viroin == false;
+    viroin = false;
     expl = false;
+    limp();
     if(quantmira == 0) {
         numhab = 0;
         trocar();

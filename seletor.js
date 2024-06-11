@@ -17,6 +17,7 @@ function limpct() {
         danost[i] = 0;
         rests[i] = 0;
         horda = 0;
+        chefe = 0;
     }
 }
 
@@ -32,6 +33,7 @@ horda1m.addEventListener("click", () => {
         danost[i] = 30;
         rests[i] = 0.95;
         horda = 1;
+        chefe = 0;
     }
 })
 
@@ -47,6 +49,7 @@ horda2m.addEventListener("click", () => {
         danost[i] = 30;
         rests[i] = 0.95;
         horda = 2;
+        chefe = 0;
     }
 })
 
@@ -62,6 +65,7 @@ horda3m.addEventListener("click", () => {
         danost[i] = 30;
         rests[i] = 0.95;
         horda = 3;
+        chefe = 0;
     }
 })
 
@@ -77,6 +81,7 @@ horda4m.addEventListener("click", () => {
         danost[i] = 95;
         rests[i] = 0.90;
         horda = 4;
+        chefe = 0;
     }
 })
 
@@ -92,6 +97,7 @@ horda5m.addEventListener("click", () => {
         danost[i] = 95;
         rests[i] = 0.90;
         horda = 5;
+        chefe = 0;
     }
 })
 
@@ -107,6 +113,7 @@ horda6m.addEventListener("click", () => {
         danost[i] = 95;
         rests[i] = 0.90;
         horda = 6;
+        chefe = 0;
     }
 })
 
@@ -122,6 +129,7 @@ horda7m.addEventListener("click", () => {
         danost[i] = 95;
         rests[i] = 0.90;
         horda = 7;
+        chefe = 0;
     }
 })
 
@@ -137,6 +145,7 @@ horda8m.addEventListener("click", () => {
         danost[i] = 95;
         rests[i] = 0.90;
         horda = 8;
+        chefe = 0;
     }
 })
 

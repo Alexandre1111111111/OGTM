@@ -303,6 +303,18 @@ const nummunp2 = document.querySelector("#nummunp2");
 const nummunp3 = document.querySelector("#nummunp3");
 const nummunp4 = document.querySelector("#nummunp4");
 const nummunp5 = document.querySelector("#nummunp5");
+const danorei1 = document.querySelector(".danorei1");
+const danorei2 = document.querySelector(".danorei2");
+const danorei3 = document.querySelector(".danorei3");
+const danorei4 = document.querySelector(".danorei4");
+const danorei5 = document.querySelector(".danorei5");
+const danorei6 = document.querySelector(".danorei6");
+const danorei7 = document.querySelector(".danorei7");
+const danorea1 = document.querySelector(".danorea1");
+const danorea2 = document.querySelector(".danorea2");
+const danorea3 = document.querySelector(".danorea3");
+const danorea4 = document.querySelector(".danorea4");
+const danorea5 = document.querySelector(".danorea5");
 
 const coronhada = 10;
 const punhal = 20;
@@ -322,7 +334,7 @@ const nock = 60;
 const arpão = 25;
 const foice = 90;
 
-const espada = 150;
+const espada = 150.01;
 
 const danoextaur = 75;
 const danorg = 50;
@@ -640,3 +652,6 @@ let danttl7 = 0;
 
 const danttls = [danttl1, danttl2, danttl3, danttl4, danttl5, danttl6, danttl7];
 
+vez.addEventListener("click", () => {
+    trocar();
+})
