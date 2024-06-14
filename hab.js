@@ -168,6 +168,11 @@ function rmvcrs() {
     cta3.removeEventListener("mouseover", cr3);
     cta4.removeEventListener("mouseover", cr4);
     cta5.removeEventListener("mouseover", cr5);
+    cta1.removeEventListener("click", curar);
+    cta2.removeEventListener("click", curar);
+    cta3.removeEventListener("click", curar);
+    cta4.removeEventListener("click", curar);
+    cta5.removeEventListener("click", curar);
     cura1.style.display = "none";
     cura2.style.display = "none";
     cura3.style.display = "none";

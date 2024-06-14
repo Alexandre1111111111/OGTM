@@ -1,9 +1,17 @@
 selniv.value = localStorage.selnivs;
-if(performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+sldm.value = localStorage.vm;
+slds.value = localStorage.vs;
+if(performance.navigation.type == performance.navigation.TYPE_RELOAD || localStorage.fv == "V") {
 horda = localStorage.hordasn;
 chefe = localStorage.chefesn;
+for(i = 0; i < musica.length; i++) {
+    musica[i].volume = localStorage.vm / 100;
 }
-if(performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+for(i = 0; i < sons.length; i++) {
+    sons[i].volume = localStorage.vs / 100;
+}
+}
+if(performance.navigation.type != performance.navigation.TYPE_RELOAD && localStorage.fv == undefined) {
     localStorage.b1 = "0";
     localStorage.b2 = "0";
     localStorage.b3 = "0";
@@ -12,7 +20,18 @@ if(performance.navigation.type != performance.navigation.TYPE_RELOAD) {
     localStorage.b6 = "0";
     localStorage.b7 = "0";
     localStorage.b8 = "0";
+    for(i = 0; i < musica.length; i++) {
+    localStorage.ms = 0.3;
+    musica[i].volume = localStorage.ms;
+    sldm.value = "30";
+    }
+    for(i = 0; i < sons.length; i++) {
+    localStorage.vl = 0.7;
+    sons[i].volume = localStorage.vl;
+    slds.value = "70";
+    }
 }
+
 quantm.textContent = localStorage.b1;
 quantr.textContent = localStorage.b2;
 quanta.textContent = localStorage.b3;
@@ -31,7 +50,7 @@ nummunp2.value = localStorage.munp2;
 nummunp3.value = localStorage.munp3;
 nummunp4.value = localStorage.munp4;
 nummunp5.value = localStorage.munp5;
-if(performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+if(performance.navigation.type != performance.navigation.TYPE_RELOAD && localStorage.fv == undefined) {
     localStorage.itnmp1 = "0";
     localStorage.itnmp2 = "0";
     localStorage.itnmp3 = "0";
@@ -283,6 +302,7 @@ switch (chefe) {
     break;
 }
 function save() {
+    localStorage.fv = "V";
     localStorage.selnivs = selniv.value;
     localStorage.hordasn = horda;
     localStorage.chefesn = chefe;

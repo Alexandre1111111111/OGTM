@@ -909,7 +909,7 @@ input::-webkit-inner-spin-button {
     margin: 0 auto;
     display: block;
     position: absolute;
-    z-index: 30;
+    z-index: 160;
     top: 1vh;
     left: 1vh;
     cursor: pointer;
@@ -927,6 +927,98 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     transition-duration: 0.3s;
     position: absolute;
+}
+.selam {
+    position: absolute;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    right: 0;
+    height: 100%;
+    width: 31vw;
+    right: -32vw;
+    background-color: #000;
+    z-index: 250;
+    border-left: 0.5vh solid #ffcb3d;
+    transition-duration: 0.3s;
+}
+.btnsam {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnsam button {
+    width: 100%;
+    height: 100%;
+    font-size: 3.5vh;
+    cursor: pointer;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    transition-duration: 0.1s;
+}
+.amls {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#coam {
+    color: #969696;
+    background-color: #272626;
+    border: 0.3vh solid #575757;
+}
+#raam {
+    color: #3750dd;
+    background-color: #00031f;
+    border: 0.3vh solid #11044e;
+}
+#epam {
+    color: #ccdd30;
+    background-color: #300b00;
+    border: 0.3vh solid #632c00;
+}
+#leam {
+    color: #7c2fd4;
+    background-color: #2b002b;
+    border: 0.3vh solid #3a0070;
+}
+#coam:hover {
+    background-color: #333131;
+}
+#raam:hover {
+    background-color: #000957;
+}
+#epam:hover {
+    background-color: #491201;
+}
+#leam:hover {
+    background-color: #470147;
+}
+#coam:active {
+    background-color: #575757;
+}
+#raam:active {
+    background-color: #222c80;
+}
+#epam:active {
+    background-color: #68220d;
+}
+#leam:active {
+    background-color: #681068;
+}
+.amls div {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.3vh solid #bb8b06;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.amls div:hover {
+    border-color: #fad05c;
 }
 .ctop {
     width: 60vh;

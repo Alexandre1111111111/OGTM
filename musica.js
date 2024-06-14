@@ -18,14 +18,6 @@ const musica = [bgmusic, bgmusic2, bgmusic3, bgmusic4, bgmusic5];
 
 let ramm;
 
-for(let i = 0; i < musica.length; i++) {
-    musica[i].volume = 0.3;
-}
-
-for(i = 0; i < sons.length; i++) {
-    sons[i].volume = 0.7;
-}
-
 function musicas() {
     for(i = 0; i < musica.length; i++) {
         musica[i].currentTime = 0;

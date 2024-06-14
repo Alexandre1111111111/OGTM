@@ -136,13 +136,15 @@ function canhaoadv() {
 }
 
 sldm.oninput = () => {
-    for(i = 0; i < sons.length; i++) {
+    for(i = 0; i < musica.length; i++) {
         musica[i].volume = sldm.value / 100;
+        localStorage.vm = sldm.value;
     }
 }
 slds.oninput = () => {
     for(i = 0; i < sons.length; i++) {
         sons[i].volume = slds.value / 100;
+        localStorage.vs = slds.value;
     }
 }
 
@@ -355,6 +357,8 @@ function inicio() {
         canhaoadv();
         musicas();
         cta1.style.animationName = "shake";
+        selam.style.visibility = "hidden";
+        selam.style.right = "-32vw";
         kit.addEventListener("click", kitf);
 
         reparo.addEventListener("click", reparof);
@@ -1624,6 +1628,8 @@ function btd(e) {
             ordem.style.display = "none";
         }, 250)
     }
+    selam.style.visibility = "hidden";
+    selam.style.right = "-32vw";
     e.preventDefault(); 
 }
 
