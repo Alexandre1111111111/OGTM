@@ -6,6 +6,41 @@ function selectini() {
     }, 50)
 }
 
+marmp.style.borderColor = "#ffd971";
+
+marmp.addEventListener("click", () => {
+    mapa = "Mar";
+    document.body.style.backgroundImage = "url(campo.gif)";
+    prancha = false;
+    marmp.style.borderColor = "#ffd971";
+    cosmp.style.borderColor = "";
+    termp.style.borderColor = "";
+    hpbarcoini.style.display = "flex";
+    hpbarco.style.display = "flex";
+})
+
+cosmp.addEventListener("click", () => {
+    mapa = "Costa";
+    document.body.style.backgroundImage = "url(costa.gif)";
+    prancha = true;
+    marmp.style.borderColor = "";
+    cosmp.style.borderColor = "#ffd971";
+    termp.style.borderColor = "";
+    hpbarcoini.style.display = "none";
+    hpbarco.style.display = "flex";
+})
+
+termp.addEventListener("click", () => {
+    mapa = "Terra";
+    document.body.style.backgroundImage = "url(terra.png)";
+    prancha = true;
+    marmp.style.borderColor = "";
+    cosmp.style.borderColor = "";
+    termp.style.borderColor = "#ffd971";
+    hpbarcoini.style.display = "none";
+    hpbarco.style.display = "none";
+})
+
 function limpct() {
     for (let i = 0; i < 7; i++) {
         cartasi[i].style.backgroundImage = "unset";

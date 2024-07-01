@@ -221,6 +221,7 @@ function use() {
             switch (per) {
                 case 1:
                     if(vidas[0].textContent * 1 < vds[0] * 1) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Kit Médico</em>` + "<br>";
                     vidac1a.textContent -= -150;
                     espitem.style.display = "none";
                     utitensct.style.opacity = "0";
@@ -255,6 +256,7 @@ function use() {
                 break;
                 case 2:
                     if(vidas[1].textContent * 1 < vds[1] * 1) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Kit Médico</em>` + "<br>";
                     vidac2a.textContent -= -150;
                     espitem.style.display = "none";
                     utitensct.style.opacity = "0";
@@ -289,6 +291,7 @@ function use() {
                 break;
                 case 3:
                     if(vidas[2].textContent * 1 < vds[2] * 1) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Kit Médico</em>` + "<br>";
                     vidac3a.textContent -= -150;
                     espitem.style.display = "none";
                     utitensct.style.opacity = "0";
@@ -323,6 +326,7 @@ function use() {
                 break;
                 case 4:
                     if(vidas[3].textContent * 1 < vds[3] * 1) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Kit Médico</em>` + "<br>";
                     vidac4a.textContent -= -150;
                     espitem.style.display = "none";
                     utitensct.style.opacity = "0";
@@ -357,6 +361,7 @@ function use() {
                 break;
                 case 5:
                     if(vidas[4].textContent * 1 < vds[4] * 1) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Kit Médico</em>` + "<br>";
                     vidac5a.textContent -= -150;
                     espitem.style.display = "none";
                     utitensct.style.opacity = "0";
@@ -393,6 +398,7 @@ function use() {
         break;
         case nomeitm.textContent == "Kit de Reparo":
             if(vidabarcoa.textContent * 1 < vidaa * 1) {
+                logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Kit de Reparo</em>` + "<br>";
             espitem.style.display = "none";
             utitensct.style.opacity = "0";
             utitensct.style.display = "flex";
@@ -432,6 +438,7 @@ function use() {
         }
         break;
         case nomeitm.textContent == "Bebida Auriana":
+            logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Bebida Auriana</em>` + "<br>";
             espitem.style.display = "none";
             utitensct.style.opacity = "0";
             utitensct.style.display = "flex";
@@ -630,6 +637,7 @@ function use() {
             }
         break;
         case nomeitm.textContent == "Essência de Cristais Norlândeses":
+            logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Essência de Cristais Norlândeses</em>` + "<br>";
             espitem.style.display = "none";
             utitensct.style.opacity = "0";
             utitensct.style.display = "flex";
@@ -856,6 +864,7 @@ function use() {
             switch(per) {
                 case 1:
                     if(armas[0] == armasf[i]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Bala Explosiva/em>` + "<br>";
                         if(itembarco == true) {
                             quante.textContent--;
                         }
@@ -895,6 +904,7 @@ function use() {
                 break;
                 case 2:
                     if(armas[1] == armasf[i]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Bala Explosiva/em>` + "<br>";
                         if(itembarco == true) {
                             quante.textContent--;
                         }
@@ -934,6 +944,7 @@ function use() {
                 break;
                 case 3:
                     if(armas[2] == armasf[i]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Bala Explosiva/em>` + "<br>";
                         if(itembarco == true) {
                             quante.textContent--;
                         }
@@ -973,6 +984,7 @@ function use() {
                 break;
                 case 4:
                     if(armas[3] == armasf[i]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Bala Explosiva/em>` + "<br>";
                         if(itembarco == true) {
                             quante.textContent--;
                         }
@@ -1012,6 +1024,7 @@ function use() {
                 break;
                 case 5:
                     if(armas[4] == armasf[i]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Bala Explosiva/em>` + "<br>";
                         if(itembarco == true) {
                             quante.textContent--;
                         }
@@ -1080,6 +1093,7 @@ function use() {
             switch (per) {
                 case 1:
                     if(armas[0] == armasb[0] || armas[0] == armasb[1] || armas[0] == armasb[2] || armas[0] == armasb[3] || armas[0] == armasb[4] || armas[0] == armasb[5]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Essência de Ferro Derretido/em>` + "<br>";
                     numbuffsp1++;
                     duraaquece = 4;
                     aquecida = true;
@@ -1143,6 +1157,7 @@ function use() {
                 break;
                 case 2:
                     if(armas[1] == armasb[0] || armas[1] == armasb[1] || armas[1] == armasb[2] || armas[1] == armasb[3] || armas[1] == armasb[4] || armas[1] == armasb[5]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Essência de Ferro Derretido/em>` + "<br>";
                             numbuffsp2++;
                     duraaquecep2 = 4;
                     aquecidap2 = true;
@@ -1206,6 +1221,7 @@ function use() {
                 break;
                 case 3:
                     if(armas[2] == armasb[0] || armas[2] == armasb[1] || armas[2] == armasb[2] || armas[2] == armasb[3] || armas[2] == armasb[4] || armas[2] == armasb[5]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Essência de Ferro Derretido/em>` + "<br>";
                             numbuffsp3++;
                     duraaquecep3 = 4;
                     aquecidap3 = true;
@@ -1269,6 +1285,7 @@ function use() {
                 break;
                 case 4:
                     if(armas[3] == armasb[0] || armas[3] == armasb[1] || armas[3] == armasb[2] || armas[3] == armasb[3] || armas[3] == armasb[4] || armas[3] == armasb[5]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Essência de Ferro Derretido/em>` + "<br>";
                             numbuffsp4++;
                     duraaquecep4 = 4;
                     aquecidap4 = true;
@@ -1332,6 +1349,7 @@ function use() {
                 break;
                 case 5:
                     if(armas[4] == armasb[0] || armas[4] == armasb[1] || armas[4] == armasb[2] || armas[4] == armasb[3] || armas[4] == armasb[4] || armas[4] == armasb[5]) {
+                        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Essência de Ferro Derretido/em>` + "<br>";
                             numbuffsp5++;
                     duraaquecep5 = 4;
                     aquecidap5 = true;
@@ -1400,6 +1418,7 @@ function use() {
                 switch(per) {
                     case 1:
                         if(armas[0] == besta) {
+                            logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Virote Incendiário/em>` + "<br>";
                             if(itembarco == true) {
                                 quanti.textContent--;
                             }
@@ -1440,6 +1459,7 @@ function use() {
                     break;
                     case 2:
                         if(armas[1] == besta) {
+                            logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Virote Incendiário/em>` + "<br>";
                             if(itembarco == true) {
                                 quanti.textContent--;
                             }
@@ -1480,6 +1500,7 @@ function use() {
                     break;
                     case 3:
                         if(armas[2] == besta) {
+                            logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Virote Incendiário/em>` + "<br>";
                             if(itembarco == true) {
                                 quanti.textContent--;
                             }
@@ -1520,6 +1541,7 @@ function use() {
                     break;
                     case 4:
                         if(armas[3] == besta) {
+                            logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Virote Incendiário/em>` + "<br>";
                             if(itembarco == true) {
                                 quanti.textContent--;
                             }
@@ -1560,6 +1582,7 @@ function use() {
                     break;
                     case 5:
                         if(armas[4] == besta) {
+                            logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Virote Incendiário/em>` + "<br>";
                             if(itembarco == true) {
                                 quanti.textContent--;
                             }

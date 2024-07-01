@@ -33,7 +33,7 @@ function atqcanhao() {
     canhaoa.style.display = "flex";
     setTimeout(() => {
         canhaoa.style.display = "none";
-    }, 1000)
+    }, 900)
     mlifei();
 }
 else {
@@ -69,13 +69,16 @@ else {
     canhaoi.style.display = "flex";
     setTimeout(() => {
         canhaoi.style.display = "none";
-    }, 1000)
+    }, 900)
     mlifea();
 }
 usandoci = false;
     }, 1000)
 }
 function afunali() {
+    setTimeout(() => {
+    somini();
+    }, 1000)
     if(vidabarcoa.textContent > 0 && nv3.style.backgroundColor != "unset" && nvila == 3) {
         nv3.style.backgroundColor = "unset";
         nvila = 2;

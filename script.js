@@ -68,6 +68,12 @@ function limp() {
         miras[i].style.display = "none";
     }
 }
+else {
+    for(i = 0; i < miras.length; i++) {
+        miras[i].style.display = "none";
+    }
+    miras[habmira].style.display = "block";
+}
     vez.style.top = "2vh";
     mrcanhao = false;
     vez.style.backgroundColor = "rgba(0, 0, 255, 0.842)";
@@ -79,6 +85,7 @@ function limp() {
 }
 
 function canhaoadv() {
+    if(mapa == "Mar") {
     canhoneiro = Math.floor(Math.random() * 7) + 1;
     if(chefe > 0 && canhoneiro == 1) {
         canhaoadv();
@@ -133,6 +140,7 @@ function canhaoadv() {
             cn7i.style.display = "flex";
         break;
     }
+}
 }
 
 sldm.oninput = () => {
@@ -354,6 +362,12 @@ function inicio() {
         escolhendo = false;
         aliado.style.display = "block";
         inimigoc.style.display = "block";
+        if(mapa == "Mar" || mapa == "Costa") {
+            ct.style.display = "none";
+        }
+        else {
+            ct.style.display = "flex";
+        }
         canhaoadv();
         musicas();
         cta1.style.animationName = "shake";
@@ -390,6 +404,22 @@ function inicio() {
         ferro2.addEventListener("click", ferrof2);
         
         incendiario2.addEventListener("click", incendiariof2);
+
+        switch (mapa) {
+            case "Mar":
+                ordenar.addEventListener("click", odm);
+                ordenar.style.cursor = "pointer";
+            break;
+            case "Costa":
+                ordenar.addEventListener("click", odm);
+                ordenar.style.cursor = "pointer";
+            break;
+            case "Terra":
+                ordenar.removeEventListener("click", odm);
+                ordenar.style.cursor = "not-allowed";
+                ordenar.style.backgroundColor = "rgba(19, 36, 100, 0.87)";
+            break;
+        }
     }
     
     atacar.addEventListener("click", rvmatq);
@@ -431,6 +461,17 @@ function inicio() {
             break;
         }
 }
+
+abrirlog.addEventListener("click", () => {
+    if(logct.style.right == "0vh") {
+        logct.style.right = "-56vh";
+        setaimg.style.rotate = "0deg";
+    } 
+    else {
+        logct.style.right = "0vh";
+        setaimg.style.rotate = "180deg";
+    }
+})
 
 cog.addEventListener("click", () => {
     if(cog.style.rotate != "90deg") {
@@ -607,8 +648,6 @@ function odm() {
     }
 }
 
-ordenar.addEventListener("click", odm);
-
 setInterval(trocatxt, 10);
 
 function personagem() {
@@ -715,6 +754,8 @@ personagem();
 
 function ulitens() {
     rmvcrs();
+    selam.style.visibility = "hidden";
+    selam.style.right = "-32vw";
     numhab = 0;
     if(cool1 == 5 && per == 1) {
         cool1 = 0;
@@ -878,6 +919,37 @@ else {
     dado.style.display = "flex";
     damage.style.visibility = "visible";
     damage.style.right = "0vh";
+    if(habatv == 1 && armasatl.textContent == "Granada") {
+        area = true;
+        switch (true) {
+            case mirac1.style.display == "block":
+                mirac2.style.display = "block"
+            break;
+            case mirac2.style.display == "block":
+                mirac1.style.display = "block"
+                mirac3.style.display = "block"
+            break;
+            case mirac3.style.display == "block":
+                mirac2.style.display = "block"
+                mirac4.style.display = "block"
+            break;
+            case mirac4.style.display == "block":
+                mirac5.style.display = "block"
+                mirac3.style.display = "block"
+            break;
+            case mirac5.style.display == "block":
+                mirac4.style.display = "block"
+                mirac6.style.display = "block"
+            break;
+            case mirac6.style.display == "block":
+                mirac7.style.display = "block"
+                mirac5.style.display = "block"
+            break;
+            case mirac7.style.display == "block":
+                mirac6.style.display = "block"
+            break;
+        }
+    }
 }
     }
     else {
@@ -888,6 +960,17 @@ else {
         mira();
     }
 }
+
+window.addEventListener("keydown", txtf);
+
+function txtf(event) {
+    const keyPressed = event.keyCode;
+    const Enter = 13;
+    if(keyPressed == Enter && esclog.value != ""){
+        logtxt.innerHTML += `> ${esclog.value}` + "<br>";
+        esclog.value = "";
+    }
+  };
 
 function rvmatq() {
     if(atacar.textContent == "Atacar") {
@@ -911,6 +994,7 @@ function rvmatq() {
     atacando();
 }
 else {
+    logtxt.innerHTML += `> <em>${pertxt}</em> colocou a prancha` + "<br>";
     atacar.textContent = "Atacar";
     prancha = true;
     tb.style.display = "flex";
@@ -1006,21 +1090,67 @@ function turnoini() {
         break;
     }
     inijog();
+if(prancha == false && usandoci == false) {
+setTimeout(() => {
+    if(vt == false) {
     dado.style.display = "flex";
     estatq.style.display = "flex";
     rolar();
+}
+else {
+    limp();
+}
+}, 1000)
+}
+else {
+    setTimeout(() => {
+        if(vt == false) {
+    dado.style.display = "flex";
+    estatq.style.display = "flex";
+    rolar();
+        }
+        else {
+            limp();
+        }
+    }, 10)
+}
     if(usandoci == false) {
         if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
+            setTimeout(() => {
+            if(vt == false) {
+                somini();
             prancha = true;
             tb.style.display = "flex";
             dado.style.display = "none";
+            }
+        }, 1000)
         }
         else {
+        setTimeout(somini, 1000);
         setTimeout(() => {
         alvos();
         danoinimigo();
         }, 50)
     }
+    }
+}
+
+function somini() {
+    if(!turnoa) {
+        switch (true) {
+            case armai == "lamina" && prancha == true:
+                sons[1].currentTime = 0;
+                sons[1].play();
+            break;
+            case armai == "mosquete":
+                sons[2].currentTime = 0.5;
+                sons[2].play();
+            break;
+            case armai == "canhoes":
+                sons[3].currentTime = 0;
+                sons[3].play();
+            break;
+        }
     }
 }
 
@@ -1201,11 +1331,17 @@ function rodar() {
             cartasi[0].style.animationName = "unset";
             cartasi[1].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1216,11 +1352,17 @@ function rodar() {
             cartasi[0].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1231,11 +1373,17 @@ function rodar() {
             cartasi[0].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1246,11 +1394,17 @@ function rodar() {
             cartasi[0].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1261,11 +1415,17 @@ function rodar() {
             cartasi[0].style.animationName = "unset";
             cartasi[3].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1276,11 +1436,17 @@ function rodar() {
             cartasi[0].style.animationName = "unset";
             cartasi[2].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1291,11 +1457,17 @@ function rodar() {
             cartasi[1].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1306,11 +1478,17 @@ function rodar() {
             cartasi[1].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1321,11 +1499,17 @@ function rodar() {
             cartasi[1].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1336,11 +1520,17 @@ function rodar() {
             cartasi[1].style.animationName = "unset";
             cartasi[3].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1351,11 +1541,17 @@ function rodar() {
             cartasi[1].style.animationName = "unset";
             cartasi[2].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1366,11 +1562,17 @@ function rodar() {
             cartasi[2].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1381,11 +1583,17 @@ function rodar() {
             cartasi[2].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1396,11 +1604,17 @@ function rodar() {
             cartasi[2].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1411,11 +1625,17 @@ function rodar() {
             cartasi[2].style.animationName = "unset";
             cartasi[3].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1426,11 +1646,17 @@ function rodar() {
             cartasi[3].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1441,11 +1667,17 @@ function rodar() {
             cartasi[3].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1456,11 +1688,17 @@ function rodar() {
             cartasi[3].style.animationName = "unset";
             cartasi[4].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1471,11 +1709,17 @@ function rodar() {
             cartasi[4].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1486,11 +1730,17 @@ function rodar() {
             cartasi[4].style.animationName = "unset";
             cartasi[5].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1501,11 +1751,17 @@ function rodar() {
             cartasi[5].style.animationName = "unset";
             cartasi[6].style.animationName = "shake";
             if(horda == 1 && prancha == false || horda == 2 && prancha == false || horda == 3 && prancha == false || horda == 4 && prancha == false || horda == 25 && prancha == false || horda == 6 && prancha == false || horda == 7 && prancha == false || horda == 8 && prancha == false || chefe == 1 && prancha == false || chefe == 2 && prancha == false) {
-                prancha = true;
-                tb.style.display = "flex";
-                dado.style.display = "none";
+                setTimeout(() => {
+                    if(vt == false) {
+                        somini();
+                        prancha = true;
+                        tb.style.display = "flex";
+                        dado.style.display = "none";
+                        }
+                    }, 1000)
             }
             else {
+                setTimeout(somini, 1000);
             setTimeout(() => {
                 alvos();
                 rolar();
@@ -1653,7 +1909,7 @@ function frio() {
             durafrios[i] = 3;
         }
     }
-    if(armasatl.textContent != "Espada Congelada") {
+    if(armasatl.textContent != "Espada Congelada" || miraspr == true) {
     mirando = false;
     area = false;
     limp();
@@ -1665,6 +1921,13 @@ for (let i = 0; i < cartasi.length; i++) {
 }
 
 function apcdado() {
+    if(habatv == 1 && per == 1) {
+        for (let i = 0; i < miras.length; i++) {
+            if(miras[i].style.display == "block") {
+                habmira = i;
+            }
+        }
+    }
         cartai1.removeEventListener("mouseover", c1);
         cartai2.removeEventListener("mouseover", c2);
         cartai3.removeEventListener("mouseover", c3);
@@ -1672,6 +1935,7 @@ function apcdado() {
         cartai5.removeEventListener("mouseover", c5);
         cartai6.removeEventListener("mouseover", c6);
         cartai7.removeEventListener("mouseover", c7);
+        if(armaatl.textContent != "Granada" && miraspr == false) {
         if(atacar.textContent == "Atacar" || miraspr == true) {
         if(area == false || expl == true) {
         if(mirac1.style.display == "block" || mirac2.style.display == "block" || mirac3.style.display == "block" || mirac4.style.display == "block" || mirac5.style.display == "block" || mirac6.style.display == "block" || mirac7.style.display == "block") {
@@ -1679,6 +1943,7 @@ function apcdado() {
         }
     }
     else if(expl == false) {
+        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Frasco de Sopro Gélido</em>` + "<br>";
         frio();
     }
 }
@@ -1688,6 +1953,11 @@ else {
     vez.style.backgroundColor = "rgba(0, 0, 255, 0.842)";
     trocar();
 }
+        }
+    else {
+        logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Frasco de Sopro Gélido</em>` + "<br>";
+        frio();
+    }
 }
 
 function mnscool() {
@@ -2398,6 +2668,7 @@ function trocar() {
                 case cn1i.style.display == "flex" && inci1.style.display != "flex":
                     usandoci = true;
                     armai = "canhoes";
+                    somini();
                 break;
                 case cn7i.style.display == "flex" && inci1.style.display == "flex" && inci2.style.display == "flex" && inci3.style.display == "flex" && inci4.style.display == "flex" && inci5.style.display == "flex" && inci6.style.display == "flex" && inci7.style.display != "flex":
                     usandoci = true; 
@@ -2864,6 +3135,96 @@ if(usandoci == true) {
 }
     dado.style.display = "flex";
     setTimeout(() => {
+        switch (true) {
+
+            case mirac2.style.display == "block" && mirac1.style.display == "block" && mirac3.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
+            break;
+            case mirac3.style.display == "block" && mirac2.style.display == "block" && mirac4.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
+            break;
+            case mirac4.style.display == "block" && mirac3.style.display == "block" && mirac5.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
+            break;
+            case mirac5.style.display == "block" && mirac4.style.display == "block" && mirac6.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
+            break;
+            case mirac6.style.display == "block" && mirac5.style.display == "block" && mirac7.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
+            break;
+            case mirac1.style.display == "block" && mirac2.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
+            break;
+            case mirac7.style.display == "block" && mirac6.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
+            break;
+
+            case mirac1.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
+            break;
+            case mirac2.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
+            break;
+            case mirac3.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
+            break;
+            case mirac4.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
+            break;
+            case mirac5.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
+            break;
+            case mirac6.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
+            break;
+            case mirac7.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
+            break;
+
+            case mirac1.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
+            break;
+            case mirac2.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
+            break;
+            case mirac3.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
+            break;
+            case mirac4.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
+            break;
+            case mirac5.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
+            break;
+            case mirac6.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
+            break;
+            case mirac7.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
+            break;
+
+            case mirac1.style.display == "block":
+                logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
+            break;
+            case mirac2.style.display == "block":
+                logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
+            break;
+            case mirac3.style.display == "block":
+                logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
+            break;
+            case mirac4.style.display == "block":
+                logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
+            break;
+            case mirac5.style.display == "block":
+                logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
+            break;
+            case mirac6.style.display == "block":
+                logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
+            break;
+            case mirac7.style.display == "block":
+                logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
+            break;
+        }
         if(numdado > 3) {
         switch (true) {
             case mirac1.style.display == "block" && mirac2.style.display == "block" && mirac3.style.display == "block":
@@ -2995,23 +3356,7 @@ if(usandoci == true) {
         }
         amuletos();
         window.addEventListener("contextmenu", btd, false);
-        if(!turnoa) {
-            switch (armai) {
-                case "lamina":
-                    sons[1].currentTime = 0;
-                    sons[1].play();
-                break;
-                case "mosquete":
-                    sons[2].currentTime = 0.5;
-                    sons[2].play();
-                break;
-                case "canhoes":
-                    sons[3].currentTime = 0;
-                    sons[3].play();
-                break;
-            }
-        }
-        else {
+        if(turnoa) {
             if(usandoc == false) {
         switch (per) {
             case 1:
@@ -3260,7 +3605,7 @@ else {
         limp();
     break;
     case mirac1.style.display == "block":
-        vidac1.textContent = hpt1;
+        vidac1.textContent = hpt;
         limp();
     break;
     case mirac2.style.display == "block":

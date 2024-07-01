@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="options">
-        <h1 id="ver">OGTM v0.7.3.10.06.2024</h1>
+        <h1 id="ver">OGTM v0.7.9.30.06.2024</h1>
         <div class="ctop">
             <div class="sonsm">
                 <h1>Volume</h1>
@@ -32,10 +32,26 @@
             </div>
         </div>
     </div>
+    <div class="logct">
+        <div class="abrirlog">
+            <img src="https://cdn-icons-png.flaticon.com/512/8213/8213522.png" alt="">
+        </div>
+        <div class="log">
+            <div class="logec">
+            <input id="esclog" type="text">
+        </div>
+            <h1 id="logtxt"></h1>
+        </div>
+    </div>
     <div class="inis">
         <div class="btninis">
             <button id="btnh">Hordas</button>
             <button id="btnc">Chefes</button>
+        </div>
+        <div class="local">
+            <button id="btnmar">Marítimo</button>
+            <button id="btnnor">Norlândia</button>
+            <button id="btnthe">Thesauri</button>
         </div>
         <div class="hordas">
             <div class="horda1m">
@@ -90,6 +106,14 @@
     <div class="ctinisel">
     <div class="inisel">
         <div class="selec">
+            <div class="mpsel">
+                <h1>Mapa</h1>
+                <div class="mpbtn">
+                <div id="marmp"></div>
+                <div id="cosmp"></div>
+                <div id="termp"></div>
+            </div>
+            </div>
             <div class="inissl">
                 <h1>Inimigos</h1>
                 <button id="selini">Escolher os Inimigos</button>
@@ -452,11 +476,12 @@
             <button id="leam">Lendário</button>
         </div>
         <div class="amls">
-            <div class="a1"></div>
-            <div class="a2"></div>
-            <div class="a3"></div>
-            <div class="a4"></div>
+            <div class="a1"><img id="a1img" src="resista.png" alt=""></div>
+            <div class="a2"><img id="a2img" src="vidaa.png" alt=""></div>
+            <div class="a3"><img id="a3img" src="sortea.png" alt=""></div>
+            <div class="a4"><img id="a4img" src="sana.png" alt=""></div>
         </div>
+        <button id="Rmvam">Remover Amuleto</button>
     </div>
     <div class="vez">
         <h1 id="veztxt">Turno de Barbarovsk</h1>
@@ -507,6 +532,9 @@
             <div class="lifea"></div>
             <div class="lifedanoa"></div>
         </div>
+        </div>
+        <div id="ct">
+
         </div>
     </div>
     <div class="inimigo">

@@ -831,7 +831,7 @@ numitp4.textContent = totalitnp4;
 numitp5.textContent = totalitnp5;
 numitb.textContent = totalitnb;
 defitens();
-if(horda != 0 || chefe != 0) {
+if(horda != 0 && horda != undefined || chefe != 0 && horda != undefined) {
     btncom.addEventListener("click", inicio);
 }
 else {
@@ -875,6 +875,40 @@ switch (per) {
             aquecidap5 = true;
         }
     break;
+}
+for (let i = 0; i < confogos.length; i++) {
+    switch(true) {
+    case vidasi[i].textContent * 1 < vidast[i] * 0.99 && vidasi[i].textContent * 1 > vidast[i] * 0.66:
+        confogos[i].style.backgroundImage = "url(rasgo1.png)";
+    break;
+    case vidasi[i].textContent * 1 < vidast[i] * 0.66 && vidasi[i].textContent * 1 > vidast[i] * 0.33:
+        confogos[i].style.backgroundImage = "url(rasgo2.png)";
+    break;
+    case vidasi[i].textContent * 1 < vidast[i] * 0.33 && vidasi[i].textContent * 1 > 0:
+        confogos[i].style.backgroundImage = "url(rasgo3.png)";
+    break;
+    case vidasi[i].textContent * 1 == 0:
+        confogos[i].style.backgroundImage = "url(rasgo4.png)";
+    break;
+    }
+}
+for (let i = 0; i < danorea.length; i++) {
+    switch(true) {
+    case vidas[i].textContent * 1 < vds[i] * 0.99 && vidas[i].textContent * 1 > vds[i] * 0.66:
+        danorea[i].style.backgroundImage = "url(rasgo1.png)";
+    break;
+    case vidas[i].textContent * 1 < vds[i] * 0.66 && vidas[i].textContent * 1 > vds[i] * 0.33:
+        danorea[i].style.backgroundImage = "url(rasgo2.png)";
+    break;
+    case vidas[i].textContent * 1 < vds[i] * 0.33 && vidas[i].textContent * 1 > 0:
+        danorea[i].style.backgroundImage = "url(rasgo3.png)";
+    break;
+    case vidas[i].textContent * 1 == 0:
+        danorea[i].style.backgroundImage = "url(rasgo4.png)";
+    break;
+    default:
+        danorea[i].style.backgroundImage = "unset";
+    }
 }
 }, 10)
 
@@ -925,6 +959,9 @@ setInterval(() => {
         vtdrct.style.display = "flex";
         vez.style.display = "none";
         vt = true;
+        for (let i = 0; i < cartasi.length; i++) {
+            cartasi[i].style.animationName = "unset";
+        }
         defvt.textContent = "Derrota";
         for (let i = 0; i <= 3; i++) {
             musica[i].pause();
@@ -936,4 +973,40 @@ setInterval(() => {
         if(incs[0].style.display == "flex" && incs[1].style.display == "flex" && incs[2].style.display == "flex" && incs[3].style.display == "flex" && incs[4].style.display == "flex" && atordoados == true) {
             trocar();
         }
+        switch (per) {
+            case 1:
+                pertxt = "Barbarovsk";
+            break;
+            case 2:
+                pertxt = "Crowly";
+            break;
+            case 3:
+                pertxt = "Lysa";
+            break;
+            case 4:
+                pertxt = "Darban";
+            break;
+            case 5:
+                pertxt = "Gabriele";
+            break;
+        }
+        for (let i = 0; i < cartasi.length; i++) {
+        switch (cartasi[i].style.backgroundImage) {
+            case 'url("BN.png")':
+                initxt[i] = "Barba-Negra";
+            break;
+            case 'url("TripN.png")':
+                initxt[i] = "Tripulante do Barba-Negra";
+            break;
+        }
+    }
+    if(vt == true && vtq == false) {
+        logtxt.innerHTML += `> <em style="color: #ebd534;">Vitória</em> da tripulação de <em>Barbarovsk</em>` + "<br>";
+        vtq = true;
+    }
+    if(!turnoa) {
+        for (let i = 0; i < cartasi.length; i++) {
+            cartasi[i].removeEventListener("click", apcdado);
+        }
+    }
 }, 0)

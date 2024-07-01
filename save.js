@@ -11,6 +11,16 @@ for(i = 0; i < sons.length; i++) {
     sons[i].volume = localStorage.vs / 100;
 }
 }
+else {
+    localStorage.vm = 30;
+    localStorage.vs = 70;
+    for(i = 0; i < musica.length; i++) {
+        musica[i].volume = localStorage.vm / 100;
+    }
+    for(i = 0; i < sons.length; i++) {
+        sons[i].volume = localStorage.vs / 100;
+    }
+}
 if(performance.navigation.type != performance.navigation.TYPE_RELOAD && localStorage.fv == undefined) {
     localStorage.b1 = "0";
     localStorage.b2 = "0";

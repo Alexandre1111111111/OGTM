@@ -112,7 +112,7 @@ html {
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    border: 0.3vh solid #000;
+    border: 0.4vh solid #000;
     font-family: "Nunito", sans-serif;
     cursor: pointer;
     align-items: center; 
@@ -153,6 +153,19 @@ html {
 
 .thesauriano:hover {
     border-color: rgb(187, 53, 0);
+}
+#ct {
+    width: 100%;
+    height: 18vh;
+    background-color: rgba(0, 0, 0, 0.692);
+    border-top: 0.5vh solid #fff;
+    position: absolute;
+    bottom: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2.5vh;
 }
 #hpbarco {
     width: 100%;
@@ -567,6 +580,59 @@ html {
     border: 0.3vh solid #bb8b06;
     border-radius: 5vh;
 }
+.mpsel {
+    width: 100%;
+    height: 90vh;
+    border-bottom: 0.3vh solid #bb8b06;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.mpbtn {
+    width: 100%;
+    border-bottom: 0.3vh solid #bb8b06;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mpbtn div {
+    width: 15vh;
+    height: 15vh;
+    border: 0.5vh solid #bb8b06;
+    display: flex;
+    align-items: center;
+    border-radius: 10vh;
+    margin: 3vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.mpbtn div:hover {
+    border-color: #ffd971;
+}
+#marmp {
+    background-image: url(campo.gif);
+}
+#cosmp {
+    background-image: url(costa.gif);
+}
+#termp {
+    background-image: url(terra.png);
+}
+.mpsel h1 {
+    width: 100%;
+    font-size: 7vh;
+    color: #ddbd2f;
+    text-align: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: #141414;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+    border: 0.3vh solid #bb8b06;
+    border-radius: 5vh;
+}
 .perssl {
     width: 100%;
     height: fit-content;
@@ -694,6 +760,27 @@ input::-webkit-inner-spin-button {
     display: none;
     font-size: 3vh;
 }
+#esclog {
+    width: 90%;
+    height: 4vh;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    font-size: 3vh;
+    border: none;
+}
+.logec {
+    width: 100%;
+    height: 4vh;
+    background-color: #fff;
+    border: 0.3vh solid #fff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vh;
+    overflow: hidden;
+}
 .armaselp1, .armaselp2, .armaselp3, .armaselp4, .armaselp5 {
     color: #ddbd2f;
     font-size: 4vh;
@@ -737,9 +824,30 @@ input::-webkit-inner-spin-button {
     border: 0.3vh solid #bb8b06;
     border-radius: 10vh;
     cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 230%;
 }
 .a1p1:hover, .a1p2:hover, .a1p3:hover, .a1p4:hover, .a1p5:hover, .a2p1:hover, .a2p2:hover, .a2p3:hover, .a2p4:hover, .a2p5:hover, .a3p1:hover, .a3p2:hover, .a3p3:hover, .a3p4:hover, .a3p5:hover {
     border-color: #e6cb83;
+}
+#Rmvam {
+    width: 100%;
+    height: 10vh;
+    border-top: 0.3vh solid #bb8b06;
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    font-size: 4vh;
+    color: #e2a600;
+    background-color: #330000;
+    transition-duration: 0.3s;
+}
+#Rmvam:hover {
+    background-color: #6e0d00;
+}
+#Rmvam:active {
+    background-color: #5c0c02;
 }
 .custom-select {
     position: relative;
@@ -811,6 +919,12 @@ input::-webkit-inner-spin-button {
     display: flex;
     align-items: center;
 }
+.local {
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
 .btninis button {
     width: 100%;
     height: 7vh;
@@ -819,6 +933,16 @@ input::-webkit-inner-spin-button {
     color: #bb8b06;
     border: 0.3vh solid #bb8b06;
     cursor: pointer;
+}
+.local button {
+    width: 100%;
+    height: 5vh;
+    font-size: 3vh;
+    background-color: #000;
+    color: #ffa836;
+    border: 0.3vh solid #bb8b06;
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 #btnh {
     border-top-left-radius: 10vh;
@@ -832,10 +956,29 @@ input::-webkit-inner-spin-button {
 #btnh:hover, #btnc:hover {
     background-color: #412e01;
 }
+#btnmar:hover {
+    background-color: #000c79;
+}
+#btnmar {
+    background-color: #00031f;
+}
+#btnnor {
+    background-color: #001f1b;
+}
+#btnthe {
+    background-color: #1f0000;
+}
+#btnnor:hover {
+    background-color: #00443b;
+}
+#btnthe:hover {
+    background-color: #5c0000;
+}
 .hordas {
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -865,6 +1008,7 @@ input::-webkit-inner-spin-button {
     display: none;
     grid-template-columns: auto auto auto auto auto auto auto;
     overflow-x: hidden;
+    justify-content: center;
 }
 .horda1m, .horda2m, .horda3m, .horda4m, .horda5m, .horda6m, .horda7m, .horda8m, .chefe1m, .chefe2m {
     width: 26vh;
@@ -963,6 +1107,10 @@ input::-webkit-inner-spin-button {
     display: grid;
     grid-template-columns: auto auto;
 }
+.amls img {
+    height: 20vh;
+    margin: 0;
+}
 #coam {
     color: #969696;
     background-color: #272626;
@@ -1008,7 +1156,7 @@ input::-webkit-inner-spin-button {
     background-color: #681068;
 }
 .amls div {
-    width: 100%;
+    width: 33vh;
     height: 30vh;
     display: flex;
     align-items: center;
@@ -1016,6 +1164,7 @@ input::-webkit-inner-spin-button {
     border: 0.3vh solid #bb8b06;
     cursor: pointer;
     transition-duration: 0.3s;
+    background-color: #1a1a1a;
 }
 .amls div:hover {
     border-color: #fad05c;
@@ -1635,6 +1784,9 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     position: absolute;
     z-index: 5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
@@ -1659,6 +1811,9 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     position: absolute;
     z-index: 6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
@@ -1838,6 +1993,79 @@ input::-webkit-inner-spin-button {
     animation-duration: 1s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+.logct {
+    width: fit-content;
+    height: fit-content;
+    z-index: 100;
+    position: absolute;
+    right: -56vh;
+    display: flex;
+    align-items: center;
+    transition-duration: 0.5s;
+}
+.abrirlog {
+    height: 30vh;
+    width: 10vh;
+    background-color: #000000af;
+    border-top: 0.3vh solid #fff;
+    border-bottom: 0.3vh solid #fff;
+    border-left: 0.3vh solid #fff;
+    border-top-left-radius: 5vh;
+    border-bottom-left-radius: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.abrirlog img {
+    height: 10vh;
+    transform: rotate(180deg);
+    transition-duration: 0.3s;
+}
+#logtxt {
+    font-size: 2.5vh;
+    color: #fff;
+    margin: 1.5vh;
+    text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
+}
+#logtxt em {
+    color: #70a2db;
+}
+.log {
+    height: 50vh;
+    width: 55vh;
+    background-color: #000000af;
+    border-top: 0.3vh solid #fff;
+    border-bottom: 0.3vh solid #fff;
+    border-left: 0.3vh solid #fff;
+    border-top-left-radius: 5vh;
+    border-bottom-left-radius: 5vh;
+    display: flex;
+    align-items: start;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    flex-direction: column-reverse;
+}
+.log::-webkit-scrollbar {
+    width: 2vh;
+}
+
+.log::-webkit-scrollbar-thumb {
+    background: #d4f1ff;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.log::-webkit-scrollbar-thumb:hover {
+    background: #bde9ff;
+}
+
+.log::-webkit-scrollbar-track {
+    background: #11110f;
+    border-radius: 1vh;
+    border: 0.3vh solid #fff;
 }
 
 @keyframes gira {
