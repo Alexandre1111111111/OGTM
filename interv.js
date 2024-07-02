@@ -887,9 +887,11 @@ for (let i = 0; i < confogos.length; i++) {
     case vidasi[i].textContent * 1 < vidast[i] * 0.33 && vidasi[i].textContent * 1 > 0:
         confogos[i].style.backgroundImage = "url(rasgo3.png)";
     break;
-    case vidasi[i].textContent * 1 == 0:
+    case vidasi[i].textContent * 1 == 0 && incis[i].style.display == "flex":
         confogos[i].style.backgroundImage = "url(rasgo4.png)";
     break;
+    default:
+        confogos[i].style.backgroundImage = "unset";
     }
 }
 for (let i = 0; i < danorea.length; i++) {
@@ -998,7 +1000,39 @@ setInterval(() => {
             case 'url("TripN.png")':
                 initxt[i] = "Tripulante do Barba-Negra";
             break;
+            case 'url("TripR.png")':
+                initxt[i] = "Tripulante do Barba-Ruiva";
+            break;
+            case 'url("Osio.png")':
+                initxt[i] = "Osio";
+            break;
+            case 'url("Ruivo.png")':
+                initxt[i] = "Barba-Ruiva";
+            break;
+            case 'url("thesauriano.png")':
+                initxt[i] = "Thesauriano";
+            break;
+            case 'url("Tina.png")':
+                initxt[i] = "Tina";
+            break;
+            case 'url("Villinski.png")':
+                initxt[i] = "Villinski";
+            break;
+            case 'url("Fromir.png")':
+                initxt[i] = "Fromir";
+            break;
+            case 'url("Granadeiro.png")':
+                initxt[i] = "Granadeiro";
+            break;
+            case 'url("Tesouros.png")':
+                initxt[i] = "Caçador-de-Tesouros";
+            break;
         }
+    }
+    switch (ini) {
+        case 1:
+            txtini = "Tripulante do Barba-Negra";
+        break;
     }
     if(vt == true && vtq == false) {
         logtxt.innerHTML += `> <em style="color: #ebd534;">Vitória</em> da tripulação de <em>Barbarovsk</em>` + "<br>";

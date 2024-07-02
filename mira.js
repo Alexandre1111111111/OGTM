@@ -217,6 +217,7 @@ else {
         mirac6.style.display = "block";
         mirac7.style.display = "block";
         ttl();
+        miraatl = 7;
         }
         else {
             cartasi[6].removeEventListener("click", apcdado);

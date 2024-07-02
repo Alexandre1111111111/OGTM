@@ -963,11 +963,361 @@ else {
 
 window.addEventListener("keydown", txtf);
 
+esclog.addEventListener("keyup", () => {
+    if(block == false) {
+     if(esclog.value == "/clear" || esclog.value == "/reset") {
+        esclog.style.color = "#fdff91";
+    }
+    else if(esclog.value == "@block") {
+        esclog.style.color = "#e642ff";
+    }
+    else {
+        esclog.style.color = "#ffffff";
+    }
+}
+else {
+    if(esclog.value == "@unblock") {
+        esclog.style.color = "#e642ff";
+    }
+    else {
+        esclog.style.color = "#ffffff";
+    }
+}
+})
+
 function txtf(event) {
     const keyPressed = event.keyCode;
     const Enter = 13;
+    if(esclog.value == "@block" && block == false && keyPressed == Enter) {
+        block = true;
+        logtxt.innerHTML += "> <i>Os comandos foram bloqueados</i>" + "<br>";
+    }
+    if(esclog.value == "@unblock" && block == true && keyPressed == Enter) {
+        block = false;
+        logtxt.innerHTML += "> <i>Os comandos foram desbloqueados</i>" + "<br>";
+    }
     if(keyPressed == Enter && esclog.value != ""){
-        logtxt.innerHTML += `> ${esclog.value}` + "<br>";
+        switch (true) {
+            case esclog.value == "/clear" && block == false:
+                logtxt.innerHTML = "";
+            break;
+            case esclog.value == "/reset" && block == false:
+                logtxt.innerHTML += "> <i>Jogo resetado</i>" + "<br>";
+                ctinisel.style.display = "flex";
+                for (let i = 0; i < cartasi.length; i++) {
+                    cartasi[i].style.animationName = "unset";
+                }
+                for (let i = 0; i < ctas.length; i++) {
+                    ctas[i].style.animationName = "unset";
+                    niveis[i].textContent = "NV: I";
+                }
+                aliado.style.display = "none";
+                inimigoc.style.display = "none";
+                  resp1 = 0.90;
+                    resp2 = 0.85;
+                    resp3 = 0.90;
+                    resp4 = 0.92;
+                    resp5 = 0.95;
+                    vidap1 = 125;
+                    vidap2 = 200;
+                    vidap3 = 125;
+                    vidap4 = 150;
+                    vidap5 = 175;
+                    vds[0] = vidap1;
+                    vds[1] = vidap2;
+                    vds[2] = vidap3;
+                    vds[3] = vidap4;
+                    vds[4] = vidap5;
+                    rd;
+                    alvo;
+                    NV = 6;
+                    danototal = 0;
+                    danototalp1 = 0;
+                    danototalp2 = 0;
+                    danototalp3 = 0;
+                    danototalp4 = 0;
+                    danototalp5 = 0;
+                    danototalini = 0;
+                    hpt;
+                    hpt2;
+                    hpt3;
+                    hpt4;
+                    hpt5;
+                    hpt6;
+                    hpt7;
+                    ress1 = 10;
+                    ress2 = 15;
+                    ress3 = 10;
+                    ress4 = 8;
+                    ress5 = 5;
+                    hpp;
+                    hpp2;
+                    hpp3;
+                    hpp4;
+                    hpp5;
+                    rest = 0;
+                    restp2 = 0;
+                    restp3 = 0;
+                    restp4 = 0;
+                    restp5 = 0;
+                    restp6 = 0;
+                    restp7 = 0;
+                    numdado;
+                    per = 0;
+                    turnoa = true;
+                    mirando = false;
+                    audio;
+                    audio2;
+                    audio3;
+                    audio4;
+                    audio5;
+                    amving;
+                    twelve;
+                    ini;
+                    munp1 = -1;
+                    munp2 = -1;
+                    munp3 = -1;
+                    munp4 = -1;
+                    munp5 = -1;
+                    mrcanhao = false;
+                    usandoc = false;
+                    canhaodmg = 230;
+                    canhaoexpdmg = 550;
+                    nvil = 0;
+                    vidaa = vidabarcoa.textContent;
+                    vidai = vidabarcoi.textContent;
+                    canhoneiro;
+                    usandoci = false;
+                    nvila = 0;
+                    habatv = 0;
+                    habs = 0;
+                    dans1 = 0;
+                    dans2 = 0;
+                    dans3 = 0;
+                    dans4 = 0;
+                    dans5 = 0;
+                    cool1 = 0;
+                    cool2 = 0;
+                    cool3 = 0;
+                    cool4 = 0;
+                    cool5 = 0;
+                    essencia = false;
+                    duracri = 0;
+                    vidat = 0;
+                    vidat2 = 0;
+                    vidat3 = 0;
+                    vidat4 = 0;
+                    vidat5 = 0;
+                    vidat6 = 0;
+                    vidat7 = 0;
+                    danot1 = danoc1.textContent;
+                    danot2 = danoc2.textContent;
+                    danot3 = danoc3.textContent;
+                    danot4 = danoc4.textContent;
+                    danot5 = danoc5.textContent;
+                    danot6 = danoc6.textContent;
+                    danot7 = danoc7.textContent;
+                    vt = false;
+                    vtq = false;
+                    duraaur = 0;
+                    duraaurp2 = 0;
+                    duraaurp3 = 0;
+                    duraaurp4 = 0;
+                    duraaurp5 = 0;
+                    auriano = false;
+                    aurianop2 = false;
+                    aurianop3 = false;
+                    aurianop4 = false;
+                    aurianop5 = false;
+                    laminau = 0;
+                    area = false;
+                    gelo = false;
+                    gelop2 = false;
+                    gelop3 = false;
+                    gelop4 = false;
+                    gelop5 = false;
+                    gelop6 = false;
+                    gelop7 = false;
+                    expl = false;
+                    aquecida = false;
+                    aquecidap2 = false;
+                    aquecidap3 = false;
+                    aquecidap4 = false;
+                    aquecidap5 = false;
+                    durafrio = -1;
+                    durafriop2 = -1;
+                    durafriop3 = -1;
+                    durafriop4 = -1;
+                    durafriop5 = -1;
+                    durafriop6 = -1;
+                    durafriop7 = -1;
+                    duraaquece = 0;
+                    duraaquecep2 = 0;
+                    duraaquecep3 = 0;
+                    duraaquecep4 = 0;
+                    duraaquecep5 = 0;
+                    numbuffsp1 = 0;
+                    numbuffsp2 = 0;
+                    numbuffsp3 = 0;
+                    numbuffsp4 = 0;
+                    numbuffsp5 = 0;
+                    db = 0;
+                    dbp2 = 0;
+                    dbp3 = 0;
+                    dbp4 = 0;
+                    dbp5 = 0;
+                    queimando1 = false;
+                    queimando2 = false;
+                    queimando3 = false;
+                    queimando4 = false;
+                    queimando5 = false;
+                    queimando6 = false;
+                    queimando7 = false;
+                    duraqmd1 = -1;
+                    duraqmd2 = -1;
+                    duraqmd3 = -1;
+                    duraqmd4 = -1;
+                    duraqmd5 = -1;
+                    duraqmd6 = -1;
+                    duraqmd7 = -1;
+                    itembarco = false;
+                    miraspr = false;
+                    viroin = false;
+                    armai = "mosquete";
+                    miraatl = 0;
+                    quantmira = 0;
+                    numhab = 0;
+                    hab3 = false;
+                    prancha = false;
+                    durarg = 0;
+                    durares = 0;
+                    rg = false;
+                    reshab = false;
+                    escolhendo = true;
+                    w = 0;
+                    pcdm = 0;
+                    pca = 100;
+                    wi = 0;
+                    pcdmi = 0;
+                    pci = 100;
+                    duraat1 = 0;
+                    duraat2 = 0;
+                    duraat3 = 0;
+                    duraat4 = 0;
+                    duraat5 = 0;
+                    atordoados = false;
+                    mr1 = false;
+                    mr2 = false;
+                    mr3 = false;
+                    mr4 = false;
+                    mr5 = false;
+                    sel = 0;
+                    totalitnb = 0;
+                    totalitnp1 = 0;
+                    totalitnp2 = 0;
+                    totalitnp3 = 0;
+                    totalitnp4 = 0;
+                    totalitnp5 = 0;
+                    for (let i = 0; i < incis.length; i++) {
+                        incis[i].style.display = "none";
+                        cnis[i].style.display = "none";
+                    }
+                    for (let i = 0; i < incs.length; i++) {
+                        incs[i].style.display = "none";
+                        vidas[i].textContent = vds[i];
+                        vidas[i].style.color = "#000";
+                    }
+                    for (let i = 0; i < cns.length; i++) {
+                        cns[i].style.display = "none";
+                    }
+                    switch(horda) {
+                        case '1':
+                            limpct();
+                            for (let i = 2; i < 5; i++) {
+                                vidasi[i].textContent = "120";
+                                vidast[i] = 120;
+                            }
+                        break;
+                        case '2':
+                            limpct();
+                            for (let i = 1; i < 6; i++) {
+                                vidasi[i].textContent = "120";
+                                vidast[i] = 120;
+                            }
+                        break;
+                        case '3':
+                            limpct();
+                            for (let i = 0; i < cartasi.length; i++) {
+                                vidasi[i].textContent = "120";
+                                vidast[i] = 120;
+                            }
+                        break;
+                        case '4':
+                            limpct();
+                            for (let i = 1; i < 5; i++) {
+                                vidasi[i].textContent = "200";
+                                vidast[i] = 200;
+                            }
+                        break;
+                        case '5':
+                            limpct();
+                            for (let i = 1; i < 6; i++) {
+                                vidasi[i].textContent = "200";
+                                vidast[i] = 200;
+                            }
+                        break;
+                        case '6':
+                            limpct();
+                            for (let i = 0; i < 6; i++) {
+                                vidasi[i].textContent = "200";
+                                vidast[i] = 200;
+                            }
+                        break;
+                        case '7':
+                            limpct();
+                            for (let i = 0; i < cartasi.length; i++) {
+                                vidasi[i].textContent = "200";
+                                vidast[i] = 200;
+                            }
+                        break;
+                        case '8':
+                            limpct();
+                            for (let i = 0; i < cartasi.length; i++) {
+                                vidasi[i].textContent = "200";
+                                vidast[i] = 200;
+                            }
+                        break;
+                    }
+                    switch (chefe) {
+                        case '1':
+                            vidasi[0].textContent = "225";
+                            for (let i = 1; i < cartasi.length; i++) {
+                                vidasi[i].textContent = "120";
+                                vidast[i] = 120;
+                            }
+                        break;
+                        case '2':
+                            vidasi[0].textContent = "720";
+                            for (let i = 1; i < cartasi.length; i++) {
+                                vidasi[i].textContent = "200";
+                                vidast[i] = 200;
+                            }
+                        break;
+                    }
+                    for (let i = 0; i < cartasi.length; i++) {
+                        vidasi[i].textContent = vidast[i];
+                        vidasi[i].style.color ="#000";
+                    }
+                    for (let i = 0; i < musica.length; i++) {
+                        musica[i].pause();
+                    }
+                    vtdrct.style.display = "none";
+            break;
+            default:
+                if(esclog.value != "@block" && esclog.value != "@unblock") {
+                logtxt.innerHTML += `> ${esclog.value}` + "<br>";
+                }
+        }
         esclog.value = "";
     }
   };
@@ -1925,6 +2275,15 @@ function apcdado() {
         for (let i = 0; i < miras.length; i++) {
             if(miras[i].style.display == "block") {
                 habmira = i;
+                if(area == true && mirac7.style.display != "block") {
+                    habmira -= 1;
+                }
+                else if(area == true && mirac7.style.display == "block" && miraatl == 7) {
+                    habmira = i;
+                }
+                else if(area == true && mirac7.style.display == "block" && mirac6.style.display == "block") {
+                    habmira -= 1;
+                }
             }
         }
     }
@@ -3136,6 +3495,38 @@ if(usandoci == true) {
     dado.style.display = "flex";
     setTimeout(() => {
         switch (true) {
+
+            case mirap1.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Barbarovsk</em>` + "<br>";
+            break;
+            case mirap2.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Crowly</em>` + "<br>";
+            break;
+            case mirap3.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Lysa</em>` + "<br>";
+            break;
+            case mirap4.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Darban</em>` + "<br>";
+            break;
+            case mirap5.style.display == "block" && numdado <= 3:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Gabriele</em>` + "<br>";
+            break;
+
+            case mirap1.style.display == "block":
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Barbarovsk</em>` + "<br>";
+            break;
+            case mirap2.style.display == "block":
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Crowly</em>` + "<br>";
+            break;
+            case mirap3.style.display == "block":
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Lysa</em>` + "<br>";
+            break;
+            case mirap4.style.display == "block":
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Darban</em>` + "<br>";
+            break;
+            case mirap5.style.display == "block":
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Gabriele</em>` + "<br>";
+            break;
 
             case mirac2.style.display == "block" && mirac1.style.display == "block" && mirac3.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
                 logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";

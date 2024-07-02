@@ -761,7 +761,7 @@ input::-webkit-inner-spin-button {
     font-size: 3vh;
 }
 #esclog {
-    width: 90%;
+    width: 100%;
     height: 4vh;
     background-color: #000;
     color: #fff;
@@ -780,6 +780,11 @@ input::-webkit-inner-spin-button {
     justify-content: center;
     font-size: 3vh;
     overflow: hidden;
+    border-bottom-left-radius: 1vh;
+}
+.alllog {
+    width: fit-content;
+    height: fit-content;
 }
 .armaselp1, .armaselp2, .armaselp3, .armaselp4, .armaselp5 {
     color: #ddbd2f;
@@ -2030,18 +2035,20 @@ input::-webkit-inner-spin-button {
     margin: 1.5vh;
     text-shadow: -0.1vh 0 black, 0 0.1vh black, 0.1vh 0 black, 0 -0.1vh black;
 }
+#logtxt i {
+    color: #979797;
+}
 #logtxt em {
     color: #70a2db;
 }
 .log {
-    height: 50vh;
+    height: 46vh;
     width: 55vh;
     background-color: #000000af;
     border-top: 0.3vh solid #fff;
     border-bottom: 0.3vh solid #fff;
     border-left: 0.3vh solid #fff;
     border-top-left-radius: 5vh;
-    border-bottom-left-radius: 5vh;
     display: flex;
     align-items: start;
     overflow-x: hidden;

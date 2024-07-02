@@ -704,6 +704,8 @@ let initxt6 = "";
 let initxt7 = "";
 let vtq = false;
 let habmira = 0;
+let block = false;
+let txtini = "";
 
 let defmp1 = 0;
 let defrp1 = 0;
