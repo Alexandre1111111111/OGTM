@@ -227,15 +227,25 @@ setInterval(() => {
     if(per != 1) {
         ordenar.style.display = "none";
         hab.style.bottom = "-20vh";
+        deschab.style.top = "27.5vh";
         btns.style.bottom = "11vh";
     }
     else {
         ordenar.style.display = "block";
         hab.style.bottom = "-11vh";
+        deschab.style.top = "18.5vh";
         btns.style.bottom = "20vh";
     }
     for (let i = 0; i < armas.length; i++) {
     switch(true) {
+        case per == i + 1 && usandoc == true:
+            armasatl.textContent = "Canhões";
+            if(miraspr == false) {
+            expl = false;
+            area = false;
+            }
+            mun.style.display = "none";
+        break;
         case per == i + 1 && armas[i] == coronhada:
             armasatl.textContent = "Coronhada";
             mun.style.display = "none";
@@ -346,7 +356,79 @@ for(let i = 0; i < 7; i++) {
         miras[i].src = "https://cdn-icons-png.flaticon.com/512/487/487009.png";
     }
 }
+    aurianos[0] = auriano;
+    aurianos[1] = aurianop2;
+    aurianos[2] = aurianop3;
+    aurianos[3] = aurianop4;
+    aurianos[4] = aurianop5;
 }, 10)
+
+setInterval(() => {
+    for (let i = 0; i < xps.length; i++) {
+        if(cartasi[i].style.display != "none") {
+        switch (cartasi[i].style.backgroundImage) {
+            case 'url("TripR.png")':
+                xps[i] = 50;
+            break;
+            case 'url("TripN.png")':
+                xps[i] = 150;
+            break;
+            case 'url("Tn.png")':
+                xps[i] = 850;
+            break;
+            case 'url("Ruivo.png")':
+                xps[i] = 600;
+            break;
+            case 'url("BN.png")':
+                xps[i] = 2000;
+            break;
+            case 'url("Osio.png")':
+                xps[i] = 400;
+            break;
+            case 'url("Granadeiro.png")':
+                xps[i] = 500;
+            break;
+            case 'url("Fromir.png")':
+                xps[i] = 1350;
+            break;
+            case 'url("Tesouros.png")':
+                xps[i] = 150;
+            break;
+            case 'url("Arthur.png")':
+                xps[i] = 5000;
+            break;
+            case 'url("thesauriano.png")':
+                xps[i] = 350;
+            break;
+        }
+    }
+    }
+    if(vt == true) {
+        xptl = xps[0] + xps[1] + xps[2] + xps[3] + xps[4] + xps[5] + xps[6];
+        ourotl = ouroc1.textContent * 1 + ouroc2.textContent * 1 + ouroc3.textContent * 1 + ouroc4.textContent * 1 + ouroc5.textContent * 1 + ouroc6.textContent * 1 + ouroc7.textContent * 1;
+        setTimeout(() => {
+        ourotl = Math.floor(ourotl);
+        if(ouropt < ourotl) {
+            if(ourotl > 3000) {
+                ouropt += 5;
+            }
+            else {
+                ouropt++;
+            }
+        }
+        if(xppt < xptl) {
+            if(xptl > 2000) {
+                xppt += 5;
+            }
+            else {
+                xppt++;
+            }
+        }
+        ourorec.textContent = `Ouro: ${ouropt}`;
+        xp.textContent = `XP: ${xppt}`;
+        }, 1000)
+    }
+}, 5)
 
 setInterval(() => {
     for (let i = 0; i < armas.length; i++) {
@@ -399,10 +481,10 @@ setInterval(() => {
         nv2.style.animationName = "pulse";
         nv3.style.animationName = "pulse";
     }
-    if(vidabarcoi.textContent < vidai) {
+    if(vidabarcoi.textContent * 1 < vidai) {
         vidabarcoi.style.color = "#ed9d9d";
     }
-    if(vidabarcoa.textContent < vidaa) {
+    if(vidabarcoa.textContent * 1 < vidaa) {
         vidabarcoa.style.color = "#ed9d9d";
     }
     switch(per) {
@@ -410,26 +492,51 @@ setInterval(() => {
             hab.style.backgroundColor = "#13801a";
             ichab.src = "https://cdn-icons-png.flaticon.com/512/855/855059.png";
             cooldown.textContent = cool1;
+            tithab.textContent = "Comando de Equipe";
+            tithab.style.color = "#6cdf00";
+            tithab.style.borderColor = "#6cdf00";
+            deshab.textContent = "Ordena com que todos da tripulação ataquem um único inimigo com um aumento de 50% no dano por 1 turno;";
+            cdesc.textContent = "Cooldown: 5 turnos";
         break;
         case 2:
             hab.style.backgroundColor = "#3084cf";
             ichab.src = "https://cdn-icons-png.flaticon.com/512/2851/2851844.png";
             cooldown.textContent = cool2;
+            tithab.textContent = "Ataque Duplo";
+            tithab.style.color = "#36a6b5";
+            tithab.style.borderColor = "#36a6b5";
+            deshab.textContent = "Ataca duas vezes qualquer inimigo;";
+            cdesc.textContent = "Cooldown: 5 turnos";
         break;
         case 3:
             hab.style.backgroundColor = "#cf30ca";
             ichab.src = "https://cdn-icons-png.flaticon.com/512/15532/15532570.png";
             cooldown.textContent = cool3;
+            tithab.textContent = "Cura Magistral";
+            tithab.style.color = "#b536a8";
+            tithab.style.borderColor = "#b536a8";
+            deshab.textContent = "Recupera 85% da vida de um membro da tripulação;";
+            cdesc.textContent = "Cooldown: 5 turnos";
         break;
         case 4:
             hab.style.backgroundColor = "#cf303d";
             ichab.src = "https://cdn-icons-png.flaticon.com/512/5246/5246522.png";
             cooldown.textContent = cool4;
+            tithab.textContent = "Rugido Furioso";
+            tithab.style.color = "#db1f44";
+            tithab.style.borderColor = "#db1f44";
+            deshab.textContent = "Aumenta o dano de todos da tripulação em 25% durante 3 turnos;";
+            cdesc.textContent = "Cooldown: 7 turnos";
         break;
         case 5:
             hab.style.backgroundColor = "#30cf9d";
             ichab.src = "https://cdn-icons-png.flaticon.com/512/139/139776.png";
             cooldown.textContent = cool5;
+            tithab.textContent = "Aura Defensiva";
+            tithab.style.color = "#1fdbd8";
+            tithab.style.borderColor = "#1fdbd8";
+            deshab.textContent = "Aumenta a resistência de todos da tripulação em 20% por 2 turnos;";
+            cdesc.textContent = "Cooldown: 6 turnos";
         break;
     }
     if(habatv == 0) {
@@ -849,6 +956,7 @@ if(armasatl.textContent == "Granada" && turnoa) {
     expl = true;
     area = true;
 }
+if(usandoc == false) {
 switch (per) {
     case 1:
         if(armas[0] == molotov) {
@@ -875,6 +983,7 @@ switch (per) {
             aquecidap5 = true;
         }
     break;
+}
 }
 for (let i = 0; i < confogos.length; i++) {
     switch(true) {
@@ -943,6 +1052,10 @@ setInterval(() => {
         vtdrct.style.display = "flex";
         vez.style.display = "none";
         vt = true;
+        ourorec.style.display = "flex";
+        xp.style.display = "flex";
+        saque.style.display = "flex";
+        vtdr.style.height = "80vh";
         for (let i = 2; i < musica.length; i++) {
             musica[0].pause();
             musica[i].pause();
@@ -961,9 +1074,21 @@ setInterval(() => {
         vtdrct.style.display = "flex";
         vez.style.display = "none";
         vt = true;
+        for (let i = 0; i < vidas.length; i++) {
+            vidas[i].textContent = 0;
+        }
+        setTimeout(() => {
+        for (let i = 0; i < 6; i++) {
+            sons[i].pause();
+        }
+        }, 500)
         for (let i = 0; i < cartasi.length; i++) {
             cartasi[i].style.animationName = "unset";
         }
+        ourorec.style.display = "none";
+        xp.style.display = "none";
+        saque.style.display = "none";
+        vtdr.style.height = "30vh";
         defvt.textContent = "Derrota";
         for (let i = 0; i <= 3; i++) {
             musica[i].pause();
@@ -1010,7 +1135,7 @@ setInterval(() => {
                 initxt[i] = "Barba-Ruiva";
             break;
             case 'url("thesauriano.png")':
-                initxt[i] = "Thesauriano";
+                initxt[i] = "Pirata Thesauriano";
             break;
             case 'url("Tina.png")':
                 initxt[i] = "Tina";
@@ -1029,12 +1154,44 @@ setInterval(() => {
             break;
         }
     }
-    switch (ini) {
-        case 1:
+    if(ini != 0 && ini != undefined) {
+    switch (true) {
+        case cartasi[ini - 1].style.backgroundImage == 'url("TripN.png")':
             txtini = "Tripulante do Barba-Negra";
         break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("BN.png")':
+            txtini = "Barba-Negra";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("TripR.png")':
+            txtini = "Tripulante do Barba-Ruiva";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("Osio.png")':
+            txtini = "Osio";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("Ruivo.png")':
+            txtini = "Barba-Ruiva";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("thesauriano.png")':
+            txtini = "Pirata Thesauriano";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("Tina.png")':
+            txtini = "Tina";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("Villinski.png")':
+            txtini = "Villinski";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("Fromir.png")':
+            txtini = "Fromir";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("Granadeiro.png")':
+            txtini = "Granadeiro";
+        break;
+        case cartasi[ini - 1].style.backgroundImage == 'url("Tesouros.png")':
+            txtini = "Caçador-de-Tesouros";
+        break;
     }
-    if(vt == true && vtq == false) {
+}
+    if(vt == true && vtq == false && defvt.textContent != "Derrota") {
         logtxt.innerHTML += `> <em style="color: #ebd534;">Vitória</em> da tripulação de <em>Barbarovsk</em>` + "<br>";
         vtq = true;
     }
@@ -1042,5 +1199,53 @@ setInterval(() => {
         for (let i = 0; i < cartasi.length; i++) {
             cartasi[i].removeEventListener("click", apcdado);
         }
+    }
+    if(prsom.currentTime >= 1.8) {
+        prsom.pause();
+    }
+    if(mapa == "Terra") {
+        ib.style.display = "none";
+        barcoit.style.display = "none";
+    }
+    else {
+        ib.style.display = "block";
+        barcoit.style.display = "grid";
+    }
+    if(!turnoa) {
+        armasatl.textContent = "";
+    }
+    if(escolhendo == true) {
+        logct.style.right = "-56vh";
+        logct.style.display = "none";
+    }
+    else {
+        logct.style.display = "flex";
+    }
+    for (let i = 0; i < vidasi.length; i++) {
+        if(vidasi[i].textContent * 1 >= 1000) {
+            vidasi[i].style.fontSize = "2vh";
+        }
+        else {
+            vidasi[i].style.fontSize = "2.5vh";
+        }
+    }
+    for (let i = 0; i < ouros.length; i++) {
+        if(ouros[i].textContent * 1 >= 1000) {
+            ouros[i].style.fontSize = "1.5vh";
+            ouros[i].style.marginLeft = "1vh";
+        }
+        else {
+            ouros[i].style.fontSize = "2vh";
+            ouros[i].style.marginLeft = "0vh";
+        }
+    }
+    if(!turnoa) {
+        miraatl = 0;
+    }
+    if(chefe == 3 && vidac1.textContent * 1 > 320) {
+        vidac1.textContent = 320;
+    }
+    if(chefe == 5 && vidac1.textContent * 1 > 1000) {
+        vidac1.textContent = 1000;
     }
 }, 0)

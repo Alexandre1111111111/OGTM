@@ -125,176 +125,710 @@ function del() {
     switch (select) {
         case 1:
     switch (true) {
-        case amulres1 == true && a1p1.style.backgroundImage == 'url("resista.png")' && amuln == 1:
+        case amulres1 == true && a1p1.style.backgroundImage == 'url("resista.png")' && amul1 == 1:
+            amuln = 0;
             amulres1 = false;
         break;
-        case amulres1 == true && a2p1.style.backgroundImage == 'url("resista.png")' && amuln == 2:
+        case amulres1 == true && a2p1.style.backgroundImage == 'url("resista.png")' && amul1 == 2:
+            amuln = 0;
             amulres1 = false;
         break;
-        case amulres1 == true && a3p1.style.backgroundImage == 'url("resista.png")' && amuln == 3:
+        case amulres1 == true && a3p1.style.backgroundImage == 'url("resista.png")' && amul1 == 3:
+            amuln = 0;
             amulres1 = false;
         break;
-        case amulvd1 == true:
-            amulrvd1 = false;
+    }
+    switch (true) {
+        case amulvd1 == true && a1p1.style.backgroundImage == 'url("vidaa.png")' && amul1 == 1:
+            amulnv = 0;
+            amulvd1 = false;
         break;
-        case amuls1 == true:
+        case amulvd1 == true && a2p1.style.backgroundImage == 'url("vidaa.png")' && amul1 == 2:
+            amulnv = 0;
+            amulvd1 = false;
+        break;
+        case amulvd1 == true && a3p1.style.backgroundImage == 'url("vidaa.png")' && amul1 == 3:
+            amulnv = 0;
+            amulvd1 = false;
+        break;
+    }
+    switch (true) {
+        case amuls1 == true && a1p1.style.backgroundImage == 'url("sortea.png")' && amul1 == 1:
+            amulns = 0;
             amuls1 = false;
         break;
-        case amulsn1 == true:
+        case amuls1 == true && a2p1.style.backgroundImage == 'url("sortea.png")' && amul1 == 2:
+            amulns = 0;
+            amuls1 = false;
+        break;
+        case amuls1 == true && a3p1.style.backgroundImage == 'url("sortea.png")' && amul1 == 3:
+            amulns = 0;
+            amuls1 = false;
+        break;
+    }
+    switch (true) {
+        case amulsn1 == true && a1p1.style.backgroundImage == 'url("sana.png")' && amul1 == 1:
+            amulnsn = 0;
             amulsn1 = false;
         break;
-        case amulreg1 == true:
+        case amulsn1 == true && a2p1.style.backgroundImage == 'url("sana.png")' && amul1 == 2:
+            amulnsn = 0;
+            amulsn1 = false;
+        break;
+        case amulsn1 == true && a3p1.style.backgroundImage == 'url("sana.png")' && amul1 == 3:
+            amulnsn = 0;
+            amulsn1 = false;
+        break;
+    }
+    switch (true) {
+        case amulreg1 == true && a1p1.style.backgroundImage == 'url("regena.png")' && amul1 == 1:
+            amulnreg = 0;
             amulreg1 = false;
         break;
-        case amulv1 == true:
+        case amulreg1 == true && a2p1.style.backgroundImage == 'url("regena.png")' && amul1 == 2:
+            amulnreg = 0;
+            amulreg1 = false;
+        break;
+        case amulreg1 == true && a3p1.style.backgroundImage == 'url("regena.png")' && amul1 == 3:
+            amulnreg = 0;
+            amulreg1 = false;
+        break;
+    }
+    switch (true) {
+        case amulv1 == true && a1p1.style.backgroundImage == 'url("vinga.png")' && amul1 == 1:
+            amulnv = 0;
             amulv1 = false;
         break;
-        case amulc1 == true:
+        case amulv1 == true && a2p1.style.backgroundImage == 'url("vinga.png")' && amul1 == 2:
+            amulnv = 0;
+            amulv1 = false;
+        break;
+        case amulv1 == true && a3p1.style.backgroundImage == 'url("vinga.png")' && amul1 == 3:
+            amulnv = 0;
+            amulv1 = false;
+        break;
+    }
+    switch (true) {
+        case amulc1 == true && a1p1.style.backgroundImage == 'url("atordoa.png")' && amul1 == 1:
+            amulnar = 0;
             amulc1 = false;
         break;
-        case amulcr1 == true:
+        case amulc1 == true && a2p1.style.backgroundImage == 'url("atordoa.png")' && amul1 == 2:
+            amulnar = 0;
+            amulc1 = false;
+        break;
+        case amulc1 == true && a3p1.style.backgroundImage == 'url("atordoa.png")' && amul1 == 3:
+            amulnar = 0;
+            amulc1 = false;
+        break;
+    }
+    switch (true) {
+        case amulcr1 == true && a1p1.style.backgroundImage == 'url("critica.png")' && amul1 == 1:
+            amulncr = 0;
             amulcr1 = false;
         break;
-        case amulsr1 == true:
+        case amulcr1 == true && a2p1.style.backgroundImage == 'url("critica.png")' && amul1 == 2:
+            amulncr = 0;
+            amulcr1 = false;
+        break;
+        case amulcr1 == true && a3p1.style.backgroundImage == 'url("critica.png")' && amul1 == 3:
+            amulncr = 0;
+            amulcr1 = false;
+        break;
+    }
+    switch (true) {
+        case amulsr1 == true && a1p1.style.backgroundImage == 'url("sangra.png")' && amul1 == 1:
+            amulnsr = 0;
             amulsr1 = false;
         break;
-        case amuli1 == true:
+        case amulsr1 == true && a2p1.style.backgroundImage == 'url("sangra.png")' && amul1 == 2:
+            amulnsr = 0;
+            amulsr1 = false;
+        break;
+        case amulsr1 == true && a3p1.style.backgroundImage == 'url("sangra.png")' && amul1 == 3:
+            amulnsr = 0;
+            amulsr1 = false;
+        break;
+    }
+    switch (true) {
+        case amuli1 == true && a1p1.style.backgroundImage == 'url("imorta.png")' && amul1 == 1:
+            amulni = 0;
+            amuli1 = false;
+        break;
+        case amuli1 == true && a2p1.style.backgroundImage == 'url("imorta.png")' && amul1 == 2:
+            amulni = 0;
+            amuli1 = false;
+        break;
+        case amuli1 == true && a3p1.style.backgroundImage == 'url("imorta.png")' && amul1 == 3:
+            amulni = 0;
             amuli1 = false;
         break;
     }
     break;
     case 2:
         switch (true) {
-            case amulres2 == true:
+            case amulres2 == true && a1p2.style.backgroundImage == 'url("resista.png")' && amul2 == 1:
+                amuln2 = 0;
                 amulres2 = false;
             break;
-            case amulvd2 == true:
-                amulrvd2 = false;
+            case amulres2 == true && a2p2.style.backgroundImage == 'url("resista.png")' && amul2 == 2:
+                amuln2 = 0;
+                amulres2 = false;
             break;
-            case amuls2 == true:
+            case amulres2 == true && a3p2.style.backgroundImage == 'url("resista.png")' && amul2 == 3:
+                amuln2 = 0;
+                amulres2 = false;
+            break;
+        }
+        switch (true) {
+            case amulvd2 == true && a1p2.style.backgroundImage == 'url("vidaa.png")' && amul2 == 1:
+                amulnv2 = 0;
+                amulvd2 = false;
+            break;
+            case amulvd2 == true && a2p2.style.backgroundImage == 'url("vidaa.png")' && amul2 == 2:
+                amulnv2 = 0;
+                amulvd2 = false;
+            break;
+            case amulvd2 == true && a3p2.style.backgroundImage == 'url("vidaa.png")' && amul2 == 3:
+                amulnv2 = 0;
+                amulvd2 = false;
+            break;
+        }
+        switch (true) {
+            case amuls2 == true && a1p2.style.backgroundImage == 'url("sortea.png")' && amul2 == 1:
+                amulns2 = 0;
                 amuls2 = false;
             break;
-            case amulsn2 == true:
+            case amuls2 == true && a2p2.style.backgroundImage == 'url("sortea.png")' && amul2 == 2:
+                amulns2 = 0;
+                amuls2 = false;
+            break;
+            case amuls2 == true && a3p2.style.backgroundImage == 'url("sortea.png")' && amul2 == 3:
+                amulns2 = 0;
+                amuls2 = false;
+            break;
+        }
+        switch (true) {
+            case amulsn2 == true && a1p2.style.backgroundImage == 'url("sana.png")' && amul2 == 1:
+                amulnsn2 = 0;
                 amulsn2 = false;
             break;
-            case amulreg2 == true:
+            case amulsn2 == true && a2p2.style.backgroundImage == 'url("sana.png")' && amul2 == 2:
+                amulnsn2 = 0;
+                amulsn2 = false;
+            break;
+            case amulsn2 == true && a3p2.style.backgroundImage == 'url("sana.png")' && amul2 == 3:
+                amulnsn2 = 0;
+                amulsn2 = false;
+            break;
+        }
+        switch (true) {
+            case amulreg2 == true && a1p2.style.backgroundImage == 'url("regena.png")' && amul2 == 1:
+                amulnreg2 = 0;
                 amulreg2 = false;
             break;
-            case amulv2 == true:
+            case amulreg2 == true && a2p2.style.backgroundImage == 'url("regena.png")' && amul2 == 2:
+                amulnreg2 = 0;
+                amulreg2 = false;
+            break;
+            case amulreg2 == true && a3p2.style.backgroundImage == 'url("regena.png")' && amul2 == 3:
+                amulnreg2 = 0;
+                amulreg2 = false;
+            break;
+        }
+        switch (true) {
+            case amulv2 == true && a1p2.style.backgroundImage == 'url("vinga.png")' && amul2 == 1:
+                amulnv2 = 0;
                 amulv2 = false;
             break;
-            case amulc2 == true:
+            case amulv2 == true && a2p2.style.backgroundImage == 'url("vinga.png")' && amul2 == 2:
+                amulnv2 = 0;
+                amulv2 = false;
+            break;
+            case amulv2 == true && a3p2.style.backgroundImage == 'url("vinga.png")' && amul2 == 3:
+                amulnv2 = 0;
+                amulv2 = false;
+            break;
+        }
+        switch (true) {
+            case amulc2 == true && a1p2.style.backgroundImage == 'url("atordoa.png")' && amul2 == 1:
+                amulnar2 = 0;
                 amulc2 = false;
             break;
-            case amulcr2 == true:
+            case amulc2 == true && a2p2.style.backgroundImage == 'url("atordoa.png")' && amul2 == 2:
+                amulnar2 = 0;
+                amulc2 = false;
+            break;
+            case amulc2 == true && a3p2.style.backgroundImage == 'url("atordoa.png")' && amul2 == 3:
+                amulnar2 = 0;
+                amulc2 = false;
+            break;
+        }
+        switch (true) {
+            case amulcr2 == true && a1p2.style.backgroundImage == 'url("critica.png")' && amul2 == 1:
+                amulncr2 = 0;
                 amulcr2 = false;
             break;
-            case amulsr2 == true:
+            case amulcr2 == true && a2p2.style.backgroundImage == 'url("critica.png")' && amul2 == 2:
+                amulncr2 = 0;
+                amulcr2 = false;
+            break;
+            case amulcr2 == true && a3p2.style.backgroundImage == 'url("critica.png")' && amul2 == 3:
+                amulncr2 = 0;
+                amulcr2 = false;
+            break;
+        }
+        switch (true) {
+            case amulsr2 == true && a1p2.style.backgroundImage == 'url("sangra.png")' && amul2 == 1:
+                amulns2 = 0;
                 amulsr2 = false;
             break;
-            case amuli2 == true:
+            case amulsr2 == true && a2p2.style.backgroundImage == 'url("sangra.png")' && amul2 == 2:
+                amulnsr2 = 0;
+                amulsr2 = false;
+            break;
+            case amulsr2 == true && a3p2.style.backgroundImage == 'url("sangra.png")' && amul2 == 3:
+                amulnsr2 = 0;
+                amulsr2 = false;
+            break;
+        }
+        switch (true) {
+            case amuli2 == true && a1p2.style.backgroundImage == 'url("imorta.png")' && amul2 == 1:
+                amulni2 = 0;
+                amuli2 = false;
+            break;
+            case amuli2 == true && a2p2.style.backgroundImage == 'url("imorta.png")' && amul2 == 2:
+                amulni2 = 0;
+                amuli2 = false;
+            break;
+            case amuli2 == true && a3p2.style.backgroundImage == 'url("imorta.png")' && amul2 == 3:
+                amulni2 = 0;
                 amuli2 = false;
             break;
         }
         break;
         case 3:
-        switch (true) {
-            case amulres3 == true:
-                amulres3 = false;
-            break;
-            case amulvd3 == true:
-                amulrvd3 = false;
-            break;
-            case amuls3 == true:
-                amuls3 = false;
-            break;
-            case amulsn3 == true:
-                amulsn3 = false;
-            break;
-            case amulreg3 == true:
-                amulreg3 = false;
-            break;
-            case amulv3 == true:
-                amulv3 = false;
-            break;
-            case amulc3 == true:
-                amulc3 = false;
-            break;
-            case amulcr3 == true:
-                amulcr3 = false;
-            break;
-            case amulsr3 == true:
-                amulsr3 = false;
-            break;
-            case amuli3 == true:
-                amuli3 = false;
-            break;
-        }
+            switch (true) {
+                case amulres3 == true && a1p3.style.backgroundImage == 'url("resista.png")' && amul3 == 1:
+                    amuln3 = 0;
+                    amulres3 = false;
+                break;
+                case amulres3 == true && a2p3.style.backgroundImage == 'url("resista.png")' && amul3 == 2:
+                    amuln3 = 0;
+                    amulres3 = false;
+                break;
+                case amulres3 == true && a3p3.style.backgroundImage == 'url("resista.png")' && amul3 == 3:
+                    amuln3 = 0;
+                    amulres3 = false;
+                break;
+            }
+            switch (true) {
+                case amulvd3 == true && a1p3.style.backgroundImage == 'url("vidaa.png")' && amul3 == 1:
+                    amulnv3 = 0;
+                    amulvd3 = false;
+                break;
+                case amulvd3 == true && a2p3.style.backgroundImage == 'url("vidaa.png")' && amul3 == 2:
+                    amulnv3 = 0;
+                    amulvd3 = false;
+                break;
+                case amulvd3 == true && a3p3.style.backgroundImage == 'url("vidaa.png")' && amul3 == 3:
+                    amulnv3 = 0;
+                    amulvd3 = false;
+                break;
+            }
+            switch (true) {
+                case amuls3 == true && a1p3.style.backgroundImage == 'url("sortea.png")' && amul3 == 1:
+                    amulns3 = 0;
+                    amuls3 = false;
+                break;
+                case amuls3 == true && a2p3.style.backgroundImage == 'url("sortea.png")' && amul3 == 2:
+                    amulns3 = 0;
+                    amuls3 = false;
+                break;
+                case amuls3 == true && a3p3.style.backgroundImage == 'url("sortea.png")' && amul3 == 3:
+                    amulns3 = 0;
+                    amuls3 = false;
+                break;
+            }
+            switch (true) {
+                case amulsn3 == true && a1p3.style.backgroundImage == 'url("sana.png")' && amul3 == 1:
+                    amulnsn3 = 0;
+                    amulsn3 = false;
+                break;
+                case amulsn3 == true && a2p3.style.backgroundImage == 'url("sana.png")' && amul3 == 2:
+                    amulnsn3 = 0;
+                    amulsn3 = false;
+                break;
+                case amulsn3 == true && a3p3.style.backgroundImage == 'url("sana.png")' && amul3 == 3:
+                    amulnsn3 = 0;
+                    amulsn3 = false;
+                break;
+            }
+            switch (true) {
+                case amulreg3 == true && a1p3.style.backgroundImage == 'url("regena.png")' && amul3 == 1:
+                    amulnreg3 = 0;
+                    amulreg3 = false;
+                break;
+                case amulreg3 == true && a2p3.style.backgroundImage == 'url("regena.png")' && amul3 == 2:
+                    amulnreg3 = 0;
+                    amulreg3 = false;
+                break;
+                case amulreg3 == true && a3p3.style.backgroundImage == 'url("regena.png")' && amul3 == 3:
+                    amulnreg3 = 0;
+                    amulreg3 = false;
+                break;
+            }
+            switch (true) {
+                case amulv3 == true && a1p3.style.backgroundImage == 'url("vinga.png")' && amul3 == 1:
+                    amulnv3 = 0;
+                    amulv3 = false;
+                break;
+                case amulv3 == true && a2p3.style.backgroundImage == 'url("vinga.png")' && amul3 == 2:
+                    amulnv3 = 0;
+                    amulv3 = false;
+                break;
+                case amulv3 == true && a3p3.style.backgroundImage == 'url("vinga.png")' && amul3 == 3:
+                    amulnv3 = 0;
+                    amulv3 = false;
+                break;
+            }
+            switch (true) {
+                case amulc3 == true && a1p3.style.backgroundImage == 'url("atordoa.png")' && amul3 == 1:
+                    amulnar3 = 0;
+                    amulc3 = false;
+                break;
+                case amulc3 == true && a2p3.style.backgroundImage == 'url("atordoa.png")' && amul3 == 2:
+                    amulnar3 = 0;
+                    amulc3 = false;
+                break;
+                case amulc3 == true && a3p3.style.backgroundImage == 'url("atordoa.png")' && amul3 == 3:
+                    amulnar3 = 0;
+                    amulc3 = false;
+                break;
+            }
+            switch (true) {
+                case amulcr3 == true && a1p3.style.backgroundImage == 'url("critica.png")' && amul3 == 1:
+                    amulncr3 = 0;
+                    amulcr3 = false;
+                break;
+                case amulcr3 == true && a2p3.style.backgroundImage == 'url("critica.png")' && amul3 == 2:
+                    amulncr3 = 0;
+                    amulcr3 = false;
+                break;
+                case amulcr3 == true && a3p3.style.backgroundImage == 'url("critica.png")' && amul3 == 3:
+                    amulncr3 = 0;
+                    amulcr3 = false;
+                break;
+            }
+            switch (true) {
+                case amulsr3 == true && a1p3.style.backgroundImage == 'url("sangra.png")' && amul3 == 1:
+                    amulns3 = 0;
+                    amulsr3 = false;
+                break;
+                case amulsr3 == true && a2p3.style.backgroundImage == 'url("sangra.png")' && amul3 == 2:
+                    amulnsr3 = 0;
+                    amulsr3 = false;
+                break;
+                case amulsr3 == true && a3p3.style.backgroundImage == 'url("sangra.png")' && amul3 == 3:
+                    amulnsr3 = 0;
+                    amulsr3 = false;
+                break;
+            }
+            switch (true) {
+                case amuli3 == true && a1p3.style.backgroundImage == 'url("imorta.png")' && amul3 == 1:
+                    amulni3 = 0;
+                    amuli3 = false;
+                break;
+                case amuli3 == true && a2p3.style.backgroundImage == 'url("imorta.png")' && amul3 == 2:
+                    amulni3 = 0;
+                    amuli3 = false;
+                break;
+                case amuli3 == true && a3p3.style.backgroundImage == 'url("imorta.png")' && amul3 == 3:
+                    amulni3 = 0;
+                    amuli3 = false;
+                break;
+            }
         break;
         case 4:
             switch (true) {
-                case amulres4 == true:
+                case amulres4 == true && a1p4.style.backgroundImage == 'url("resista.png")' && amul4 == 1:
+                    amuln4 = 0;
                     amulres4 = false;
                 break;
-                case amulvd4 == true:
-                    amulrvd4 = false;
+                case amulres4 == true && a2p4.style.backgroundImage == 'url("resista.png")' && amul4 == 2:
+                    amuln4 = 0;
+                    amulres4 = false;
                 break;
-                case amuls4 == true:
+                case amulres4 == true && a3p4.style.backgroundImage == 'url("resista.png")' && amul4 == 3:
+                    amuln4 = 0;
+                    amulres4 = false;
+                break;
+            }
+            switch (true) {
+                case amulvd4 == true && a1p4.style.backgroundImage == 'url("vidaa.png")' && amul4 == 1:
+                    amulnv4 = 0;
+                    amulvd4 = false;
+                break;
+                case amulvd4 == true && a2p4.style.backgroundImage == 'url("vidaa.png")' && amul4 == 2:
+                    amulnv4 = 0;
+                    amulvd4 = false;
+                break;
+                case amulvd4 == true && a3p4.style.backgroundImage == 'url("vidaa.png")' && amul4 == 3:
+                    amulnv4 = 0;
+                    amulvd4 = false;
+                break;
+            }
+            switch (true) {
+                case amuls4 == true && a1p4.style.backgroundImage == 'url("sortea.png")' && amul4 == 1:
+                    amulns4 = 0;
                     amuls4 = false;
                 break;
-                case amulsn4 == true:
+                case amuls4 == true && a2p4.style.backgroundImage == 'url("sortea.png")' && amul4 == 2:
+                    amulns4 = 0;
+                    amuls4 = false;
+                break;
+                case amuls4 == true && a3p4.style.backgroundImage == 'url("sortea.png")' && amul4 == 3:
+                    amulns4 = 0;
+                    amuls4 = false;
+                break;
+            }
+            switch (true) {
+                case amulsn4 == true && a1p4.style.backgroundImage == 'url("sana.png")' && amul4 == 1:
+                    amulnsn4 = 0;
                     amulsn4 = false;
                 break;
-                case amulreg4 == true:
+                case amulsn4 == true && a2p4.style.backgroundImage == 'url("sana.png")' && amul4 == 2:
+                    amulnsn4 = 0;
+                    amulsn4 = false;
+                break;
+                case amulsn4 == true && a3p4.style.backgroundImage == 'url("sana.png")' && amul4 == 3:
+                    amulnsn4 = 0;
+                    amulsn4 = false;
+                break;
+            }
+            switch (true) {
+                case amulreg4 == true && a1p4.style.backgroundImage == 'url("regena.png")' && amul4 == 1:
+                    amulnreg4 = 0;
                     amulreg4 = false;
                 break;
-                case amulv4 == true:
+                case amulreg4 == true && a2p4.style.backgroundImage == 'url("regena.png")' && amul4 == 2:
+                    amulnreg4 = 0;
+                    amulreg4 = false;
+                break;
+                case amulreg4 == true && a3p4.style.backgroundImage == 'url("regena.png")' && amul4 == 3:
+                    amulnreg4 = 0;
+                    amulreg4 = false;
+                break;
+            }
+            switch (true) {
+                case amulv4 == true && a1p4.style.backgroundImage == 'url("vinga.png")' && amul4 == 1:
+                    amulnv4 = 0;
                     amulv4 = false;
                 break;
-                case amulc4 == true:
+                case amulv4 == true && a2p4.style.backgroundImage == 'url("vinga.png")' && amul4 == 2:
+                    amulnv4 = 0;
+                    amulv4 = false;
+                break;
+                case amulv4 == true && a3p4.style.backgroundImage == 'url("vinga.png")' && amul4 == 3:
+                    amulnv4 = 0;
+                    amulv4 = false;
+                break;
+            }
+            switch (true) {
+                case amulc4 == true && a1p4.style.backgroundImage == 'url("atordoa.png")' && amul4 == 1:
+                    amulnar4 = 0;
                     amulc4 = false;
                 break;
-                case amulcr4 == true:
+                case amulc4 == true && a2p4.style.backgroundImage == 'url("atordoa.png")' && amul4 == 2:
+                    amulnar4 = 0;
+                    amulc4 = false;
+                break;
+                case amulc4 == true && a3p4.style.backgroundImage == 'url("atordoa.png")' && amul4 == 3:
+                    amulnar4 = 0;
+                    amulc4 = false;
+                break;
+            }
+            switch (true) {
+                case amulcr4 == true && a1p4.style.backgroundImage == 'url("critica.png")' && amul4 == 1:
+                    amulncr4 = 0;
                     amulcr4 = false;
                 break;
-                case amulsr4 == true:
+                case amulcr4 == true && a2p4.style.backgroundImage == 'url("critica.png")' && amul4 == 2:
+                    amulncr4 = 0;
+                    amulcr4 = false;
+                break;
+                case amulcr4 == true && a3p4.style.backgroundImage == 'url("critica.png")' && amul4 == 3:
+                    amulncr4 = 0;
+                    amulcr4 = false;
+                break;
+            }
+            switch (true) {
+                case amulsr4 == true && a1p4.style.backgroundImage == 'url("sangra.png")' && amul4 == 1:
+                    amulns4 = 0;
                     amulsr4 = false;
                 break;
-                case amuli4 == true:
+                case amulsr4 == true && a2p4.style.backgroundImage == 'url("sangra.png")' && amul4 == 2:
+                    amulnsr4 = 0;
+                    amulsr4 = false;
+                break;
+                case amulsr4 == true && a3p4.style.backgroundImage == 'url("sangra.png")' && amul4 == 3:
+                    amulnsr4 = 0;
+                    amulsr4 = false;
+                break;
+            }
+            switch (true) {
+                case amuli4 == true && a1p4.style.backgroundImage == 'url("imorta.png")' && amul4 == 1:
+                    amulni4 = 0;
+                    amuli4 = false;
+                break;
+                case amuli4 == true && a2p4.style.backgroundImage == 'url("imorta.png")' && amul4 == 2:
+                    amulni4 = 0;
+                    amuli4 = false;
+                break;
+                case amuli4 == true && a3p4.style.backgroundImage == 'url("imorta.png")' && amul4 == 3:
+                    amulni4 = 0;
                     amuli4 = false;
                 break;
             }
             break;
             case 5:
                 switch (true) {
-                    case amulres5 == true:
+                    case amulres5 == true && a1p5.style.backgroundImage == 'url("resista.png")' && amul5 == 1:
+                        amuln5 = 0;
                         amulres5 = false;
                     break;
-                    case amulvd5 == true:
-                        amulrvd5 = false;
+                    case amulres5 == true && a2p5.style.backgroundImage == 'url("resista.png")' && amul5 == 2:
+                        amuln5 = 0;
+                        amulres5 = false;
                     break;
-                    case amuls5 == true:
+                    case amulres5 == true && a3p5.style.backgroundImage == 'url("resista.png")' && amul5 == 3:
+                        amuln5 = 0;
+                        amulres5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amulvd5 == true && a1p5.style.backgroundImage == 'url("vidaa.png")' && amul5 == 1:
+                        amulnv5 = 0;
+                        amulvd5 = false;
+                    break;
+                    case amulvd5 == true && a2p5.style.backgroundImage == 'url("vidaa.png")' && amul5 == 2:
+                        amulnv5 = 0;
+                        amulvd5 = false;
+                    break;
+                    case amulvd5 == true && a3p5.style.backgroundImage == 'url("vidaa.png")' && amul5 == 3:
+                        amulnv5 = 0;
+                        amulvd5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amuls5 == true && a1p5.style.backgroundImage == 'url("sortea.png")' && amul5 == 1:
+                        amulns5 = 0;
                         amuls5 = false;
                     break;
-                    case amulsn5 == true:
+                    case amuls5 == true && a2p5.style.backgroundImage == 'url("sortea.png")' && amul5 == 2:
+                        amulns5 = 0;
+                        amuls5 = false;
+                    break;
+                    case amuls5 == true && a3p5.style.backgroundImage == 'url("sortea.png")' && amul5 == 3:
+                        amulns5 = 0;
+                        amuls5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amulsn5 == true && a1p5.style.backgroundImage == 'url("sana.png")' && amul5 == 1:
+                        amulnsn5 = 0;
                         amulsn5 = false;
                     break;
-                    case amulreg5 == true:
+                    case amulsn5 == true && a2p5.style.backgroundImage == 'url("sana.png")' && amul5 == 2:
+                        amulnsn5 = 0;
+                        amulsn5 = false;
+                    break;
+                    case amulsn5 == true && a3p5.style.backgroundImage == 'url("sana.png")' && amul5 == 3:
+                        amulnsn5 = 0;
+                        amulsn5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amulreg5 == true && a1p5.style.backgroundImage == 'url("regena.png")' && amul5 == 1:
+                        amulnreg5 = 0;
                         amulreg5 = false;
                     break;
-                    case amulv5 == true:
+                    case amulreg5 == true && a2p5.style.backgroundImage == 'url("regena.png")' && amul5 == 2:
+                        amulnreg5 = 0;
+                        amulreg5 = false;
+                    break;
+                    case amulreg5 == true && a3p5.style.backgroundImage == 'url("regena.png")' && amul5 == 3:
+                        amulnreg5 = 0;
+                        amulreg5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amulv5 == true && a1p5.style.backgroundImage == 'url("vinga.png")' && amul5 == 1:
+                        amulnv5 = 0;
                         amulv5 = false;
                     break;
-                    case amulc5 == true:
+                    case amulv5 == true && a2p5.style.backgroundImage == 'url("vinga.png")' && amul5 == 2:
+                        amulnv5 = 0;
+                        amulv5 = false;
+                    break;
+                    case amulv5 == true && a3p5.style.backgroundImage == 'url("vinga.png")' && amul5 == 3:
+                        amulnv5 = 0;
+                        amulv5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amulc5 == true && a1p5.style.backgroundImage == 'url("atordoa.png")' && amul5 == 1:
+                        amulnar5 = 0;
                         amulc5 = false;
                     break;
-                    case amulcr5 == true:
+                    case amulc5 == true && a2p5.style.backgroundImage == 'url("atordoa.png")' && amul5 == 2:
+                        amulnar5 = 0;
+                        amulc5 = false;
+                    break;
+                    case amulc5 == true && a3p5.style.backgroundImage == 'url("atordoa.png")' && amul5 == 3:
+                        amulnar5 = 0;
+                        amulc5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amulcr5 == true && a1p5.style.backgroundImage == 'url("critica.png")' && amul5 == 1:
+                        amulncr5 = 0;
                         amulcr5 = false;
                     break;
-                    case amulsr5 == true:
+                    case amulcr5 == true && a2p5.style.backgroundImage == 'url("critica.png")' && amul5 == 2:
+                        amulncr5 = 0;
+                        amulcr5 = false;
+                    break;
+                    case amulcr5 == true && a3p5.style.backgroundImage == 'url("critica.png")' && amul5 == 3:
+                        amulncr5 = 0;
+                        amulcr5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amulsr5 == true && a1p5.style.backgroundImage == 'url("sangra.png")' && amul5 == 1:
+                        amulns5 = 0;
                         amulsr5 = false;
                     break;
-                    case amuli5 == true:
+                    case amulsr5 == true && a2p5.style.backgroundImage == 'url("sangra.png")' && amul5 == 2:
+                        amulnsr5 = 0;
+                        amulsr5 = false;
+                    break;
+                    case amulsr5 == true && a3p5.style.backgroundImage == 'url("sangra.png")' && amul5 == 3:
+                        amulnsr5 = 0;
+                        amulsr5 = false;
+                    break;
+                }
+                switch (true) {
+                    case amuli5 == true && a1p5.style.backgroundImage == 'url("imorta.png")' && amul5 == 1:
+                        amulni5 = 0;
+                        amuli5 = false;
+                    break;
+                    case amuli5 == true && a2p5.style.backgroundImage == 'url("imorta.png")' && amul5 == 2:
+                        amulni5 = 0;
+                        amuli5 = false;
+                    break;
+                    case amuli5 == true && a3p5.style.backgroundImage == 'url("imorta.png")' && amul5 == 3:
+                        amulni5 = 0;
                         amuli5 = false;
                     break;
                 }

@@ -11,8 +11,13 @@ const canhao = new Audio("canhao.mp3");
 const gransd = new Audio("granada.mp3");
 const molotsd = new Audio("molotov.mp3");
 const bstsd = new Audio("besta.mp3");
+const mar = new Audio("marsom.mp3");
+const prsom = new Audio("prancha.mp3");
+const chuva = new Audio("chuva.mp3");
+const trovaos = new Audio("trovao.mp3");
+const trovaos2 = new Audio("trovao2.mp3");
 
-const sons = [doze, lamina, mosqsd, canhao, gransd, molotsd, bstsd];
+const sons = [doze, lamina, mosqsd, canhao, gransd, molotsd, bstsd, mar, prsom, chuva, trovaos, trovaos2];
 
 const musica = [bgmusic, bgmusic2, bgmusic3, bgmusic4, bgmusic5];
 

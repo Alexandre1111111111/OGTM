@@ -225,3 +225,19 @@ function cr5() {
         cura5.style.display = "flex";
     }
 }
+
+ichab.addEventListener("mouseover", () => {
+    if(cool.style.display != "flex") {
+    deschab.style.display = "flex";
+    setTimeout(() => {
+        deschab.style.opacity = "1";
+    }, 100)
+}
+})
+
+ichab.addEventListener("mouseout", () => {
+    deschab.style.opacity = "0";
+    setTimeout(() => {
+        deschab.style.display = "none";
+    }, 100)
+})

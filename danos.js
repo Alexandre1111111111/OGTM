@@ -49,7 +49,13 @@ function danoinimigo() {
             break;
         }
     }
-
+    quinze = Math.floor(Math.random() * 7) + 1;
+    if(quinze == 7 && !turnoa && numdado > 3) {
+        if(cartasi[ini - 1].style.backgroundImage == 'url("Villinski.png")' || cartasi[ini - 1].style.backgroundImage == 'url("Fromir.png")') {
+            danototalini *= 3;
+        }
+    }
+if(area == false) {
 if(numdado == 1 || numdado == 2 || numdado == 3){
     hpp = vidas[0].textContent;
     hpp2 = vidas[1].textContent;
@@ -99,8 +105,37 @@ else if (numdado == 19 || numdado == 20){
     est.style.color = "#008013";
 }
 }
+else {
+    if(numdado <= 10){
+        hpp = vidas[0].textContent;
+        hpp2 = vidas[1].textContent;
+        hpp3 = vidas[2].textContent;
+        hpp4 = vidas[3].textContent;
+        hpp5 = vidas[4].textContent;
+        est.textContent = "Ataque Falho";
+        est.style.color = "#fc1303";
+    }
+    else {
+        hpp = Math.floor(vidas[0].textContent * 1 - (danototalini * resps[0]));
+        hpp2 = Math.floor(vidas[1].textContent * 1 - (danototalini * resps[1]));
+        hpp3 = Math.floor(vidas[2].textContent * 1 - (danototalini * resps[2]));
+        hpp4 = Math.floor(vidas[3].textContent * 1 - (danototalini * resps[3]));
+        hpp5 = Math.floor(vidas[4].textContent * 1 - (danototalini * resps[4]));
+        est.textContent = "Ataque Acertivo";
+        est.style.color = "#fbff08";
+    }
+}
+setTimeout(() => {
+if(ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Granadeiro.png")' && vidabarcoa.textContent != "0" && mapa != "Terra") {
+    vidabarcoa.textContent = Math.floor(vidabarcoa.textContent - danoini[ini - 1].textContent * 1);
+    mlifea();
+}
+}, 1000)
+}
 
 function dano() {
+    if(armasatl.textContent != "Canhões") {
+    if(armasatl.textContent != "Granada") {
     if(armasatl.textContent != "Espingarda Nock" || expl == true) {
     if(expl == false || armasatl.textContent == "Granada") {
     if(auriano == false && per == 1 || aurianop2 == false && per == 2 || aurianop3 == false && per == 3 || aurianop4 == false && per == 4 || aurianop5 == false && per == 5) {
@@ -671,4 +706,69 @@ else if (numdado == 19 || numdado == 20){
 break;
     }
 }
+    }
+    else {
+        if(auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5) {
+            hpt = Math.floor(vidac1.textContent * 1 - danototal);
+            hpt2 = Math.floor(vidac2.textContent * 1 - danototal);
+            hpt3 = Math.floor(vidac3.textContent * 1 - danototal);
+            hpt4 = Math.floor(vidac4.textContent * 1 - danototal);
+            hpt5 = Math.floor(vidac5.textContent * 1 - danototal);
+            hpt6 = Math.floor(vidac6.textContent * 1 - danototal);
+            hpt7 = Math.floor(vidac7.textContent * 1 - danototal);
+        }
+        else if(numdado <= 10){
+            hpt = vidac1.textContent;
+            hpt2 = vidac2.textContent;
+            hpt3 = vidac3.textContent;
+            hpt4 = vidac4.textContent;
+            hpt5 = vidac5.textContent;
+            hpt6 = vidac6.textContent;
+            hpt7 = vidac7.textContent;
+            est.textContent = "Ataque Falho";
+            est.style.color = "#fc1303";
+        }
+        else {
+            hpt = Math.floor(vidac1.textContent * 1 - danototal);
+            hpt2 = Math.floor(vidac2.textContent * 1 - danototal);
+            hpt3 = Math.floor(vidac3.textContent * 1 - danototal);
+            hpt4 = Math.floor(vidac4.textContent * 1 - danototal);
+            hpt5 = Math.floor(vidac5.textContent * 1 - danototal);
+            hpt6 = Math.floor(vidac6.textContent * 1 - danototal);
+            hpt7 = Math.floor(vidac7.textContent * 1 - danototal);
+        }
+    }
+}
+else if(mapa == "Costa") {
+    setTimeout(() => {
+    canhaoa.style.display = "flex";
+    setTimeout(() => {
+        canhaoa.style.display = "none";
+    }, 900)
+}, 1000)
+    if(numdado <= 3){
+        hpt = vidac1.textContent;
+        hpt2 = vidac2.textContent;
+        hpt3 = vidac3.textContent;
+        hpt4 = vidac4.textContent;
+        hpt5 = vidac5.textContent;
+        hpt6 = vidac6.textContent;
+        hpt7 = vidac7.textContent;
+    }
+    else {
+        hpt = Math.floor(vidac1.textContent * 1 - canhaodmg);
+        hpt2 = Math.floor(vidac2.textContent * 1 - canhaodmg);
+        hpt3 = Math.floor(vidac3.textContent * 1 - canhaodmg);
+        hpt4 = Math.floor(vidac4.textContent * 1 - canhaodmg);
+        hpt5 = Math.floor(vidac5.textContent * 1 - canhaodmg);
+        hpt6 = Math.floor(vidac6.textContent * 1 - canhaodmg);
+        hpt7 = Math.floor(vidac7.textContent * 1 - canhaodmg);
+    }
+}
+setTimeout(() => {
+    if(armasatl.textContent == "Granada" && vidabarcoi.textContent != "0" && mapa != "Terra" && mapa != "Costa") {
+        vidabarcoi.textContent = Math.floor(vidabarcoi.textContent - dns[per - 1].textContent * 1);
+        mlifei();
+    }
+    }, 1000)
 }

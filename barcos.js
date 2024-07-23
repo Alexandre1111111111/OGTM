@@ -1,4 +1,11 @@
 function atqcanhao() {
+    hpt = vidac1.textContent;
+    hpt2 = vidac2.textContent;
+    hpt3 = vidac3.textContent;
+    hpt4 = vidac4.textContent;
+    hpt5 = vidac5.textContent;
+    hpt6 = vidac6.textContent;
+    hpt7 = vidac7.textContent;
     setTimeout(() => {
     if(usandoci == false) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
@@ -150,6 +157,7 @@ else {
 
 function mlifea() {
     w = vidaa / 100;
+    if(usandoci == true) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         pcdm = (canhaodmg - 50) / w;
     }
@@ -165,6 +173,10 @@ function mlifea() {
     else if (numdado == 19 || numdado == 20){
         pcdm = (canhaodmg + 50) / w;
     }
+}
+    else {
+        pcdm = 245 / w;
+    }
     pca -= pcdm;
     if(pca <= 0) {
         pca = 0;
@@ -175,6 +187,7 @@ function mlifea() {
 
 function mlifei() {
     wi = vidai / 100;
+    if(usandoc == true) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         pcdmi = (canhaodmg - 50) / wi;
     }
@@ -190,6 +203,10 @@ function mlifei() {
     else if (numdado == 19 || numdado == 20){
         pcdmi = (canhaodmg + 50) / wi;
     }
+}
+else {
+    pcdmi = dns[per - 1].textContent * 1 / wi;
+}
     pci -= pcdmi;
     if(pci <= 0) {
         pci = 0;

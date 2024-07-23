@@ -31,6 +31,8 @@ function cnf4() {
     }
 }
 
+mar.loop = true;
+
 function cannon() {
     ctas[1].addEventListener("mouseover", cnf1);
     ctas[2].addEventListener("mouseover", cnf2);
@@ -85,7 +87,7 @@ else {
 }
 
 function canhaoadv() {
-    if(mapa == "Mar") {
+    if(mapa == "Mar" || mapa == "March") {
     canhoneiro = Math.floor(Math.random() * 7) + 1;
     if(chefe > 0 && canhoneiro == 1) {
         canhaoadv();
@@ -159,7 +161,17 @@ slds.oninput = () => {
 function ttl() {
     for (let i = 0; i < rests.length; i++) {
         if(miras[i].style.display == "block") {
-            total.textContent = Math.floor(danototal * rests[i]);
+            if(armasatl.textContent != "Canhões") {
+                total.textContent = Math.floor(danototal * rests[i]);
+            }
+            else {
+                if(gelos[miraatl - 1] == true) {
+                    total.textContent = Math.floor(canhaodmg * rests[i] * 1.30);
+                }
+                else {
+                    total.textContent = Math.floor(canhaodmg * rests[i]);
+                }
+            }
         }
     }
 }
@@ -356,6 +368,36 @@ function inicio() {
             case 6:
                 cartai7.style.display = "none";
             break;
+            case 9:
+                cartai1.style.display = "none";
+                cartai2.style.display = "none";
+                cartai6.style.display = "none";
+                cartai7.style.display = "none";
+            break;
+            case 10:
+                cartai1.style.display = "none";
+                cartai2.style.display = "none";
+                cartai7.style.display = "none";
+            break;
+            case 11:
+                cartai1.style.display = "none";
+                cartai2.style.display = "none";
+                cartai7.style.display = "none";
+            break;
+            case 12:
+                cartai7.style.display = "none";
+            break;
+            case 15:
+                cartai7.style.display = "none";
+            break;
+            case 16:
+                cartai7.style.display = "none";
+            break;
+            case 17:
+                cartai1.style.display = "none";
+                cartai6.style.display = "none";
+                cartai7.style.display = "none";
+            break;
         }
         ctinisel.style.display = "none";
         vez.style.display = "flex";
@@ -364,9 +406,44 @@ function inicio() {
         inimigoc.style.display = "block";
         if(mapa == "Mar" || mapa == "Costa") {
             ct.style.display = "none";
+            mar.play();
+        }
+        else if(mapa == "March") {
+            chi = setInterval(() => {
+                trovao = Math.floor(Math.random() * 8) + 1;
+                if(trovao == 8) {
+                    tr = Math.floor(Math.random() * 2) + 1;
+                    raio.style.backgroundColor = "#fff";
+                    setTimeout(() => {
+                        raio.style.backgroundColor = "#0000004f";
+                    }, 100)
+                    setTimeout(() => {
+                        raio.style.backgroundColor = "#fff";
+                    }, 200)
+                    setTimeout(() => {
+                        raio.style.backgroundColor = "#0000004f";
+                    }, 300)
+                    setTimeout(() => {
+                        if(tr == 1) {
+                            trovaos.currentTime = 0;
+                            trovaos.play();
+                        }
+                        else {
+                            trovaos2.currentTime = 0;
+                            trovaos2.play();
+                        }
+                    }, 800)
+                    trovao = 0;
+                }
+            }, 5000)
+            chuva.currentTime = 0;
+            chuva.play();
+            mar.currentTime = 0;
+            mar.play();
         }
         else {
             ct.style.display = "flex";
+            mar.pause();
         }
         canhaoadv();
         musicas();
@@ -407,6 +484,10 @@ function inicio() {
 
         switch (mapa) {
             case "Mar":
+                ordenar.addEventListener("click", odm);
+                ordenar.style.cursor = "pointer";
+            break;
+            case "March":
                 ordenar.addEventListener("click", odm);
                 ordenar.style.cursor = "pointer";
             break;
@@ -487,38 +568,18 @@ cog.addEventListener("click", () => {
 
 function amuletos() {
     twelve = Math.floor(Math.random() * 5) + 1;
-    if(twelve == 5 && horda == 9) {
-    switch(true) {
-    case mirac1.style.display == "block" && danoc1.textContent == danttls[0]:
-        danototalini *= 1.50;
-        danoc1.textContent = Math.floor(danototalini);
-    break;
-    case mirac2.style.display == "block" && danoc2.textContent == danttls[1]:
-        danototalini *= 1.50;
-        danoc2.textContent = Math.floor(danototalini);
-    break;
-    case mirac3.style.display == "block" && danoc3.textContent == danttls[2]:
-        danototalini *= 1.50;
-        danoc3.textContent = Math.floor(danototalini);
-    break;
-    case mirac4.style.display == "block" && danoc4.textContent == danttls[3]:
-        danototalini *= 1.50;
-        danoc4.textContent = Math.floor(danototalini);
-    break;
-    case mirac5.style.display == "block" && danoc5.textContent == danttls[4]:
-        danototalini *= 1.50;
-        danoc5.textContent = Math.floor(danototalini);
-    break;
-    case mirac6.style.display == "block" && danoc6.textContent == danttls[5]:
-        danototalini *= 1.50;
-        danoc6.textContent = Math.floor(danototalini);
-    break;
-    case mirac7.style.display == "block" && danoc7.textContent == danttls[6]:
-        danototalini *= 1.50;
-        danoc7.textContent = Math.floor(danototalini);
-    break;
+    if(miraatl != 0) {
+    if(twelve == 5 && cartasi[miraatl - 1].style.backgroundImage == 'url("Osio.png")') {
+    if(miras[miraatl - 1].style.display == "block" && danoini[miraatl - 1].textContent == danttls[miraatl - 1]) {
+        danoini[miraatl - 1].textContent = Math.floor(danoini[miraatl - 1].textContent * 1.50);
     }
 }
+if(twelve == 5 && cartasi[miraatl - 1].style.backgroundImage == 'url("thesauriano.png")') {
+    if(miras[miraatl - 1].style.display == "block" && danoini[miraatl - 1].textContent == danttls[miraatl - 1]) {
+        danoini[miraatl - 1].textContent = Math.floor(danoini[miraatl - 1].textContent * 1.50);
+    }
+}
+    }
 if(twelve == 5 && chefe == 2) {
     if(mirac1.style.display == "block" && danoc1.textContent == danttls[0]) {
         danototalini = danoc1.textContent * 1;
@@ -527,39 +588,41 @@ if(twelve == 5 && chefe == 2) {
     }
 }
 ten = Math.floor(Math.random() * 10) + 1;
-if(ten == 10 && chefe == 2 && numdado > 3 || ten == 10 && chefe == 1 && numdado > 3) {
+if(ten == 10 && !turnoa && numdado > 3) {
+    if(cartasi[ini - 1].style.backgroundImage == 'url("Osio.png")' || cartasi[ini - 1].style.backgroundImage == 'url("Ruivo.png")' || cartasi[ini - 1].style.backgroundImage == 'url("BN.png")') {
     switch (true) {
-        case mirap1.style.display == "block" && ini == 1 && vidas[0].textContent != 0:
+        case mirap1.style.display == "block" && vidas[0].textContent != 0:
             inc1.style.visibility = "hidden";
             inc1.style.display = "flex";
             atordoas[0].style.display = "flex";
             duraats[0] = 1;
         break;
-        case mirap2.style.display == "block" && ini == 1 && vidas[1].textContent != 0:
+        case mirap2.style.display == "block" && vidas[1].textContent != 0:
             inc2.style.visibility = "hidden";
             inc2.style.display = "flex";
             atordoas[1].style.display = "flex";
             duraats[1] = 1;
         break;
-        case mirap3.style.display == "block" && ini == 1 && vidas[2].textContent != 0:
+        case mirap3.style.display == "block" && vidas[2].textContent != 0:
             inc3.style.visibility = "hidden";
             inc3.style.display = "flex";
             atordoas[2].style.display = "flex";
             duraats[2] = 1;
         break;
-        case mirap4.style.display == "block" && ini == 1 && vidas[3].textContent != 0:
+        case mirap4.style.display == "block" && vidas[3].textContent != 0:
             inc4.style.visibility = "hidden";
             inc4.style.display = "flex";
             atordoas[3].style.display = "flex";
             duraats[3] = 1;
         break;
-        case mirap5.style.display == "block" && ini == 1 && vidas[4].textContent != 0:
+        case mirap5.style.display == "block" && vidas[4].textContent != 0:
             inc5.style.visibility = "hidden";
             inc5.style.display = "flex";
             atordoas[4].style.display = "flex";
             duraats[4] = 1;
         break;
     }
+}
 }
 }
 
@@ -662,7 +725,12 @@ function personagem() {
             }
         }
         else {
-            danototal = dans1 * 1.30;
+            if(habatv == 0) {
+                danototal = dans1 * 1.30;
+            }
+            else {
+                danototal = dans1 * 1.50 * 1.30;
+            }
         }
         break;
         case 2:
@@ -675,7 +743,12 @@ function personagem() {
             }
         }
         else {
-            danototal = dans2 * 1.30;
+            if(habatv == 0) {
+                danototal = dans2 * 1.30;
+            }
+            else {
+                danototal = dans2 * 1.50 * 1.30;
+            }
         }
         break;
         case 3:
@@ -688,7 +761,12 @@ function personagem() {
             }
         }
         else {
-            danototal = dans3 * 1.30;
+            if(habatv == 0) {
+                danototal = dans3 * 1.30;
+            }
+            else {
+                danototal = dans3 * 1.50 * 1.30;
+            }
         }
         break;
         case 4:
@@ -701,7 +779,12 @@ function personagem() {
             }
         }
         else {
-            danototal = dans4 * 1.30;
+            if(habatv == 0) {
+                danototal = dans4 * 1.30;
+            }
+            else {
+                danototal = dans4 * 1.50 * 1.30;
+            }
         }
         break;
         case 5:
@@ -714,7 +797,12 @@ function personagem() {
             }
         }
         else {
-            danototal = dans5 * 1.30;
+            if(habatv == 0) {
+                danototal = dans5 * 1.30;
+            }
+            else {
+                danototal = dans5 * 1.50 * 1.30;
+            }
         }
         break;
     }
@@ -751,6 +839,8 @@ setInterval(inimigo, 10);
 nvs();
 
 personagem();
+
+vtbtn.addEventListener("click", reset);
 
 function ulitens() {
     rmvcrs();
@@ -882,11 +972,11 @@ function atacando() {
     }
     if(habatv == 0 || per == 1) {
     atacar.addEventListener("click", rvmatq);
-    if(mrcanhao == true) {
+    if(mrcanhao == true && mapa != "Costa") {
         limpcn();
     }
     rmvcnmira();
-    if(usandoc == false) {
+    if(usandoc == false || mapa == "Costa") {
     mirando = true;
     if(ordem.style.display == "flex") {
         ordem.style.opacity = "0";
@@ -922,6 +1012,59 @@ else {
     if(habatv == 1 && armasatl.textContent == "Granada") {
         area = true;
         switch (true) {
+            case mirac1.style.display == "block" && inci2.style.display == "flex":
+                mirac1.style.display = "block"
+            break;
+            case mirac2.style.display == "block" && inci1.style.display == "flex" && inci3.style.display == "flex":
+                mirac2.style.display = "block"
+            break;
+            case mirac3.style.display == "block" && inci2.style.display == "flex" && inci4.style.display == "flex":
+                mirac3.style.display = "block"
+            break;
+            case mirac4.style.display == "block" && inci3.style.display == "flex" && inci5.style.display == "flex":
+                mirac4.style.display = "block"
+            break;
+            case mirac5.style.display == "block" && inci4.style.display == "flex" && inci6.style.display == "flex":
+                mirac5.style.display = "block"
+            break;
+            case mirac6.style.display == "block" && inci7.style.display == "flex" && inci5.style.display == "flex":
+                mirac6.style.display = "block"
+            break;
+            case mirac7.style.display == "block" && inci6.style.display == "flex":
+                mirac7.style.display = "block"
+            break;
+
+            case mirac2.style.display == "block" && inci1.style.display == "flex":
+                mirac3.style.display = "block"
+            break;
+            case mirac3.style.display == "block" && inci2.style.display == "flex":
+                mirac4.style.display = "block"
+            break;
+            case mirac4.style.display == "block" && inci3.style.display == "flex":
+                mirac5.style.display = "block"
+            break;
+            case mirac5.style.display == "block" && inci4.style.display == "flex":
+                mirac6.style.display = "block"
+            break;
+            case mirac6.style.display == "block" && inci5.style.display == "flex":
+                mirac7.style.display = "block"
+            break;
+            case mirac6.style.display == "block" && inci7.style.display == "flex":
+                mirac5.style.display = "block"
+            break;
+            case mirac5.style.display == "block" && inci6.style.display == "flex":
+                mirac4.style.display = "block"
+            break;
+            case mirac4.style.display == "block" && inci5.style.display == "flex":
+                mirac3.style.display = "block"
+            break;
+            case mirac3.style.display == "block" && inci4.style.display == "flex":
+                mirac2.style.display = "block"
+            break;
+            case mirac2.style.display == "block" && inci3.style.display == "flex":
+                mirac1.style.display = "block"
+            break;
+            
             case mirac1.style.display == "block":
                 mirac2.style.display = "block"
             break;
@@ -965,10 +1108,10 @@ window.addEventListener("keydown", txtf);
 
 esclog.addEventListener("keyup", () => {
     if(block == false) {
-     if(esclog.value == "/clear" || esclog.value == "/reset") {
+     if(esclog.value.trim() == "/clear" || esclog.value.trim() == "/reset") {
         esclog.style.color = "#fdff91";
     }
-    else if(esclog.value == "@block") {
+    else if(esclog.value.trim() == "@block") {
         esclog.style.color = "#e642ff";
     }
     else {
@@ -976,7 +1119,7 @@ esclog.addEventListener("keyup", () => {
     }
 }
 else {
-    if(esclog.value == "@unblock") {
+    if(esclog.value.trim() == "@unblock") {
         esclog.style.color = "#e642ff";
     }
     else {
@@ -985,342 +1128,389 @@ else {
 }
 })
 
+window.addEventListener("keydown", (event) => {
+    const keyPressed = event.keyCode;
+    const F5 = 116;
+    
+    if(keyPressed === F5) {
+        event.preventDefault();
+    }
+})
+
 function txtf(event) {
     const keyPressed = event.keyCode;
     const Enter = 13;
-    if(esclog.value == "@block" && block == false && keyPressed == Enter) {
+    if(esclog.value.trim() == "@block" && block == false && keyPressed == Enter) {
         block = true;
         logtxt.innerHTML += "> <i>Os comandos foram bloqueados</i>" + "<br>";
+        log.scrollTop = 0;
     }
-    if(esclog.value == "@unblock" && block == true && keyPressed == Enter) {
+    if(esclog.value.trim() == "@unblock" && block == true && keyPressed == Enter) {
         block = false;
         logtxt.innerHTML += "> <i>Os comandos foram desbloqueados</i>" + "<br>";
+        log.scrollTop = 0;
     }
     if(keyPressed == Enter && esclog.value != ""){
         switch (true) {
-            case esclog.value == "/clear" && block == false:
+            case esclog.value.trim() == "/clear" && block == false:
                 logtxt.innerHTML = "";
             break;
-            case esclog.value == "/reset" && block == false:
+            case esclog.value.trim() == "/reset" && block == false:
                 logtxt.innerHTML += "> <i>Jogo resetado</i>" + "<br>";
-                ctinisel.style.display = "flex";
-                for (let i = 0; i < cartasi.length; i++) {
-                    cartasi[i].style.animationName = "unset";
-                }
-                for (let i = 0; i < ctas.length; i++) {
-                    ctas[i].style.animationName = "unset";
-                    niveis[i].textContent = "NV: I";
-                }
-                aliado.style.display = "none";
-                inimigoc.style.display = "none";
-                  resp1 = 0.90;
-                    resp2 = 0.85;
-                    resp3 = 0.90;
-                    resp4 = 0.92;
-                    resp5 = 0.95;
-                    vidap1 = 125;
-                    vidap2 = 200;
-                    vidap3 = 125;
-                    vidap4 = 150;
-                    vidap5 = 175;
-                    vds[0] = vidap1;
-                    vds[1] = vidap2;
-                    vds[2] = vidap3;
-                    vds[3] = vidap4;
-                    vds[4] = vidap5;
-                    rd;
-                    alvo;
-                    NV = 6;
-                    danototal = 0;
-                    danototalp1 = 0;
-                    danototalp2 = 0;
-                    danototalp3 = 0;
-                    danototalp4 = 0;
-                    danototalp5 = 0;
-                    danototalini = 0;
-                    hpt;
-                    hpt2;
-                    hpt3;
-                    hpt4;
-                    hpt5;
-                    hpt6;
-                    hpt7;
-                    ress1 = 10;
-                    ress2 = 15;
-                    ress3 = 10;
-                    ress4 = 8;
-                    ress5 = 5;
-                    hpp;
-                    hpp2;
-                    hpp3;
-                    hpp4;
-                    hpp5;
-                    rest = 0;
-                    restp2 = 0;
-                    restp3 = 0;
-                    restp4 = 0;
-                    restp5 = 0;
-                    restp6 = 0;
-                    restp7 = 0;
-                    numdado;
-                    per = 0;
-                    turnoa = true;
-                    mirando = false;
-                    audio;
-                    audio2;
-                    audio3;
-                    audio4;
-                    audio5;
-                    amving;
-                    twelve;
-                    ini;
-                    munp1 = -1;
-                    munp2 = -1;
-                    munp3 = -1;
-                    munp4 = -1;
-                    munp5 = -1;
-                    mrcanhao = false;
-                    usandoc = false;
-                    canhaodmg = 230;
-                    canhaoexpdmg = 550;
-                    nvil = 0;
-                    vidaa = vidabarcoa.textContent;
-                    vidai = vidabarcoi.textContent;
-                    canhoneiro;
-                    usandoci = false;
-                    nvila = 0;
-                    habatv = 0;
-                    habs = 0;
-                    dans1 = 0;
-                    dans2 = 0;
-                    dans3 = 0;
-                    dans4 = 0;
-                    dans5 = 0;
-                    cool1 = 0;
-                    cool2 = 0;
-                    cool3 = 0;
-                    cool4 = 0;
-                    cool5 = 0;
-                    essencia = false;
-                    duracri = 0;
-                    vidat = 0;
-                    vidat2 = 0;
-                    vidat3 = 0;
-                    vidat4 = 0;
-                    vidat5 = 0;
-                    vidat6 = 0;
-                    vidat7 = 0;
-                    danot1 = danoc1.textContent;
-                    danot2 = danoc2.textContent;
-                    danot3 = danoc3.textContent;
-                    danot4 = danoc4.textContent;
-                    danot5 = danoc5.textContent;
-                    danot6 = danoc6.textContent;
-                    danot7 = danoc7.textContent;
-                    vt = false;
-                    vtq = false;
-                    duraaur = 0;
-                    duraaurp2 = 0;
-                    duraaurp3 = 0;
-                    duraaurp4 = 0;
-                    duraaurp5 = 0;
-                    auriano = false;
-                    aurianop2 = false;
-                    aurianop3 = false;
-                    aurianop4 = false;
-                    aurianop5 = false;
-                    laminau = 0;
-                    area = false;
-                    gelo = false;
-                    gelop2 = false;
-                    gelop3 = false;
-                    gelop4 = false;
-                    gelop5 = false;
-                    gelop6 = false;
-                    gelop7 = false;
-                    expl = false;
-                    aquecida = false;
-                    aquecidap2 = false;
-                    aquecidap3 = false;
-                    aquecidap4 = false;
-                    aquecidap5 = false;
-                    durafrio = -1;
-                    durafriop2 = -1;
-                    durafriop3 = -1;
-                    durafriop4 = -1;
-                    durafriop5 = -1;
-                    durafriop6 = -1;
-                    durafriop7 = -1;
-                    duraaquece = 0;
-                    duraaquecep2 = 0;
-                    duraaquecep3 = 0;
-                    duraaquecep4 = 0;
-                    duraaquecep5 = 0;
-                    numbuffsp1 = 0;
-                    numbuffsp2 = 0;
-                    numbuffsp3 = 0;
-                    numbuffsp4 = 0;
-                    numbuffsp5 = 0;
-                    db = 0;
-                    dbp2 = 0;
-                    dbp3 = 0;
-                    dbp4 = 0;
-                    dbp5 = 0;
-                    queimando1 = false;
-                    queimando2 = false;
-                    queimando3 = false;
-                    queimando4 = false;
-                    queimando5 = false;
-                    queimando6 = false;
-                    queimando7 = false;
-                    duraqmd1 = -1;
-                    duraqmd2 = -1;
-                    duraqmd3 = -1;
-                    duraqmd4 = -1;
-                    duraqmd5 = -1;
-                    duraqmd6 = -1;
-                    duraqmd7 = -1;
-                    itembarco = false;
-                    miraspr = false;
-                    viroin = false;
-                    armai = "mosquete";
-                    miraatl = 0;
-                    quantmira = 0;
-                    numhab = 0;
-                    hab3 = false;
-                    prancha = false;
-                    durarg = 0;
-                    durares = 0;
-                    rg = false;
-                    reshab = false;
-                    escolhendo = true;
-                    w = 0;
-                    pcdm = 0;
-                    pca = 100;
-                    wi = 0;
-                    pcdmi = 0;
-                    pci = 100;
-                    duraat1 = 0;
-                    duraat2 = 0;
-                    duraat3 = 0;
-                    duraat4 = 0;
-                    duraat5 = 0;
-                    atordoados = false;
-                    mr1 = false;
-                    mr2 = false;
-                    mr3 = false;
-                    mr4 = false;
-                    mr5 = false;
-                    sel = 0;
-                    totalitnb = 0;
-                    totalitnp1 = 0;
-                    totalitnp2 = 0;
-                    totalitnp3 = 0;
-                    totalitnp4 = 0;
-                    totalitnp5 = 0;
-                    for (let i = 0; i < incis.length; i++) {
-                        incis[i].style.display = "none";
-                        cnis[i].style.display = "none";
-                    }
-                    for (let i = 0; i < incs.length; i++) {
-                        incs[i].style.display = "none";
-                        vidas[i].textContent = vds[i];
-                        vidas[i].style.color = "#000";
-                    }
-                    for (let i = 0; i < cns.length; i++) {
-                        cns[i].style.display = "none";
-                    }
-                    switch(horda) {
-                        case '1':
-                            limpct();
-                            for (let i = 2; i < 5; i++) {
-                                vidasi[i].textContent = "120";
-                                vidast[i] = 120;
-                            }
-                        break;
-                        case '2':
-                            limpct();
-                            for (let i = 1; i < 6; i++) {
-                                vidasi[i].textContent = "120";
-                                vidast[i] = 120;
-                            }
-                        break;
-                        case '3':
-                            limpct();
-                            for (let i = 0; i < cartasi.length; i++) {
-                                vidasi[i].textContent = "120";
-                                vidast[i] = 120;
-                            }
-                        break;
-                        case '4':
-                            limpct();
-                            for (let i = 1; i < 5; i++) {
-                                vidasi[i].textContent = "200";
-                                vidast[i] = 200;
-                            }
-                        break;
-                        case '5':
-                            limpct();
-                            for (let i = 1; i < 6; i++) {
-                                vidasi[i].textContent = "200";
-                                vidast[i] = 200;
-                            }
-                        break;
-                        case '6':
-                            limpct();
-                            for (let i = 0; i < 6; i++) {
-                                vidasi[i].textContent = "200";
-                                vidast[i] = 200;
-                            }
-                        break;
-                        case '7':
-                            limpct();
-                            for (let i = 0; i < cartasi.length; i++) {
-                                vidasi[i].textContent = "200";
-                                vidast[i] = 200;
-                            }
-                        break;
-                        case '8':
-                            limpct();
-                            for (let i = 0; i < cartasi.length; i++) {
-                                vidasi[i].textContent = "200";
-                                vidast[i] = 200;
-                            }
-                        break;
-                    }
-                    switch (chefe) {
-                        case '1':
-                            vidasi[0].textContent = "225";
-                            for (let i = 1; i < cartasi.length; i++) {
-                                vidasi[i].textContent = "120";
-                                vidast[i] = 120;
-                            }
-                        break;
-                        case '2':
-                            vidasi[0].textContent = "720";
-                            for (let i = 1; i < cartasi.length; i++) {
-                                vidasi[i].textContent = "200";
-                                vidast[i] = 200;
-                            }
-                        break;
-                    }
-                    for (let i = 0; i < cartasi.length; i++) {
-                        vidasi[i].textContent = vidast[i];
-                        vidasi[i].style.color ="#000";
-                    }
-                    for (let i = 0; i < musica.length; i++) {
-                        musica[i].pause();
-                    }
-                    vtdrct.style.display = "none";
+                log.scrollTop = 0;
+                reset();
             break;
             default:
                 if(esclog.value != "@block" && esclog.value != "@unblock") {
+                    log.scrollTop = 0;
                 logtxt.innerHTML += `> ${esclog.value}` + "<br>";
                 }
         }
         esclog.value = "";
     }
   };
+
+function reset() {
+    for (let i = 0; i < xps.length; i++) {
+        cartasi[i].style.display = "flex";
+    }
+    ctinisel.style.display = "flex";
+    for (let i = 0; i < cartasi.length; i++) {
+        cartasi[i].style.animationName = "unset";
+    }
+    for (let i = 0; i < ctas.length; i++) {
+        ctas[i].style.animationName = "unset";
+        niveis[i].textContent = "NV: I";
+    }
+    aliado.style.display = "none";
+    inimigoc.style.display = "none";
+    vez.style.display = "none";
+    clearInterval(chi);
+    xptl = 0;
+    ourotl = 0;
+    ouropt = 0;
+    xppt = 0;
+      resp1 = 0.90;
+        resp2 = 0.85;
+        resp3 = 0.90;
+        resp4 = 0.92;
+        resp5 = 0.95;
+        vidap1 = 125;
+        vidap2 = 200;
+        vidap3 = 125;
+        vidap4 = 150;
+        vidap5 = 175;
+        vds[0] = vidap1;
+        vds[1] = vidap2;
+        vds[2] = vidap3;
+        vds[3] = vidap4;
+        vds[4] = vidap5;
+        rd;
+        alvo;
+        NV = 6;
+        danototal = 0;
+        danototalp1 = 0;
+        danototalp2 = 0;
+        danototalp3 = 0;
+        danototalp4 = 0;
+        danototalp5 = 0;
+        danototalini = 0;
+        hpt;
+        hpt2;
+        hpt3;
+        hpt4;
+        hpt5;
+        hpt6;
+        hpt7;
+        ress1 = 10;
+        ress2 = 15;
+        ress3 = 10;
+        ress4 = 8;
+        ress5 = 5;
+        hpp;
+        hpp2;
+        hpp3;
+        hpp4;
+        hpp5;
+        rest = 0;
+        restp2 = 0;
+        restp3 = 0;
+        restp4 = 0;
+        restp5 = 0;
+        restp6 = 0;
+        restp7 = 0;
+        numdado;
+        per = 0;
+        turnoa = true;
+        mirando = false;
+        audio;
+        audio2;
+        audio3;
+        audio4;
+        audio5;
+        amving;
+        twelve;
+        ini;
+        munp1 = -1;
+        munp2 = -1;
+        munp3 = -1;
+        munp4 = -1;
+        munp5 = -1;
+        mrcanhao = false;
+        usandoc = false;
+        canhaodmg = 230;
+        canhaoexpdmg = 550;
+        nvil = 0;
+        vidaa = vidabarcoa.textContent;
+        vidai = vidabarcoi.textContent;
+        canhoneiro;
+        usandoci = false;
+        nvila = 0;
+        habatv = 0;
+        habs = 0;
+        dans1 = 0;
+        dans2 = 0;
+        dans3 = 0;
+        dans4 = 0;
+        dans5 = 0;
+        cool1 = 0;
+        cool2 = 0;
+        cool3 = 0;
+        cool4 = 0;
+        cool5 = 0;
+        essencia = false;
+        duracri = 0;
+        vidat = 0;
+        vidat2 = 0;
+        vidat3 = 0;
+        vidat4 = 0;
+        vidat5 = 0;
+        vidat6 = 0;
+        vidat7 = 0;
+        danot1 = danoc1.textContent;
+        danot2 = danoc2.textContent;
+        danot3 = danoc3.textContent;
+        danot4 = danoc4.textContent;
+        danot5 = danoc5.textContent;
+        danot6 = danoc6.textContent;
+        danot7 = danoc7.textContent;
+        vt = false;
+        vtq = false;
+        duraaur = 0;
+        duraaurp2 = 0;
+        duraaurp3 = 0;
+        duraaurp4 = 0;
+        duraaurp5 = 0;
+        auriano = false;
+        aurianop2 = false;
+        aurianop3 = false;
+        aurianop4 = false;
+        aurianop5 = false;
+        laminau = 0;
+        area = false;
+        gelo = false;
+        gelop2 = false;
+        gelop3 = false;
+        gelop4 = false;
+        gelop5 = false;
+        gelop6 = false;
+        gelop7 = false;
+        expl = false;
+        aquecida = false;
+        aquecidap2 = false;
+        aquecidap3 = false;
+        aquecidap4 = false;
+        aquecidap5 = false;
+        durafrio = -1;
+        durafriop2 = -1;
+        durafriop3 = -1;
+        durafriop4 = -1;
+        durafriop5 = -1;
+        durafriop6 = -1;
+        durafriop7 = -1;
+        duraaquece = 0;
+        duraaquecep2 = 0;
+        duraaquecep3 = 0;
+        duraaquecep4 = 0;
+        duraaquecep5 = 0;
+        numbuffsp1 = 0;
+        numbuffsp2 = 0;
+        numbuffsp3 = 0;
+        numbuffsp4 = 0;
+        numbuffsp5 = 0;
+        db = 0;
+        dbp2 = 0;
+        dbp3 = 0;
+        dbp4 = 0;
+        dbp5 = 0;
+        queimando1 = false;
+        queimando2 = false;
+        queimando3 = false;
+        queimando4 = false;
+        queimando5 = false;
+        queimando6 = false;
+        queimando7 = false;
+        duraqmd1 = -1;
+        duraqmd2 = -1;
+        duraqmd3 = -1;
+        duraqmd4 = -1;
+        duraqmd5 = -1;
+        duraqmd6 = -1;
+        duraqmd7 = -1;
+        itembarco = false;
+        miraspr = false;
+        viroin = false;
+        armai = "mosquete";
+        miraatl = 0;
+        quantmira = 0;
+        numhab = 0;
+        hab3 = false;
+        prancha = false;
+        durarg = 0;
+        durares = 0;
+        rg = false;
+        reshab = false;
+        escolhendo = true;
+        w = 0;
+        pcdm = 0;
+        pca = 100;
+        wi = 0;
+        pcdmi = 0;
+        pci = 100;
+        duraat1 = 0;
+        duraat2 = 0;
+        duraat3 = 0;
+        duraat4 = 0;
+        duraat5 = 0;
+        atordoados = false;
+        mr1 = false;
+        mr2 = false;
+        mr3 = false;
+        mr4 = false;
+        mr5 = false;
+        sel = 0;
+        totalitnb = 0;
+        totalitnp1 = 0;
+        totalitnp2 = 0;
+        totalitnp3 = 0;
+        totalitnp4 = 0;
+        totalitnp5 = 0;
+        for (let i = 0; i < confogos.length; i++) {
+            confogos[i].style.animationName = "unset";
+            duraqmds[i] = -1;
+            queimando[i] = false;
+            gelos[i] = false;
+            durafrios[i] = -1;
+        }
+        limp();
+        for (let i = 0; i < db1sa.length; i++) {
+            db1sa[i].style.display = "none";
+            db2sa[i].style.display = "none";
+            db3sa[i].style.display = "none";
+        }
+        for (let i = 0; i < db1s.length; i++) {
+            db1s[i].style.display = "none";
+        }
+        for (let i = 0; i < incis.length; i++) {
+            incis[i].style.display = "none";
+            cnis[i].style.display = "none";
+        }
+        for (let i = 0; i < incs.length; i++) {
+            incs[i].style.display = "none";
+            vidas[i].textContent = vds[i];
+            vidas[i].style.color = "#000";
+            debuffsa[i].style.display = "none";
+        }
+        for (let i = 0; i < cns.length; i++) {
+            cns[i].style.display = "none";
+        }
+        tb.style.display = "none";
+        selec.scrollTop = 0;
+        mar.pause();
+        chuva.pause();
+        switch(horda) {
+            case '1':
+                limpct();
+                for (let i = 2; i < 5; i++) {
+                    vidasi[i].textContent = "120";
+                    vidast[i] = 120;
+                }
+            break;
+            case '2':
+                limpct();
+                for (let i = 1; i < 6; i++) {
+                    vidasi[i].textContent = "120";
+                    vidast[i] = 120;
+                }
+            break;
+            case '3':
+                limpct();
+                for (let i = 0; i < cartasi.length; i++) {
+                    vidasi[i].textContent = "120";
+                    vidast[i] = 120;
+                }
+            break;
+            case '4':
+                limpct();
+                for (let i = 1; i < 5; i++) {
+                    vidasi[i].textContent = "200";
+                    vidast[i] = 200;
+                }
+            break;
+            case '5':
+                limpct();
+                for (let i = 1; i < 6; i++) {
+                    vidasi[i].textContent = "200";
+                    vidast[i] = 200;
+                }
+            break;
+            case '6':
+                limpct();
+                for (let i = 0; i < 6; i++) {
+                    vidasi[i].textContent = "200";
+                    vidast[i] = 200;
+                }
+            break;
+            case '7':
+                limpct();
+                for (let i = 0; i < cartasi.length; i++) {
+                    vidasi[i].textContent = "200";
+                    vidast[i] = 200;
+                }
+            break;
+            case '8':
+                limpct();
+                for (let i = 0; i < cartasi.length; i++) {
+                    vidasi[i].textContent = "200";
+                    vidast[i] = 200;
+                }
+            break;
+        }
+        switch (chefe) {
+            case '1':
+                vidasi[0].textContent = "225";
+                for (let i = 1; i < cartasi.length; i++) {
+                    vidasi[i].textContent = "120";
+                    vidast[i] = 120;
+                }
+            break;
+            case '2':
+                vidasi[0].textContent = "720";
+                for (let i = 1; i < cartasi.length; i++) {
+                    vidasi[i].textContent = "200";
+                    vidast[i] = 200;
+                }
+            break;
+        }
+        for (let i = 0; i < cartasi.length; i++) {
+            vidasi[i].textContent = vidast[i];
+            vidasi[i].style.color ="#000";
+        }
+        for (let i = 0; i < musica.length; i++) {
+            musica[i].pause();
+        }
+        vtdrct.style.display = "none";
+}
 
 function rvmatq() {
     if(atacar.textContent == "Atacar") {
@@ -1344,10 +1534,13 @@ function rvmatq() {
     atacando();
 }
 else {
+    log.scrollTop = 0;
     logtxt.innerHTML += `> <em>${pertxt}</em> colocou a prancha` + "<br>";
     atacar.textContent = "Atacar";
     prancha = true;
     tb.style.display = "flex";
+    prsom.currentTime = 0;
+    prsom.play();
     trocar();
 }
 }
@@ -1365,6 +1558,7 @@ resume.addEventListener("click", () => {
 function turnoini() {
     turnoa = false;
     habatv = 0;
+    limp();
     setInterval(() => {
         for (let i = 0; i < miras.length; i++) {
         switch (true) {
@@ -1406,8 +1600,15 @@ function turnoini() {
             default:
                 usandoci = false;
                 switch (true) {
-                    case horda == 1 || horda == 2 || horda == 3 || horda == 4 || horda == 5 || horda == 6 || horda == 7 || horda == 8 || chefe == 1 || chefe == 2:
+                    case ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("TripR.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("TripN.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Osio.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Ruivo.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("BN.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Tina.png")':
                         armai = "lamina";
+                    break;
+                    case ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("thesauriano.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Tesouros.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Fromir.png")' || ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Villinski.png")':
+                        armai = "mosquete";
+                    break;
+                    case ini != undefined && ini != 0 && cartasi[ini - 1].style.backgroundImage == 'url("Granadeiro.png")':
+                        armai = "granada";
+                        area = true;
                     break;
                 }
         }
@@ -1440,11 +1641,13 @@ function turnoini() {
         break;
     }
     inijog();
-if(prancha == false && usandoci == false) {
+if(prancha == false && usandoci == false && armai != "mosquete" && armai != "granada") {
 setTimeout(() => {
     if(vt == false) {
     dado.style.display = "flex";
     estatq.style.display = "flex";
+    prsom.currentTime = 0;
+    prsom.play();
     rolar();
 }
 else {
@@ -1479,14 +1682,17 @@ else {
         setTimeout(somini, 1000);
         setTimeout(() => {
         alvos();
-        danoinimigo();
         }, 50)
     }
     }
 }
 
 function somini() {
-    if(!turnoa) {
+    if(prancha == false && usandoci == false && armai != "mosquete" && armai != "granada") {
+        prsom.currentTime = 0;
+        prsom.play();
+    }
+    else if(!turnoa) {
         switch (true) {
             case armai == "lamina" && prancha == true:
                 sons[1].currentTime = 0;
@@ -1499,6 +1705,10 @@ function somini() {
             case armai == "canhoes":
                 sons[3].currentTime = 0;
                 sons[3].play();
+            break;
+            case armai == "granada":
+                sons[4].currentTime = 0;
+                sons[4].play();
             break;
         }
     }
@@ -2227,7 +2437,9 @@ function btd(e) {
     if(cta1.style.animationName == "shake") {
         limpcn();
     }
+    if(turnoa) {
     dado.style.display = "none";
+    }
     if(ordem.style.display == "flex") {
         ordem.style.opacity = "0";
         setTimeout(() => {
@@ -2240,7 +2452,9 @@ function btd(e) {
 }
 
 function rmvbtd(e) {
+    if(turnoa) {
     dado.style.display = "none";
+    }
     e.preventDefault(); 
 }
 
@@ -2302,11 +2516,12 @@ function apcdado() {
         }
     }
     else if(expl == false) {
+        log.scrollTop = 0;
         logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Frasco de Sopro Gélido</em>` + "<br>";
         frio();
     }
 }
-else {
+else if(mirando == true) {
     mirando = false;
     vez.style.top = "2vh";
     vez.style.backgroundColor = "rgba(0, 0, 255, 0.842)";
@@ -2314,12 +2529,16 @@ else {
 }
         }
     else {
+        log.scrollTop = 0;
         logtxt.innerHTML += `> <em>${pertxt}</em> usou o item <em style="color: #34eb64;">Frasco de Sopro Gélido</em>` + "<br>";
         frio();
     }
 }
 
 function mnscool() {
+    if(chefe == 3 || chefe == 5) {
+        vidac1.textContent -= -10;
+    }
     if(essencia == true) {
         duracri--;
     }
@@ -3412,7 +3631,7 @@ function rolar() {
     estatq.style.display = "flex";
     numdado = Math.floor(Math.random() * 20) + 1;
     rolln.textContent = numdado;
-    if(turnoa && usandoc == false && habatv == 0) {
+    if(turnoa && usandoc == false && habatv == 0 || turnoa && usandoc == true && mapa == "Costa") {
         dano();
     }
     else if(turnoa && usandoc == false && habatv == 1) {
@@ -3429,6 +3648,7 @@ function rolar() {
     }
     if(expl == false) {
     if(usandoc == false) {
+    if(armasatl.textContent != "Granada") {
     if(auriano == false && per == 1 || aurianop2 == false && per == 2 || aurianop3 == false && per == 3 || aurianop4 == false && per == 4 || aurianop5 == false && per == 5) {
     if(numdado == 1 || numdado == 2 || numdado == 3){
         est.textContent = "Ataque Falho";
@@ -3492,105 +3712,163 @@ if(usandoci == true) {
         est.style.color = "#f7847c";
         }
 }
+    }
+    else if(armasatl.textContent == "Granada") {
+        if(auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5) {
+            est.textContent = "Ataque Arcetivo";
+            est.style.color = "#a0ff08";
+        }
+        else if(numdado <= 10){
+            est.textContent = "Ataque Falho";
+            est.style.color = "#fc1303";
+        }
+        else {
+            est.textContent = "Ataque Arcetivo";
+            est.style.color = "#a0ff08";
+        }
+    }
+    if(area == true && !turnoa) {
+        if(numdado <= 10){
+            est.textContent = "Ataque Falho";
+            est.style.color = "#fc1303";
+        }
+        else {
+            est.textContent = "Ataque Arcetivo";
+            est.style.color = "#a0ff08";
+        }
+    }
     dado.style.display = "flex";
     setTimeout(() => {
+        log.scrollTop = 0;
         switch (true) {
 
-            case mirap1.style.display == "block" && numdado <= 3:
+            case mirap1.style.display == "block" && numdado <= 10 && alvo == 1 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou a granada em <em>Barbarovsk</em>` + "<br>";
+            break;
+            case mirap2.style.display == "block" && numdado <= 10 && alvo == 2 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou a granada em <em>Crowly</em>` + "<br>";
+            break;
+            case mirap3.style.display == "block" && numdado <= 10 && alvo == 3 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou a granada em <em>Lysa</em>` + "<br>";
+            break;
+            case mirap4.style.display == "block" && numdado <= 10 && alvo == 4 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou a granada em <em>Darban</em>` + "<br>";
+            break;
+            case mirap5.style.display == "block" && numdado <= 10 && alvo == 5 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou a granada em <em>Gabriele</em>` + "<br>";
+            break;
+
+            case mirap1.style.display == "block" && alvo == 1 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> jogou uma granada em <em>Barbarovsk</em>` + "<br>";
+            break;
+            case mirap2.style.display == "block" && alvo == 2 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> jogou uma granada em <em>Crowly</em>` + "<br>";
+            break;
+            case mirap3.style.display == "block" && alvo == 3 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> jogou uma granada em <em>Lysa</em>` + "<br>";
+            break;
+            case mirap4.style.display == "block" && alvo == 4 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> jogou uma granada em <em>Darban</em>` + "<br>";
+            break;
+            case mirap5.style.display == "block" && alvo == 5 && area == true:
+                logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> jogou uma granada em <em>Gabriele</em>` + "<br>";
+            break;
+
+            case mirap1.style.display == "block" && numdado <= 3 && alvo == 1:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Barbarovsk</em>` + "<br>";
             break;
-            case mirap2.style.display == "block" && numdado <= 3:
+            case mirap2.style.display == "block" && numdado <= 3 && alvo == 2:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Crowly</em>` + "<br>";
             break;
-            case mirap3.style.display == "block" && numdado <= 3:
+            case mirap3.style.display == "block" && numdado <= 3 && alvo == 3:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Lysa</em>` + "<br>";
             break;
-            case mirap4.style.display == "block" && numdado <= 3:
+            case mirap4.style.display == "block" && numdado <= 3 && alvo == 4:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Darban</em>` + "<br>";
             break;
-            case mirap5.style.display == "block" && numdado <= 3:
+            case mirap5.style.display == "block" && numdado <= 3 && alvo == 5:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> errou o ataque em <em>Gabriele</em>` + "<br>";
             break;
 
-            case mirap1.style.display == "block":
+            case mirap1.style.display == "block" && alvo == 1:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Barbarovsk</em>` + "<br>";
             break;
-            case mirap2.style.display == "block":
+            case mirap2.style.display == "block" && alvo == 2:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Crowly</em>` + "<br>";
             break;
-            case mirap3.style.display == "block":
+            case mirap3.style.display == "block" && alvo == 3:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Lysa</em>` + "<br>";
             break;
-            case mirap4.style.display == "block":
+            case mirap4.style.display == "block" && alvo == 4:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Darban</em>` + "<br>";
             break;
-            case mirap5.style.display == "block":
+            case mirap5.style.display == "block" && alvo == 5:
                 logtxt.innerHTML += `> <em style="color: #c04843;">${txtini}</em> atacou <em>Gabriele</em>` + "<br>";
             break;
 
-            case mirac2.style.display == "block" && mirac1.style.display == "block" && mirac3.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
+            case miraatl == 1 && armasatl.textContent == "Granada" && numdado <= 10 && aurianos[per - 1] == false:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou a granada em <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
             break;
-            case mirac3.style.display == "block" && mirac2.style.display == "block" && mirac4.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
+            case miraatl == 2 && armasatl.textContent == "Granada" && numdado <= 10 && aurianos[per - 1] == false:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou a granada em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
             break;
-            case mirac4.style.display == "block" && mirac3.style.display == "block" && mirac5.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
+            case miraatl == 3 && armasatl.textContent == "Granada" && numdado <= 10 && aurianos[per - 1] == false:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou a granada em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
             break;
-            case mirac5.style.display == "block" && mirac4.style.display == "block" && mirac6.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
+            case miraatl == 4 && armasatl.textContent == "Granada" && numdado <= 10 && aurianos[per - 1] == false:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou a granada em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
             break;
-            case mirac6.style.display == "block" && mirac5.style.display == "block" && mirac7.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
+            case miraatl == 5 && armasatl.textContent == "Granada" && numdado <= 10 && aurianos[per - 1] == false:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou a granada em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
             break;
-            case mirac1.style.display == "block" && mirac2.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+            case miraatl == 6 && armasatl.textContent == "Granada" && numdado <= 10 && aurianos[per - 1] == false:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou a granada em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
+            break;
+            case miraatl == 7 && armasatl.textContent == "Granada" && numdado <= 10 && aurianos[per - 1] == false:
+                logtxt.innerHTML += `> <em>${pertxt}</em> errou a granada em <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
+            break;
+
+            case miraatl == 1 && armasatl.textContent == "Granada":
                 logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
             break;
-            case mirac7.style.display == "block" && mirac6.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
+            case miraatl == 2 && armasatl.textContent == "Granada":
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
+            break;
+            case miraatl == 3 && armasatl.textContent == "Granada":
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
+            break;
+            case miraatl == 4 && armasatl.textContent == "Granada":
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
+            break;
+            case miraatl == 5 && armasatl.textContent == "Granada":
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
+            break;
+            case miraatl == 6 && armasatl.textContent == "Granada":
+                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
+            break;
+            case miraatl == 7 && armasatl.textContent == "Granada":
                 logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
             break;
 
-            case mirac1.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
-            break;
-            case mirac2.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
-            break;
-            case mirac3.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
-            break;
-            case mirac4.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
-            break;
-            case mirac5.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
-            break;
-            case mirac6.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
-            break;
-            case mirac7.style.display == "block" && armasatl.textContent == "Granada" && numdado > 3:
-                logtxt.innerHTML += `> <em>${pertxt}</em> jogou uma granada em <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
-            break;
-
-            case mirac1.style.display == "block" && numdado <= 3:
+            case mirac1.style.display == "block" && numdado <= 3 && aurianos[per - 1] == false:
                 logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[0]}</em>` + "<br>";
             break;
-            case mirac2.style.display == "block" && numdado <= 3:
+            case mirac2.style.display == "block" && numdado <= 3 && aurianos[per - 1] == false:
                 logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[1]}</em>` + "<br>";
             break;
-            case mirac3.style.display == "block" && numdado <= 3:
+            case mirac3.style.display == "block" && numdado <= 3 && aurianos[per - 1] == false:
                 logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[2]}</em>` + "<br>";
             break;
-            case mirac4.style.display == "block" && numdado <= 3:
+            case mirac4.style.display == "block" && numdado <= 3 && aurianos[per - 1] == false:
                 logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[3]}</em>` + "<br>";
             break;
-            case mirac5.style.display == "block" && numdado <= 3:
+            case mirac5.style.display == "block" && numdado <= 3 && aurianos[per - 1] == false:
                 logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[4]}</em>` + "<br>";
             break;
-            case mirac6.style.display == "block" && numdado <= 3:
+            case mirac6.style.display == "block" && numdado <= 3 && aurianos[per - 1] == false:
                 logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[5]}</em>` + "<br>";
             break;
-            case mirac7.style.display == "block" && numdado <= 3:
+            case mirac7.style.display == "block" && numdado <= 3 && aurianos[per - 1] == false:
                 logtxt.innerHTML += `> <em>${pertxt}</em> errou o ataque em <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
             break;
 
@@ -3616,7 +3894,7 @@ if(usandoci == true) {
                 logtxt.innerHTML += `> <em>${pertxt}</em> atacou <em style="color: #c04843;">${initxt[6]}</em>` + "<br>";
             break;
         }
-        if(numdado > 3) {
+        if(numdado > 3 && armasatl.textContent != "Granada" || numdado > 10 && armasatl.textContent == "Granada" || auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5) {
         switch (true) {
             case mirac1.style.display == "block" && mirac2.style.display == "block" && mirac3.style.display == "block":
                 danorei1.style.animationName = "recebido";
@@ -3667,40 +3945,86 @@ if(usandoci == true) {
                 danorei6.style.animationName = "recebido";
                 danorei7.style.animationName = "recebido";
             break;
-            case mirac1.style.display == "block":
+            case mirac1.style.display == "block" && usandoc == false || mirac1.style.display == "block" && mapa == "Costa":
                 danorei1.style.animationName = "recebido";
             break;
-            case mirac2.style.display == "block":
+            case mirac2.style.display == "block" && usandoc == false || mirac2.style.display == "block" && mapa == "Costa":
                 danorei2.style.animationName = "recebido";
             break;
-            case mirac3.style.display == "block":
+            case mirac3.style.display == "block" && usandoc == false || mirac3.style.display == "block" && mapa == "Costa":
                 danorei3.style.animationName = "recebido";
             break;
-            case mirac4.style.display == "block":
+            case mirac4.style.display == "block" && usandoc == false || mirac4.style.display == "block" && mapa == "Costa":
                 danorei4.style.animationName = "recebido";
             break;
-            case mirac5.style.display == "block":
+            case mirac5.style.display == "block" && usandoc == false || mirac5.style.display == "block" && mapa == "Costa":
                 danorei5.style.animationName = "recebido";
             break;
-            case mirac6.style.display == "block":
+            case mirac6.style.display == "block" && usandoc == false || mirac6.style.display == "block" && mapa == "Costa":
                 danorei6.style.animationName = "recebido";
             break;
-            case mirac7.style.display == "block":
+            case mirac7.style.display == "block" && usandoc == false || mirac7.style.display == "block" && mapa == "Costa":
                 danorei7.style.animationName = "recebido";
             break;
-            case mirap1.style.display == "block":
+            case mirap1.style.display == "block" && mirap2.style.display == "block" && area == true && numdado > 10 && usandoci == false:
                 danorea1.style.animationName = "recebido";
-            break;
-            case mirap2.style.display == "block":
                 danorea2.style.animationName = "recebido";
             break;
-            case mirap3.style.display == "block":
+            case mirap1.style.display == "block" && mirap2.style.display == "block" && mirap3.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea1.style.animationName = "recebido";
+                danorea2.style.animationName = "recebido";
                 danorea3.style.animationName = "recebido";
             break;
-            case mirap4.style.display == "block":
+            case mirap2.style.display == "block" && mirap3.style.display == "block" && mirap4.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea2.style.animationName = "recebido";
+                danorea3.style.animationName = "recebido";
                 danorea4.style.animationName = "recebido";
             break;
-            case mirap5.style.display == "block":
+            case mirap3.style.display == "block" && mirap4.style.display == "block" && mirap5.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea3.style.animationName = "recebido";
+                danorea4.style.animationName = "recebido";
+                danorea5.style.animationName = "recebido";
+            break;
+            case mirap2.style.display == "block" && mirap3.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea2.style.animationName = "recebido";
+                danorea3.style.animationName = "recebido";
+            break;
+            case mirap3.style.display == "block" && mirap4.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea3.style.animationName = "recebido";
+                danorea4.style.animationName = "recebido";
+            break;
+            case mirap4.style.display == "block" && mirap5.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea4.style.animationName = "recebido";
+                danorea5.style.animationName = "recebido";
+            break;
+            case mirap1.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea1.style.animationName = "recebido";
+            break;
+            case mirap2.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea2.style.animationName = "recebido";
+            break;
+            case mirap3.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea3.style.animationName = "recebido";
+            break;
+            case mirap4.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea4.style.animationName = "recebido";
+            break;
+            case mirap5.style.display == "block" && area == true && numdado > 10 && usandoci == false:
+                danorea5.style.animationName = "recebido";
+            break;
+            case mirap1.style.display == "block" && area == false && numdado > 3 && usandoci == false:
+                danorea1.style.animationName = "recebido";
+            break;
+            case mirap2.style.display == "block" && area == false && numdado > 3 && usandoci == false:
+                danorea2.style.animationName = "recebido";
+            break;
+            case mirap3.style.display == "block" && area == false && numdado > 3 && usandoci == false:
+                danorea3.style.animationName = "recebido";
+            break;
+            case mirap4.style.display == "block" && area == false && numdado > 3 && usandoci == false:
+                danorea4.style.animationName = "recebido";
+            break;
+            case mirap5.style.display == "block" && area == false && numdado > 3 && usandoci == false:
                 danorea5.style.animationName = "recebido";
             break;
         }
@@ -3719,6 +4043,7 @@ if(usandoci == true) {
             danorea4.style.animationName = "unset";
             danorea5.style.animationName = "unset";
         }, 1500)
+        if(mapa != "March") {
         if(aquecida == true && per == 1 || aquecidap2 == true && per == 2 || aquecidap3 == true && per == 3 || aquecidap4 == true && per == 4 || aquecidap5 == true && per == 5) {
         for(let i = 0; i < db1s.length; i++) {
             if(numdado > 3 || aurianos[i] == true) {
@@ -3735,6 +4060,7 @@ if(usandoci == true) {
                 }
             }
         }
+    }
         balaset.style.display = "none";
         balaset.style.left = "70%";
         balaset.style.opacity = "0";
@@ -3897,6 +4223,7 @@ if(usandoci == true) {
         }
     else if(usandoci == false) {
         danototalini = 0;
+        if(area == false) {
         switch (alvo) {
             case 1:
                 roll.style.visibility = "hidden";
@@ -3929,6 +4256,49 @@ if(usandoci == true) {
                     limp();
             break;
         }
+    }
+    else if(numdado > 10 || auriano == true && per == 1 || aurianop2 == true && per == 2 || aurianop3 == true && per == 3 || aurianop4 == true && per == 4 || aurianop5 == true && per == 5) {
+        switch (alvo) {
+            case 1:
+                roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
+                    vidac1a.textContent = hpp;
+                    vidac2a.textContent = hpp;
+                    limp();
+            break;
+            case 2:
+                roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
+                    vidac1a.textContent = hpp;
+                    vidac2a.textContent = hpp2;
+                    vidac3a.textContent = hpp3;
+                    limp();
+            break;
+            case 3:
+                roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
+                    vidac2a.textContent = hpp2;
+                    vidac3a.textContent = hpp3;
+                    vidac4a.textContent = hpp4;
+                    limp();
+            break;
+            case 4:
+                roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
+                    vidac3a.textContent = hpp3;
+                    vidac4a.textContent = hpp4;
+                    vidac5a.textContent = hpp5;
+                    limp();
+            break;
+            case 5:
+                roll.style.visibility = "hidden";
+                estatq.style.display = "flex";
+                    vidac4a.textContent = hpp4;
+                    vidac5a.textContent = hpp5;
+                    limp();
+            break;
+        }
+    }
     }
 }
 else {

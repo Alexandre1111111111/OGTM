@@ -10,6 +10,51 @@ for(i = 0; i < musica.length; i++) {
 for(i = 0; i < sons.length; i++) {
     sons[i].volume = localStorage.vs / 100;
 }
+switch (localStorage.mp) {
+    case "Mar":
+        mapa = "Mar";
+        document.body.style.backgroundImage = "url(campo.gif)";
+        prancha = false;
+        marmp.style.borderColor = "#ffd971";
+        cosmp.style.borderColor = "";
+        termp.style.borderColor = "";
+        hpbarcoini.style.display = "flex";
+        hpbarco.style.display = "flex";
+    break;
+    case "March":
+        mapa = "March";
+        document.body.style.backgroundImage = "url(march.gif)";
+        prancha = false;
+        marmp.style.borderColor = "";
+        marchmp.style.borderColor = "#ffd971";
+        cosmp.style.borderColor = "";
+        termp.style.borderColor = "";
+        hpbarcoini.style.display = "flex";
+        hpbarco.style.display = "flex";
+        ch.style.display = "block";
+        raio.style.display = "block";
+    break;
+    case "Costa":
+        mapa = "Costa";
+        document.body.style.backgroundImage = "url(costa.gif)";
+        prancha = true;
+        marmp.style.borderColor = "";
+        cosmp.style.borderColor = "#ffd971";
+        termp.style.borderColor = "";
+        hpbarcoini.style.display = "none";
+        hpbarco.style.display = "flex";
+    break;
+    case "Terra":
+        mapa = "Terra";
+        document.body.style.backgroundImage = "url(terra.png)";
+        prancha = true;
+        marmp.style.borderColor = "";
+        cosmp.style.borderColor = "";
+        termp.style.borderColor = "#ffd971";
+        hpbarcoini.style.display = "none";
+        hpbarco.style.display = "none";
+    break;
+}
 }
 else {
     localStorage.vm = 30;
@@ -264,6 +309,212 @@ switch(horda) {
             chefe = 0;
         }
     break;
+    case '9':
+        limpct();
+        for (let i = 2; i < 5; i++) {
+            cartasi[i].style.backgroundImage = "url(Tesouros.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 9;
+            chefe = 0;
+        }
+    break;
+    case '10':
+        limpct();
+        for (let i = 2; i < 5; i++) {
+            cartasi[i].style.backgroundImage = "url(Tesouros.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 10;
+            chefe = 0;
+        }
+        cartasi[5].style.backgroundImage = "url(Osio.png)";
+        vidasi[5].textContent = "255";
+        danoini[5].textContent = "75";
+        rescs[5].textContent = "8%";
+        ouros[5].textContent = "300";
+        vidast[5] = 255;
+        danost[5] = 75;
+        rests[5] = 0.92;
+    break;
+    case '11':
+        limpct();
+        for (let i = 2; i < 4; i++) {
+            cartasi[i].style.backgroundImage = "url(Tesouros.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 11;
+            chefe = 0;
+        }
+        for (let i = 4; i < 6; i++) {
+        cartasi[i].style.backgroundImage = "url(Osio.png)";
+        vidasi[i].textContent = "255";
+        danoini[i].textContent = "75";
+        rescs[i].textContent = "8%";
+        ouros[i].textContent = "300";
+        vidast[i] = 255;
+        danost[i] = 75;
+        rests[i] = 0.92;
+        }
+    break;
+    case '12':
+        limpct();
+        for (let i = 0; i < 5; i++) {
+            cartasi[i].style.backgroundImage = "url(Tesouros.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 12;
+            chefe = 0;
+        }
+        cartasi[5].style.backgroundImage = "url(Osio.png)";
+        vidasi[5].textContent = "255";
+        danoini[5].textContent = "75";
+        rescs[5].textContent = "8%";
+        ouros[5].textContent = "300";
+        vidast[5] = 255;
+        danost[5] = 75;
+        rests[5] = 0.92;
+    break;
+    case '13':
+        limpct();
+        for (let i = 0; i < 4; i++) {
+            cartasi[i].style.backgroundImage = "url(Tesouros.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 13;
+            chefe = 0;
+        }
+        for (let i = 4; i < 7; i++) {
+        cartasi[i].style.backgroundImage = "url(Osio.png)";
+        vidasi[i].textContent = "255";
+        danoini[i].textContent = "75";
+        rescs[i].textContent = "8%";
+        ouros[i].textContent = "300";
+        vidast[i] = 255;
+        danost[i] = 75;
+        rests[i] = 0.92;
+        }
+    break;
+    case '14':
+        limpct();
+        for (let i = 0; i < 5; i++) {
+            cartasi[i].style.backgroundImage = "url(thesauriano.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 14;
+            chefe = 0;
+        }
+        for (let i = 5; i < 7; i++) {
+        cartasi[i].style.backgroundImage = "url(Granadeiro.png)";
+        vidasi[i].textContent = "250";
+        danoini[i].textContent = "245";
+        rescs[i].textContent = "12%";
+        ouros[i].textContent = "550";
+        vidast[i] = 250;
+        danost[i] = 245;
+        rests[i] = 0.88;
+        }
+    break;
+    case '15':
+        limpct();
+        for (let i = 0; i < 6; i++) {
+            cartasi[i].style.backgroundImage = "url(thesauriano.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 15;
+            chefe = 0;
+        }
+    break;
+    case '16':
+        limpct();
+        for (let i = 0; i < 3; i++) {
+            cartasi[i].style.backgroundImage = "url(thesauriano.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 16;
+            chefe = 0;
+        }
+        for (let i = 3; i < 6; i++) {
+        cartasi[i].style.backgroundImage = "url(Granadeiro.png)";
+        vidasi[i].textContent = "250";
+        danoini[i].textContent = "245";
+        rescs[i].textContent = "12%";
+        ouros[i].textContent = "550";
+        vidast[i] = 250;
+        danost[i] = 245;
+        rests[i] = 0.88;
+        }
+    break;
+    case '17':
+        limpct();
+        for (let i = 1; i < 5; i++) {
+        cartasi[i].style.backgroundImage = "url(Granadeiro.png)";
+        vidasi[i].textContent = "250";
+        danoini[i].textContent = "245";
+        rescs[i].textContent = "12%";
+        ouros[i].textContent = "550";
+        vidast[i] = 250;
+        danost[i] = 245;
+        rests[i] = 0.88;
+        horda = 17;
+        chefe = 0;
+        }
+    break;
+    case '18':
+        limpct();
+        for (let i = 0; i < 7; i++) {
+            cartasi[i].style.backgroundImage = "url(thesauriano.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 18;
+            chefe = 0;
+        }
+    break;
 }
 switch (chefe) {
     case '1':
@@ -310,8 +561,96 @@ switch (chefe) {
             chefe = 2;
         }
     break;
+    case '3':
+        cartasi[0].style.backgroundImage = "url(Tina.png)";
+        vidasi[0].textContent = "320";
+        danoini[0].textContent = "85";
+        rescs[0].textContent = "15%";
+        ouros[0].textContent = "700";
+        vidast[0] = 320;
+        danost[0] = 85;
+        rests[0] = 0.85;
+        for (let i = 1; i < 5; i++) {
+            cartasi[i].style.backgroundImage = "url(Osio.png)";
+            vidasi[i].textContent = "255";
+            danoini[i].textContent = "75";
+            rescs[i].textContent = "8%";
+            ouros[i].textContent = "300";
+            vidast[i] = 255;
+            danost[i] = 75;
+            rests[i] = 0.92;
+            horda = 0;
+            chefe = 3;
+        }
+        for (let i = 5; i < 7; i++) {
+            cartasi[i].style.backgroundImage = "url(Tesouros.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+        }
+    break;
+    case '4':
+        cartasi[0].style.backgroundImage = "url(Fromir.png)";
+        vidasi[0].textContent = "470";
+        danoini[0].textContent = "165";
+        rescs[0].textContent = "15%";
+        ouros[0].textContent = "1750";
+        vidast[0] = 470;
+        danost[0] = 165;
+        rests[0] = 0.85;
+        for (let i = 1; i < 7; i++) {
+            cartasi[i].style.backgroundImage = "url(Tesouros.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 0;
+            chefe = 4;
+        }
+    break;
+    case '5':
+        limpct();
+        cartasi[0].style.backgroundImage = "url(Villinski.png)";
+        vidasi[0].textContent = "1000";
+        danoini[0].textContent = "325";
+        rescs[0].textContent = "60%";
+        ouros[0].textContent = "10000";
+        vidast[0] = 1000;
+        danost[0] = 325;
+        rests[0] = 0.40;
+        for (let i = 1; i < 4; i++) {
+            cartasi[i].style.backgroundImage = "url(thesauriano.png)";
+            vidasi[i].textContent = "205";
+            danoini[i].textContent = "65";
+            rescs[i].textContent = "15%";
+            ouros[i].textContent = "400";
+            vidast[i] = 205;
+            danost[i] = 65;
+            rests[i] = 0.85;
+            horda = 0;
+            chefe = 5;
+        }
+        for (let i = 4; i < 7; i++) {
+        cartasi[i].style.backgroundImage = "url(Granadeiro.png)";
+        vidasi[i].textContent = "250";
+        danoini[i].textContent = "245";
+        rescs[i].textContent = "12%";
+        ouros[i].textContent = "550";
+        vidast[i] = 250;
+        danost[i] = 245;
+        rests[i] = 0.88;
+        }
+    break;
 }
 function save() {
+    localStorage.mp = mapa;
     localStorage.fv = "V";
     localStorage.selnivs = selniv.value;
     localStorage.hordasn = horda;

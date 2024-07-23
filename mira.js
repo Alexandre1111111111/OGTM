@@ -24,6 +24,7 @@ else {
         mirac6.style.display = "none";
         mirac7.style.display = "none";
         ttl();
+        miraatl = 1;
         }
         else {
             cartasi[0].removeEventListener("click", apcdado);
@@ -57,6 +58,7 @@ else {
         mirac6.style.display = "none";
         mirac7.style.display = "none";
         ttl();
+        miraatl = 2;
         }
         else {
             cartasi[1].removeEventListener("click", apcdado);
@@ -89,6 +91,7 @@ else {
         mirac6.style.display = "none";
         mirac7.style.display = "none";
         ttl();
+        miraatl = 3;
         }
         else {
             cartasi[2].removeEventListener("click", apcdado);
@@ -121,6 +124,7 @@ else {
         mirac6.style.display = "none";
         mirac7.style.display = "none";
         ttl();
+        miraatl = 4;
         }
         else {
             cartasi[3].removeEventListener("click", apcdado);
@@ -153,6 +157,7 @@ else {
         mirac6.style.display = "block";
         mirac7.style.display = "none";
         ttl();
+        miraatl = 5;
         }
         else {
             cartasi[4].removeEventListener("click", apcdado);
@@ -185,6 +190,7 @@ else {
         mirac6.style.display = "block";
         mirac7.style.display = "block";
         ttl();
+        miraatl = 6;
         }
         else {
             cartasi[5].removeEventListener("click", apcdado);
@@ -293,6 +299,7 @@ function alvos() {
             alvo -= 1;
         break;
     }
+    if(area == false) {
     switch (alvo) {
         case 1:
             mirap1.style.display = "block";
@@ -310,6 +317,83 @@ function alvos() {
             mirap5.style.display = "block";
         break;
     }
+}
+else {
+    switch (alvo) {
+        case 1:
+            if(inc2.style.display != "flex") {
+                mirap1.style.display = "block";
+                mirap2.style.display = "block";
+            }
+            else {
+                mirap1.style.display = "block";
+            }
+        break;
+        case 2:
+            if(inc3.style.display != "flex" && inc1.style.display != "flex") {
+                mirap1.style.display = "block";
+                mirap2.style.display = "block";
+                mirap3.style.display = "block";
+            }
+            else if(inc3.style.display != "flex") {
+                mirap2.style.display = "block";
+                mirap3.style.display = "block";
+            }
+            else if(inc1.style.display != "flex") {
+                mirap1.style.display = "block";
+                mirap2.style.display = "block";
+            }
+            else {
+                mirap2.style.display = "block";
+            }
+        break;
+        case 3:
+            if(inc4.style.display != "flex" && inc2.style.display != "flex") {
+                mirap2.style.display = "block";
+                mirap3.style.display = "block";
+                mirap4.style.display = "block";
+            }
+            else if(inc4.style.display != "flex") {
+                mirap3.style.display = "block";
+                mirap4.style.display = "block";
+            }
+            else if(inc2.style.display != "flex") {
+                mirap2.style.display = "block";
+                mirap3.style.display = "block";
+            }
+            else {
+                mirap3.style.display = "block";
+            }
+        break;
+        case 4:
+            if(inc5.style.display != "flex" && inc3.style.display != "flex") {
+                mirap3.style.display = "block";
+                mirap4.style.display = "block";
+                mirap5.style.display = "block";
+            }
+            else if(inc5.style.display != "flex") {
+                mirap4.style.display = "block";
+                mirap5.style.display = "block";
+            }
+            else if(inc3.style.display != "flex") {
+                mirap3.style.display = "block";
+                mirap4.style.display = "block";
+            }
+            else {
+                mirap4.style.display = "block";
+            }
+        break;
+        case 5:
+            if(inc4.style.display != "flex") {
+                mirap4.style.display = "block";
+                mirap5.style.display = "block";
+            }
+            else {
+                mirap5.style.display = "block";
+            }
+        break;
+    }
+}
 }
 }
 function mira() {

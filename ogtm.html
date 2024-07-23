@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGTM - RPG</title>
+    <link rel="stylesheet" href="ogtm.css">
+    <link rel="Icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="options">
+        <h1 class="ver">OGTM v0.9.1.09.07.2024</h1>
+        <div class="ctop">
+            <div class="sonsm">
+                <h1>Volume</h1>
+                <div class="barras">
+                <div class="brrm">
+                    <h1>Música</h1>
+                        <input type="range" min="0" max="100" value="30" class="slide" id="sldm">
+                      </div>
+                <div class="brrs">
+                    <h1>SFX</h1>
+                        <input type="range" min="0" max="100" value="70" class="slide" id="slds">
+                </div>
+            </div>
+            </div>
+            <div class="cct">
+                <button id="resume">Retomar</button>
+            </div>
+        </div>
+    </div>
+    <div class="ch"></div>
+    <div class="raio"></div>
+    <div class="logct">
+        <div class="abrirlog">
+            <img src="https://cdn-icons-png.flaticon.com/512/8213/8213522.png" alt="">
+        </div>
+        <div class="alllog">
+        <div class="log">
+            <h1 id="logtxt"></h1>
+        </div>
+        <div class="logec">
+        <input id="esclog" type="text">
+    </div>
+    </div>
+    </div>
+    <div class="inis">
+        <div class="btninis">
+            <button id="btnh">Hordas</button>
+            <button id="btnc">Chefes</button>
+        </div>
+        <div class="local">
+            <button id="btnmar">Marítimo</button>
+            <button id="btnnor">Norlândia</button>
+            <button id="btnthe">Thesauri</button>
+        </div>
+        <div class="hordas">
+            <div class="horda1m">
+                <img src="TR.png" alt="">
+            </div>
+            <div class="horda2m">
+                <img src="TR.png" alt="">
+            </div>
+            <div class="horda3m">
+                <img src="TR.png" alt="">
+            </div>
+            <div class="horda4m">
+                <img src="TNimg.png" alt="">
+            </div>
+            <div class="horda5m">
+                <img src="TNimg.png" alt="">
+            </div>
+            <div class="horda6m">
+                <img src="TNimg.png" alt="">
+            </div>
+            <div class="horda7m">
+                <img src="TNimg.png" alt="">
+            </div>
+            <div class="horda8m">
+                <img src="TNimg.png" alt="">
+            </div>
+
+            <div class="horda1n">
+                <img src="CT.png" alt="">
+            </div>
+            <div class="horda2n">
+                <img src="CT.png" alt="">
+            </div>
+            <div class="horda3n">
+                <img src="CT.png" alt="">
+            </div>
+            <div class="horda4n">
+                <img src="osioimg.png" alt="">
+            </div>
+            <div class="horda5n">
+                <img src="osioimg.png" alt="">
+            </div>
+
+            <div class="horda1t">
+                <img src="timg.png" alt="">
+            </div>
+            <div class="horda2t">
+                <img src="timg.png" alt="">
+            </div>
+            <div class="horda3t">
+                <img src="GR.png" alt="">
+            </div>
+            <div class="horda4t">
+                <img src="GR.png" alt="">
+            </div>
+            <div class="horda5t">
+                <img src="timg.png" alt="">
+            </div>
+        </div>
+        <div class="chefes">
+            <div class="chefe1m">
+                <img src="R.png" alt="">
+            </div>
+            <div class="chefe2m">
+                <img src="BNimg.png" alt="">
+            </div>
+
+            <div class="chefe1n">
+                <img src="Tn.png" alt="">
+            </div>
+            <div class="chefe2n">
+                <img src="FR.png" alt="">
+            </div>
+
+            <div class="chefe1t">
+                <img src="Arthur.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="tb">
+        <img src="tabua.png" alt="">
+    </div>
+    <div class="canhaoi">
+        <img src="explosao.gif" id="cn1e" alt="">
+        <img src="explosao.gif" id="cn2e" alt="">
+        <img src="explosao.gif" id="cn1d" alt="">
+        <img src="explosao.gif" id="cn2d" alt="">
+    </div>
+    <div class="canhaoa">
+        <img src="explosao.gif" alt="">
+        <img src="explosao.gif" alt="">
+        <img src="explosao.gif" alt="">
+    </div>
+    <img id="cog" src="https://cdn-icons-png.flaticon.com/512/5725/5725391.png" alt="">
+    <div class="ctinisel">
+    <div class="inisel">
+        <div class="selec">
+            <div class="mpsel">
+                <h1>Mapa</h1>
+                <div class="mpbtn">
+                <div id="marmp"></div>
+                <div id="marchmp"></div>
+                <div id="cosmp"></div>
+                <div id="termp"></div>
+            </div>
+            </div>
+            <div class="inissl">
+                <h1>Inimigos</h1>
+                <button id="selini">Escolher os Inimigos</button>
+            </div>
+            <div class="perssl">
+                <h1>Personagens</h1>
+                <div class="nvls">
+                    <h1>Nível:</h1>
+                <div class="custom-select">
+                    <select name="niveis" id="selniv">
+                        <option value="I">Auto</option>
+                        <option value="I">I</option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="IV">IV</option>
+                        <option value="V">V</option>
+                        <option value="VI">VI</option>
+                        <option value="VII">VII</option>
+                        <option value="VIII">VIII</option>
+                        <option value="IX">IX</option>
+                        <option value="X">X</option>
+                    </select>
+                </div>
+            </div>
+            <h1 id="armatxt">Armas:</h1>
+            <div class="armaselp1">
+                <h1>Barbarovsk:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap1">
+                    <option value="punhal">Auto</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp1">
+            </div>
+            <div class="armaselp2">
+            <h1>Crowly:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap2">
+                    <option value="punhal">Auto</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp2">
+        </div>
+            <div class="armaselp3">
+            <h1>Lysa:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap3">
+                    <option value="punhal">Auto</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp3">
+        </div>
+            <div class="armaselp4">
+            <h1>Darban:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap4">
+                    <option value="punhal">Auto</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp4">
+        </div>
+            <div class="armaselp5">
+            <h1>Gabriele:</h1>
+            <div class="custom-select">
+                <select name="armas" id="selarmap5">
+                    <option value="punhal">Auto</option>
+                    <option value="punhal">Punhal</option>
+                    <option value="rapieira">Rapieira</option>
+                    <option value="sabre">Sabre</option>
+                    <option value="mosquete">Mosquete</option>
+                    <option value="perdeneira">Pederneira</option>
+                    <option value="machado">Machado</option>
+                    <option value="besta">Besta</option>
+                    <option value="pistola">Pistola</option>
+                    <option value="granada">Granada</option>
+                    <option value="adaga">Adaga Dupla</option>
+                    <option value="molotov">Coquetel Molotov</option>
+                    <option value="nock">Espingarda Nock</option>
+                    <option value="arpao">Mini-arpão</option>
+                    <option value="foice">Foice curta</option>
+                    <option value="espada">Espada Congelada</option>
+                </select>
+            </div>
+            <input type="number" placeholder="mun" id="nummunp5">
+        </div>
+        <h1 id="amultxt">Amuletos:</h1>
+        <div class="amulp1">
+            <h1>Barbarovsk:</h1>
+            <div class="esp">
+                <div class="a1p1"></div>
+                <div class="a2p1"></div>
+                <div class="a3p1"></div>
+            </div>
+            </div>
+            <div class="amulp2">
+            <h1>Crowly:</h1>
+            <div class="esp">
+                <div class="a1p2"></div>
+                <div class="a2p2"></div>
+                <div class="a3p2"></div>
+            </div>
+            </div>
+            <div class="amulp3">
+            <h1>Lysa:</h1>
+            <div class="esp">
+                <div class="a1p3"></div>
+                <div class="a2p3"></div>
+                <div class="a3p3"></div>
+            </div>
+            </div>
+            <div class="amulp4">
+            <h1>Darban:</h1>
+            <div class="esp">
+                <div class="a1p4"></div>
+                <div class="a2p4"></div>
+                <div class="a3p4"></div>
+            </div>
+            </div>
+            <div class="amulp5">
+            <h1>Gabriele:</h1>
+            <div class="esp">
+                <div class="a1p5"></div>
+                <div class="a2p5"></div>
+                <div class="a3p5"></div>
+            </div>
+            </div>
+            </div>
+            <div class="itenssel">
+                <h1>Itens</h1>
+                <div class="p1itns">
+                    <h1>Barbarovsk:</h1>
+                    <button id="p1itn">+</button>
+                    <h1 id="numitp1">0</h1>
+                </div>
+                <div class="p2itns">
+                    <h1>Crowly:</h1>
+                    <button id="p2itn">+</button>
+                    <h1 id="numitp2">0</h1>
+                </div>
+                <div class="p3itns">
+                    <h1>Lysa:</h1>
+                    <button id="p3itn">+</button>
+                    <h1 id="numitp3">0</h1>
+                </div>
+                <div class="p4itns">
+                    <h1>Darban:</h1>
+                    <button id="p4itn">+</button>
+                    <h1 id="numitp4">0</h1>
+                </div>
+                <div class="p5itns">
+                    <h1>Gabriele:</h1>
+                    <button id="p5itn">+</button>
+                    <h1 id="numitp5">0</h1>
+                </div>
+                <div class="barcoitns">
+                    <h1>Barco:</h1>
+                    <button id="pbitn">+</button>
+                    <h1 id="numitb">0</h1>
+                </div>
+            </div>
+        </div>
+        <button id="btncom">Começar</button>
+    </div>
+    </div>
+    <div class="ordem">
+        <button id="opcnn">Utilizar os Canhões</button>
+    </div>
+    <div class="utitensct">
+        <div class="utitens">
+            <div class="allitens">
+                <h1 id="it">Itens:</h1>
+                <div class="gradeit perit">
+                <div class="itensgr kit">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2053/2053884.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantmp">0</h1>
+                    </div>
+                </div>
+                  <div class="itensgr reparo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4854/4854866.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantrp">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr auriana">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2190/2190855.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantap">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr cristais">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3753/3753718.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantcp">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr sopro">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6658/6658725.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantsp">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr explosiva">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3553/3553208.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantep">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr ferro">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6984/6984654.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantfp">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr incendiario">
+                    <img src="flecha.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantip">0</h1>
+                    </div>
+                </div>
+            </div>
+            <h1 id="ib">Itens do Barco:</h1>
+            <div class="gradeit barcoit">
+                <div class="itensgr kit2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2053/2053884.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantm">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr reparo2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4854/4854866.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantr">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr auriana2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2190/2190855.png" alt="">
+                    <div class="quant">
+                        <h1 id="quanta">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr cristais2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3753/3753718.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantc">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr sopro2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6658/6658725.png" alt="">
+                    <div class="quant">
+                        <h1 id="quants">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr explosiva2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3553/3553208.png" alt="">
+                    <div class="quant">
+                        <h1 id="quante">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr ferro2">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6984/6984654.png" alt="">
+                    <div class="quant">
+                        <h1 id="quantf">0</h1>
+                    </div>
+                </div>
+                <div class="itensgr incendiario2">
+                    <img src="flecha.png" alt="">
+                    <div class="quant">
+                        <h1 id="quanti">0</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divfechar">
+            <div class="fechar">
+                <img src="https://cdn-icons-png.flaticon.com/512/2919/2919590.png" alt="">
+            </div>
+        </div>
+            <div class="espitem">
+            <div class="imgitemct">
+                <div class="imgitem">
+                <img id="espimg" src="https://cdn-icons-png.flaticon.com/512/2053/2053884.png" alt="">
+                </div>
+            </div>
+            <h1 id="nomeitm"></h1>
+            <div class="desc">
+            <h2 id="efeitoi">Efeito: <b id="efeito"></b></h2>
+            <h2 id="duracaoi">Duração: <b id="duracao"></b></h2>
+        </div>
+            <button id="usar">Usar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="selam">
+        <div class="btnsam">
+            <button id="coam">Comum</button>
+            <button id="raam">Raro</button>
+            <button id="epam">Épico</button>
+            <button id="leam">Lendário</button>
+        </div>
+        <div class="amls">
+            <div class="a1"><img id="a1img" src="resista.png" alt=""></div>
+            <div class="a2"><img id="a2img" src="vidaa.png" alt=""></div>
+            <div class="a3"><img id="a3img" src="sortea.png" alt=""></div>
+            <div class="a4"><img id="a4img" src="sana.png" alt=""></div>
+        </div>
+        <button id="Rmvam">Remover Amuleto</button>
+    </div>
+    <div class="vez">
+        <h1 id="veztxt">Turno de Barbarovsk</h1>
+    </div>
+    <div class="aliado">
+        <div class="damage">
+            <h1>Dano Total:</h1>
+            <h2 id="total">---</h2>
+        </div>
+        <div class="armaatl">
+            <div class="armatxt">
+            <h1>Arma Atual:</h1>
+        </div>
+        <div class="atltxt">
+            <h2 id="armasatl">---</h2>
+        </div>
+            <div class="mun">
+            <h3 id="ammo">Munição: </h3>
+        </div>
+        <div class="deschab">
+            <div>
+            <h1 id="tithab">Comando de Equipe</h1>
+        </div>
+        <div class="dchab">
+            <h2 id="deshab">Ordena com que todos da tripulação ataquem um único inimigo com um aumento de 50% no dano por 1 turno;</h2>
+        </div>
+        <div class="cooldesc">
+            <h3 id="cdesc">Cooldown: 5 turnos</h3>
+        </div>
+        </div>
+        <div class="hab">
+            <div class="cool">
+                <h1 id="cooldown">0</h1>
+            </div>
+            <img id="ichab" src="https://cdn-icons-png.flaticon.com/512/855/855059.png" alt="">
+        </div>
+        </div>
+        <div id="btns">
+            <div class="balaset">
+                <img id="munesp" src="https://cdn-icons-png.flaticon.com/512/3553/3553208.png" alt="">
+            </div>
+            <button id="atacar">Atacar</button>
+            <button id="ordenar">Ordens</button>
+            <button id="itens">Itens</button>
+        </div>
+        <div id="hpbarco">
+            <div class="niveis">
+                <div class="inund">
+                    <div id="nv1"></div>
+                    <div id="nv2"></div>
+                    <div id="nv3"></div>
+                </div>
+            </div>
+            <div class="vidabc">
+            <img src="https://cdn-icons-png.flaticon.com/512/535/535183.png" alt="">
+            <h1 id="vidabarcoa">1250</h1>
+        </div>
+        <div class="lifebara">
+            <div class="lifea"></div>
+            <div class="lifedanoa"></div>
+        </div>
+        </div>
+        <div id="ct">
+
+        </div>
+    </div>
+    <div class="inimigo">
+        <div id="hpbarcoini">
+            <div class="lifebari">
+                <div class="lifedanoi"></div>
+                <div class="lifei"></div>
+            </div>
+            <div class="vidabci">
+            <img src="https://cdn-icons-png.flaticon.com/512/535/535183.png" alt="">
+            <h1 id="vidabarcoi">1250</h1>
+            </div>
+            <div class="niveisi">
+                <div class="inundi">
+                    <div id="nv1i"></div>
+                    <div id="nv2i"></div>
+                    <div id="nv3i"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="personagens">
+    <div id="cta1" class="barbarovsk">
+        <div class="danorea1"></div>
+        <div class="nivel">
+            <h1 id="nvc1">NV: I</h1>
+        </div>
+        <div class="debuff">
+            <div class="db1">
+                <img id="imgdb" src="" alt="">
+            </div>
+            <div class="db2">
+                <img id="imgdb2" src="" alt="">
+            </div>
+            <div class="db3">
+                <img id="imgdb3" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vdc">
+                <h1 id="vidac1a">125</h1>
+                <h1 id="danoc1a">35</h1>
+            </div>
+            <div class="ressan">
+                <h1 id="resc1a">10%</h1>
+                <h1 id="sanc1">60</h1>
+            </div>
+        </div>
+        <div class="amuls">
+            <div class="am1">
+            <img src="resista.png" alt="">
+        </div>
+        <div class="am2">
+            <img src="regena.png" alt="">
+        </div>
+            <div class="am3">
+            <img src="imorta.png" alt="">
+        </div>
+        </div>
+        <div class="cura1">
+            <img src="https://cdn-icons-png.flaticon.com/512/232/232446.png" alt="">
+        </div>
+        <div class="atordoa1">
+            <img src="spiral.png" alt="">
+        </div>
+        <img id="mirap1" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+        <div id="inc1" class="incapacitado">
+                <h1>Incapacitado</h1>
+        </div>
+    </div>
+    <div id="cta2" class="barbarovsk alto">
+        <div class="danorea2"></div>
+        <div id="cn1" class="canhoneiro">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="nivel">
+            <h1 id="nvc2">NV: I</h1>
+        </div>
+        <div class="debuffp2">
+            <div class="db1p2">
+                <img id="imgdbp2" src="" alt="">
+            </div>
+            <div class="db2p2">
+                <img id="imgdb2p2" src="" alt="">
+            </div>
+            <div class="db3p2">
+                <img id="imgdb3p2" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vdc">
+                <h1 id="vidac2a">200</h1>
+                <h1 id="danoc2a">40</h1>
+            </div>
+            <div class="ressan">
+                <h1 id="resc2a">15%</h1>
+                <h1 id="sanc2">70</h1>
+            </div>
+        </div>
+        <div class="amuls">
+            <div class="am1">
+            <img src="resista.png" alt="">
+        </div>
+        <div class="am2">
+            <img src="regena.png" alt="">
+        </div>
+            <div class="am3">
+            <img src="imorta.png" alt="">
+        </div>
+        </div>
+        <div class="cura2">
+            <img src="https://cdn-icons-png.flaticon.com/512/232/232446.png" alt="">
+        </div>
+        <div class="atordoa2">
+            <img src="spiral.png" alt="">
+        </div>
+        <img id="mirap2" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+        <div id="inc2" class="incapacitado">
+            <h1>Incapacitado</h1>
+    </div>
+    </div>
+    <div id="cta3" class="barbarovsk">
+        <div class="danorea3"></div>
+        <div id="cn2" class="canhoneiro">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="nivel">
+            <h1 id="nvc3">NV: I</h1>
+        </div>
+        <div class="debuffp3">
+            <div class="db1p3">
+                <img id="imgdbp3" src="" alt="">
+            </div>
+            <div class="db2p3">
+                <img id="imgdb2p3" src="" alt="">
+            </div>
+            <div class="db3p3">
+                <img id="imgdb3p3" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vdc">
+                <h1 id="vidac3a">125</h1>
+                <h1 id="danoc3a">30</h1>
+            </div>
+            <div class="ressan">
+                <h1 id="resc3a">10%</h1>
+                <h1 id="sanc3">80</h1>
+            </div>
+        </div>
+        <div class="amuls">
+            <div class="am1">
+            <img src="resista.png" alt="">
+        </div>
+        <div class="am2">
+            <img src="regena.png" alt="">
+        </div>
+            <div class="am3">
+            <img src="imorta.png" alt="">
+        </div>
+        </div>
+        <div class="cura3">
+            <img src="https://cdn-icons-png.flaticon.com/512/232/232446.png" alt="">
+        </div>
+        <div class="atordoa3">
+            <img src="spiral.png" alt="">
+        </div>
+        <img id="mirap3" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+        <div id="inc3" class="incapacitado">
+            <h1>Incapacitada</h1>
+        </div>
+    </div>
+    <div id="cta4" class="barbarovsk alto">
+        <div class="danorea4"></div>
+        <div id="cn3" class="canhoneiro">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="nivel">
+            <h1 id="nvc4">NV: I</h1>
+        </div>
+        <div class="debuffp4">
+            <div class="db1p4">
+                <img id="imgdbp4" src="" alt="">
+            </div>
+            <div class="db2p4">
+                <img id="imgdb2p4" src="" alt="">
+            </div>
+            <div class="db3p4">
+                <img id="imgdb3p4" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vdc">
+                <h1 id="vidac4a">150</h1>
+                <h1 id="danoc4a">35</h1>
+            </div>
+            <div class="ressan">
+                <h1 id="resc4a">8%</h1>
+                <h1 id="sanc4">65</h1>
+            </div>
+        </div>
+        <div class="amuls">
+            <div class="am1">
+            <img src="resista.png" alt="">
+        </div>
+        <div class="am2">
+            <img src="regena.png" alt="">
+        </div>
+            <div class="am3">
+            <img src="imorta.png" alt="">
+        </div>
+        </div>
+        <div class="cura4">
+            <img src="https://cdn-icons-png.flaticon.com/512/232/232446.png" alt="">
+        </div>
+        <div class="atordoa4">
+            <img src="spiral.png" alt="">
+        </div>
+        <img id="mirap4" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+        <div id="inc4" class="incapacitado">
+            <h1>Incapacitado</h1>
+    </div>
+    </div>
+    <div id="cta5" class="barbarovsk">
+        <div class="danorea5"></div>
+        <div id="cn4" class="canhoneiro">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="nivel">
+            <h1 id="nvc5">NV: I</h1>
+        </div>
+        <div class="debuffp5">
+            <div class="db1p5">
+                <img id="imgdbp5" src="" alt="">
+            </div>
+            <div class="db2p5">
+                <img id="imgdb2p5" src="" alt="">
+            </div>
+            <div class="db3p5">
+                <img id="imgdb3p5" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vdc">
+                <h1 id="vidac5a">175</h1>
+                <h1 id="danoc5a">30</h1>
+            </div>
+            <div class="ressan">
+                <h1 id="resc5a">5%</h1>
+                <h1 id="sanc5">85</h1>
+            </div>
+        </div>
+        <div class="amuls">
+            <div class="am1">
+            <img src="resista.png" alt="">
+        </div>
+        <div class="am2">
+            <img src="regena.png" alt="">
+        </div>
+            <div class="am3">
+            <img src="imorta.png" alt="">
+        </div>
+        </div>
+        <div class="cura5">
+            <img src="https://cdn-icons-png.flaticon.com/512/232/232446.png" alt="">
+        </div>
+        <div class="atordoa5">
+            <img src="spiral.png" alt="">
+        </div>
+        <img id="mirap5" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+        <div id="inc5" class="incapacitado">
+            <h1>Incapacitada</h1>
+    </div>
+    </div>
+</div>
+<div class="rivais">
+    <div id="cartai1" class="thesauriano baixo">
+        <div class="confogo1"></div>
+        <div class="danorei1"></div>
+        <div id="cn1i" class="canhoneiroi">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="debuffi1">
+            <div class="db1i1">
+                <img id="imgdbi1" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+        <div class="vd vdc1">
+            <h1 id="vidac1"></h1>
+            <h1 id="danoc1"></h1>
+        </div>
+        <div class="resouro">
+            <h1 id="resc1"></h1>
+            <h1 id="ouroc1"></h1>
+        </div>
+        </div>
+        <img id="mirac1" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+        <div id="inci1" class="incapacitado">
+            <img src="https://cdn-icons-png.flaticon.com/512/1355/1355991.png" alt="">
+    </div>
+    </div>
+    <div id="cartai2" class="thesauriano">
+        <div class="confogo2"></div>
+        <div class="danorei2"></div>
+        <div id="cn2i" class="canhoneiroi">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="debuffi2">
+            <div class="db1i2">
+                <img id="imgdbi2" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vd">
+                <h1 id="vidac2"></h1>
+                <h1 id="danoc2"></h1>
+            </div>
+            <div class="resouro">
+                <h1 id="resc2"></h1>
+                <h1 id="ouroc2"></h1>
+            </div>
+            </div>
+            <img id="mirac2" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+            <div id="inci2" class="incapacitado">
+                <img src="https://cdn-icons-png.flaticon.com/512/1355/1355991.png" alt="">
+        </div>
+    </div>
+    <div id="cartai3" class="thesauriano baixo">
+        <div class="confogo3"></div>
+        <div class="danorei3"></div>
+        <div id="cn3i" class="canhoneiroi">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="debuffi3">
+            <div class="db1i3">
+                <img id="imgdbi3" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vd">
+                <h1 id="vidac3"></h1>
+                <h1 id="danoc3"></h1>
+            </div>
+            <div class="resouro">
+                <h1 id="resc3"></h1>
+                <h1 id="ouroc3"></h1>
+            </div>
+            </div>
+            <img id="mirac3" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+            <div id="inci3" class="incapacitado">
+                <img src="https://cdn-icons-png.flaticon.com/512/1355/1355991.png" alt="">
+        </div>
+    </div>
+    <div id="cartai4" class="thesauriano">
+        <div class="confogo4"></div>
+        <div class="danorei4"></div>
+        <div id="cn4i" class="canhoneiroi">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="debuffi4">
+            <div class="db1i4">
+                <img id="imgdbi4" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vd">
+                <h1 id="vidac4"></h1>
+                <h1 id="danoc4"></h1>
+            </div>
+            <div class="resouro">
+                <h1 id="resc4"></h1>
+                <h1 id="ouroc4"></h1>
+            </div>
+            </div>
+            <img id="mirac4" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+            <div id="inci4" class="incapacitado">
+                <img src="https://cdn-icons-png.flaticon.com/512/1355/1355991.png" alt="">
+        </div>
+    </div>
+    <div id="cartai5" class="thesauriano baixo">
+        <div class="confogo5"></div>
+        <div class="danorei5"></div>
+        <div id="cn5i" class="canhoneiroi">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="debuffi5">
+            <div class="db1i5">
+                <img id="imgdbi5" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vd">
+                <h1 id="vidac5"></h1>
+                <h1 id="danoc5"></h1>
+            </div>
+            <div class="resouro">
+                <h1 id="resc5"></h1>
+                <h1 id="ouroc5"></h1>
+            </div>
+            </div>
+            <img id="mirac5" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+            <div id="inci5" class="incapacitado">
+                <img src="https://cdn-icons-png.flaticon.com/512/1355/1355991.png" alt="">
+        </div>
+    </div>
+    <div id="cartai6" class="thesauriano">
+        <div class="confogo6"></div>
+        <div class="danorei6"></div>
+        <div id="cn6i" class="canhoneiroi">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="debuffi6">
+            <div class="db1i6">
+                <img id="imgdbi6" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vd">
+                <h1 id="vidac6"></h1>
+                <h1 id="danoc6"></h1>
+            </div>
+            <div class="resouro">
+                <h1 id="resc6"></h1>
+                <h1 id="ouroc6"></h1>
+            </div>
+            </div>
+            <img id="mirac6" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+            <div id="inci6" class="incapacitado">
+                <img src="https://cdn-icons-png.flaticon.com/512/1355/1355991.png" alt="">
+        </div>
+    </div>
+    <div id="cartai7" class="thesauriano baixo">
+        <div class="confogo7"></div>
+        <div class="danorei7"></div>
+        <div id="cn7i" class="canhoneiroi">
+            <img src="https://cdn-icons-png.flaticon.com/512/4219/4219373.png" alt="">
+        </div>
+        <div class="debuffi7">
+            <div class="db1i7">
+                <img id="imgdbi7" src="" alt="">
+            </div>
+        </div>
+        <div class="atributosc1">
+            <div class="vd">
+                <h1 id="vidac7"></h1>
+                <h1 id="danoc7"></h1>
+            </div>
+            <div class="resouro">
+                <h1 id="resc7"></h1>
+                <h1 id="ouroc7"></h1>
+            </div>
+            </div>
+            <img id="mirac7" src="https://cdn-icons-png.flaticon.com/512/487/487009.png" alt="">
+            <div id="inci7" class="incapacitado">
+                <img src="https://cdn-icons-png.flaticon.com/512/1355/1355991.png" alt="">
+        </div>
+    </div>
+</div>
+    <div class="vtdrct">
+        <div class="vtdr">
+            <h1 id="defvt">Vitória</h1>
+            <h1 id="saque">Saque Total:</h1>
+            <h1 id="ourorec">Ouro: 0</h1>
+            <h1 id="xp">XP: 0</h1>
+            <div class="voltar">
+                <button id="vtbtn">Voltar</button>
+            </div>
+        </div>
+    </div>
+    <div class="dado">
+        <div class="num">
+            <h1 id="rolln">0</h1>
+        </div>
+        <div class="estatq">
+            <h1 id="est"></h1>
+        </div>
+        <button id="roll">Rolar</button>
+    </div>
+    <script src="var.js"></script>
+    <script src="musica.js"></script>
+    <script src="barcos.js"></script>
+    <script src="hab.js"></script>
+    <script src="danos.js"></script>
+    <script src="seletor.js"></script>
+    <script src="incs.js"></script>
+    <script src="niveis.js"></script>
+    <script src="mira.js"></script>
+    <script src="interv.js"></script>
+    <script src="itens.js"></script>
+    <script src="amuletos.js"></script>
+    <script src="script.js"></script>
+    <script src="save.js"></script>
+</body>
+</html>
